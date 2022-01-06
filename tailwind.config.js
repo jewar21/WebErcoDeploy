@@ -43,7 +43,99 @@ module.exports = {
         }
       },
       fontFamily: {
-        body: ["Sora"]
+        Sora: ["Sora", "sans-serif"],
+        IBM: ['IBM Plex Sans', "sans-serif"]
+      },
+      fontWeight: {
+        Regular: "400",
+        Bold: "700",
+        ExtraBold: "800"
+      },
+      fontSize: {
+        display: [
+          "4.5em",
+          {
+            lineHeight: "80px",
+            letterSpacing: "-2%"
+          }
+        ],
+        H1: [
+          "3.5em",
+          {
+            lineHeight: "64px",
+            letterSpacing: "0"
+          }
+        ],
+        H2: [
+          "3em",
+          {
+            lineHeight: "56px",
+            letterSpacing: "0"
+          }
+        ],
+        H3: [
+          "2.5em",
+          {
+            lineHeight: "48px",
+            letterSpacing: "0"
+          }
+        ],
+        H4: [
+          "2em",
+          {
+            lineHeight: "40px",
+            letterSpacing: "0"
+          }
+        ],
+        H5: [
+          "1.5em",
+          {
+            lineHeight: "32px",
+            letterSpacing: "0"
+          }
+        ],
+        H6: [
+          "1em",
+          {
+            lineHeight: "24px",
+            letterSpacing: "0"
+          }
+        ],
+        Subtitle: [
+          "1em",
+          {
+            lineHeight: "24px",
+            letterSpacing: "0"
+          }
+        ],
+        Body1: [
+          "1.125em",
+          {
+            lineHeight: "32px",
+            letterSpacing: "0"
+          }
+        ],
+        Body2: [
+          "1em",
+          {
+            lineHeight: "24px",
+            letterSpacing: "0"
+          }
+        ],
+        Body3: [
+          "0.875em",
+          {
+            lineHeight: "24px",
+            letterSpacing: "0"
+          }
+        ],
+        Button: [
+          "1em",
+          {
+            lineHeight: "22px",
+            letterSpacing: "4%"
+          }
+        ]
       }
     }
   },

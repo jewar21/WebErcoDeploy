@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .navLinksContainer {
+    @apply flex flex-col justify-between h-[calc(100%_-_3.5rem)] mx-6 lg:h-auto lg:w-full text-H5 font-IBM font-Bold text-darkGrey-900 lg:text-darkGrey-300 lg:text-base lg:mx-0 lg:font-Regular lg:text-Subtitle;
+  }
+  .contentUl {
+    @apply flex flex-col lg:flex-row lg:justify-evenly;
+  }
+  .navLinksActive {
+    @apply active:font-Bold focus:font-Bold active:text-darkGrey-900 focus:text-darkGrey-900;
+  }
+  /* Mobile styles  */
+  .navLinksActiveMobile {
+    @apply border-b-2 border-dotted border-lightGrey-900 lg:border-none py-6 lg:mb-0;
+  }
+  .mobileNavContainer {
+    @apply flex h-full items-center;
+  }
+  .mobileNav {
+    @apply absolute top-14 left-0 bg-lightGrey-100 h-screen w-screen;
+  }
+  .countriesButton {
+    @apply flex justify-center items-center rounded-full w-10 h-10;
+  }
+}
