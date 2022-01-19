@@ -3,8 +3,25 @@
 @tailwind utilities;
 
 @layer components {
+  .navbarContainer {
+    @apply flex fixed w-full bg-lightGrey-100 h-14 lg:h-24;
+  }
+  .navbarDivContainer {
+    @apply flex w-full justify-between mx-6 lg:mx-20;
+  }
+  .navbarLogo {
+    @apply flex h-full items-center;
+  }
+  .navbarLinks {
+    @apply flex h-full items-center w-3/5;
+  }
+  .navbarButtons {
+    @apply flex justify-evenly h-full w-1/4 items-center;
+  }
+  /* NavLinks */
   .navLinksContainer {
-    @apply flex flex-col justify-between h-[calc(100%_-_3.5rem)] mx-6 lg:h-auto lg:w-full text-H5 font-IBM font-Bold text-darkGrey-900 lg:text-darkGrey-300 lg:text-base lg:mx-0 lg:font-Regular lg:text-Subtitle;
+    @apply flex flex-col justify-between h-[calc(100%_-_3.5rem)] mx-6 lg:h-auto lg:w-full 
+    text-H5 font-IBM font-Bold text-darkGrey-900 lg:text-darkGrey-300 lg:text-base lg:mx-0 lg:font-Regular lg:text-Subtitle;
   }
   .contentUl {
     @apply flex flex-col lg:flex-row lg:justify-evenly;

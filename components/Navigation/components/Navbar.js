@@ -1,4 +1,5 @@
 import React from "react";
+// import Link from "next/link";
 
 import { useMediaQuery } from "react-responsive";
 
@@ -14,25 +15,25 @@ const Navbar = ({ isScrolling }) => {
   const isTablet = useMediaQuery({ maxWidth: DeviceSize.tablet });
   return (
     <nav
-      className={`flex fixed w-full bg-lightGrey-100 h-14 lg:h-24 ${
+      className={`navbarContainer ${
         isScrolling > 20 ? "scrolling" : null
       }`}
     >
-      <div className="flex w-full justify-between mx-6 lg:mx-20">
-        <div className="flex h-full items-center">
-          {isMobile ? ercoLogo("102", "28") : ercoLogo("142", "40")}
+      <div className="navbarDivContainer">
+        <div className="navbarLogo">
+          {isMobile ? ercoLogo(102, 28) : ercoLogo(142, 40)}
         </div>
         {isTablet ? (
           <MobileNav />
         ) : (
           <>
-            <div className="flex h-full items-center w-3/5">
+            <div className="navbarLinks">
               <NavLinks />
             </div>
-            <div className="flex justify-evenly h-full w-1/4 items-center">
+            <div className="navbarButtons">
               <CountriesButton />
               <QuoteButton
-                buttonParameters={"w-52 h-12"}
+                buttonParameters={"w-12.5 h-12 font-bold"}
                 buttonText={"¡Quiero cotizar!"}
               />
             </div>

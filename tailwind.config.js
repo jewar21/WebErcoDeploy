@@ -5,6 +5,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      spacing: {
+        5.5: "5.5rem",
+        5.25: "5.25rem",
+        12.5: "12.5rem",
+        18.5: "18.5rem",
+        19: "19rem",
+        "52rem": "52rem",
+      },
       colors: {
         primary: {
           100: "#EBF9C1",
@@ -44,7 +52,7 @@ module.exports = {
       },
       fontFamily: {
         Sora: ["Sora", "sans-serif"],
-        IBM: ['IBM Plex Sans', "sans-serif"]
+        IBM: ["IBM Plex Sans", "sans-serif"]
       },
       fontWeight: {
         Regular: "400",

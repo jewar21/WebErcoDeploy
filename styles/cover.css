@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .coverContainer {
+    @apply flex flex-col h-screen w-full object-contain inset-0 outline-0;
+  }
+  .coverBackground {
+    @apply flex h-full w-full bg-darkGrey-900/10 bg-gradient-to-r from-darkGrey-900/60
+     to-darkGrey-900/25 -z-10 absolute;
+  }
+  .coverInfo {
+    @apply text-primary-300 mt-64 lg:mt-48 px-6 -z-10 lg:w-52rem lg:px-5.5;
+  }
+  .coverInfo > h1 {
+    @apply flex items-center w-full h-8 font-IBM text-sm lg:text-base font-medium;
+  }
+  .coverInfo > p {
+    @apply text-lightGrey-100 z-10 font-Sora text-2xl h-48 lg:text-4xl lg:font-semibold;
+  }
+  /* -------------------------------CardsCover------------------------------------------ */
+  .cardCoverContainer {
+    @apply flex flex-col py-12 px-6 lg:py-10 lg:absolute lg:bottom-0 lg:w-full lg:px-5.5
+     lg:flex-row lg:justify-between lg:items-center bg-lightGrey-300;
+  }
+  .coverContentInfo {
+    @apply flex flex-row h-5.25;
+  }
+  .coverContentIcon {
+    @apply text-5xl text-primary-500 mr-6;
+  }
+  .coverContentText {
+    @apply flex flex-col text-darkGrey-900 lg:w-19;
+  }
+  .coverContentText > h5 {
+    @apply flex items-center font-bold text-H5 h-8;
+  }
+  .coverContentText > p {
+    @apply flex items-center h-12 text-Body2 mt-1;
+  }
+}
