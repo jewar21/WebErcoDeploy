@@ -4,6 +4,6 @@
 
 @layer components {
   .globalButton {
-    @apply flex justify-evenly items-center rounded-full font-Sora;
+    @apply flex justify-evenly items-center rounded-full font-Sora text-Button;
   }
 }

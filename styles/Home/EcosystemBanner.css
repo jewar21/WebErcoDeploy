@@ -7,18 +7,18 @@
     @apply flex w-screen bg-primary-500;
   }
   .ecosystemBannerContent {
-    @apply flex w-full justify-between lg:p-5.5rem;
+    @apply flex flex-col px-6 py-10 lg:flex-row w-full justify-between lg:p-5.5rem;
   }
   .ecosystemBannerLeft {
-    @apply w-38.7rem;
+    @apply w-full lg:w-38.7rem;
   }
   .ecosystemBannerLeft > h3 {
-    @apply text-darkGrey-900 text-H3 font-Sora font-semibold;
+    @apply text-darkGrey-900 text-H5 lg:text-H3 font-Sora font-semibold;
   }
   .ecosystemBannerLeft > p {
     @apply text-darkGrey-700 text-Body1 mt-4;
   }
   .ecosystemBannerRight {
-    @apply flex items-center;
+    @apply flex flex-col mt-10 lg:mt-0 lg:items-center lg:flex-row;
   }
 }

@@ -32,7 +32,7 @@ const iconShield = <RiShieldStarLine />;
 const iconGroup = <RiGroupLine />;
 const iconTrophy = <RiTrophyLine />;
 
-export const iconArrow = <RiArrowRightLine className="w-5 h-5" />;
+export const iconArrow = <RiArrowRightLine />;
 
 // social networks
 

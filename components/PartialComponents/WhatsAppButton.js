@@ -4,7 +4,7 @@ const WhatsAppButton = ({ buttonParameters, buttonText }) => {
   return (
     <button className={`globalButton ${buttonParameters}`}>
       <p>{buttonText}</p>
-      {iconWhatsapp}
+      <div className="text-2xl">{iconWhatsapp}</div>
     </button>
   );
 };

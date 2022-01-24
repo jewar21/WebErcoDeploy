@@ -18,12 +18,12 @@ const EcosystemBanner = () => {
             buttonParameters={
               "w-48 h-14 font-semibold bg-darkGrey-700 text-lightGrey-100 mr-6"
             }
-            buttonText={"Cotizar ahora"}
+            buttonText={"Cotizar sistema"}
             isIcon={false}
           />
           <WhatsAppButton
             buttonParameters={
-              "w-48 h-14 font-semibold text-darkGrey-900 border-2 border-darkGrey-900"
+              "w-48 h-14 mt-6 font-semibold text-darkGrey-900 border-2 border-darkGrey-900 lg:mt-0"
             }
             buttonText={"Contáctanos"}
           />
