@@ -7,7 +7,8 @@ import { OverlayPanel } from "primereact/overlaypanel";
 import { RiArrowRightLine } from "react-icons/ri";
 
 import "primereact/resources/themes/lara-light-indigo/theme.css";
-import { DeviceSize, co, pe, us } from "../../../utils/handlers/handlers";
+import { DeviceSize } from "../../../utils/handlers/handlers";
+import { co, pe, us } from "../../../content/data/homeData";
 
 import ServicesPanel from "./ServicesPanel";
 

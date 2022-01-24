@@ -1,13 +1,10 @@
-import { RiArrowRightLine } from "react-icons/ri";
+import { iconArrow } from "../../content/data/homeData";
 
-const QuoteButton = ({ buttonParameters, buttonText }) => {
-  const iconArrow = <RiArrowRightLine className="w-5 h-5" />;
+const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
   return (
-    <button
-      className={`flex justify-evenly items-center bg-primary-500 rounded-full text-darkGrey-900 font-Sora ${buttonParameters}`}
-    >
+    <button className={`globalButton ${buttonParameters}`}>
       <p>{buttonText}</p>
-      {iconArrow}
+      {isIcon && iconArrow}
     </button>
   );
 };

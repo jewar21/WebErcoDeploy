@@ -6,12 +6,23 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        5.5: "5.5rem",
-        5.25: "5.25rem",
-        12.5: "12.5rem",
-        18.5: "18.5rem",
-        19: "19rem",
+        "4.25rem": "4.25rem",
+        "4.5rem": "4.5rem",
+        "5.25rem": "5.25rem",
+        "5.5rem": "5.5rem",
+        "10.5rem": "10.5rem",
+        "12.5rem": "12.5rem",
+        "16.5rem": "16.5rem",
+        "19rem": "19rem",
+        "29rem": "29rem",
+        "32rem": "32rem",
+        "40rem": "40rem",
+        "36.5rem": "36.5rem",
+        "38.7rem": "38.7rem",
         "52rem": "52rem",
+        "56.75rem": "56.75rem",
+        "66rem": "66rem",
+        "600%": "600%",
       },
       colors: {
         primary: {

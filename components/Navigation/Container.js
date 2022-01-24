@@ -1,6 +1,7 @@
 import Head from "next/Head";
 
 import Navigation from "./Navigation";
+import Footer from "../Footer/Footer";
 
 const Container = (props) => (
   <div>
@@ -18,6 +19,7 @@ const Container = (props) => (
     </Head>
     <Navigation />
     <div>{props.children}</div>
+    <Footer />
   </div>
 );
 

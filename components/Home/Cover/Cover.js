@@ -3,21 +3,20 @@ import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
 // Data
-import { coverInfo } from "../../content/data/homeData";
+import { coverInfo } from "../../../content/data/homeData";
 
 // Components
 import CardsCover from "./components/cardsCover";
-import QuoteButton from "../PartialComponents/QuoteButton";
+import QuoteButton from "../../PartialComponents/QuoteButton";
 
 // vars
-import { DeviceSize } from "../../utils/handlers/handlers";
+import { DeviceSize } from "../../../utils/handlers/handlers";
 
 // animations
-import { containerInfo } from "../../styles/animations/globals";
+import { containerInfo } from "../../../styles/animations/globals";
 
 const Cover = () => {
-  const isTablet = useMediaQuery({ maxWidth: DeviceSize.tablet});
-  console.log(isTablet);
+  const isTablet = useMediaQuery({ maxWidth: DeviceSize.tablet });
   return (
     <sections>
       <div className="coverContainer">
@@ -41,8 +40,9 @@ const Cover = () => {
             <span className="text-primary-300">ecosistema de energía</span>
           </p>
           <QuoteButton
-            buttonParameters={"w-44 h-12 font-semibold"}
+            buttonParameters={"w-44 h-12 font-semibold bg-primary-500 text-darkGrey-900"}
             buttonText={"Cotizar ahora"}
+            isIcon={true}
           />
         </motion.div>
         {!isTablet && <CardsCover />}

@@ -11,7 +11,7 @@
      to-darkGrey-900/25 -z-10 absolute;
   }
   .coverInfo {
-    @apply text-primary-300 mt-64 lg:mt-48 px-6 -z-10 lg:w-52rem lg:px-5.5;
+    @apply text-primary-300 mt-64 lg:mt-48 px-6 -z-10 lg:w-52rem lg:px-5.5rem;
   }
   .coverInfo > h1 {
     @apply flex items-center w-full h-8 font-IBM text-sm lg:text-base font-medium;
@@ -21,17 +21,17 @@
   }
   /* -------------------------------CardsCover------------------------------------------ */
   .cardCoverContainer {
-    @apply flex flex-col py-12 px-6 lg:py-10 lg:absolute lg:bottom-0 lg:w-full lg:px-5.5
+    @apply flex flex-col py-12 px-6 lg:py-10 lg:absolute lg:bottom-0 lg:w-full lg:px-5.5rem
      lg:flex-row lg:justify-between lg:items-center bg-lightGrey-300;
   }
   .coverContentInfo {
-    @apply flex flex-row h-5.25;
+    @apply flex flex-row h-5.25rem;
   }
   .coverContentIcon {
     @apply text-5xl text-primary-500 mr-6;
   }
   .coverContentText {
-    @apply flex flex-col text-darkGrey-900 lg:w-19;
+    @apply flex flex-col text-darkGrey-900 lg:w-19rem;
   }
   .coverContentText > h5 {
     @apply flex items-center font-bold text-H5 h-8;

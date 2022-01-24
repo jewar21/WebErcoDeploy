@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .footerContainer {
+    @apply flex flex-col bg-darkGrey-900;
+  }
+  .footerIconsContent {
+    @apply flex flex-col lg:flex-row justify-between lg:px-5.5rem;
+  }
+  .footerIconsContainer {
+    @apply px-6 pt-4.25rem lg:py-16;
+  }
+  .footerSocialNetworks {
+    @apply flex text-xl w-10.5rem justify-between pt-11 text-primary-500 lg:pt-12;
+  }
+  /* --------------------------------FooterLinks-------------------------------- */
+  .footerLinksContainer {
+    @apply flex flex-col text-sm px-6 py-12 h-29rem lg:flex-row lg:text-base lg:py-16 lg:px-0 lg:h-96 lg:w-36.5rem lg:justify-between;
+  }
+  .footerlinksContentRight {
+    @apply flex flex-col h-1/2 justify-between lg:h-full;
+  }
+  .footerLink {
+    @apply font-Sora text-Body3 lg:text-Body2 text-lightGrey-700;
+  }
+  .footerLinkTitle {
+    @apply font-IBM font-semibold text-lightGrey-100;
+  }
+  .footerbutton {
+    @apply h-12.5rem bg-darkGrey-700 lg:h-28;
+  }
+  .footerbuttonContainer {
+    @apply flex flex-col px-6 py-8 h-full justify-between lg:flex-row lg:px-5.5rem lg:items-center;
+  }
+  .footerInfoLeft {
+    @apply font-Sora text-Body3 text-sm text-lightGrey-100/60 lg:text-Body2;
+  }
+  .footerInfoRight {
+    @apply font-IBM text-xs font-normal text-lightGrey-100/60;
+  }
+}

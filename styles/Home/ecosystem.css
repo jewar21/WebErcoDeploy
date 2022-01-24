@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .ecosystemContainer {
+    @apply flex flex-nowrap w-600%;
+  }
+  .cardsEcosystemContainer {
+    @apply flex flex-col h-screen w-full pt-24 font-Sora;
+  }
+  .cardsEcosystemHeader > h3 {
+    @apply text-H3 text-darkGrey-900 font-bold;
+  }
+  .cardsEcosystemHeader > p {
+    @apply text-Subtitle text-center w-36.5rem pt-4 text-darkGrey-300;
+  }
+  .cardsEcosystem {
+    @apply flex h-full;
+  }
+  .cardsEcosystemInfoContent {
+    @apply bg-slate-400 w-screen px-5.5rem py-4.25rem h-auto;
+  }
+  .cardsEcosystemInfo {
+    @apply w-full h-full bg-green-400;
+  }
+}

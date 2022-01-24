@@ -1,5 +1,5 @@
 // data
-import { coverInfo } from "../../../content/data/homeData";
+import { coverInfo } from "../../../../content/data/homeData";
 
 const CardsCover = () => {
   return (

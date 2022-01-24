@@ -1,9 +1,10 @@
 import React from "react";
-// import Link from "next/link";
+import Link from "next/link";
 
 import { useMediaQuery } from "react-responsive";
 
-import { ercoLogo, DeviceSize } from "../../../utils/handlers/handlers";
+import { DeviceSize } from "../../../utils/handlers/handlers";
+import { ercoLogo } from "../../../content/data/homeData";
 
 import NavLinks from "./NavLinks";
 import MobileNav from "./MobileNav";
@@ -14,15 +15,13 @@ const Navbar = ({ isScrolling }) => {
   const isMobile = useMediaQuery({ maxWidth: DeviceSize.mobile });
   const isTablet = useMediaQuery({ maxWidth: DeviceSize.tablet });
   return (
-    <nav
-      className={`navbarContainer ${
-        isScrolling > 20 ? "scrolling" : null
-      }`}
-    >
+    <nav className={`navbarContainer ${isScrolling > 20 ? "scrolling" : null}`}>
       <div className="navbarDivContainer">
-        <div className="navbarLogo">
-          {isMobile ? ercoLogo(102, 28) : ercoLogo(142, 40)}
-        </div>
+        <Link href="/">
+          <a className="navbarLogo">
+            {isMobile ? ercoLogo(102, 28) : ercoLogo(142, 40)}
+          </a>
+        </Link>
         {isTablet ? (
           <MobileNav />
         ) : (
@@ -33,8 +32,9 @@ const Navbar = ({ isScrolling }) => {
             <div className="navbarButtons">
               <CountriesButton />
               <QuoteButton
-                buttonParameters={"w-12.5 h-12 font-bold"}
+                buttonParameters={"w-12.5rem h-12 font-bold bg-primary-500 text-darkGrey-900"}
                 buttonText={"¡Quiero cotizar!"}
+                isIcon={true}
               />
             </div>
           </>

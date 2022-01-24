@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { RiArrowDownSLine } from "react-icons/ri";
 
-import { co, pe, us } from "../../../utils/handlers/handlers";
+import { co, pe, us } from "../../../content/data/homeData";
 
 const CountriesButton = () => {
   return (

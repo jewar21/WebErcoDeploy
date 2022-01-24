@@ -1,6 +1,6 @@
 const ServicesPanel = () => {
     return (
-        <div>
+        <div className="">
             Holaaaaaaaa
         </div>
     )
