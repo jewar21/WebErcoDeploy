@@ -15,9 +15,8 @@ import {
   ercoLogo
 } from "../../content/data/homeData";
 
-const Footer = ({isMobile}) => {
-  console.log(isMobile);
-  // const isMobile = useMediaQuery({ maxWidth: DeviceSize.mobile });
+const Footer = () => {
+  const isMobile = useMediaQuery({ maxWidth: DeviceSize.mobile });
   return (
     <footer className="footerContainer">
       <div className="footerIconsContent">

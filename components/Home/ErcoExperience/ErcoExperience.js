@@ -1,9 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import {experienceTitle, experienceContent} from '../../../content/data/homeData';
+import GeneralView from "./components/GeneralView";
+import MobileView from "./components/MobileView";
 
 const ErcoExperience = () => {
-  return <div></div>;
+  return (
+    <div>
+      ErcoExperience <GeneralView /> <MobileView />
+    </div>
+  );
 };
 
 export default ErcoExperience;
