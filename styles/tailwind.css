@@ -8,6 +8,7 @@
 
 @import "./Home/cover.css";
 @import "./Home/ecosystem.css";
+@import "./Home/StatisticsBanner.css";
 @import "./Home/EcosystemBanner.css";
 
 @import "./PartialComponents/PartialComponents.css";

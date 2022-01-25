@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .statisticsBannerContainer {
+    @apply w-screen bg-darkGrey-700;
+  }
+  .statisticsBannerContent {
+    @apply grid gap-4 grid-cols-2 px-6 py-11 w-full lg:flex lg:justify-between lg:px-5.5rem lg:py-6.5rem;
+  }
+  .statistics {
+    @apply lg:w-60 lg:flex lg:flex-col lg:items-center lg:text-center;
+  }
+  .statistics > h3 {
+    @apply text-primary-500 text-H1 font-bold;
+  }
+  .statistics > p {
+    @apply text-lightGrey-100 text-lg lg:pt-2;
+  }
+  .statistics > spam {
+    @apply text-lightGrey-300 text-sm font-IBM lg:pt-6;
+  }
+}

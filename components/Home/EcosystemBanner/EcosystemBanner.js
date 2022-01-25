@@ -16,14 +16,14 @@ const EcosystemBanner = () => {
         <div className="ecosystemBannerRight">
           <QuoteButton
             buttonParameters={
-              "w-48 h-14 font-semibold bg-darkGrey-700 text-lightGrey-100 mr-6"
+              "w-10.5rem h-12 lg:w-48 lg:h-14 font-semibold bg-darkGrey-700 text-lightGrey-100 mr-6"
             }
             buttonText={"Cotizar sistema"}
             isIcon={false}
           />
           <WhatsAppButton
             buttonParameters={
-              "w-48 h-14 mt-6 font-semibold text-darkGrey-900 border-2 border-darkGrey-900 lg:mt-0"
+              "w-10.5rem h-12 lg:w-13.5rem lg:h-14 mt-6 font-semibold text-darkGrey-900 border-2 border-darkGrey-900 lg:mt-0"
             }
             buttonText={"Contáctanos"}
           />
