@@ -19,7 +19,7 @@ const Container = (props) => (
     </Head>
     <Navigation />
     <div>{props.children}</div>
-    <Footer />
+    <Footer isMobile={props.isMobile}/>
   </div>
 );
 
