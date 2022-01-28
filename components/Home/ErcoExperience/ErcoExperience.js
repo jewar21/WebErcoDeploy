@@ -1,12 +1,13 @@
 import React from "react";
 
-import GeneralView from "./components/GeneralView";
-import MobileView from "./components/MobileView";
+// components
+import AccordionComponent from "../../PartialComponents/AccordionComponent";
+import GridComponent from "../../PartialComponents/GridComponent";
 
-const ErcoExperience = () => {
+const ErcoExperience = ({ isMobile }) => {
   return (
     <div>
-      ErcoExperience <GeneralView /> <MobileView />
+      ErcoExperience {isMobile ? <AccordionComponent /> : <GridComponent />}
     </div>
   );
 };

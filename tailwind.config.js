@@ -157,6 +157,9 @@ module.exports = {
             letterSpacing: "4%"
           }
         ]
+      },
+      backgroundImage: {
+        'servicesCover-texture': "url('./assets/Backgrounds/backgroundServices.png')",
       }
     }
   },

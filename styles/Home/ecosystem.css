@@ -9,11 +9,14 @@
   .cardsEcosystemContainer {
     @apply flex flex-col h-screen w-full pt-24 font-Sora;
   }
+  .cardsEcosystemHeader {
+    @apply flex flex-col;
+  }
   .cardsEcosystemHeader > h3 {
     @apply text-H3 text-darkGrey-900 font-bold;
   }
   .cardsEcosystemHeader > p {
-    @apply text-Subtitle text-center w-36.5rem pt-4 text-darkGrey-300;
+    @apply text-Subtitle lg:text-center lg:w-36.5rem pt-4 text-darkGrey-300;
   }
   .cardsEcosystem {
     @apply flex h-full;
