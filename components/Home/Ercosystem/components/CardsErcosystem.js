@@ -12,13 +12,14 @@ import {
 
 import QuoteButton from "../../../PartialComponents/QuoteButton";
 
-const CardsEcosystem = ({ contentData }) => {
+const CardsEcosystem = ({ contentData, icon }) => {
   useEffect(() => {
     gsap.set(".panel-imgs", {
       zIndex: (i, target, targets) => targets.length - i
     });
-
-    const images = gsap.utils.toArray(".panel-imgs:not(.purple)");
+    gsap.set(".panel-phone", {
+      zIndex: (i, target, targets) => targets.length - i
+    });
 
     gsap.set(".panel-text", {
       zIndex: (i, target, targets) => targets.length - i
@@ -28,11 +29,13 @@ const CardsEcosystem = ({ contentData }) => {
       zIndex: (i, target, targets) => targets.length - i
     });
 
+    const images = gsap.utils.toArray(".panel-imgs:not(.exclude)");
+    const phoneImgs = gsap.utils.toArray(".panel-phone:not(.exclude)");
     const texts = gsap.utils.toArray(".panel-text");
-    const counter = gsap.utils.toArray(".counter");
     const card = gsap.utils.toArray(".cardsEcosystemContainer");
+    const counter = gsap.utils.toArray(".counter");
 
-    sidebarAnimations(images, texts, card, counter);
+    sidebarAnimations(images, phoneImgs, texts, card, counter);
   }, []);
 
   return (
@@ -41,22 +44,22 @@ const CardsEcosystem = ({ contentData }) => {
         <div className="cardText-wrap">
           <div className="contentTextButton">
             <div className="progressBar">
-              <p>0</p>
+              <p className="progressBar-number">0</p>
               <div>
                 {contentData.map((e, i) => (
                   <span
                     key={i}
                     className={
                       i === 0
-                        ? "counter opacity-1"
-                        : "counter opacity-1 translate-y-[-10%]"
+                        ? "progressBar-number counter opacity-1"
+                        : "progressBar-number counter opacity-1 translate-y-[-5%]"
                     }
                   >
                     {e.counter}
                   </span>
                 ))}
               </div>
-              <p className="pl-2.5">/03</p>
+              <p className="progressBar-base">/03</p>
               <div className="progressBar-content">
                 <div className="progressBar-line">
                   <div id="progress" className="progressBar-line-fill"></div>
@@ -65,6 +68,8 @@ const CardsEcosystem = ({ contentData }) => {
             </div>
             <div>
               {contentData.map((e, i) => {
+                console.log(e.items);
+                let items = e.items;
                 return (
                   <div
                     key={i}
@@ -74,7 +79,13 @@ const CardsEcosystem = ({ contentData }) => {
                         : "panel-text opacity-0 translate-x-[10%]"
                     }
                   >
-                    <div>{e.subtitle}</div>
+                    <h5 className="panel-title">{e.subtitle}</h5>
+                    {items.map((e, i) => (
+                      <div key={i} className="panel-body">
+                        <div className="panel-icon">{icon}</div>
+                        <p className="panel-item">{e.item}</p>
+                      </div>
+                    ))}
                   </div>
                 );
               })}
@@ -92,7 +103,7 @@ const CardsEcosystem = ({ contentData }) => {
           {contentData.map((e, i) => (
             <div
               key={i}
-              className={i === 2 ? "panel-imgs purple" : "panel-imgs"}
+              className={i === 2 ? "panel-imgs exclude" : "panel-imgs"}
             >
               <Image
                 src={e.img.src}
@@ -103,9 +114,11 @@ const CardsEcosystem = ({ contentData }) => {
               />
             </div>
           ))}
-          {/* <div className="panel-imgs bg-blue-300"></div>
-          <div className="panel-imgs bg-red-300"></div>
-          <div className="panel-imgs purple bg-orange-300"></div> */}
+        </div>
+        <div id="panel-phone" className="panel-phone-content">
+          <div className="panel-phone bg-blue-300"></div>
+          <div className="panel-phone bg-red-300"></div>
+          <div className="panel-phone exclude bg-orange-300"></div>
         </div>
       </div>
     </section>

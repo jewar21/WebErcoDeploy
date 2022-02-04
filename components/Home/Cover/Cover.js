@@ -40,7 +40,9 @@ const Cover = () => {
             <span className="text-primary-300">ecosistema de energía</span>
           </p>
           <QuoteButton
-            buttonParameters={"w-44 h-12 font-semibold bg-primary-500 text-darkGrey-900"}
+            buttonParameters={
+              "w-44 h-12 font-semibold bg-primary-500 text-darkGrey-900"
+            }
             buttonText={"Cotizar ahora"}
             isIcon={true}
           />

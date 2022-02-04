@@ -1,5 +1,5 @@
 const GridComponent = () => {
-  return <div>GridComponent</div>;
+  return <div className="bg-green-300">GridComponent</div>;
 };
 
 export default GridComponent;

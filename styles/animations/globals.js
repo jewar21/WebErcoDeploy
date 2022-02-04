@@ -4,28 +4,6 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 // ------------Slider-------------
 gsap.registerPlugin(ScrollTrigger);
 
-export const sliderAnimation = (e) => {
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: ".ecosystemContainer",
-        pin: true,
-        scrub: 0.01,
-        toggleActions: "restart pause reverse pause",
-        markers: true,
-        snap: 1 / (e.length - 1),
-        //     // base vertical scrolling on how wide the container is so it feels more natural.
-        end: () =>
-          "+=" + document.querySelector(".ercosystemContainer").offsetWidth
-      }
-      // duration: 3,
-    })
-    .to(e, {
-      xPercent: -100 * (e.length - 1),
-      ease: "none"
-    });
-};
-
 export const containerInfo = {
   displacement: {
     opacity: 0,
@@ -41,18 +19,7 @@ export const containerInfo = {
   }
 };
 
-export const sidebarAnimations = (images, texts, card, counter) => {
-  // ScrollTrigger.scrollerProxy(".scroller", {
-  //   scrollTop(value) {
-  //     if (arguments.length) {
-  //       bodyScrollBar.scrollTop = value;
-  //     }
-  //     return bodyScrollBar.scrollTop;
-  //   }
-  // });
-
-  // bodyScrollBar.addListener(ScrollTrigger.update);
-
+export const sidebarAnimations = (images, phoneImgs, texts, card, counter) => {
   gsap
     .timeline({
       scrollTrigger: {
@@ -64,7 +31,8 @@ export const sidebarAnimations = (images, texts, card, counter) => {
         invalidateOnRefresh: true
       }
     })
-    .to(card, { marginTop: 55, ease: "power3.out" });
+    .to(card, { duration: 0.33, marginTop: 55, ease: "power3.out" })
+    .to("#panel-phone", { duration: 0.6, top: "22%" });
 
   // ----------------------------------------------------------------------
 
@@ -72,7 +40,6 @@ export const sidebarAnimations = (images, texts, card, counter) => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "section.ecosystemContainer",
-        // scroller: ".scroller",
         start: () => "top -" + window.innerHeight * (i + 0.5),
         end: () => "+=" + window.innerHeight,
         scrub: true,
@@ -81,7 +48,23 @@ export const sidebarAnimations = (images, texts, card, counter) => {
       }
     });
 
-    tl.to(image, { width: 0 });
+    tl.to(image, { opacity: 0 }, 0.1);
+  });
+  // ----------------------------------------------------------------------
+
+  phoneImgs.forEach((phone, i) => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "section.ecosystemContainer",
+        start: () => "top -" + window.innerHeight * (i + 0.5),
+        end: () => "+=" + window.innerHeight,
+        scrub: true,
+        toggleActions: "play none reverse none",
+        invalidateOnRefresh: true
+      }
+    });
+
+    tl.to(phone, { opacity: 0, right: 50 }, 0.1);
   });
 
   // ----------------------------------------------------------------------
@@ -90,7 +73,6 @@ export const sidebarAnimations = (images, texts, card, counter) => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "section.ecosystemContainer",
-        // scroller: ".scroller",
         start: () => "top -" + window.innerHeight * i,
         end: () => "+=" + window.innerHeight,
         scrub: true,
@@ -116,7 +98,6 @@ export const sidebarAnimations = (images, texts, card, counter) => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "section.ecosystemContainer",
-        // scroller: ".scroller",
         start: () => "top -" + window.innerHeight * i,
         end: () => "+=" + window.innerHeight,
         scrub: true,
@@ -125,18 +106,18 @@ export const sidebarAnimations = (images, texts, card, counter) => {
       }
     });
     if (i === 0) {
-      tl.to(count, { duration: 0.2, opacity: 0, y: "5%" });
+      tl.to(count, { duration: 0.33, opacity: 0, y: "1%" }, 0.66);
     } else if (i === 2) {
-      tl.to(count, { duration: 0.2, opacity: 1, y: 0 }).to(
+      tl.to(count, { duration: 0.33, opacity: 1, y: 0 }, 0.66).to(
         "#progress",
         {
           width: `${(3 / 3) * 100}%`
         },
-        0
+        0.66
       );
     } else {
-      tl.to(count, { duration: 0.2, opacity: 1, y: 0 })
-        .to(count, { duration: 0.33, opacity: 0, y: "5%" }, 0.66)
+      tl.to(count, { duration: 0.33, opacity: 1, y: 0 })
+        .to(count, { duration: 0.33, opacity: 0, y: "1%" }, 0.66)
         .to(
           "#progress",
           {
@@ -151,7 +132,6 @@ export const sidebarAnimations = (images, texts, card, counter) => {
 
   ScrollTrigger.create({
     trigger: "section.ecosystemContainer",
-    // scroller: ".scroller",
     scrub: true,
     markers: true,
     pin: true,

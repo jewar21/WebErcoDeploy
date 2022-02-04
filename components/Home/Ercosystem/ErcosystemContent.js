@@ -3,17 +3,13 @@
 import CardsErcosystem from "./components/CardsErcosystem";
 import MobileErcosystem from "./components/MobileErcosystem";
 
-const ErcosystemContent = ({ isMobile, headerData, contentData }) => {
+const ErcosystemContent = ({ isMobile, headerData, contentData, icon }) => {
   return (
     <>
       {isMobile ? (
         <MobileErcosystem />
       ) : (
-        <CardsErcosystem
-          headerData={headerData}
-          contentData={contentData}
-          isMobile={isMobile}
-        />
+        <CardsErcosystem contentData={contentData} icon={icon} />
       )}
     </>
   );

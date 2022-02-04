@@ -11,7 +11,7 @@ import TitleContent from "./components/TitleContent";
 
 const ErcosystemHeader = ({ isMobile }) => {
   return (
-    <div className="scroller">
+    <div>
       <TitleContent headerData={ecoSystemHeader} />
       <ErcosystemContent
         isMobile={isMobile}

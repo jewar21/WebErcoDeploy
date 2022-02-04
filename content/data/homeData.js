@@ -154,32 +154,35 @@ export const ecoSystemContent = [
     counter: 1,
     img: img1,
     subtitle: "Instalación de sistemas de autogeneración",
-    items: {
-      item1: "Generar ahorros en tu factura de energía.",
-      item2: "Realizar seguimiento y control de tu proyecto en tiempo real.",
-      item3: "Contribuir a un futuro sostenible."
-    }
+    items: [
+      { item: "Generar ahorros en tu factura de energía." },
+      {
+        item: "Realizar seguimiento y control de tu proyecto en tiempo real."
+      },
+      { item: "Contribuir a un futuro sostenible." }
+    ]
   },
   {
     counter: 2,
     img: img2,
     subtitle: "Control de consumos y producción de energía a través de NEU +",
-    items: {
-      item1: "Visualizar datos de consumo y generación en tiempo real.",
-      item2: "Obtener alertas por consumos atípicos.",
-      item3: "Evitar multas por consumo excesivo de energía reactiva."
-    }
+    items: [
+      { item: "Visualizar datos de consumo y generación en tiempo real." },
+      { item: "Obtener alertas por consumos atípicos." },
+      { item: "Evitar multas por consumo excesivo de energía reactiva." }
+    ]
   },
   {
     counter: 3,
     img: img3,
     subtitle: "Gestionar y operar tus sistemas de Energía Solar",
-    items: {
-      item1:
-        "Garantizar que el sistema solar trabaje al punto máximo de operación.",
-      item2: "Realizar mantenimiento predictivo, preventivo y correctivo.",
-      item3: "Acompañar tu proyecto con un equipo propio y calificado."
-    }
+    items: [
+      {
+        item: "Garantizar que el sistema solar trabaje al punto máximo de operación."
+      },
+      { item: "Realizar mantenimiento predictivo, preventivo y correctivo." },
+      { item: "Acompañar tu proyecto con un equipo propio y calificado." }
+    ]
   }
 ];
 
