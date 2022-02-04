@@ -9,13 +9,11 @@ const ErcosystemContent = ({ isMobile, headerData, contentData }) => {
       {isMobile ? (
         <MobileErcosystem />
       ) : (
-        <div className="ecosystemContainer">
-          <CardsErcosystem
-            headerData={headerData}
-            contentData={contentData}
-            isMobile={isMobile}
-          />
-        </div>
+        <CardsErcosystem
+          headerData={headerData}
+          contentData={contentData}
+          isMobile={isMobile}
+        />
       )}
     </>
   );

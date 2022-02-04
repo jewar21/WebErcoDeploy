@@ -34,6 +34,8 @@ const iconTrophy = <RiTrophyLine />;
 
 export const iconArrow = <RiArrowRightLine />;
 
+export const iconCheck = <RiCheckFill />;
+
 // social networks
 
 export const iconWhatsapp = <RiWhatsappLine />;
@@ -141,12 +143,6 @@ export const coverInfo = [
 
 // Ecosystem information
 
-export const checkIcon = (
-  <div className="">
-    <RiCheckFill />
-  </div>
-);
-
 export const ecoSystemHeader = {
   title: "Ecosistema de energía Erco",
   content:
@@ -155,7 +151,8 @@ export const ecoSystemHeader = {
 
 export const ecoSystemContent = [
   {
-    img: { img1 },
+    counter: 1,
+    img: img1,
     subtitle: "Instalación de sistemas de autogeneración",
     items: {
       item1: "Generar ahorros en tu factura de energía.",
@@ -164,7 +161,8 @@ export const ecoSystemContent = [
     }
   },
   {
-    img: { img2 },
+    counter: 2,
+    img: img2,
     subtitle: "Control de consumos y producción de energía a través de NEU +",
     items: {
       item1: "Visualizar datos de consumo y generación en tiempo real.",
@@ -173,7 +171,8 @@ export const ecoSystemContent = [
     }
   },
   {
-    img: { img3 },
+    counter: 3,
+    img: img3,
     subtitle: "Gestionar y operar tus sistemas de Energía Solar",
     items: {
       item1:

@@ -32,8 +32,8 @@ const Home = () => {
   return (
     <Container>
       <Cover />
-      <Ercosystem isMobile={isMobileVar}/>
-      <ErcoExperience isMobile={isMobileVar}/>
+      <Ercosystem isMobile={isMobileVar} />
+      <ErcoExperience isMobile={isMobileVar} />
       <Customers />
       <StatisticsBanner />
       <EcosystemBanner />

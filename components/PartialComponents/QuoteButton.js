@@ -4,7 +4,7 @@ const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
   return (
     <button className={`globalButton ${buttonParameters}`}>
       <p>{buttonText}</p>
-      <div className="text-2xl">{isIcon && iconArrow}</div>
+      {isIcon && <div className="text-2xl">{iconArrow}</div>}
     </button>
   );
 };

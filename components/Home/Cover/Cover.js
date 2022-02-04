@@ -18,11 +18,11 @@ import { containerInfo } from "../../../styles/animations/globals";
 const Cover = () => {
   const isTablet = useMediaQuery({ maxWidth: DeviceSize.tablet });
   return (
-    <sections>
+    <section>
       <div className="coverContainer">
         <div className="coverBackground" />
         <video
-          className="object-cover w-full h-full absolute -z-50 "
+          className="object-cover w-full h-screen absolute -z-50"
           src="/cover.m4v"
           autoPlay
           loop
@@ -50,7 +50,7 @@ const Cover = () => {
       <div className="lg:hidden">
         <CardsCover />
       </div>
-    </sections>
+    </section>
   );
 };
 

@@ -3,20 +3,9 @@
 @tailwind utilities;
 
 @layer components {
-  .ecosystemContainer {
-    @apply flex flex-nowrap w-600%;
-  }
-  .cardsEcosystemContainer {
-    @apply flex flex-col h-screen w-full pt-24 font-Sora;
-  }
-  .cardsEcosystemHeader {
-    @apply flex flex-col;
-  }
-  .cardsEcosystemHeader > h3 {
-    @apply text-H3 text-darkGrey-900 font-bold;
-  }
-  .cardsEcosystemHeader > p {
-    @apply text-Subtitle lg:text-center lg:w-36.5rem pt-4 text-darkGrey-300;
+  .ercosystemContainer {
+    /* @apply flex flex-nowrap w-600%; */
+    @apply flex flex-nowrap;
   }
   .cardsEcosystem {
     @apply flex h-full;
@@ -26,5 +15,52 @@
   }
   .cardsEcosystemInfo {
     @apply w-full h-full bg-green-400;
+  }
+
+  /* CardContent */
+
+  .cardsEcosystemContainer {
+    @apply flex h-screen w-screen px-5.5rem pt-4.5rem pb-6.5rem font-Sora sticky;
+  }
+  .cardText-wrap {
+    @apply flex w-[40%] h-full rounded-l-[2.5rem] bg-lightGrey-300 px-16 py-20;
+  }
+  .contentTextButton {
+    @apply flex flex-col justify-between w-full h-full relative overflow-hidden;
+  }
+  .progressBar {
+    @apply flex w-full h-6 overflow-hidden;
+  }
+  .counter {
+    @apply absolute z-10 h-full w-full;
+  }
+  .progressBar-content {
+    @apply flex items-center w-[7.3rem] ml-6;
+  }
+  .progressBar-line {
+    @apply h-1 w-full bg-lightGrey-700;
+  }
+  .progressBar-line-fill {
+    @apply h-full w-2/5 bg-gradient-to-r from-[#ABD131] to-[#60BE3E];
+  }
+  .panel-text {
+    @apply absolute z-10 w-full h-full;
+  }
+  .imgs-wrap {
+    @apply relative overflow-hidden w-full h-full rounded-r-[2.5rem];
+  }
+  .panel-imgs {
+    @apply absolute z-10 w-full h-full;
+  }
+
+  /* TitleContent */
+  .cardsEcosystemHeader {
+    @apply flex flex-col lg:items-center lg:pt-4.5rem;
+  }
+  .cardsEcosystemHeader > h3 {
+    @apply text-H3 text-darkGrey-900 font-bold;
+  }
+  .cardsEcosystemHeader > p {
+    @apply text-Subtitle lg:text-center lg:w-36.5rem pt-4 text-darkGrey-300;
   }
 }

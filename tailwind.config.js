@@ -15,6 +15,7 @@ module.exports = {
         "12.5rem": "12.5rem",
         "13.5rem": "13.5rem",
         "16.5rem": "16.5rem",
+        "17rem": "17rem",
         "19rem": "19rem",
         "29rem": "29rem",
         "32rem": "32rem",
@@ -50,7 +51,7 @@ module.exports = {
         },
         lightGrey: {
           100: "#FFFFFF",
-          300: "#F4F5F2",
+          300: "#F7F7F5",
           500: "#E0E0DE",
           700: "#CCCCCA",
           900: "#B7B8B6"
@@ -160,6 +161,7 @@ module.exports = {
       },
       backgroundImage: {
         'servicesCover-texture': "url('./assets/Backgrounds/backgroundServices.png')",
+        'img': "url('/assets/imagenes/prueba.png')",
       }
     }
   },

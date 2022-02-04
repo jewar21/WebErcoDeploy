@@ -42,4 +42,18 @@
   .countriesButton {
     @apply flex justify-center items-center rounded-full w-10 h-10;
   }
+  /* Services panel  */
+  .servicesPanelContent {
+    @apply flex w-full h-17rem rounded-2xl bg-lightGrey-100;
+  }
+  .servicesPanelLeft {
+    @apply flex flex-col h-full w-2/5 rounded-l-2xl px-6 bg-lightGrey-300;
+  }
+  .menuLeft {
+    @apply flex justify-between py-6;
+  }
+}
+
+.p-overlaypanel .p-overlaypanel-content {
+  padding: 0 !important;
 }

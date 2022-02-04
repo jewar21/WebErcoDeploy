@@ -7,7 +7,7 @@
     @apply flex flex-col h-screen w-full object-contain inset-0 outline-0;
   }
   .coverBackground {
-    @apply flex h-full w-full bg-darkGrey-900/10 bg-gradient-to-r from-darkGrey-900/60
+    @apply flex h-screen w-full bg-darkGrey-900/10 bg-gradient-to-r from-darkGrey-900/60
      to-darkGrey-900/25 -z-10 absolute;
   }
   .coverInfo {

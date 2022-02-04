@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&display=swap");
 @import "./navbar.css";
 @import "./footer.css";
 
@@ -14,8 +14,7 @@
 @import "./PartialComponents/PartialComponents.css";
 
 @layer base {
-    html {
-        @apply font-Sora overflow-x-hidden;
-        
-    }
+  html {
+    @apply font-Sora overflow-x-hidden;
+  }
 }
