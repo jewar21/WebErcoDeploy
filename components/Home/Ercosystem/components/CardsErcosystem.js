@@ -3,12 +3,8 @@ import Image from "next/image";
 
 // Packages
 import { gsap } from "gsap/dist/gsap";
-import Scrollbar from "smooth-scrollbar";
 
-import {
-  sliderAnimation,
-  sidebarAnimations
-} from "../../../../styles/animations/globals";
+import { sidebarAnimations } from "../../../../styles/animations/globals";
 
 import QuoteButton from "../../../PartialComponents/QuoteButton";
 
@@ -107,7 +103,6 @@ const CardsEcosystem = ({ contentData, icon }) => {
             >
               <Image
                 src={e.img.src}
-                // className="w-full max-w-full h-full max-h-full rounded-r-[2.5rem] object-cover absolute"
                 alt="image"
                 layout="fill"
                 objectFit="fill"

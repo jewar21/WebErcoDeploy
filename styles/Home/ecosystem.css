@@ -5,13 +5,13 @@
 @layer components {
   /* TitleContent */
   .cardsEcosystemHeader {
-    @apply flex flex-col lg:items-center lg:pt-4.5rem;
+    @apply flex flex-col px-6 lg:px-0 lg:items-center lg:pt-4.5rem;
   }
   .cardsEcosystemHeader > h3 {
-    @apply text-H3 text-darkGrey-900 font-bold;
+    @apply text-H4 lg:text-H3 text-darkGrey-900 font-bold;
   }
   .cardsEcosystemHeader > p {
-    @apply text-Subtitle lg:text-center lg:w-36.5rem pt-4 text-darkGrey-300;
+    @apply text-Subtitle w-full text-left lg:text-center lg:w-36.5rem pt-4 text-darkGrey-300;
   }
 
   /* CardContent SideBar*/
@@ -26,10 +26,10 @@
     @apply flex flex-col justify-between w-full h-full relative overflow-hidden;
   }
   .progressBar {
-    @apply flex w-full h-6 overflow-hidden;
+    @apply flex w-full h-6 overflow-hidden text-sm font-IBM font-semibold;
   }
   .progressBar-number {
-    @apply text-darkGrey-900 font-semibold;
+    @apply text-darkGrey-900;
   }
   .progressBar-base {
     @apply text-darkGrey-900/40 pl-2.5;
@@ -38,10 +38,10 @@
     @apply absolute z-10 h-full w-full;
   }
   .progressBar-content {
-    @apply flex items-center w-[7.3rem] ml-6;
+    @apply flex h-5 w-[7.3rem] ml-6 items-center;
   }
   .progressBar-line {
-    @apply h-1 w-full bg-lightGrey-700;
+    @apply h-0.5 w-full bg-lightGrey-700;
   }
   .progressBar-line-fill {
     @apply h-full w-2/5 bg-gradient-to-r from-[#ABD131] to-[#60BE3E];
@@ -50,10 +50,10 @@
     @apply absolute z-10 w-full h-full top-14;
   }
   .panel-title {
-    @apply text-xl text-darkGrey-700 font-semibold;
+    @apply text-xl text-darkGrey-700 font-semibold font-Sora;
   }
   .panel-body {
-    @apply flex w-full h-14 justify-between pt-6;
+    @apply flex w-full justify-between pt-3;
   }
   .panel-icon {
     @apply flex w-6 h-6 rounded-full bg-primary-500 items-center text-base p-1;
