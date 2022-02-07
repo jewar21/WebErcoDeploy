@@ -64,7 +64,6 @@ const CardsEcosystem = ({ contentData, icon }) => {
             </div>
             <div>
               {contentData.map((e, i) => {
-                console.log(e.items);
                 let items = e.items;
                 return (
                   <div

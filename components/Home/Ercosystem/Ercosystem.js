@@ -1,24 +1,24 @@
-import React from "react";
-
 import {
   ecoSystemContent,
   ecoSystemHeader,
   iconCheck
 } from "../../../content/data/homeData";
 
-import ErcosystemContent from "./ErcosystemContent";
 import TitleContent from "./components/TitleContent";
+import MobileErcosystem from "./components/MobileErcosystem";
+import CardsErcosystem from "./components/CardsErcosystem";
 
 const ErcosystemHeader = ({ isMobile }) => {
   return (
-    <div>
+    <section>
       <TitleContent headerData={ecoSystemHeader} />
-      <ErcosystemContent
-        isMobile={isMobile}
-        contentData={ecoSystemContent}
-        icon={iconCheck}
-      />
-    </div>
+      {isMobile ? (
+        <MobileErcosystem contentData={ecoSystemContent} icon={iconCheck} />
+      ) : (
+        // <CardsErcosystem contentData={ecoSystemContent} icon={iconCheck} />
+        <></>
+      )}
+    </section>
   );
 };
 
