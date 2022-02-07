@@ -35,7 +35,7 @@ const CardsEcosystem = ({ contentData, icon }) => {
   }, []);
 
   return (
-    <section className="ecosystemContainer">
+    <div className="ecosystemContainer">
       <div className="cardsEcosystemContainer">
         <div className="cardText-wrap">
           <div className="contentTextButton">
@@ -115,7 +115,7 @@ const CardsEcosystem = ({ contentData, icon }) => {
           <div className="panel-phone exclude bg-orange-300"></div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

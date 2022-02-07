@@ -4,7 +4,7 @@ import QuoteButton from "../../../PartialComponents/QuoteButton";
 
 const MobileErcosystem = ({ contentData, icon }) => {
   return (
-    <section>
+    <div>
       {contentData.map((e, i) => {
         let items = e.items;
         return (
@@ -38,7 +38,7 @@ const MobileErcosystem = ({ contentData, icon }) => {
           </div>
         );
       })}
-    </section>
+    </div>
   );
 };
 
