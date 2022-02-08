@@ -18,7 +18,9 @@
   .navbarButtons {
     @apply flex justify-evenly h-full w-1/4 items-center;
   }
-  /* NavLinks */
+
+  /*------------------------------- NavLinks -------------------------------*/
+
   .navLinksContainer {
     @apply flex flex-col justify-between h-[calc(100%_-_3.5rem)] mx-6 lg:h-auto lg:w-full 
     text-H5 font-IBM font-Bold text-darkGrey-900 lg:text-darkGrey-300 lg:text-base lg:mx-0 lg:font-Regular lg:text-Subtitle;
@@ -29,7 +31,9 @@
   .navLinksActive {
     @apply active:font-Bold focus:font-Bold active:text-darkGrey-900 focus:text-darkGrey-900;
   }
-  /* Mobile styles  */
+
+  /*------------------------------- Mobile styles  -------------------------------*/
+
   .navLinksActiveMobile {
     @apply border-b-2 border-dotted border-lightGrey-900 lg:border-none py-6 lg:mb-0;
   }
@@ -42,7 +46,9 @@
   .countriesButton {
     @apply flex justify-center items-center rounded-full w-10 h-10;
   }
-  /* Services panel  */
+
+  /*------------------------------- Services panel  -------------------------------*/
+
   .servicesPanelContent {
     @apply flex w-full h-17rem rounded-2xl bg-lightGrey-100;
   }
@@ -51,6 +57,15 @@
   }
   .menuLeft {
     @apply flex justify-between py-6;
+  }
+
+  /*------------------------------- Contries panel  -------------------------------*/
+
+  .countriesPanelContent {
+    @apply flex flex-col p-4;
+  }
+  .itemCountry {
+    @apply pl-4 h-12 w-full text-Body1 text-left;
   }
 }
 
