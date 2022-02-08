@@ -25,7 +25,7 @@ module.exports = {
         "52rem": "52rem",
         "56.75rem": "56.75rem",
         "66rem": "66rem",
-        "600%": "600%",
+        "600%": "600%"
       },
       colors: {
         primary: {
@@ -160,8 +160,9 @@ module.exports = {
         ]
       },
       backgroundImage: {
-        'servicesCover-texture': "url('./assets/Backgrounds/backgroundServices.png')",
-        'img': "url('/assets/imagenes/prueba.png')",
+        "servicesCover-texture":
+          "url('./assets/Backgrounds/backgroundServices.png')",
+        img: "url('/assets/imagenes/prueba.png')"
       }
     }
   },

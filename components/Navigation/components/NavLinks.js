@@ -8,7 +8,7 @@ import { RiArrowRightLine } from "react-icons/ri";
 
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import { DeviceSize } from "../../../utils/handlers/handlers";
-import { co, pe, us } from "../../../content/data/homeData";
+import { co, pa, us } from "../../../content/data/homeData";
 
 import ServicesPanel from "./ServicesPanel";
 
@@ -43,7 +43,7 @@ const NavLinks = () => {
                 width: "38rem",
                 height: "17rem",
                 position: "absolute",
-                marginTop: "3rem",
+                marginTop: "1rem",
                 borderRadius: "1rem"
               }}
             >
@@ -71,7 +71,7 @@ const NavLinks = () => {
             <Image src={co} alt="Colombia" width={32} height={32} />
           </div>
           <div className="countriesButton mx-2">
-            <Image src={pe} alt="Colombia" width={32} height={32} />
+            <Image src={pa} alt="Colombia" width={32} height={32} />
           </div>
           <div className="countriesButton">
             <Image src={us} alt="Colombia" width={32} height={32} />

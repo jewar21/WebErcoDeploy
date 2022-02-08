@@ -52,11 +52,11 @@ import img2 from "../../assets/imagenes/2.png";
 import img3 from "../../assets/imagenes/3.png";
 import nuestroSocio from "../../assets/Icon/nuestroSocio.png";
 import colombia from "../../assets/Paises/CO.png";
-import peru from "../../assets/Paises/PA.png";
+import panama from "../../assets/Paises/PA.png";
 import unitedStates from "../../assets/Paises/UE.png";
 
 export const co = colombia;
-export const pe = peru;
+export const pa = panama;
 export const us = unitedStates;
 
 export const nuestroSocioImg = nuestroSocio;
