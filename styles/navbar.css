@@ -50,13 +50,40 @@
   /*------------------------------- Services panel  -------------------------------*/
 
   .servicesPanelContent {
-    @apply flex w-full h-17rem rounded-2xl bg-lightGrey-100;
+    @apply flex w-full h-17rem rounded-2xl bg-lightGrey-100 overflow-hidden;
   }
   .servicesPanelLeft {
-    @apply flex flex-col h-full w-2/5 rounded-l-2xl px-6 bg-lightGrey-300;
+    @apply flex flex-col h-full w-2/5 bg-lightGrey-300;
   }
   .menuLeft {
-    @apply flex justify-between py-6;
+    @apply flex justify-between items-center p-6 cursor-pointer;
+  }
+  .viewConditionalContent {
+    @apply h-full w-full;
+  }
+  .viewConditionalContainer {
+    @apply flex flex-col h-full w-full justify-center items-center px-8;
+  }
+  .viewConditionalContainer > p {
+    @apply text-center text-darkGrey-900 text-Body2 font-IBM;
+  }
+  .viewConditionalButton {
+    @apply flex items-center justify-between w-32 border-b-2 border-primary-500 pt-6;
+  }
+  .viewConditionalButtonText {
+    @apply font-Sora font-semibold text-base text-darkGrey-900;
+  }
+  .hiddenConditional {
+    @apply h-full w-full bg-lightGrey-100;
+  }
+  .hiddenConditionalIcon {
+    @apply flex items-center justify-center w-14 h-14 rounded-lg text-primary-900 bg-lightGrey-300 text-[2rem];
+  }
+  .hiddenConditionalText > dt {
+    @apply text-darkGrey-900 text-sm font-semibold font-IBM;
+  }
+  .hiddenConditionalText > dd {
+    @apply text-darkGrey-900/70 text-xs font-semibold font-IBM;
   }
 
   /*------------------------------- Contries panel  -------------------------------*/
