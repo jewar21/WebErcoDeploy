@@ -79,10 +79,10 @@
   .hiddenConditionalIcon {
     @apply flex items-center justify-center w-14 h-14 rounded-lg text-primary-900 bg-lightGrey-300 text-[2rem];
   }
-  .hiddenConditionalText > dt {
+  .hiddenConditionalText > h2 {
     @apply text-darkGrey-900 text-sm font-semibold font-IBM;
   }
-  .hiddenConditionalText > dd {
+  .hiddenConditionalText > p {
     @apply text-darkGrey-900/70 text-xs font-semibold font-IBM;
   }
 

@@ -54,6 +54,7 @@ import nuestroSocio from "../../assets/Icon/nuestroSocio.png";
 import colombia from "../../assets/Paises/CO.png";
 import panama from "../../assets/Paises/PA.png";
 import unitedStates from "../../assets/Paises/UE.png";
+import imgBackground from "../../assets/Backgrounds/backgroundGrid.svg";
 
 export const co = colombia;
 export const pa = panama;
@@ -189,9 +190,11 @@ export const ecoSystemContent = [
 // Experience Erco Information
 
 export const experienceTitle = {
-  title: "Experiencia Erco: deja todo en nuestras manos",
+  title: "Experiencia Erco:",
+  title1: "deja todo en nuestras manos",
   content:
-    "Realizamos diseño, instalación, legalización, certificados UPME y carbono cero."
+    "Realizamos diseño, instalación, legalización, certificados UPME y carbono cero.",
+  imgBackground: imgBackground
 };
 
 export const experienceContent = [

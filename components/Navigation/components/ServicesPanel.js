@@ -94,8 +94,8 @@ const ServicesPanel = () => {
                   {item.icon}
                 </div>
                 <div className="hiddenConditionalText w-4/5">
-                  <dt>{item.title}</dt>
-                  <dd>{item.content}</dd>
+                  <h2>{item.title}</h2>
+                  <p>{item.content}</p>
                 </div>
               </a>
             </Link>
