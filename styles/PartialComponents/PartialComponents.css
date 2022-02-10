@@ -18,16 +18,16 @@
   .gridComponentContent {
     @apply grid grid-cols-2 gap-x-[8.75rem] w-full px-5.5rem;
   }
-  .gridComponentLeft {
+  .componentTitle {
     @apply w-5/6;
   }
-  .gridComponentLeft > h3 {
+  .componentTitle > h3 {
     @apply text-H3 font-bold text-darkGrey-900;
   }
-  .gridComponentLeft > h3 > span {
+  .componentTitle > h3 > span {
     @apply block;
   }
-  .gridComponentLeft > p {
+  .componentTitle > p {
     @apply text-Subtitle  text-darkGrey-300 pt-8;
   }
   .gridComponentRight {

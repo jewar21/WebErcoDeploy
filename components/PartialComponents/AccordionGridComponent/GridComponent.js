@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+// component
+import ComponentTitle from "./ComponentTitle";
+
 const GridComponent = ({ headContent, bodyContent }) => {
   return (
     <section className="gridComponentContainer">
@@ -12,13 +15,7 @@ const GridComponent = ({ headContent, bodyContent }) => {
         />
       </div>
       <div className="gridComponentContent">
-        <div className="gridComponentLeft">
-          <h3>
-            {headContent.title}
-            <span>{headContent.title1}</span>
-          </h3>
-          <p>{headContent.content}</p>
-        </div>
+        <ComponentTitle headContent={headContent} />
         <div className="gridComponentRight">
           {bodyContent.map((body, i) => {
             return (

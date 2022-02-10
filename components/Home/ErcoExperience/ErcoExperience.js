@@ -6,18 +6,15 @@ import {
 } from "../../../content/data/homeData";
 
 // components
-import AccordionComponent from "../../PartialComponents/AccordionComponent";
-import GridComponent from "../../PartialComponents/GridComponent";
+import AccordionGridComponent from "../../PartialComponents/AccordionGridComponent";
 
 const ErcoExperience = ({ isMobile }) => {
   return (
-    <div>
-      {isMobile ? (
-        <AccordionComponent />
-      ) : (
-        <GridComponent headContent={experienceTitle} bodyContent={experienceContent} />
-      )}
-    </div>
+    <AccordionGridComponent
+      isMobile={isMobile}
+      headContent={experienceTitle}
+      bodyContent={experienceContent}
+    />
   );
 };
 
