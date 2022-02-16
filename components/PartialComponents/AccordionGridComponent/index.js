@@ -3,13 +3,10 @@ import GridComponent from "./GridComponent";
 
 const index = ({ isMobile, headContent, bodyContent }) => {
   return (
-    <div>
-      {isMobile ? (
-        <AccordionComponent />
-      ) : (
-        <GridComponent headContent={headContent} bodyContent={bodyContent} />
-      )}
-    </div>
+    <>
+      <AccordionComponent headContent={headContent} bodyContent={bodyContent} />
+      <GridComponent headContent={headContent} bodyContent={bodyContent} />
+    </>
   );
 };
 

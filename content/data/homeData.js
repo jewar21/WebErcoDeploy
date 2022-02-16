@@ -18,7 +18,9 @@ import {
   RiInstagramLine,
   RiFacebookBoxFill,
   RiLinkedinFill,
-  RiYoutubeFill
+  RiYoutubeFill,
+  RiSubtractLine,
+  RiAddLine
 } from "react-icons/ri";
 
 const iconHandler = <RiHandCoinLine />;
@@ -35,6 +37,9 @@ const iconTrophy = <RiTrophyLine />;
 export const iconArrow = <RiArrowRightLine />;
 
 export const iconCheck = <RiCheckFill />;
+
+export const iconAdd = <RiAddLine />;
+export const iconSubtrac = <RiSubtractLine />;
 
 // social networks
 

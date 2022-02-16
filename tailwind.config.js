@@ -159,10 +159,9 @@ module.exports = {
           }
         ]
       },
-      backgroundImage: {
-        "servicesCover-texture":
-          "url('./assets/Backgrounds/backgroundServices.png')",
-        img: "url('/assets/imagenes/prueba.png')"
+      transitionTimingFunction: {
+        'in-expo': 'cubic-bezier(1, 0, 1, 0)',
+        'out-expo': 'cubic-bezier(0, 1, 0, 1)',
       }
     }
   },

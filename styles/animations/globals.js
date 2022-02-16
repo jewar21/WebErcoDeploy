@@ -19,6 +19,21 @@ export const containerInfo = {
   }
 };
 
+export const accordionBody = {
+  displacement: {
+    opacity: 0,
+    y: "-30"
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      delay: 0.1
+    }
+  }
+};
+
 export const sidebarAnimations = (images, phoneImgs, texts, card, counter) => {
   gsap
     .timeline({

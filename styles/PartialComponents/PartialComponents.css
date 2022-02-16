@@ -7,10 +7,10 @@
     @apply flex justify-evenly items-center rounded-full font-Sora text-Button;
   }
 
-  /*--------------------------------- Grid component ---------------------------------  */
+  /*--------------------------------- Accordion and Grid component ---------------------------------  */
 
   .gridComponentContainer {
-    @apply w-screen mt-24 relative;
+    @apply w-screen mt-24 relative hidden lg:block;
   }
   .gridComponentImg {
     @apply w-full h-full absolute bottom-0 left-0 -z-10;
@@ -19,10 +19,10 @@
     @apply grid grid-cols-2 gap-x-[8.75rem] w-full px-5.5rem;
   }
   .componentTitle {
-    @apply w-5/6;
+    @apply lg:w-5/6;
   }
   .componentTitle > h3 {
-    @apply text-H3 font-bold text-darkGrey-900;
+    @apply text-H4 lg:text-H3 font-bold text-darkGrey-900;
   }
   .componentTitle > h3 > span {
     @apply block;
@@ -44,5 +44,27 @@
   }
   .gridComponentRightItemText > p {
     @apply text-Body1 text-darkGrey-700 pt-2;
+  }
+
+  .accordionComponentContainer {
+    @apply relative block px-6 lg:hidden;
+  }
+  .accordan {
+    @apply border-t-2 border-lightGrey-500 py-6;
+  }
+  .accordan-head {
+    @apply flex justify-between;
+  }
+  .accordan-head > h4 {
+    @apply text-base font-Sora font-semibold text-darkGrey-900;
+  }
+  .action-itemButton {
+    @apply text-[2rem] text-primary-500;
+  }
+  .acordan-body {
+    @apply text-Body3 text-darkGrey-300 w-[80%] max-h-0 overflow-hidden transition-all duration-500 ease-out-expo opacity-0;
+  }
+  .acordan-body-show {
+    @apply text-Body3 text-darkGrey-300 w-[80%] h-auto max-h-96 transition-all duration-500 ease-in-expo;
   }
 }
