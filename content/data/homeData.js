@@ -55,7 +55,6 @@ export const iconYoutube = <RiYoutubeFill />;
 import img1 from "../../assets/imagenes/1.png";
 import img2 from "../../assets/imagenes/2.png";
 import img3 from "../../assets/imagenes/3.png";
-import nuestroSocio from "../../assets/Icon/nuestroSocio.png";
 import colombia from "../../assets/Paises/CO.png";
 import panama from "../../assets/Paises/PA.png";
 import unitedStates from "../../assets/Paises/UE.png";
@@ -65,7 +64,7 @@ export const co = colombia;
 export const pa = panama;
 export const us = unitedStates;
 
-export const nuestroSocioImg = nuestroSocio;
+export const nuestroSocioImg = "/Icon/nuestroSocio.png";
 
 // Erco logo
 

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ComponentTitle from "./ComponentTitle";
 
 import { iconAdd, iconSubtrac } from "../../../content/data/homeData";
-import { accordionBody } from "../../../styles/animations/globals";
 import { RiNumbersFill } from "react-icons/ri";
 
 const AccordionComponent = ({ headContent, bodyContent }) => {
@@ -20,13 +19,11 @@ const AccordionComponent = ({ headContent, bodyContent }) => {
         <ComponentTitle headContent={headContent} />
         <div className="pt-12">
           {bodyContent.map(({ title, content }, i) => {
-            // return <Accordan key={i} title={title} content={content} />;
             return (
               <div key={i} className="accordan">
                 <div
                   className="accordan-head"
                   onClick={() => {
-                    // setisOpen(!isOpen);
                     toggle(i);
                   }}
                 >
@@ -37,9 +34,7 @@ const AccordionComponent = ({ headContent, bodyContent }) => {
                 </div>
                 <div
                   className={
-                    selected === i
-                      ? ".acordan-generalBody acordan-body-show"
-                      : ".acordan-generalBody acordan-body"
+                    selected === i ? "acordan-body-show" : "acordan-body"
                   }
                 >
                   <p>{content}</p>

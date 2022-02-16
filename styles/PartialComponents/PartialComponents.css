@@ -13,7 +13,7 @@
     @apply w-screen mt-24 relative hidden lg:block;
   }
   .gridComponentImg {
-    @apply w-full h-full absolute bottom-0 left-0 -z-10;
+    @apply w-5/6 h-full absolute bottom-0 left-0 -z-10;
   }
   .gridComponentContent {
     @apply grid grid-cols-2 gap-x-[8.75rem] w-full px-5.5rem;

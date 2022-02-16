@@ -12,7 +12,8 @@ import {
   iconLinkedIn,
   iconYoutube,
   nuestroSocioImg,
-  ercoLogo
+  ercoLogo,
+  iconErco
 } from "../../content/data/homeData";
 
 const Footer = () => {
@@ -22,11 +23,12 @@ const Footer = () => {
       <div className="footerIconsContent">
         <div className="footerIconsContainer">
           <Link href="/">
-            <a>
-              {isMobile
-                ? ercoLogo(144, 38.92, "#fff", true)
-                : ercoLogo(185, 50, "#fff", true)}
+            <a className="block lg:hidden">
+              {ercoLogo(144, 38.92, "#fff", true)}
             </a>
+          </Link>
+          <Link href="/">
+            <a className="hidden lg:block">{ercoLogo(185, 50, "#fff", true)}</a>
           </Link>
           <div className="footerSocialNetworks">
             <Link href="/">
@@ -60,12 +62,15 @@ const Footer = () => {
           </div>
           <div className="footerInfoRight">
             <p className="mb-1">NUESTRO SOCIO</p>
-            <Image
-              src={nuestroSocioImg}
-              alt="Nuestro Socio"
-              width={isMobile ? 140 : 159}
-              height={isMobile ? 32 : 40}
-            />
+            <div className="nuestroSocioImg">
+              <Image
+                src={nuestroSocioImg}
+                alt="Nuestro Socio"
+                layout="responsive"
+                width={159}
+                height={40}
+              />
+            </div>
           </div>
         </div>
       </div>

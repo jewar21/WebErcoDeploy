@@ -38,6 +38,9 @@
     @apply font-Sora text-Body3 text-sm text-lightGrey-100/60 lg:text-Body2;
   }
   .footerInfoRight {
-    @apply font-IBM text-xs font-normal text-lightGrey-100/60;
+    @apply relative font-IBM text-xs font-normal text-lightGrey-100/60;
+  }
+  .nuestroSocioImg {
+    @apply w-6.5rem h-8 lg:w-40 lg:h-10;
   }
 }
