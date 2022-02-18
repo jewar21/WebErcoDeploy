@@ -8,16 +8,12 @@ import TitleContent from "./components/TitleContent";
 import MobileErcosystem from "./components/MobileErcosystem";
 import CardsErcosystem from "./components/CardsErcosystem";
 
-const ErcosystemHeader = ({ isMobile }) => {
+const ErcosystemHeader = () => {
   return (
     <section>
       <TitleContent headerData={ecoSystemHeader} />
-      {isMobile ? (
-        <MobileErcosystem contentData={ecoSystemContent} icon={iconCheck} />
-      ) : (
-        // <CardsErcosystem contentData={ecoSystemContent} icon={iconCheck} />
-        <></>
-      )}
+      <MobileErcosystem contentData={ecoSystemContent} icon={iconCheck} />
+      <CardsErcosystem contentData={ecoSystemContent} icon={iconCheck} />
     </section>
   );
 };

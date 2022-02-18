@@ -17,7 +17,7 @@
   /* --------------------- CardContent SideBar ---------------------*/
 
   .cardsEcosystemContainer {
-    @apply flex h-screen w-screen px-5.5rem pt-4.5rem pb-6.5rem font-Sora sticky;
+    @apply hidden lg:flex h-screen w-screen px-5.5rem pt-4.5rem pb-6.5rem font-Sora sticky;
   }
   .cardText-wrap {
     @apply flex w-[40%] h-full rounded-l-[2.5rem] bg-lightGrey-300 px-16 py-10;
@@ -68,10 +68,10 @@
     @apply absolute z-10 w-full h-full;
   }
   .panel-phone-content {
-    @apply absolute overflow-hidden w-13.5rem h-[27.5rem] right-[10%] top-[28%] z-50 rounded-3xl;
+    @apply flex absolute overflow-hidden items-center justify-center w-13.5rem h-[27.5rem] right-[10%] top-[28%] z-50 rounded-3xl;
   }
   .panel-phone {
-    @apply absolute z-10 w-full h-full rounded-3xl;
+    @apply -z-10;
   }
 
   /* --------------------- Mobile ---------------------*/

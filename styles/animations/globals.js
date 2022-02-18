@@ -47,7 +47,7 @@ export const sidebarAnimations = (images, phoneImgs, texts, card, counter) => {
       }
     })
     .to(card, { duration: 0.33, marginTop: 55, ease: "power3.out" })
-    .to("#panel-phone", { duration: 0.6, top: "22%" });
+    .to("#panel-phone", { duration: 0.6, top: "22%" })
 
   // ----------------------------------------------------------------------
 
@@ -79,7 +79,7 @@ export const sidebarAnimations = (images, phoneImgs, texts, card, counter) => {
       }
     });
 
-    tl.to(phone, { opacity: 0, right: 50 }, 0.1);
+    tl.to(phone, { opacity: 0 }, 0.1);
   });
 
   // ----------------------------------------------------------------------

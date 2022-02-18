@@ -1,10 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import FooterLinks from "./FooterLinks";
-
-import { useMediaQuery } from "react-responsive";
-import { DeviceSize } from "../../utils/handlers/handlers";
+// local data
 import {
   iconTwitter,
   iconInstagram,
@@ -12,12 +9,13 @@ import {
   iconLinkedIn,
   iconYoutube,
   nuestroSocioImg,
-  ercoLogo,
-  iconErco
+  ercoLogo
 } from "../../content/data/homeData";
 
+// components
+import FooterLinks from "./FooterLinks";
+
 const Footer = () => {
-  const isMobile = useMediaQuery({ maxWidth: DeviceSize.mobile });
   return (
     <footer className="footerContainer">
       <div className="footerIconsContent">
@@ -64,7 +62,7 @@ const Footer = () => {
             <p className="mb-1">NUESTRO SOCIO</p>
             <div className="nuestroSocioImg">
               <Image
-                src={nuestroSocioImg}
+                src={nuestroSocioImg.src}
                 alt="Nuestro Socio"
                 layout="responsive"
                 width={159}

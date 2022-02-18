@@ -55,16 +55,20 @@ export const iconYoutube = <RiYoutubeFill />;
 import img1 from "../../assets/imagenes/1.png";
 import img2 from "../../assets/imagenes/2.png";
 import img3 from "../../assets/imagenes/3.png";
+import p01 from "../../assets/imagenes/phone/instalacion.svg";
+import p02 from "../../assets/imagenes/phone/tecnologia.svg";
+import p03 from "../../assets/imagenes/phone/oym.svg";
 import colombia from "../../assets/Paises/CO.png";
 import panama from "../../assets/Paises/PA.png";
 import unitedStates from "../../assets/Paises/UE.png";
 import imgBackground from "../../assets/Backgrounds/backgroundGrid.svg";
+import nuestroSocio from "../../assets/Icon/nuestroSocio.png";
 
 export const co = colombia;
 export const pa = panama;
 export const us = unitedStates;
 
-export const nuestroSocioImg = "/Icon/nuestroSocio.png";
+export const nuestroSocioImg = nuestroSocio;
 
 // Erco logo
 
@@ -165,7 +169,8 @@ export const ecoSystemContent = [
         item: "Realizar seguimiento y control de tu proyecto en tiempo real."
       },
       { item: "Contribuir a un futuro sostenible." }
-    ]
+    ],
+    phoneImg: p01
   },
   {
     counter: 2,
@@ -175,7 +180,8 @@ export const ecoSystemContent = [
       { item: "Visualizar datos de consumo y generación en tiempo real." },
       { item: "Obtener alertas por consumos atípicos." },
       { item: "Evitar multas por consumo excesivo de energía reactiva." }
-    ]
+    ],
+    phoneImg: p02
   },
   {
     counter: 3,
@@ -187,7 +193,8 @@ export const ecoSystemContent = [
       },
       { item: "Realizar mantenimiento predictivo, preventivo y correctivo." },
       { item: "Acompañar tu proyecto con un equipo propio y calificado." }
-    ]
+    ],
+    phoneImg: p03
   }
 ];
 

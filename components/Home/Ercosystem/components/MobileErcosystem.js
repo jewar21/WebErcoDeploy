@@ -8,7 +8,7 @@ const MobileErcosystem = ({ contentData, icon }) => {
       {contentData.map((e, i) => {
         let items = e.items;
         return (
-          <div className="flex w-full" key={i}>
+          <div className="flex w-full lg:hidden" key={i}>
             <div className="mobileErcosystemImg">
               <Image
                 src={e.img.src}

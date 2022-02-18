@@ -35,7 +35,7 @@ const CardsEcosystem = ({ contentData, icon }) => {
   }, []);
 
   return (
-    <div className="ecosystemContainer">
+    <section className="ecosystemContainer">
       <div className="cardsEcosystemContainer">
         <div className="cardText-wrap">
           <div className="contentTextButton">
@@ -110,12 +110,26 @@ const CardsEcosystem = ({ contentData, icon }) => {
           ))}
         </div>
         <div id="panel-phone" className="panel-phone-content">
-          <div className="panel-phone bg-blue-300"></div>
-          <div className="panel-phone bg-red-300"></div>
-          <div className="panel-phone exclude bg-orange-300"></div>
+          <Image
+            className="z-10"
+            src="/imagenes/phone/phone.svg"
+            alt="image"
+            layout="fill"
+            objectFit="fill"
+          />
+          {contentData.map((p, i) => (
+            <Image
+              key={i}
+              className={i === 2 ? "panel-phone exclude" : "panel-phone"}
+              src={p.phoneImg.src}
+              alt="image"
+              layout="fill"
+              objectFit="fill"
+            />
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
