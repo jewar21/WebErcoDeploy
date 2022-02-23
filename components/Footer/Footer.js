@@ -10,7 +10,7 @@ import {
   iconYoutube,
   nuestroSocioImg,
   ercoLogo
-} from "../../content/data/homeData";
+} from "../../content/globalData";
 
 // components
 import FooterLinks from "./FooterLinks";

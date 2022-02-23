@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 
 import { DeviceSize } from "../../../utils/handlers/handlers";
-import { ercoLogo } from "../../../content/data/homeData";
+import { ercoLogo } from "../../../content/globalData";
 
 import NavLinks from "./NavLinks";
 import MobileNav from "./MobileNav";

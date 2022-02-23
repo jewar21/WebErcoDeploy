@@ -1,8 +1,15 @@
+// Data
+
 import {
   ecoSystemContent,
-  ecoSystemHeader,
-  iconCheck
+  ecoSystemHeader
 } from "../../../content/data/homeData";
+
+// Iconos
+
+import { iconCheck } from "../../../content/globalData";
+
+// Components
 
 import TitleContent from "./components/TitleContent";
 import MobileErcosystem from "./components/MobileErcosystem";

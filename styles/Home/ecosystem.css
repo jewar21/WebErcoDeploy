@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  /* TitleContent */
+  /*---------------------  TitleContent --------------------- */
   .cardsEcosystemHeader {
     @apply flex flex-col px-6 pt-12 lg:px-0 lg:items-center lg:pt-4.5rem;
   }
@@ -15,9 +15,11 @@
   }
 
   /* --------------------- CardContent SideBar ---------------------*/
-
+  .ecosystemContainer {
+    @apply hidden lg:flex;
+  }
   .cardsEcosystemContainer {
-    @apply hidden lg:flex h-screen w-screen px-5.5rem pt-4.5rem pb-6.5rem font-Sora sticky;
+    @apply flex h-screen w-screen px-5.5rem pt-4.5rem pb-6.5rem font-Sora sticky;
   }
   .cardText-wrap {
     @apply flex w-[40%] h-full rounded-l-[2.5rem] bg-lightGrey-300 px-16 py-10;

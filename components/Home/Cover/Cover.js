@@ -1,22 +1,14 @@
 // Lib
 import { motion } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
-
-// Data
-import { coverInfo } from "../../../content/data/homeData";
 
 // Components
 import CardsCover from "./components/cardsCover";
 import QuoteButton from "../../PartialComponents/QuoteButton";
 
-// vars
-import { DeviceSize } from "../../../utils/handlers/handlers";
-
 // animations
 import { containerInfo } from "../../../styles/animations/globals";
 
 const Cover = () => {
-  const isTablet = useMediaQuery({ maxWidth: DeviceSize.tablet });
   return (
     <section>
       <div className="coverContainer">
@@ -47,7 +39,9 @@ const Cover = () => {
             isIcon={true}
           />
         </motion.div>
-        {!isTablet && <CardsCover />}
+        <div className="hidden lg:block">
+          <CardsCover />
+        </div>
       </div>
       <div className="lg:hidden">
         <CardsCover />

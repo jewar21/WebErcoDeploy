@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import ComponentTitle from "./ComponentTitle";
 
-import { iconAdd, iconSubtrac } from "../../../content/data/homeData";
-import { RiNumbersFill } from "react-icons/ri";
+import { iconAdd, iconSubtrac } from "../../../content/globalData";
 
 const AccordionComponent = ({ headContent, bodyContent }) => {
-  const [selected, setselected] = useState(RiNumbersFill);
+  const [selected, setselected] = useState(null);
 
   const toggle = (i) => {
     if (selected === i) {

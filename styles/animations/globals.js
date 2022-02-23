@@ -148,7 +148,7 @@ export const sidebarAnimations = (images, phoneImgs, texts, card, counter) => {
   ScrollTrigger.create({
     trigger: "section.ecosystemContainer",
     scrub: true,
-    markers: true,
+    // markers: true,
     pin: true,
     start: () => "top top",
     end: () => "+=" + (images.length + 1) * window.innerHeight,

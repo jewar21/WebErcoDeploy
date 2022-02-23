@@ -1,14 +1,17 @@
 import Link from "next/link";
-import { MouseEventHandler, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { RiArrowRightSLine, RiArrowRightLine } from "react-icons/ri";
 
 import { navInfo } from "../../../content/data/homeData";
 
-const iconArrowRightL = <RiArrowRightLine />;
-const iconArrowRight = <RiArrowRightSLine />;
+import { iconArrow, iconArrowRight } from "../../../content/globalData";
 
-const initialState = { opacity: "opacity-0", class: "hidden", colorHover: " " };
+const initialState = {
+  opacity: "opacity-0 pointer-events-none",
+  class: "hidden",
+  colorHover: " "
+};
 
 const viewedComponent = {
   opacity: "opacity-1",
@@ -25,6 +28,7 @@ const ServicesPanel = () => {
     const divHome = document.querySelector("#home");
     const divCompany = document.querySelector("#company");
     const divServicesPanel = document.querySelector("#servicesPanel");
+    const buttonView = document.querySelector("buttonView");
 
     divHome.addEventListener("mouseover", () => {
       setHome(viewedComponent);
@@ -69,7 +73,7 @@ const ServicesPanel = () => {
             <Link href="/">
               <a className="viewConditionalButtonText">Conoce más</a>
             </Link>
-            <div className="text-primary-500 text-xl">{iconArrowRightL}</div>
+            <div className="text-primary-500 text-xl">{iconArrow}</div>
           </div>
         </div>
       </div>
@@ -80,7 +84,7 @@ const ServicesPanel = () => {
               <a
                 className={
                   i === 2
-                    ? `flex justify-between w-full ${company.opacity}`
+                    ? `buttonView flex justify-between w-full ${company.opacity}`
                     : "flex justify-between w-full"
                 }
               >
