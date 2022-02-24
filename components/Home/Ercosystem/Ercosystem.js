@@ -7,7 +7,7 @@ import {
 
 // Iconos
 
-import { iconCheck } from "../../../content/globalData";
+import { iconCheck, phoneSVG } from "../../../content/globalData";
 
 // Components
 
@@ -20,7 +20,11 @@ const ErcosystemHeader = () => {
     <section>
       <TitleContent headerData={ecoSystemHeader} />
       <MobileErcosystem contentData={ecoSystemContent} icon={iconCheck} />
-      <CardsErcosystem contentData={ecoSystemContent} icon={iconCheck} />
+      <CardsErcosystem
+        contentData={ecoSystemContent}
+        icon={iconCheck}
+        phone={phoneSVG}
+      />
     </section>
   );
 };

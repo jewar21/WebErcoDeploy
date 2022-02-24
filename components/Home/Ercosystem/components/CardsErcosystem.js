@@ -8,7 +8,7 @@ import { sidebarAnimations } from "../../../../styles/animations/globals";
 
 import QuoteButton from "../../../PartialComponents/QuoteButton";
 
-const CardsEcosystem = ({ contentData, icon }) => {
+const CardsEcosystem = ({ contentData, icon, phone }) => {
   useEffect(() => {
     gsap.set(".panel-imgs", {
       zIndex: (i, target, targets) => targets.length - i
@@ -112,8 +112,8 @@ const CardsEcosystem = ({ contentData, icon }) => {
         <div id="panel-phone" className="panel-phone-content">
           <Image
             className="z-10"
-            src="/imagenes/phone/phone.svg"
-            alt="image"
+            src={phone.src}
+            alt="phone"
             layout="fill"
             objectFit="fill"
           />

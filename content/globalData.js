@@ -57,6 +57,9 @@ export const iconYoutube = <RiYoutubeFill />;
 import nuestroSocio from "../assets/Icon/nuestroSocio.png";
 export const nuestroSocioImg = nuestroSocio;
 
+import phone from "../assets/imagenes/phone/phone.svg";
+export const phoneSVG = phone;
+
 // Erco logo
 
 export const ercoLogo = (width, height, color, isOneColor) => (

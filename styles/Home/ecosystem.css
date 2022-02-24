@@ -73,7 +73,7 @@
     @apply flex absolute overflow-hidden items-center justify-center w-13.5rem h-[27.5rem] right-[10%] top-[28%] z-50 rounded-3xl;
   }
   .panel-phone {
-    @apply -z-10;
+    @apply -z-50 ;
   }
 
   /* --------------------- Mobile ---------------------*/
