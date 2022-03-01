@@ -65,20 +65,20 @@ export const navInfo = [
     icon: iconLightbulb,
     title: "Energía solar",
     content: "Transforman la radiación solar en energía eléctrica.",
-    slug: "/solarEnergy"
+    link: "/solarEnergy"
   },
   {
     icon: iconCar,
     title: "Movilidad eléctrica",
     content:
       "Infraestructura e instalación de Equipos para recarga de vehículos eléctricos.",
-    slug: "/electricMobility"
+    link: "/electricMobility"
   },
   {
     icon: iconBattery,
     title: "Almacenamiento de energía",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    slug: "/energyStorage"
+    link: "/energyStorage"
   }
 ];
 

@@ -23,6 +23,7 @@ const ServicesPanel = () => {
   const [home, setHome] = useState(initialState);
   const [company, setCompany] = useState(initialState);
   const [opening, setopening] = useState(viewedComponent.class);
+  const [isCompany, setisCompany] = useState(false);
 
   useEffect(() => {
     const divHome = document.querySelector("#home");
@@ -45,6 +46,7 @@ const ServicesPanel = () => {
       setHome(viewedComponent.class);
       setCompany(viewedComponent);
       setopening(initialState.class);
+      setisCompany(true);
     });
 
     divServicesPanel.addEventListener("mouseleave", () => {
@@ -80,7 +82,7 @@ const ServicesPanel = () => {
       <div className={`hiddenConditional ${home.class}`}>
         <div className="p-6 flex flex-col h-full w-full justify-between">
           {navInfo.map((item, i) => (
-            <Link key={i} href={`/services${item.slug}`}>
+            <Link key={i} href={isCompany ? `/services/company${item.link}` : `/services/home${item.link}`}>
               <a
                 className={
                   i === 2
