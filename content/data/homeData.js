@@ -54,6 +54,14 @@ import suratex from "../../assets/imagenes/brands/Suratex.png";
 import tcc from "../../assets/imagenes/brands/TCC.png";
 import virelSAS from "../../assets/imagenes/brands/VirelSAS.jpg";
 
+// Customers
+
+import img1Customer from "../../assets/imagenes/testimonios/Virel.JPG";
+import img2Customer from "../../assets/imagenes/testimonios/Pintuco.jpg";
+import img3Customer from "../../assets/imagenes/testimonios/CI Jeans.jpg";
+
+import imgClient from "../../assets/imagenes/testimonios/José Manuel Gutiérrez Pintuco.jpg";
+
 export const co = colombia;
 export const pa = panama;
 export const us = unitedStates;
@@ -198,35 +206,38 @@ export const experienceContent = [
 
 // Clients testimonials
 
-export const testimonials = [
-  {
-    img: "",
-    photo: "",
-    name: "Jaime Jaramillo Henao",
-    position: "Gerente Grupo AL S.A.S.",
-    testimonial:
-      "“Erco es la mejor alternativa, por su experiencia, conocimiento de la industria y su alianza con EPM. Además, por su conocimiento técnico y respaldo. Para nosotros Erco App fue una herramienta fundamental, porque nos mantuvo actualizados sin estar en el montaje”.",
-    companyIcon: ""
-  },
-  {
-    img: "",
-    photo: "",
-    name: "",
-    position: "",
-    testimonial:
-      "“Erco Energía fue y es la empresa adecuada para nuestro proyecto solar; por su respaldo, por el acompañamiento durante el proceso y la trayectoria de proyectos reconocidos”.",
-    companyIcon: ""
-  },
-  {
-    img: "",
-    photo: "",
-    name: "José Manuel Gutiérrez",
-    position: "Director Cadena de Suministro",
-    testimonial:
-      "“Después de recibir varias ofertas para nuestro sistema solar fotovoltaico, optamos por la empresa colombiana Erco Energía S.A.S. como la empresa con mejor oferta tecnológica, conocimiento de la normativa colombiana en el sistema energético y mejor programación en el montaje y control del proyecto”.",
-    companyIcon: ""
-  }
-];
+export const testimonials = {
+  title: "Clientes que confiaron en Erco",
+  cardContent: [
+    {
+      img: img1Customer,
+      photo: imgClient,
+      name: "Jaime Jaramillo Henao",
+      position: "Gerente Grupo AL S.A.S.",
+      testimonial:
+        "“Erco es la mejor alternativa, por su experiencia, conocimiento de la industria y su alianza con EPM. Además, por su conocimiento técnico y respaldo. Para nosotros Erco App fue una herramienta fundamental, porque nos mantuvo actualizados sin estar en el montaje”.",
+      companyIcon: ""
+    },
+    {
+      img: img2Customer,
+      photo: imgClient,
+      name: "",
+      position: "",
+      testimonial:
+        "“Erco Energía fue y es la empresa adecuada para nuestro proyecto solar; por su respaldo, por el acompañamiento durante el proceso y la trayectoria de proyectos reconocidos”.",
+      companyIcon: ""
+    },
+    {
+      img: img3Customer,
+      photo: imgClient,
+      name: "José Manuel Gutiérrez",
+      position: "Director Cadena de Suministro",
+      testimonial:
+        "“Después de recibir varias ofertas para nuestro sistema solar fotovoltaico, optamos por la empresa colombiana Erco Energía S.A.S. como la empresa con mejor oferta tecnológica, conocimiento de la normativa colombiana en el sistema energético y mejor programación en el montaje y control del proyecto”.",
+      companyIcon: ""
+    }
+  ]
+};
 
 // Company logos
 

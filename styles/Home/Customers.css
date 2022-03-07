@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .customers-container {
+    @apply flex flex-col bg-lightGrey-300;
+  }
+  .customers-container > h3 {
+    @apply w-full text-center lg:py-20 text-H4 lg:text-H3 text-darkGrey-900 font-bold;
+  }
+  .swiper-container {
+    @apply lg:flex lg:w-[60rem] lg:h-[30rem] rounded-[2rem] bg-lightGrey-100;
+  }
+  .swiper-container-img {
+    @apply lg:w-2/4 rounded-l-[2rem] bg-red-200;
+  }
+  .swiper-container-desc {
+    @apply lg:flex lg:flex-col justify-between lg:w-3/5 lg:px-4.5rem lg:py-16;
+  }
+  .swiper-title {
+    @apply lg:flex;
+  }
+  .swiper-client {
+    @apply lg:w-12 lg:h-12 lg:mr-4 rounded-full bg-blue-800;
+  }
+  .swiper-client-name {
+    @apply text-darkGrey-700 font-bold font-IBM lg:text-base;
+  }
+  .swiper-text {
+    @apply text-darkGrey-700 text-Body2 lg:text-lg;
+  }
+  .swiper-logo {
+    @apply lg:w-[8.375rem] lg:h-[3.75rem] lg:bg-blue-200;
+  }
+  .brandsImg {
+    @apply h-16;
+  }
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: " ";
+  width: 72px;
+  height: 72px;
+  background-color: #292928;
+  border-radius: 100%;
+  margin-left: 6rem;
+}
+/* .swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+} */
+.swiper-button-next:after, .swiper-button-prev:after {
+  font-family: none;
+}
