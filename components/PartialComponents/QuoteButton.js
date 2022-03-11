@@ -1,4 +1,6 @@
-import { iconArrow } from "../../content/data/homeData";
+import PropTypes from "prop-types";
+
+import { iconArrow } from "../../content/globalData";
 
 const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
   return (
@@ -7,6 +9,12 @@ const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
       {isIcon && <div className="text-2xl">{iconArrow}</div>}
     </button>
   );
+};
+
+QuoteButton.propTypes = {
+  buttonParameters: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  isIcon: PropTypes.bool.isRequired
 };
 
 export default QuoteButton;

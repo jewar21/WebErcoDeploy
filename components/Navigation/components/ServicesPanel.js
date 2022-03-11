@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-import { RiArrowRightSLine, RiArrowRightLine } from "react-icons/ri";
+import { useRecoilState } from "recoil";
+import { typeServiceState } from "../../../recoil/atoms";
 
 import { navInfo } from "../../../content/data/homeData";
 
@@ -23,18 +24,18 @@ const ServicesPanel = () => {
   const [home, setHome] = useState(initialState);
   const [company, setCompany] = useState(initialState);
   const [opening, setopening] = useState(viewedComponent.class);
-  const [isCompany, setisCompany] = useState(false);
+  const [typeService, setTypeService] = useRecoilState(typeServiceState);
 
   useEffect(() => {
     const divHome = document.querySelector("#home");
     const divCompany = document.querySelector("#company");
     const divServicesPanel = document.querySelector("#servicesPanel");
-    const buttonView = document.querySelector("buttonView");
 
     divHome.addEventListener("mouseover", () => {
       setHome(viewedComponent);
       setCompany(initialState);
       setopening(initialState.class);
+      setTypeService("Hogar");
     });
 
     divServicesPanel.addEventListener("mouseleave", () => {
@@ -46,7 +47,7 @@ const ServicesPanel = () => {
       setHome(viewedComponent.class);
       setCompany(viewedComponent);
       setopening(initialState.class);
-      setisCompany(true);
+      setTypeService("Empresa");
     });
 
     divServicesPanel.addEventListener("mouseleave", () => {
@@ -54,7 +55,7 @@ const ServicesPanel = () => {
       setopening(viewedComponent.class);
       setCompany(initialState);
     });
-  }, []);
+  }, [setTypeService]);
 
   return (
     <div id="servicesPanel" className="servicesPanelContent">
@@ -82,11 +83,18 @@ const ServicesPanel = () => {
       <div className={`hiddenConditional ${home.class}`}>
         <div className="p-6 flex flex-col h-full w-full justify-between">
           {navInfo.map((item, i) => (
-            <Link key={i} href={isCompany ? `/services/company${item.link}` : `/services/home${item.link}`}>
+            <Link
+              key={i}
+              href={
+                typeService === "Hogar"
+                  ? `/services/home${item.link}`
+                  : `/services/company${item.link}`
+              }
+            >
               <a
                 className={
                   i === 2
-                    ? `buttonView flex justify-between w-full ${company.opacity}`
+                    ? `flex justify-between w-full ${company.opacity}`
                     : "flex justify-between w-full"
                 }
               >

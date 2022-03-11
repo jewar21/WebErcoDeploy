@@ -7,12 +7,18 @@ import {
   RiTrophyLine
 } from "react-icons/ri";
 
+// Imagenes
+
 import imghome1 from "../../assets/imagenes/Hogar/HogarInterconectado.png";
 import imghome2 from "../../assets/imagenes/Hogar/HogarHibrido.png";
 import imghome3 from "../../assets/imagenes/Hogar/HogarAisldo.png";
+import imgCover from "../../assets/imagenes/Hogar/BannerEnergíaSolarHogar.png";
+
 import imgCompany1 from "../../assets/imagenes/Empresas/EmpresaInterconectado.png";
 import imgCompany2 from "../../assets/imagenes/Empresas/EmpresaHibrido.png";
 import imgCompany3 from "../../assets/imagenes/Empresas/EmpresaAislado.png";
+
+// Iconos
 
 const iconComputer = <RiComputerLine />;
 const iconLeaf = <RiLeafLine />;
@@ -23,19 +29,17 @@ const iconGroup = <RiGroupLine />;
 // cover info
 
 export const homeConverInfo = {
-  img: "",
-  section: "Hogar",
+  img: imgCover,
   title: "Energía solar",
   content:
-    "Elige una de nuestras soluciones de energía solar y comienza a construir tu ecosistema de energía. Así podrás tener ahorros adicionales y el control de toda tu energía. "
+    "Elige una de nuestras soluciones de energía solar y comienza a construir tu ecosistema de energía. Así podrás tener ahorros adicionales y el control de toda tu energía."
 };
 
 export const companyConverInfo = {
-  img: "",
-  section: "Empresa",
+  img: imgCover,
   title: "Energía solar",
   content:
-    "Elige una de nuestras soluciones de energía solar y comienza a construir tu ecosistema de energía. Así podrás tener ahorros adicionales y el control de toda tu energía. "
+    "Elige una de nuestras soluciones de energía solar y comienza a construir tu ecosistema de energía. Así podrás tener ahorros adicionales y el control de toda tu energía."
 };
 
 // instalación

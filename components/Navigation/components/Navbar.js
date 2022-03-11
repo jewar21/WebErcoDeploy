@@ -34,7 +34,7 @@ const Navbar = ({ isScrolling }) => {
               <QuoteButton
                 buttonParameters={"w-12.5rem h-12 font-bold bg-primary-500 text-darkGrey-900"}
                 buttonText={"¡Quiero cotizar!"}
-                isIcon={true}
+                isIcon={false}
               />
             </div>
           </>

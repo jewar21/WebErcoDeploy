@@ -67,4 +67,37 @@
   .acordan-body-show {
     @apply text-Body3 text-darkGrey-300 w-[80%] h-auto max-h-96 transition-all duration-500 ease-in-expo;
   }
+
+  /*--------------------------------- ServicesCover component ---------------------------------  */
+
+  .servicesCoverContent {
+    @apply relative lg:h-38.7rem w-screen h-screen;
+  }
+  .servicesCoverImage {
+    @apply absolute w-full h-full -z-50;
+  }
+  .servicesCoverContainer {
+    @apply flex flex-col justify-center w-full lg:w-3/4 h-full px-6 pt-[5%] lg:px-5.5rem;
+  }
+  .servicesCoverContainer > span {
+    @apply flex items-center w-full h-8 text-sm font-IBM font-medium text-primary-300 uppercase lg:text-base;
+  }
+  .servicesCoverContainer > h1 {
+    @apply flex items-center text-H3 font-extrabold text-lightGrey-100 lg:text-H1 lg:h-20;
+  }
+  .servicesCoverContainer > p {
+    @apply text-Body2 font-Regular text-lightGrey-500 lg:text-Body1;
+  }
+  .servicesCoverButtons {
+    @apply flex lg:flex-row flex-col h-[25%] lg:w-[45%] justify-between pt-12;
+  }
+
+  /*--------------------------------- ServicesCover component ---------------------------------  */
+
+  .exploreButton {
+    @apply h-12 w-12.5rem lg:h-12 border-primary-500 border-solid border-2 rounded-full;
+  }
+  .exploreButton > p {
+    @apply font-Sora text-base font-semibold text-lightGrey-100 tracking-wide;
+  }
 }

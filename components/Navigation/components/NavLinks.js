@@ -52,7 +52,7 @@ const NavLinks = () => {
           </>
         )}
 
-        <Link href="/">
+        <Link href="/projects">
           <a className="navLinksActive navLinksActiveMobile">Proyectos</a>
         </Link>
         <Link href="/">
