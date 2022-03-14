@@ -92,7 +92,7 @@
     @apply flex lg:flex-row flex-col h-[25%] lg:w-[45%] justify-between pt-12;
   }
 
-  /*--------------------------------- ServicesCover component ---------------------------------  */
+  /*--------------------------------- ExploreButton component ---------------------------------  */
 
   .exploreButton {
     @apply h-12 w-12.5rem lg:h-12 border-primary-500 border-solid border-2 rounded-full;

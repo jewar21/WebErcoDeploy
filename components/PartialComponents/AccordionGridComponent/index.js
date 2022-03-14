@@ -1,7 +1,7 @@
 import AccordionComponent from "./AccordionComponent";
 import GridComponent from "./GridComponent";
 
-const index = ({ isMobile, headContent, bodyContent }) => {
+const index = ({ headContent, bodyContent }) => {
   return (
     <>
       <AccordionComponent headContent={headContent} bodyContent={bodyContent} />

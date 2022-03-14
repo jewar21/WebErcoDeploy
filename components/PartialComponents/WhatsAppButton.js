@@ -1,4 +1,4 @@
-import { iconWhatsapp } from "../../content/data/homeData";
+import { iconWhatsapp } from "../../content/globalData";
 
 const WhatsAppButton = ({ buttonParameters, buttonText }) => {
   return (

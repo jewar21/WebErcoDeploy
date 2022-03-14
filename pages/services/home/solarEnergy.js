@@ -7,17 +7,14 @@ import {
 
 // components
 
-import Container from "../../../components/Navigation/Container";
-import ServicesCover from "../../../components/PartialComponents/ServicesCover/ServicesCover";
-import EcosystemBanner from "../../../components/PartialComponents/EcosystemBanner/EcosystemBanner";
+import SolarEnergy from "../../../components/Services/SolarEnergy";
 
 const solarEnergy = () => {
   return (
-    <Container>
-      <ServicesCover dataCover={homeConverInfo} />
-      solarEnergy
-      <EcosystemBanner />
-    </Container>
+    <SolarEnergy
+      dataCover={homeConverInfo}
+      dataInstallation={homeInstallation}
+    />
   );
 };
 

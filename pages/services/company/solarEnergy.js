@@ -1,14 +1,22 @@
-import Container from "../../../components/Navigation/Container";
-import ServicesCover from "../../../components/PartialComponents/ServicesCover/ServicesCover";
-import EcosystemBanner from "../../../components/PartialComponents/EcosystemBanner/EcosystemBanner";
+// Data
+
+import {
+  companyConverInfo,
+  companyInstallation,
+  neuPlus,
+  operationAndMaintenance
+} from "../../../content/data/servicesData";
+
+// components
+
+import SolarEnergy from "../../../components/Services/SolarEnergy";
 
 const solarEnergy = () => {
   return (
-    <Container>
-      <ServicesCover />
-      solarEnergy Company
-      <EcosystemBanner />
-    </Container>
+    <SolarEnergy
+      dataCover={companyConverInfo}
+      dataInstallation={companyInstallation}
+    />
   );
 };
 
