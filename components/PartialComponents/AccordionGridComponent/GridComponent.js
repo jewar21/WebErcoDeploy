@@ -3,21 +3,22 @@ import Image from "next/image";
 // component
 import ComponentTitle from "./ComponentTitle";
 
-const GridComponent = ({ headContent, bodyContent }) => {
+const GridComponent = ({ data }) => {
+  const cards = data.cards;
   return (
     <section className="gridComponentContainer">
       <div className="gridComponentImg">
         <Image
-          src={headContent.imgBackground.src}
+          src={data.imgBackground.src}
           alt="image"
           layout="fill"
           objectFit="cover"
         />
       </div>
       <div className="gridComponentContent">
-        <ComponentTitle headContent={headContent} />
+        <ComponentTitle data={data} />
         <div className="gridComponentRight">
-          {bodyContent.map((body, i) => {
+          {cards.map((body, i) => {
             return (
               <div key={i} className="gridComponentRightItem">
                 <div className="gridComponentRightItemIcon">{body.icon}</div>

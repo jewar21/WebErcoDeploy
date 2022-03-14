@@ -1,11 +1,11 @@
 import AccordionComponent from "./AccordionComponent";
 import GridComponent from "./GridComponent";
 
-const index = ({ headContent, bodyContent }) => {
+const index = ({ data }) => {
   return (
     <>
-      <AccordionComponent headContent={headContent} bodyContent={bodyContent} />
-      <GridComponent headContent={headContent} bodyContent={bodyContent} />
+      <AccordionComponent data={data} />
+      <GridComponent data={data} />
     </>
   );
 };

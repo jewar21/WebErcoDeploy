@@ -1,12 +1,12 @@
-const ComponentTitle = ({ headContent }) => {
-  const title1 = headContent.title1;
+const ComponentTitle = ({ data }) => {
+  const title1 = data.title1;
   return (
     <div className="componentTitle">
       <h3>
-        {headContent.title}
+        {data.title}
         {title1 && <span>{title1}</span>}
       </h3>
-      <p>{headContent.content}</p>
+      <p>{data.content}</p>
     </div>
   );
 };

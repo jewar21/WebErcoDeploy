@@ -3,7 +3,8 @@ import ComponentTitle from "./ComponentTitle";
 
 import { iconAdd, iconSubtrac } from "../../../content/globalData";
 
-const AccordionComponent = ({ headContent, bodyContent }) => {
+const AccordionComponent = ({ data}) => {
+  const cards = data.cards;
   const [selected, setselected] = useState(null);
 
   const toggle = (i) => {
@@ -15,9 +16,9 @@ const AccordionComponent = ({ headContent, bodyContent }) => {
   return (
     <section>
       <div className="accordionComponentContainer">
-        <ComponentTitle headContent={headContent} />
+        <ComponentTitle data={data} />
         <div className="pt-12">
-          {bodyContent.map(({ title, content }, i) => {
+          {cards.map(({ title, content }, i) => {
             return (
               <div key={i} className="accordan">
                 <div

@@ -1,9 +1,6 @@
 // Data
 
-import {
-  ecoSystemContent,
-  ecoSystemHeader
-} from "../../../content/data/homeData";
+import { ecoSystemContent } from "../../../content/data/homeData";
 
 // Iconos
 
@@ -16,12 +13,13 @@ import MobileErcosystem from "./components/MobileErcosystem";
 import CardsErcosystem from "./components/CardsErcosystem";
 
 const ErcosystemHeader = () => {
+  const dataInformation = ecoSystemContent.information;
   return (
     <section>
-      <TitleContent headerData={ecoSystemHeader} />
-      <MobileErcosystem contentData={ecoSystemContent} icon={iconCheck} />
+      <TitleContent headerData={ecoSystemContent} />
+      <MobileErcosystem contentData={dataInformation} icon={iconCheck} />
       <CardsErcosystem
-        contentData={ecoSystemContent}
+        contentData={dataInformation}
         icon={iconCheck}
         phone={phoneSVG}
       />

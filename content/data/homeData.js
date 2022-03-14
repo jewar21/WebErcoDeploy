@@ -114,95 +114,94 @@ export const coverInfo = [
 
 // Ecosystem information
 
-export const ecoSystemHeader = {
+export const ecoSystemContent = {
   title: "Ecosistema de energía Erco",
-  content: "Instala un sistema de energía solar y ten el control de tu energía."
+  content:
+    "Instala un sistema de energía solar y ten el control de tu energía.",
+  information: [
+    {
+      counter: 1,
+      img: img1,
+      subtitle: "Instalación de sistemas de autogeneración",
+      items: [
+        { item: "Generar ahorros en tu factura de energía." },
+        {
+          item: "Realizar seguimiento y control de tu proyecto en tiempo real."
+        },
+        { item: "Contribuir a un futuro sostenible." }
+      ],
+      phoneImg: p01
+    },
+    {
+      counter: 2,
+      img: img2,
+      subtitle: "Control de consumos y producción de energía a través de NEU +",
+      items: [
+        { item: "Visualizar datos de consumo y generación en tiempo real." },
+        { item: "Obtener alertas por consumos atípicos." },
+        { item: "Evitar multas por consumo excesivo de energía reactiva." }
+      ],
+      phoneImg: p02
+    },
+    {
+      counter: 3,
+      img: img3,
+      subtitle: "Gestionar y operar tus sistemas de Energía Solar",
+      items: [
+        {
+          item: "Garantizar que el sistema solar trabaje al punto máximo de operación."
+        },
+        { item: "Realizar mantenimiento predictivo, preventivo y correctivo." },
+        { item: "Acompañar tu proyecto con un equipo propio y calificado." }
+      ],
+      phoneImg: p03
+    }
+  ]
 };
-
-export const ecoSystemContent = [
-  {
-    counter: 1,
-    img: img1,
-    subtitle: "Instalación de sistemas de autogeneración",
-    items: [
-      { item: "Generar ahorros en tu factura de energía." },
-      {
-        item: "Realizar seguimiento y control de tu proyecto en tiempo real."
-      },
-      { item: "Contribuir a un futuro sostenible." }
-    ],
-    phoneImg: p01
-  },
-  {
-    counter: 2,
-    img: img2,
-    subtitle: "Control de consumos y producción de energía a través de NEU +",
-    items: [
-      { item: "Visualizar datos de consumo y generación en tiempo real." },
-      { item: "Obtener alertas por consumos atípicos." },
-      { item: "Evitar multas por consumo excesivo de energía reactiva." }
-    ],
-    phoneImg: p02
-  },
-  {
-    counter: 3,
-    img: img3,
-    subtitle: "Gestionar y operar tus sistemas de Energía Solar",
-    items: [
-      {
-        item: "Garantizar que el sistema solar trabaje al punto máximo de operación."
-      },
-      { item: "Realizar mantenimiento predictivo, preventivo y correctivo." },
-      { item: "Acompañar tu proyecto con un equipo propio y calificado." }
-    ],
-    phoneImg: p03
-  }
-];
 
 // Experience Erco Information
 
-export const experienceTitle = {
+export const experienceContent = {
   title: "Experiencia Erco:",
   title1: "deja todo en nuestras manos",
   content:
     "Realizamos diseño, instalación, legalización, certificados UPME y carbono cero.",
-  imgBackground: imgBackground
+  imgBackground: imgBackground,
+  cards: [
+    {
+      icon: iconCustomer,
+      title: "Acompañamiento permanente",
+      content:
+        "Un líder de experiencia te acompañará en cada una de las etapas de tu proyecto.​"
+    },
+    {
+      icon: iconShield,
+      title: "Garantía",
+      content: "10 años en mano de obra y 25 años en paneles solares.​"
+    },
+    {
+      icon: iconGroup,
+      title: "Equipos de calidad",
+      content: "Contamos con equipos de alto reconocimiento en el mercado."
+    },
+    {
+      icon: iconComputer,
+      title: "Tecnología",
+      content:
+        "Visualización y control de tus consumos de energía en tiempo real."
+    },
+    {
+      icon: iconLeaf,
+      title: "Medio ambiente",
+      content: "A través de nuestras soluciones aportas a un futuro sostenible."
+    },
+    {
+      icon: iconTrophy,
+      title: "Trayectoria",
+      content: "10 años de experiencia a nivel nacional e internacional."
+    }
+  ]
 };
-
-export const experienceContent = [
-  {
-    icon: iconCustomer,
-    title: "Acompañamiento permanente",
-    content:
-      "Un líder de experiencia te acompañará en cada una de las etapas de tu proyecto.​"
-  },
-  {
-    icon: iconShield,
-    title: "Garantía",
-    content: "10 años en mano de obra y 25 años en paneles solares.​"
-  },
-  {
-    icon: iconGroup,
-    title: "Equipos de calidad",
-    content: "Contamos con equipos de alto reconocimiento en el mercado."
-  },
-  {
-    icon: iconComputer,
-    title: "Tecnología",
-    content:
-      "Visualización y control de tus consumos de energía en tiempo real."
-  },
-  {
-    icon: iconLeaf,
-    title: "Medio ambiente",
-    content: "A través de nuestras soluciones aportas a un futuro sostenible."
-  },
-  {
-    icon: iconTrophy,
-    title: "Trayectoria",
-    content: "10 años de experiencia a nivel nacional e internacional."
-  }
-];
 
 // Clients testimonials
 
