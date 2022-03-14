@@ -1,8 +1,5 @@
-import { useMediaQuery } from "react-responsive";
-
-import { DeviceSize } from "../utils/handlers/handlers";
-
 // Components
+
 import Container from "../components/Navigation/Container";
 import Cover from "../components/Home/Cover/Cover";
 import Ercosystem from "../components/Home/Ercosystem/Ercosystem";
@@ -12,13 +9,11 @@ import StatisticsBanner from "../components/Home/StatisticsBanner/StatisticsBann
 import EcosystemBanner from "../components/PartialComponents/EcosystemBanner/EcosystemBanner";
 
 const Home = () => {
-  const isMobileVar = useMediaQuery({ maxWidth: DeviceSize.mobile });
-
   return (
     <Container>
       <Cover />
-      <Ercosystem isMobile={isMobileVar} />
-      <ErcoExperience isMobile={isMobileVar} />
+      <Ercosystem />
+      <ErcoExperience />
       <Customers />
       <StatisticsBanner />
       <EcosystemBanner />

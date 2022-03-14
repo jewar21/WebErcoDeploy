@@ -2,7 +2,10 @@ import React from "react";
 
 // data
 
-import { stepsSolarEnergy } from "../../content/data/servicesData";
+import {
+  stepsSolarEnergy,
+  paymentMethods
+} from "../../content/data/servicesData";
 
 // components
 
@@ -11,6 +14,7 @@ import ServicesCover from "../../components/PartialComponents/ServicesCover/Serv
 import Installation from "./components/installation";
 import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner/EcosystemBanner";
 import StepsSolarEnergy from "./components/StepsSolarEnergy";
+import PaymentMethods from "./components/PaymentMethods";
 
 const SolarEnergy = ({ dataCover, dataInstallation }) => {
   return (
@@ -19,6 +23,7 @@ const SolarEnergy = ({ dataCover, dataInstallation }) => {
       <Installation dataInstallation={dataInstallation} />
       <EcosystemBanner />
       <StepsSolarEnergy dataSteps={stepsSolarEnergy} />
+      <PaymentMethods dataPayment={paymentMethods} />
     </Container>
   );
 };

@@ -5,10 +5,8 @@ import { experienceContent } from "../../../content/data/homeData";
 // components
 import AccordionGridComponent from "../../PartialComponents/AccordionGridComponent";
 
-const ErcoExperience = ({ isMobile }) => {
-  return (
-    <AccordionGridComponent isMobile={isMobile} data={experienceContent} />
-  );
+const ErcoExperience = () => {
+  return <AccordionGridComponent data={experienceContent} />;
 };
 
 export default ErcoExperience;
