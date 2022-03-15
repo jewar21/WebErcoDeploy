@@ -3,17 +3,24 @@ import Image from "next/image";
 // component
 import ComponentTitle from "./ComponentTitle";
 
-const GridComponent = ({ data }) => {
+const GridComponent = ({ data, isImage, isColor }) => {
+  console.log("aca", isColor);
   const cards = data.cards;
   return (
-    <section className="gridComponentContainer">
+    <section
+      className={
+        isColor ? "gridComponentContainer bg-lightGrey-300" : "gridComponentContainer"
+      }
+    >
       <div className="gridComponentImg">
-        <Image
-          src={data.imgBackground.src}
-          alt="image"
-          layout="fill"
-          objectFit="cover"
-        />
+        {isImage && (
+          <Image
+            src={data.imgBackground.src}
+            alt="image"
+            layout="fill"
+            objectFit="cover"
+          />
+        )}
       </div>
       <div className="gridComponentContent">
         <ComponentTitle data={data} />

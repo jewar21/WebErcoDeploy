@@ -238,7 +238,7 @@ export const companyInstallation = {
 
 export const neuPlus = {
   title: "NEU+",
-  description:
+  content:
     "Visualiza tus consumos de energía en tiempo real, recibe notificaciones a través de inteligencia artificial.",
   cards: [
     {
@@ -273,7 +273,7 @@ export const neuPlus = {
 
 export const operationAndMaintenance = {
   title: "Operación & Mantenimiento",
-  description:
+  content:
     "Garantizamos que tu sistema solar trabaje al punto máximo de operación.",
   cards: [
     {

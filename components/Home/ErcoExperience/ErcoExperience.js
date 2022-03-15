@@ -6,7 +6,7 @@ import { experienceContent } from "../../../content/data/homeData";
 import AccordionGridComponent from "../../PartialComponents/AccordionGridComponent";
 
 const ErcoExperience = () => {
-  return <AccordionGridComponent data={experienceContent} />;
+  return <AccordionGridComponent data={experienceContent} isImage={true} />;
 };
 
 export default ErcoExperience;
