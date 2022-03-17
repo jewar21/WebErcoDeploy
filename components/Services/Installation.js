@@ -1,13 +1,14 @@
+// components
+
 import Container from "../../components/Navigation/Container";
 import ServicesCover from "../../components/PartialComponents/ServicesCover/ServicesCover";
 
-const solarEnergyInstallation = () => {
+const Installation = ({ dataInstallation }) => {
   return (
     <Container>
-      {/* <ServicesCover dataCover={dataCover} isActiveQuoteButton={true}/> */}
-      solarEnergyInstallation
+      <ServicesCover dataCover={dataInstallation} isActiveQuoteButton={false} />
     </Container>
   );
 };
 
-export default solarEnergyInstallation;
+export default Installation;

@@ -4,12 +4,13 @@ import Image from "next/image";
 import ComponentTitle from "./ComponentTitle";
 
 const GridComponent = ({ data, isImage, isColor }) => {
-  console.log("aca", isColor);
   const cards = data.cards;
   return (
     <section
       className={
-        isColor ? "gridComponentContainer bg-lightGrey-300" : "gridComponentContainer"
+        isColor
+          ? "gridComponentContainer bg-lightGrey-300"
+          : "gridComponentContainer"
       }
     >
       <div className="gridComponentImg">

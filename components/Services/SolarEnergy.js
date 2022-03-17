@@ -1,5 +1,3 @@
-import React from "react";
-
 // data
 
 import {
@@ -22,10 +20,10 @@ import PaymentMethods from "./components/PaymentMethods";
 const SolarEnergy = ({ dataCover, dataInstallation }) => {
   return (
     <Container>
-      <ServicesCover dataCover={dataCover} />
+      <ServicesCover dataCover={dataCover} isActiveQuoteButton={true}/>
       <Installation dataInstallation={dataInstallation} />
-      <AccordionGridComponent data={neuPlus} isImage={false} isColor={true} />
-      <AccordionGridComponent data={operationAndMaintenance} isImage={false} isColor={false} />
+      <AccordionGridComponent data={neuPlus} isColor={true} />
+      <AccordionGridComponent data={operationAndMaintenance} />
       <EcosystemBanner />
       <StepsSolarEnergy dataSteps={stepsSolarEnergy} />
       <PaymentMethods dataPayment={paymentMethods} />

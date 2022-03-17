@@ -1,6 +1,6 @@
 const TitleContent = ({ headerData }) => {
   return (
-    <section className="cardsEcosystemHeader">
+    <section className="TitleContent">
       <h3>{headerData.title}</h3>
       <p>{headerData.content}</p>
     </section>

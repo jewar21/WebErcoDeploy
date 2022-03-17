@@ -12,6 +12,10 @@
 @import "./Home/EcosystemBanner.css";
 @import "./Home/Customers.css";
 
+@import "./Services/installation.css";
+@import "./Services/paymentMethods.css";
+@import "./Services/stepsSolarEnergy.css";
+
 @import "./PartialComponents/PartialComponents.css";
 
 @layer base {

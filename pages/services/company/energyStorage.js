@@ -4,7 +4,7 @@ import ServicesCover from "../../../components/PartialComponents/ServicesCover/S
 const energyStorage = () => {
   return (
     <Container>
-      <ServicesCover />
+      {/* <ServicesCover dataCover={dataCover} isActiveQuoteButton={true}/> */}
       Energy Storage Company
     </Container>
   );

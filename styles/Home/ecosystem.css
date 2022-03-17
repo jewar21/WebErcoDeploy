@@ -4,13 +4,13 @@
 
 @layer components {
   /*---------------------  TitleContent --------------------- */
-  .cardsEcosystemHeader {
+  .TitleContent {
     @apply flex flex-col px-6 pt-12 lg:px-0 lg:items-center lg:pt-4.5rem;
   }
-  .cardsEcosystemHeader > h3 {
+  .TitleContent > h3 {
     @apply text-H4 lg:text-H3 text-darkGrey-900 font-bold;
   }
-  .cardsEcosystemHeader > p {
+  .TitleContent > p {
     @apply text-Subtitle w-full text-left lg:text-center lg:w-36.5rem pt-4 text-darkGrey-300;
   }
 

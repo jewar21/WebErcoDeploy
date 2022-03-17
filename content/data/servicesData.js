@@ -48,7 +48,7 @@ export const homeInstallation = {
   title: "Instalación energía solar",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel lectus tortor. Fusce ut dolor dolor. Morbi viverra bibendum risus a imperdiet.",
-  subtitle: "Instalación",
+  title1: "Instalación",
   content:
     "Instala un sistema de energía solar fotovoltaico para tu hogar y genera hasta el 100% de tus consumos energéticos.",
   cards: [
@@ -143,7 +143,7 @@ export const companyInstallation = {
   title: "Instalación energía solar",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel lectus tortor. Fusce ut dolor dolor. Morbi viverra bibendum risus a imperdiet.",
-  subtitle: "Instalación",
+  title1: "Instalación",
   content:
     "Instala un sistema de energía solar fotovoltaico para tu empresa y mejora su productividad y eficiencia energética.",
   cards: [

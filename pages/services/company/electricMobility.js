@@ -4,7 +4,7 @@ import ServicesCover from "../../../components/PartialComponents/ServicesCover/S
 const electricMobility = () => {
   return (
     <Container>
-      <ServicesCover />
+      {/* <ServicesCover dataCover={dataCover} isActiveQuoteButton={true} /> */}
       Electric Mobility Company
     </Container>
   );

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .installation-card-content {
+    @apply w-full lg:px-5.5rem flex justify-between lg:pt-8;
+  }
+  .installation-cardContent {
+    @apply lg:w-[25rem];
+  }
+  .installationImg-content {
+    @apply relative overflow-hidden w-full lg:h-[25rem] lg:rounded-[2rem];
+  }
+  .installationImg {
+    @apply absolute w-full h-full top-0 left-0;
+  }
+  .installationText-content {
+    @apply pt-8;
+  }
+  .installationText-content > h5 {
+    @apply text-H5 font-Sora font-bold text-darkGrey-900 pb-4;
+  }
+  .installationText-content > p {
+    @apply text-Body1 text-darkGrey-500;
+  }
+}
