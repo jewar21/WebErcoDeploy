@@ -45,6 +45,7 @@ export const companyConverInfo = {
 // instalación
 
 export const homeInstallation = {
+  section: 'Hogar',
   title: "Instalación energía solar",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel lectus tortor. Fusce ut dolor dolor. Morbi viverra bibendum risus a imperdiet.",
@@ -140,6 +141,7 @@ export const homeInstallation = {
 };
 
 export const companyInstallation = {
+  section: 'Empresa',
   title: "Instalación energía solar",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel lectus tortor. Fusce ut dolor dolor. Morbi viverra bibendum risus a imperdiet.",

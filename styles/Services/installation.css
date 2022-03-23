@@ -3,25 +3,43 @@
 @tailwind utilities;
 
 @layer components {
+  .installation-container {
+    @apply w-screen px-6 lg:px-5.5rem;
+  }
+  .installation-titleContent {
+    @apply flex flex-col px-6 py-12 items-center lg:py-4.5rem;
+  }
+  .installation-titleContent > h3 {
+    @apply text-H4 lg:text-H3 text-darkGrey-900 font-bold;
+  }
+  .installation-titleContent > p {
+    @apply text-Subtitle w-full text-center lg:w-36.5rem pt-4 text-darkGrey-300;
+  }
   .installation-card-content {
-    @apply w-full lg:px-5.5rem flex justify-between lg:pt-8;
+    @apply flex flex-col w-full justify-between lg:flex-row;
   }
   .installation-cardContent {
-    @apply lg:w-[25rem];
+    @apply w-[20.5rem] lg:w-96;
   }
   .installationImg-content {
-    @apply relative overflow-hidden w-full lg:h-[25rem] lg:rounded-[2rem];
+    @apply relative overflow-hidden w-full h-56 rounded-3xl lg:h-96 lg:rounded-[2rem];
   }
   .installationImg {
     @apply absolute w-full h-full top-0 left-0;
   }
   .installationText-content {
-    @apply pt-8;
+    @apply pt-6 lg:pt-8;
   }
   .installationText-content > h5 {
     @apply text-H5 font-Sora font-bold text-darkGrey-900 pb-4;
   }
   .installationText-content > p {
-    @apply text-Body1 text-darkGrey-500;
+    @apply text-Body3 pb-14 lg:pb-0 lg:text-Body1 text-darkGrey-500;
+  }
+  .installationButton-container {
+    @apply flex w-full pb-20 lg:h-10.5rem justify-center items-center;
+  }
+  .installationButton {
+    @apply flex text-Button font-Sora font-bold items-center bg-primary-500 rounded-full w-44 h-12 justify-evenly lg:w-48;
   }
 }

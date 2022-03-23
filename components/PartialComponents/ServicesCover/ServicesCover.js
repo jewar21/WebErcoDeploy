@@ -1,8 +1,8 @@
 import Image from "next/image";
 import PropTypes from "prop-types";
 
-import { useRecoilValue } from "recoil";
-import { typeServiceState } from "../../../recoil/atoms";
+// import { useRecoilValue } from "recoil";
+// import { typeServiceState } from "../../../recoil/atoms";
 
 // components
 
@@ -10,7 +10,8 @@ import ExploreButton from "../ExploreButton";
 import QuoteButton from "../QuoteButton";
 
 const ServicesCover = ({ dataCover, isActiveQuoteButton }) => {
-  const typeService = useRecoilValue(typeServiceState);
+  // const typeService = useRecoilValue(typeServiceState);
+  const section = dataCover.section;
   const title = dataCover.title;
   const content = dataCover.content;
   const image = dataCover.img;
@@ -27,7 +28,8 @@ const ServicesCover = ({ dataCover, isActiveQuoteButton }) => {
         />
       </div>
       <div className="servicesCoverContainer">
-        <span>{typeService}</span>
+        {/* <span>{typeService}</span> */}
+        <span>{section}</span>
         <h1>{title}</h1>
         <p>{content}</p>
         <div className="servicesCoverButtons">

@@ -1,14 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
+
+import { iconAdd } from "../../../content/globalData";
 
 const Installation = ({ dataInstallation }) => {
   const title = dataInstallation.title1;
-  const description = dataInstallation.description;
+  const content = dataInstallation.content;
   const cards = dataInstallation.cards;
   return (
-    <section className="w-screem">
-      <div className="TitleContent">
+    <section className="installation-container">
+      <div className="installation-titleContent">
         <h3>{title}</h3>
-        <p>{description}</p>
+        <p>{content}</p>
       </div>
       <div className="installation-card-content">
         {cards.map((card, i) => {
@@ -31,6 +34,15 @@ const Installation = ({ dataInstallation }) => {
             </div>
           );
         })}
+      </div>
+      <div className="installationButton-container">
+        <Link href="/installation" passHref>
+          {/* passHref: se utiliza cada vez que hay un componente personalizado dentro de un Link, esto es clave para el SEO */}
+          <button className="installationButton">
+            <p>Conoce más</p>
+            {iconAdd}
+          </button>
+        </Link>
       </div>
     </section>
   );

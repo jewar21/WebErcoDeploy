@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-import { useRecoilState } from "recoil";
-import { typeServiceState } from "../../../recoil/atoms";
+// import { useRecoilState } from "recoil";
+// import { typeServiceState } from "../../../recoil/atoms";
 
 import { navInfo } from "../../../content/data/homeData";
 
@@ -24,7 +24,16 @@ const ServicesPanel = () => {
   const [home, setHome] = useState(initialState);
   const [company, setCompany] = useState(initialState);
   const [opening, setopening] = useState(viewedComponent.class);
-  const [typeService, setTypeService] = useRecoilState(typeServiceState);
+  const [overCompany, setoverCompany] = useState(false);
+  // const [typeService, setTypeService] = useRecoilState(typeServiceState);
+
+  // const handleClick = (e, isCompany) => {
+  //   if (isCompany) {
+  //     setTypeService("Empresa");
+  //   } else {
+  //     setTypeService("Hogar");
+  //   }
+  // };
 
   useEffect(() => {
     const divHome = document.querySelector("#home");
@@ -35,7 +44,7 @@ const ServicesPanel = () => {
       setHome(viewedComponent);
       setCompany(initialState);
       setopening(initialState.class);
-      setTypeService("Hogar");
+      setoverCompany(false);
     });
 
     divServicesPanel.addEventListener("mouseleave", () => {
@@ -47,7 +56,7 @@ const ServicesPanel = () => {
       setHome(viewedComponent.class);
       setCompany(viewedComponent);
       setopening(initialState.class);
-      setTypeService("Empresa");
+      setoverCompany(true);
     });
 
     divServicesPanel.addEventListener("mouseleave", () => {
@@ -55,7 +64,7 @@ const ServicesPanel = () => {
       setopening(viewedComponent.class);
       setCompany(initialState);
     });
-  }, [setTypeService]);
+  }, []);
 
   return (
     <div id="servicesPanel" className="servicesPanelContent">
@@ -86,12 +95,13 @@ const ServicesPanel = () => {
             <Link
               key={i}
               href={
-                typeService === "Hogar"
-                  ? `/services/home${item.link}`
-                  : `/services/company${item.link}`
+                overCompany
+                  ? `/services/company${item.link}`
+                  : `/services/home${item.link}`
               }
             >
               <a
+                // onClick={(e) => handleClick(e, overCompany)}
                 className={
                   i === 2
                     ? `flex justify-between w-full ${company.opacity}`
