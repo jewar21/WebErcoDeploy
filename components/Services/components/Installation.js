@@ -1,12 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
+// import { useRecoilValue } from "recoil";
+// import { typeServiceState } from "../../../recoil/atoms";
+
 import { iconAdd } from "../../../content/globalData";
 
 const Installation = ({ dataInstallation }) => {
+  // const section = useRecoilValue(typeServiceState);
   const title = dataInstallation.title1;
   const content = dataInstallation.content;
   const cards = dataInstallation.cards;
+
   return (
     <section className="installation-container">
       <div className="installation-titleContent">
@@ -36,7 +41,8 @@ const Installation = ({ dataInstallation }) => {
         })}
       </div>
       <div className="installationButton-container">
-        <Link href="/installation" passHref>
+        <Link href="installation" passHref>
+        {/* <Link href={`services/${section}/installation`} passHref> */}
           {/* passHref: se utiliza cada vez que hay un componente personalizado dentro de un Link, esto es clave para el SEO */}
           <button className="installationButton">
             <p>Conoce más</p>

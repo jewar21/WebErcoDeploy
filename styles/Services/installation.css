@@ -37,7 +37,7 @@
     @apply text-Body3 pb-14 lg:pb-0 lg:text-Body1 text-darkGrey-500;
   }
   .installationButton-container {
-    @apply flex w-full pb-20 lg:h-10.5rem justify-center items-center;
+    @apply flex w-full pb-20 lg:pt-20 lg:h-10.5rem justify-center items-center;
   }
   .installationButton {
     @apply flex text-Button font-Sora font-bold items-center bg-primary-500 rounded-full w-44 h-12 justify-evenly lg:w-48;

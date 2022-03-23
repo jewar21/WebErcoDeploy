@@ -29,9 +29,9 @@ const ServicesPanel = () => {
 
   // const handleClick = (e, isCompany) => {
   //   if (isCompany) {
-  //     setTypeService("Empresa");
+  //     setTypeService("company");
   //   } else {
-  //     setTypeService("Hogar");
+  //     setTypeService("home");
   //   }
   // };
 
