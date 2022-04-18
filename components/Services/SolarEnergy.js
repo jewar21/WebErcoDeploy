@@ -5,8 +5,8 @@ import ServicesCover from "../../components/PartialComponents/ServicesCover/Serv
 import Installation from "./components/installation";
 import AccordionGridComponent from "../../components/PartialComponents/AccordionGridComponent";
 import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner/EcosystemBanner";
-import StepsSolarEnergy from "./components/StepsSolarEnergy";
-import PaymentMethods from "./components/PaymentMethods";
+import PaymentMethods from "../PartialComponents/PaymentMethods/PaymentMethods";
+import Steps from "../PartialComponents/steps/Steps";
 
 const SolarEnergy = ({
   dataCover,
@@ -24,7 +24,7 @@ const SolarEnergy = ({
       <AccordionGridComponent data={neuPlus} isColor={true} />
       <AccordionGridComponent data={operationAndMaintenance} />
       <EcosystemBanner />
-      <StepsSolarEnergy dataSteps={stepsData} />
+      <Steps dataSteps={stepsData} />
       <PaymentMethods dataPayment={paymentMethods} />
     </Container>
   );
