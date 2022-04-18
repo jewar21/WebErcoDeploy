@@ -13,7 +13,6 @@ import {
 import SolarEnergy from "../../../components/Services/SolarEnergy";
 
 const solarEnergy = () => {
-  console.log('vaaaaaaar',companyConverInfo);
   return (
     <SolarEnergy
       dataCover={companyConverInfo}

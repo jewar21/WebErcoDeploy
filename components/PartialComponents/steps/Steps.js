@@ -1,13 +1,15 @@
-const Steps = () => {
+const Steps = ({ dataSteps }) => {
+  const title = dataSteps.title;
+  const content = dataSteps.steps;
   return (
     <section>
-      <h3>Title</h3>
+      <h3>{title}</h3>
       <div>
-        {statisticsErco.map((statistic, index) => (
-          <div className="statistics" key={index}>
-            <h3>{statistic.number}</h3>
-            <p>{statistic.description}</p>
-            <spam>{statistic.info}</spam>
+        {content.map((steps, index) => (
+          <div key={index}>
+            <h3>{steps.number}</h3>
+            <p>{steps.description}</p>
+            <spam>{steps.info}</spam>
           </div>
         ))}
       </div>

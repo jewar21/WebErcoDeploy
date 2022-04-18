@@ -242,7 +242,7 @@ export const operationAndMaintenance = {
 
 export const stepsSolarEnergy = {
   title: "5 pasos para tener tu sistema de energía solar",
-  info: [
+  steps: [
     {
       number: "01",
       description: "Firma de contrato",
@@ -260,7 +260,7 @@ export const stepsSolarEnergy = {
     },
     {
       number: "04",
-      description: "RETIE",
+      description: "Legalización y RETIE",
       info: "Envío de documentación, visita de certificación y certificación."
     },
     {

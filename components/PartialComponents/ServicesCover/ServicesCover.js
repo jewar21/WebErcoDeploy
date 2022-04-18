@@ -15,7 +15,6 @@ const ServicesCover = ({ dataCover, isActiveQuoteButton }) => {
   const title = dataCover.title;
   const content = dataCover.content;
   const image = dataCover.img;
-  console.log(dataCover);
 
   return (
     <section className="servicesCoverContent">

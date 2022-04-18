@@ -1,12 +1,3 @@
-// data
-
-import {
-  stepsSolarEnergy,
-  paymentMethods,
-  neuPlus,
-  operationAndMaintenance
-} from "../../content/data/servicesData";
-
 // components
 
 import Container from "../../components/Navigation/Container";
@@ -17,7 +8,15 @@ import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner/
 import StepsSolarEnergy from "./components/StepsSolarEnergy";
 import PaymentMethods from "./components/PaymentMethods";
 
-const SolarEnergy = ({ dataCover, dataInstallation, cardsData }) => {
+const SolarEnergy = ({
+  dataCover,
+  dataInstallation,
+  cardsData,
+  stepsData,
+  paymentMethods,
+  neuPlus,
+  operationAndMaintenance
+}) => {
   return (
     <Container>
       <ServicesCover dataCover={dataCover} isActiveQuoteButton={true} />
@@ -25,7 +24,7 @@ const SolarEnergy = ({ dataCover, dataInstallation, cardsData }) => {
       <AccordionGridComponent data={neuPlus} isColor={true} />
       <AccordionGridComponent data={operationAndMaintenance} />
       <EcosystemBanner />
-      <StepsSolarEnergy dataSteps={stepsSolarEnergy} />
+      <StepsSolarEnergy dataSteps={stepsData} />
       <PaymentMethods dataPayment={paymentMethods} />
     </Container>
   );

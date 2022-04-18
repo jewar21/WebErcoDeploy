@@ -26,7 +26,6 @@ const ServicesPanel = () => {
   const [opening, setopening] = useState(viewedComponent.class);
   const [overCompany, setoverCompany] = useState(false);
   const [typeService, setTypeService] = useRecoilState(typeServiceState);
-  console.log(typeService);
 
   const handleClick = (e, isCompany) => {
     if (isCompany) {

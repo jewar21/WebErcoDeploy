@@ -1,7 +1,7 @@
-import React from "react";
+import Steps from "../../PartialComponents/steps/Steps";
 
 const StepsSolarEnergy = ({ dataSteps }) => {
-  return <div>StepsSolarEnergy</div>;
+  return <Steps dataSteps={dataSteps} />;
 };
 
 export default StepsSolarEnergy;
