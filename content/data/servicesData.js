@@ -331,7 +331,7 @@ export const electricMobility = {
 
 export const fiveStepsM = {
   title: "5 pasos para tener tu cargador eléctrico",
-  items: [
+  steps: [
     {
       number: "01",
       description: "Visita de ingeniería",
