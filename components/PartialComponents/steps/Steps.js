@@ -1,9 +1,8 @@
-import { statisticsErco } from "../../../content/data/homeData";
-
-const StatisticsBanner = () => {
+const Steps = () => {
   return (
-    <section className="statisticsBannerContainer">
-      <div className="statisticsBannerContent">
+    <section>
+      <h3>Title</h3>
+      <div>
         {statisticsErco.map((statistic, index) => (
           <div className="statistics" key={index}>
             <h3>{statistic.number}</h3>
@@ -16,4 +15,4 @@ const StatisticsBanner = () => {
   );
 };
 
-export default StatisticsBanner;
+export default Steps;

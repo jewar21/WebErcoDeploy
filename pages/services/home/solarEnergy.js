@@ -3,6 +3,7 @@
 import {
   homeConverInfo,
   homeInstallation,
+  cardsInstallation,
   neuPlus,
   operationAndMaintenance
 } from "../../../content/data/servicesData";
@@ -16,6 +17,7 @@ const solarEnergy = () => {
     <SolarEnergy
       dataCover={homeConverInfo}
       dataInstallation={homeInstallation}
+      cardsData={cardsInstallation}
     />
   );
 };

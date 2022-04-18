@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-// import { useRecoilState } from "recoil";
-// import { typeServiceState } from "../../../recoil/atoms";
+import { useRecoilState } from "recoil";
+import { typeServiceState } from "../../../recoil/atoms";
 
 import { navInfo } from "../../../content/data/homeData";
 
@@ -25,15 +25,16 @@ const ServicesPanel = () => {
   const [company, setCompany] = useState(initialState);
   const [opening, setopening] = useState(viewedComponent.class);
   const [overCompany, setoverCompany] = useState(false);
-  // const [typeService, setTypeService] = useRecoilState(typeServiceState);
+  const [typeService, setTypeService] = useRecoilState(typeServiceState);
+  console.log(typeService);
 
-  // const handleClick = (e, isCompany) => {
-  //   if (isCompany) {
-  //     setTypeService("company");
-  //   } else {
-  //     setTypeService("home");
-  //   }
-  // };
+  const handleClick = (e, isCompany) => {
+    if (isCompany) {
+      setTypeService("company");
+    } else {
+      setTypeService("home");
+    }
+  };
 
   useEffect(() => {
     const divHome = document.querySelector("#home");
@@ -101,7 +102,7 @@ const ServicesPanel = () => {
               }
             >
               <a
-                // onClick={(e) => handleClick(e, overCompany)}
+                onClick={(e) => handleClick(e, overCompany)}
                 className={
                   i === 2
                     ? `flex justify-between w-full ${company.opacity}`

@@ -10,6 +10,7 @@ import {
   RiLightbulbFlashFill,
   RiRoadsterLine,
   RiBatteryChargeLine,
+  RiBatteryLine,
   RiCustomerService2Line,
   RiShieldStarLine,
   RiGroupLine,
@@ -21,8 +22,25 @@ import {
   RiLinkedinFill,
   RiYoutubeFill,
   RiSubtractLine,
-  RiAddLine
+  RiAddLine,
+  RiBillLine,
+  RiTeamLine
 } from "react-icons/ri";
+import { FaSolarPanel } from "react-icons/fa";
+import { ImMobile } from "react-icons/im";
+import {
+  MdOutlineAddAlert,
+  MdOutlineAnalytics,
+  MdOutlinePlace
+} from "react-icons/md";
+import { FiAlertCircle } from "react-icons/fi";
+import { AiOutlineStar } from "react-icons/ai";
+import { VscTools, VscRadioTower } from "react-icons/vsc";
+import { IoGitNetworkOutline } from "react-icons/io5";
+import { BsPlug, BsLightning } from "react-icons/bs";
+import { HiOutlineLightBulb } from "react-icons/hi";
+import { TiCancelOutline } from "react-icons/ti";
+import { BiTime } from "react-icons/bi";
 
 export const iconHandler = <RiHandCoinLine />;
 export const iconComputer = <RiComputerLine />;
@@ -59,6 +77,30 @@ export const nuestroSocioImg = nuestroSocio;
 
 import phone from "../assets/imagenes/phone/phone.svg";
 export const phoneSVG = phone;
+
+// Icon Services
+
+export const iconMobile = <ImMobile />;
+export const iconAlert = <MdOutlineAddAlert />;
+export const iconTechnology = <IoGitNetworkOutline />;
+export const iconAlertCircle = <FiAlertCircle />;
+export const iconBill = <RiBillLine />;
+
+export const iconStar = <AiOutlineStar />;
+export const iconAnalytics = <MdOutlineAnalytics />;
+export const iconTools = <VscTools />;
+export const iconWorker = <RiTeamLine />;
+
+export const iconRadioTower = <VscRadioTower />;
+export const iconPlug = <BsPlug />;
+export const iconLightBulb = <HiOutlineLightBulb />;
+export const iconCancel = <TiCancelOutline />;
+export const iconTime = <BiTime />;
+export const iconPlace = <MdOutlinePlace />;
+export const iconLightning = <BsLightning />;
+export const iconSolarPanel = <FaSolarPanel />;
+
+export const iconBatteryLine = <RiBatteryLine />;
 
 // Erco logo
 

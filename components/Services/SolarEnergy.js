@@ -17,11 +17,11 @@ import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner/
 import StepsSolarEnergy from "./components/StepsSolarEnergy";
 import PaymentMethods from "./components/PaymentMethods";
 
-const SolarEnergy = ({ dataCover, dataInstallation }) => {
+const SolarEnergy = ({ dataCover, dataInstallation, cardsData }) => {
   return (
     <Container>
-      <ServicesCover dataCover={dataCover} isActiveQuoteButton={true}/>
-      <Installation dataInstallation={dataInstallation} />
+      <ServicesCover dataCover={dataCover} isActiveQuoteButton={true} />
+      <Installation dataInstallation={dataInstallation} cardsData={cardsData} />
       <AccordionGridComponent data={neuPlus} isColor={true} />
       <AccordionGridComponent data={operationAndMaintenance} />
       <EcosystemBanner />
