@@ -18,7 +18,7 @@
   .statistics > p {
     @apply text-lightGrey-100 text-lg lg:pt-2;
   }
-  .statistics > spam {
+  .statistics > span {
     @apply text-lightGrey-300 text-sm font-IBM lg:pt-6;
   }
 }

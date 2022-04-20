@@ -100,4 +100,29 @@
   .exploreButton > p {
     @apply font-Sora text-base font-semibold text-lightGrey-100 tracking-wide;
   }
+
+  .stepsContainer {
+    @apply w-screen bg-lightGrey-300;
+  }
+  .stepsContent {
+    @apply lg:px-5.5rem lg:py-6.5rem;
+  }
+  .stepsContent > h3 {
+    @apply text-H3 font-bold text-darkGrey-900 lg:w-2/4;
+  }
+  .steps {
+    @apply flex justify-between lg:py-14;
+  }
+  .stepInfo {
+    @apply lg:w-12.5rem;
+  }
+  .stepInfo > h3 {
+    @apply text-H1 font-extrabold font-Sora text-primary-500;
+  }
+  .stepInfo > p {
+    @apply text-H5 font-bold text-darkGrey-900 lg:h-24 lg:pt-4;
+  }
+  .stepInfo > span {
+    @apply text-Body2 font-Regular text-darkGrey-900 lg:h-24 lg:pt-4;
+  }	
 }

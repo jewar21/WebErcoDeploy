@@ -4,6 +4,7 @@ import {
   companyConverInfo,
   companyInstallation,
   cardsInstallation,
+  stepsSolarEnergy,
   neuPlus,
   operationAndMaintenance
 } from "../../../content/data/servicesData";
@@ -18,6 +19,9 @@ const solarEnergy = () => {
       dataCover={companyConverInfo}
       dataInstallation={companyInstallation}
       cardsData={cardsInstallation}
+      stepsData={stepsSolarEnergy}
+      neuPlus={neuPlus}
+      operationAndMaintenance={operationAndMaintenance}
     />
   );
 };

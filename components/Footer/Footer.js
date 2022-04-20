@@ -53,9 +53,9 @@ const Footer = () => {
           <div>
             <p className="footerInfoLeft">
               Cra 49 # 61 Sur 540 Bodega 106
-              <spam className="block lg:ml-1 lg:inline">
+              <span className="block lg:ml-1 lg:inline">
                 Medellín, Antioquia.
-              </spam>
+              </span>
             </p>
           </div>
           <div className="footerInfoRight">

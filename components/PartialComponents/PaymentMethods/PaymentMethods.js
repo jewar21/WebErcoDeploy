@@ -1,6 +1,9 @@
+// data
+import { paymentMethods as dataPayment } from "../../../content/data/servicesData";
+
 import QuoteButton from "../../PartialComponents/QuoteButton";
 
-const PaymentMethods = ({ dataPayment }) => {
+const PaymentMethods = () => {
   return (
     <section>
       <div>

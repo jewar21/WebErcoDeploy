@@ -8,7 +8,7 @@ const StatisticsBanner = () => {
           <div className="statistics" key={index}>
             <h3>{statistic.number}</h3>
             <p>{statistic.description}</p>
-            <spam>{statistic.info}</spam>
+            <span>{statistic.info}</span>
           </div>
         ))}
       </div>

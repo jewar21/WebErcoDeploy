@@ -5,7 +5,6 @@ import {
   homeInstallation,
   cardsInstallation,
   stepsSolarEnergy,
-  paymentMethods,
   neuPlus,
   operationAndMaintenance
 } from "../../../content/data/servicesData";
@@ -21,7 +20,6 @@ const solarEnergy = () => {
       dataInstallation={homeInstallation}
       cardsData={cardsInstallation}
       stepsData={stepsSolarEnergy}
-      paymentMethods={paymentMethods}
       neuPlus={neuPlus}
       operationAndMaintenance={operationAndMaintenance}
     />
