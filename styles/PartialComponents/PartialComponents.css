@@ -106,9 +106,6 @@
   .stepsContainer {
     @apply w-screen bg-lightGrey-300;
   }
-  .globalContent {
-    @apply px-6 py-14 lg:px-5.5rem lg:py-6.5rem;
-  }
   .stepsContent > h3 {
     @apply text-H4 lg:text-H3 font-bold text-darkGrey-900 lg:w-2/4;
   }
@@ -119,15 +116,41 @@
     @apply w-[8.313rem] lg:w-12.5rem;
   }
   .stepInfo > h3 {
-    @apply text-H1 font-extrabold font-Sora text-primary-500;
+    @apply text-H3 font-bold font-Sora text-primary-500 lg:text-H1 lg:font-extrabold;
   }
   .stepInfo > p {
-    @apply text-H5 font-bold text-darkGrey-900 lg:h-24 lg:pt-4;
+    @apply text-H5 pt-4 h-5.5rem font-bold text-darkGrey-900 lg:h-24;
   }
   .stepInfo > span {
-    @apply text-Body2 font-Regular text-darkGrey-900 lg:h-24 lg:pt-4;
+    @apply text-Body3 font-Regular text-darkGrey-900 lg:h-24 lg:pt-4 lg:text-Body2 ;
   }	
   .stepsSwiper {
     @apply lg:hidden pt-10;
+  }
+
+  .paymentContainer {
+    @apply w-screen bg-darkGrey-700;
+  }
+  .paymentContent {
+    @apply lg:flex lg:justify-between;
+  }
+  .paymentText {
+    @apply text-lightGrey-100;
+  }
+  .paymentText > h3 {
+    @apply text-H5 font-bold lg:text-H3;
+  }
+  .paymentText > p {
+    @apply text-Body1 font-Regular font-IBM pt-4;
+  }
+  .paymentText > span {
+    @apply text-Body1 font-bold font-IBM;
+  }
+  .paymentButton {
+    @apply pt-10;
+  }
+
+  .globalContent {
+    @apply px-6 py-14 lg:px-5.5rem lg:py-6.5rem;
   }
 }

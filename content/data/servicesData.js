@@ -255,7 +255,7 @@ export const stepsSolarEnergy = {
     },
     {
       number: "03",
-      description: "instalación",
+      description: "Instalación",
       info: "De estructuras, paneles, inversor e instalación de acometidas DC, AC."
     },
     {
