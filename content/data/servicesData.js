@@ -28,13 +28,13 @@ import imgCoverHomeE from "../../assets/imagenes/Hogar/EnergiaSolar/BannerEnergi
 import imghomeE1 from "../../assets/imagenes/Hogar/EnergiaSolar/HogarInterconectado.png";
 import imghomeE2 from "../../assets/imagenes/Hogar/EnergiaSolar/HogarHibrido.png";
 import imghomeE3 from "../../assets/imagenes/Hogar/EnergiaSolar/HogarAisldo.png";
+import imgCoverInstallationHome from "../../assets/imagenes/Instalacion/BannerInstalacionHogar.jpg";
 
 import imgCoverCompanyE from "../../assets/imagenes/Empresas/EnergiaSolar/BannerEnergiaSolarEmpresa.jpg";
 import imgCompanyE1 from "../../assets/imagenes/Empresas/EnergiaSolar/EmpresaInterconectado.png";
 import imgCompanyE2 from "../../assets/imagenes/Empresas/EnergiaSolar/EmpresaHibrido.png";
 import imgCompanyE3 from "../../assets/imagenes/Empresas/EnergiaSolar/EmpresaAislado.png";
-
-// import imgCoverInstallationE from "../../assets/imagenes/Instalaciones/EnergiaSolar/BannerEnergiaSolarInstalaciones.png";
+import imgCoverInstallationCompany from "../../assets/imagenes/Instalacion/BannerInstalacionEmpresa.jpg";
 
 import imgCoverMobilityH from "../../assets/imagenes/Hogar/MovilidadElectrica/BannerMovilidadElectrica.jpg";
 import imgHomeM1 from "../../assets/imagenes/Hogar/MovilidadElectrica/MovilidadElectrica.jpeg";
@@ -65,6 +65,7 @@ export const companyConverInfo = {
 // instalación
 
 export const homeInstallation = {
+  img: imgCoverInstallationHome,
   title: "Instalación energía solar",
   description:
     "¡Deja que tu proyecto solar esté en manos de expertos! Nos encargamos del diseño, instalación y puesta en marcha de tu sistema de energía solar. ",
@@ -74,6 +75,7 @@ export const homeInstallation = {
 };
 
 export const companyInstallation = {
+  img: imgCoverInstallationCompany,
   title: "Instalación energía solar",
   description:
     "¡Deja que tu proyecto solar esté en manos de expertos! Nos encargamos del diseño, instalación y puesta en marcha de tu sistema de energía solar. ",

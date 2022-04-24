@@ -42,4 +42,40 @@
   .installationButton {
     @apply flex text-Button font-Sora font-bold items-center bg-primary-500 rounded-full w-44 h-12 justify-evenly lg:w-48;
   }
+
+  /* -------------------------- globalView -------------------------- */
+
+  .cardIntallation {
+    @apply flex flex-col items-center w-full py-14 lg:py-[5.75rem];
+  }
+  .cardTitle {
+    @apply flex flex-col items-center text-center;
+  }
+  .cardTitle > h3 {
+    @apply text-H4 font-bold text-darkGrey-900 lg:text-H3;
+  }
+  .cardTitle > p {
+    @apply text-Subtitle font-Regular text-darkGrey-300 pt-4 pb-12 lg:text-xl lg:w-38.7rem;
+  }
+  .cardImg {
+    @apply relative overflow-hidden w-[20.5rem] h-[14rem] rounded-3xl px-6 lg:w-[65.5rem] lg:h-32rem lg:rounded-[2rem];
+  }
+  .cardItemGrid {
+    @apply lg:grid lg:grid-cols-2 lg:gap-6 lg:pt-12;
+  }
+  .cardItem {
+    @apply flex pt-12 lg:w-32rem;
+  }
+  .cardItemIcon {
+    @apply text-5xl text-primary-500 pr-6 lg:text-7xl lg:pr-10;
+  }
+  .cardItemText > h5 {
+    @apply text-H6 font-bold text-darkGrey-900 lg:text-H5;
+  }
+  .cardItemText > p {
+    @apply text-Body3 font-Regular text-darkGrey-900 pt-1 lg:text-Body1 lg:pt-2;
+  }
+  .cardQuoteButton {
+    @apply flex justify-center w-full pt-12 lg:pt-28;
+  }
 }

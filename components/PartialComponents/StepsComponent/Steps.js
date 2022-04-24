@@ -9,7 +9,7 @@ const Steps = ({ dataSteps }) => {
     <section className="stepsContainer">
       <div className="stepsContent globalContent">
         <h3>{title}</h3>
-        <div className="steps">
+        <div className="stepsDiv">
           {content.map((step, index) => (
             <div className="stepInfo" key={index}>
               <h3>{step.number}</h3>

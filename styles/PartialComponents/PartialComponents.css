@@ -109,7 +109,7 @@
   .stepsContent > h3 {
     @apply text-H4 lg:text-H3 font-bold text-darkGrey-900 lg:w-2/4;
   }
-  .steps {
+  .stepsDiv {
     @apply hidden lg:flex justify-between lg:py-14;
   }
   .stepInfo {

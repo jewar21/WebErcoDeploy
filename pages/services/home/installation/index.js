@@ -1,9 +1,13 @@
-import React from 'react'
+// data
+
+import { homeInstallation } from "../../../../content/data/servicesData";
+
+// components
+
+import InstallationPage from "../../../../components/Services/InstallationPage";
 
 const index = () => {
-  return (
-    <div>index</div>
-  )
-}
+  return <InstallationPage dataInstallation={homeInstallation} />;
+};
 
-export default index
+export default index;

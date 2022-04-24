@@ -4,14 +4,10 @@ import { companyInstallation } from "../../../../content/data/servicesData";
 
 // components
 
-import Installation from "../../../../components/Services/Installation";
+import InstallationPage from "../../../../components/Services/InstallationPage";
 
 const index = () => {
-  return (
-    <>
-      <Installation dataInstallation={companyInstallation} />
-    </>
-  );
+  return <InstallationPage dataInstallation={companyInstallation} />;
 };
 
 export default index;

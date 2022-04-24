@@ -6,7 +6,7 @@ import Installation from "./components/installation";
 import AccordionGridComponent from "../../components/PartialComponents/AccordionGridComponent";
 import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner/EcosystemBanner";
 import PaymentMethods from "../PartialComponents/PaymentMethods/PaymentMethods";
-import Steps from "../PartialComponents/steps/Steps";
+import Steps from "../PartialComponents/StepsComponent/Steps";
 
 const SolarEnergy = ({
   dataCover,
