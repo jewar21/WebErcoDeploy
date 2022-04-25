@@ -1,6 +1,9 @@
 import Link from "next/link";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
+
+import { useRecoilState } from "recoil";
+import { mobilePanelServiceState } from "../../../recoil/atoms";
 
 import { useMediaQuery } from "react-responsive";
 import { OverlayPanel } from "primereact/overlaypanel";
@@ -10,11 +13,16 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import { DeviceSize } from "../../../utils/handlers/handlers";
 import { co, pa, us } from "../../../content/data/homeData";
 
+// components
+
 import ServicesPanel from "./ServicesPanel";
+import ServicesPanelMobile from "./ServicesPanelMobile";
 
 const NavLinks = () => {
   const op = useRef(null);
   const isTablet = useMediaQuery({ maxWidth: DeviceSize.tablet });
+  const [isOpenPenal, setOpenPanel] = useRecoilState(mobilePanelServiceState);
+
   return (
     <div className="navLinksContainer">
       <ul className="contentUl">
@@ -24,8 +32,13 @@ const NavLinks = () => {
         {isTablet ? (
           <div className="flex justify-between navLinksActiveMobile">
             <p>Servicios</p>
-            <button>
-              <RiArrowRightLine className="w-8 h-8 text-primary-500" />
+            <button
+              type="button"
+              onClick={() => {
+                setOpenPanel(!isOpenPenal);
+              }}
+            >
+              <RiArrowRightLine className="iconArrow" />
             </button>
           </div>
         ) : (
@@ -78,6 +91,7 @@ const NavLinks = () => {
           </div>
         </div>
       )}
+      {isOpenPenal && <ServicesPanelMobile />}
     </div>
   );
 };

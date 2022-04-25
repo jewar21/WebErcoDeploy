@@ -41,6 +41,6 @@
     @apply relative font-IBM text-xs font-normal text-lightGrey-100/60;
   }
   .nuestroSocioImg {
-    @apply w-6.5rem h-8 lg:w-40 lg:h-10;
+    @apply w-[9rem] h-auto lg:w-40 lg:h-10;
   }
 }

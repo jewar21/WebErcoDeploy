@@ -47,6 +47,39 @@
     @apply flex justify-center items-center rounded-full w-10 h-10;
   }
 
+  /*------------------------------- Mobile services panel   -------------------------------*/
+
+  .servicesPanelMobileContent {
+    @apply absolute top-0 left-0 bg-lightGrey-100 h-screen w-screen lg:hidden;
+  }
+  .servicesPanelMobileContainer {
+    @apply px-10 pt-8;
+  }
+  .servicesPanelMobileButton {
+    @apply flex pb-8;
+  }
+  .iconArrow {
+    @apply w-8 h-8 text-primary-500;
+  }
+  .servicesReturn {
+    @apply text-base font-IBM font-bold text-darkGrey-900;
+  }
+  .companyContent {
+    @apply border-y-4 border-dotted;
+  }
+  .companyContainer {
+    @apply py-10;
+  }
+  .titleSection {
+    @apply text-base font-IBM font-bold text-darkGrey-900;
+  }
+  .companyLink {
+    @apply block text-base font-Sora font-Regular text-darkGrey-300 pt-10;
+  }
+  .homeContainer {
+    @apply pt-10;
+  }	
+
   /*------------------------------- Services panel  -------------------------------*/
 
   .servicesPanelContent {

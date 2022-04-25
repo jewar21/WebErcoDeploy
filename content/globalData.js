@@ -2,6 +2,7 @@
 
 import {
   RiArrowRightLine,
+  RiArrowLeftLine,
   RiArrowRightSLine,
   RiHandCoinLine,
   RiComputerLine,
@@ -54,6 +55,7 @@ export const iconGroup = <RiGroupLine />;
 export const iconTrophy = <RiTrophyLine />;
 
 export const iconArrow = <RiArrowRightLine />;
+export const iconArrowL = <RiArrowLeftLine />;
 export const iconArrowRight = <RiArrowRightSLine />;
 
 export const iconCheck = <RiCheckFill />;
