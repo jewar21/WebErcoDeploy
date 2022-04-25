@@ -6,7 +6,7 @@ import { companyLogos } from "../../../content/data/homeData.js";
 
 const Customers = () => {
   return (
-    <section className="customers-container">
+    <section className="customersContent">
       <h3>{testimonials.title}</h3>
       <Testimonials testimonials={testimonials} />
       <Brands companyLogos={companyLogos} />

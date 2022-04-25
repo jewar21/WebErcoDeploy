@@ -5,15 +5,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
+import { useMediaQuery } from "react-responsive";
+import { DeviceSize } from "../../../../utils/handlers/handlers";
+
 import { Autoplay } from "swiper";
 
 const Brands = ({ companyLogos }) => {
+  const isMobile = useMediaQuery({ maxWidth: DeviceSize.mobile });
   return (
     <div className="lg:p-5.5rem ">
       <Swiper
         // effect={"coverflow"}
-        slidesPerView={6}
-        spaceBetween={32}
+        slidesPerView={isMobile ? 2 : 6}
+        spaceBetween={24}
         centeredSlides={true}
         autoplay={{
           delay: 4000,
@@ -34,13 +38,17 @@ const Brands = ({ companyLogos }) => {
           const image = e.logo.src;
           return (
             <SwiperSlide key={i}>
-              <div className="brandsImg">
-                <Image
-                  src={image}
-                  alt="Picture of the brand"
-                  layout="fill"
-                  objectFit="fill"
-                />
+              <div className="grid grid-rows-2">
+                <div className="brandsImgR">
+                  <div className="brandsImgA">
+                    <Image
+                      src={image}
+                      alt="Picture of the brand"
+                      layout="fill"
+                      objectFit="fill"
+                    />
+                  </div>
+                </div>
               </div>
             </SwiperSlide>
           );

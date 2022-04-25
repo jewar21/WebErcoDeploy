@@ -3,38 +3,50 @@
 @tailwind utilities;
 
 @layer components {
-  .customers-container {
+  .customersContent {
     @apply flex flex-col bg-lightGrey-300;
   }
-  .customers-container > h3 {
-    @apply w-full text-center lg:py-20 text-H4 lg:text-H3 text-darkGrey-900 font-bold;
+  .customersContent > h3 {
+    @apply w-full pt-14 px-6 text-H4 text-darkGrey-900 font-bold lg:text-center lg:py-20 lg:text-H3;
   }
-  .swiper-container {
-    @apply lg:flex lg:w-[60rem] lg:h-[30rem] rounded-[2rem] bg-lightGrey-100;
+  .testimonialsContainer {
+    @apply flex w-screen pt-10;
   }
-  .swiper-container-img {
-    @apply lg:w-2/4 rounded-l-[2rem] bg-red-200;
+  .swiperMobileContent {
+    @apply w-80 rounded-[2rem] bg-lightGrey-100 lg:hidden;
   }
-  .swiper-container-desc {
-    @apply lg:flex lg:flex-col justify-between lg:w-3/5 lg:px-4.5rem lg:py-16;
+  .swiperMobileContainer {
+    @apply p-6;
   }
-  .swiper-title {
-    @apply lg:flex;
+  .swiperText {
+    @apply text-darkGrey-700 text-Body2;
   }
-  .swiper-client {
-    @apply lg:w-12 lg:h-12 lg:mr-4 rounded-full bg-blue-800;
+  .swiperClientInfo {
+    @apply flex py-6 items-center;
   }
-  .swiper-client-name {
-    @apply text-darkGrey-700 font-bold font-IBM lg:text-base;
+  .swiperClientImgR {
+    @apply relative overflow-hidden w-12 h-12 rounded-full bg-blue-300;
   }
-  .swiper-text {
-    @apply text-darkGrey-700 text-Body2 lg:text-lg;
+  .swiperClientImgA {
+    @apply absolute w-full h-full top-0 left-0;
   }
-  .swiper-logo {
-    @apply lg:w-[8.375rem] lg:h-[3.75rem] lg:bg-blue-200;
+  .swiperClientName {
+    @apply text-sm pl-4 text-darkGrey-700 font-bold font-IBM;
   }
-  .brandsImg {
-    @apply h-16;
+  .swiperBrandR {
+    @apply relative w-24 h-10;
+  }
+  .swiperBrandA {
+    @apply absolute w-full h-full top-0 left-0;
+  }
+
+  /* -----------------------Brands-------------------- */
+
+  .brandsImgR {
+    @apply relative w-36 h-14;
+  }
+  .brandsImgA {
+    @apply absolute w-full h-full top-0 left-0;
   }
 }
 
@@ -50,6 +62,7 @@
 /* .swiper-button-prev,
 .swiper-rtl .swiper-button-next {
 } */
-.swiper-button-next:after, .swiper-button-prev:after {
+.swiper-button-next:after,
+.swiper-button-prev:after {
   font-family: none;
 }
