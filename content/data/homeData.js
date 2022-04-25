@@ -362,7 +362,7 @@ export const statisticsErco = [
     info: "Colombia, Panamá y Estados Unidos."
   },
   {
-    number: "17 MWp",
+    number: "37 MWp",
     description: "Instalados",
     info: "Proyectos residenciales, comerciales e industriales y gran escala."
   }

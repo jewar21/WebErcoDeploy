@@ -71,7 +71,21 @@ export const homeInstallation = {
     "¡Deja que tu proyecto solar esté en manos de expertos! Nos encargamos del diseño, instalación y puesta en marcha de tu sistema de energía solar. ",
   title1: "Instalación",
   content:
-    "Instala un sistema de energía solar fotovoltaico para tu hogar y genera hasta el 100% de tus consumos energéticos."
+    "Instala un sistema de energía solar fotovoltaico para tu hogar y genera hasta el 100% de tus consumos energéticos.",
+  cardsInstallation: [
+    {
+      imgHome: imghomeE1,
+      title: "Sistema interconectado",
+      content:
+        "Estos sistemas funcionan en conjunto con la red eléctrica convencional, te permiten un flujo constante de energía y conectar cualquier equipo de tu hogar sin importar su potencia o consumo. Los sistemas interconectados no generan un respaldo de energía."
+    },
+    {
+      imgHome: imghomeE2,
+      title: "Sistema Híbrido",
+      content:
+        "Está compuesto por un sistema de energía solar y un banco de baterías que te permiten almacenar la energía producida por los paneles solares y utilizarla en cualquier momento del día, durante la noche o en caso de cortes de la energía de la red convencional."
+    }
+  ]
 };
 
 export const companyInstallation = {
@@ -81,7 +95,27 @@ export const companyInstallation = {
     "¡Deja que tu proyecto solar esté en manos de expertos! Nos encargamos del diseño, instalación y puesta en marcha de tu sistema de energía solar. ",
   title1: "Instalación",
   content:
-    "Instala un sistema de energía solar fotovoltaico para tu empresa y mejora su productividad y eficiencia energética."
+    "Instala un sistema de energía solar fotovoltaico en tu empresa para que mejores la productividad, seas más eficiente y obtengas ahorros en tu factura.",
+  cardsInstallation: [
+    {
+      imgCompany: imgCompanyE1,
+      title: "Sistema interconectado",
+      content:
+        "Son sistemas ideales para que tu empresa pueda generar ahorros hasta del 100% de la factura de energía, recuperar la inversión entre 4 a 6 años, contribuir a un futuro sostenible y acceder a beneficios tributarios. Este sistema no genera un respaldo de energía."
+    },
+    {
+      imgCompany: imgCompanyE2,
+      title: "Sistema Híbrido",
+      content:
+        "Si tienes un servicio de energía inestable y tu producción se ve afectada, el sistema híbrido es el ideal para tu empresa. Combina el sistema interconectado con el aislado, generando un respaldo de energía a la red eléctrica la cual podrás utilizar en cualquier momento del día o durante la noche."
+    },
+    {
+      imgCompany: imgCompanyE3,
+      title: "Sistema Aislado",
+      content:
+        "Si tu empresa se encuentra en una zona rural, está apartada de la red eléctrica o tiene energía inestable ¡el sistema aislado es el ideal! Este sistema almacena la energía producida en baterías que puedes utilizar en cualquier momento del día o durante la noche. Este sistema no necesita estar conectado a la red eléctrica."
+    }
+  ]
 };
 
 export const cardsInstallation = [
