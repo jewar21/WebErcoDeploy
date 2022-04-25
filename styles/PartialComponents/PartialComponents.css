@@ -89,7 +89,7 @@
     @apply text-Body2 font-Regular text-lightGrey-500 lg:text-Body1;
   }
   .servicesCoverButtons {
-    @apply flex lg:flex-row flex-col h-[25%] lg:w-[45%] justify-between pt-12;
+    @apply flex lg:flex-row flex-col h-[25%] lg:w-[55%] justify-between pt-12;
   }
 
   /*--------------------------------- ExploreButton component ---------------------------------  */
@@ -113,17 +113,17 @@
     @apply hidden lg:flex justify-between lg:py-14;
   }
   .stepInfo {
-    @apply w-[8.313rem] lg:w-12.5rem;
+    @apply w-[8.313rem] lg:w-52;
   }
   .stepInfo > h3 {
     @apply text-H3 font-bold font-Sora text-primary-500 lg:text-H1 lg:font-extrabold;
   }
   .stepInfo > p {
-    @apply text-H5 pt-4 h-5.5rem font-bold text-darkGrey-900 lg:h-24;
+    @apply text-H5 pt-4 h-5.5rem font-bold text-darkGrey-900 lg:text-2xl lg:h-28;
   }
   .stepInfo > span {
-    @apply text-Body3 font-Regular text-darkGrey-900 lg:h-24 lg:pt-4 lg:text-Body2 ;
-  }	
+    @apply text-Body3 font-Regular text-darkGrey-900 lg:h-24 lg:pt-4 lg:text-Body2;
+  }
   .stepsSwiper {
     @apply lg:hidden pt-10;
   }
@@ -152,5 +152,41 @@
 
   .globalContent {
     @apply px-6 py-14 lg:px-5.5rem lg:py-6.5rem;
+  }
+
+  /* ------------------------------ Mobility component ------------------------------ */
+
+  .mobilityContent {
+    @apply py-6;
+  }
+  .mobilityContainer {
+    @apply w-full px-6 lg:px-5.5rem;
+  }
+  .mobilityCard {
+    @apply flex justify-around lg:py-5.25rem;
+  }
+  .mobilityItemImgR {
+    @apply relative overflow-hidden w-[20.5rem] h-[13.9rem] lg:w-[30.5rem] lg:h-[20.5rem] rounded-2xl bg-blue-300;
+  }
+  .mobilityItemImgA {
+    @apply absolute w-full h-full top-0 left-0;
+  }
+  .mobilityCardContent {
+    @apply pt-6 lg:pt-0;
+  }
+  .mobilityTitle > h3 {
+    @apply text-H5 py-8 lg:text-H4 font-bold text-darkGrey-900;
+  }
+  .mobilityTitle > p {
+    @apply text-Body2 lg:text-Body1 font-Regular text-darkGrey-500 lg:w-[30.5rem];
+  }
+  .infoChargeContainer {
+    @apply flex items-center pt-8;
+  }
+  .battery {
+    @apply text-4xl pr-4 text-primary-500 lg:text-7xl;
+  }
+  .infoCharge > span {
+    @apply block text-sm font-semibold text-darkGrey-500 lg:text-lg;
   }
 }

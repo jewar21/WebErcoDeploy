@@ -317,12 +317,20 @@ export const paymentMethods = {
 
 // Mobility
 
-export const electricMobility = {
-  bannerHome: imgCoverMobilityH,
-  bannerCompany: imgCoverMobilityE,
-  title: "Movilidad eléctrica",
-  content:
-    "Infraestructura e instalación de equipos para recarga de vehículos eléctricos e híbridos.",
+export const electricMobilityData = {
+  bannerHome: {
+    img: imgCoverMobilityH,
+    title: "Movilidad eléctrica",
+    content:
+      "Infraestructura e instalación de equipos para recarga de vehículos eléctricos e híbridos."
+  },
+  bannerCompany: {
+    img: imgCoverMobilityE,
+    title: "Movilidad eléctrica",
+    content:
+      "Infraestructura e instalación de equipos para recarga de vehículos eléctricos e híbridos."
+  },
+  
   iconBattery: iconBattery,
   iconBatteryL: iconBatteryLine,
   var1: "Carga rápida",
