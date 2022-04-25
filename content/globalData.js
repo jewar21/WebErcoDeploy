@@ -25,7 +25,9 @@ import {
   RiSubtractLine,
   RiAddLine,
   RiBillLine,
-  RiTeamLine
+  RiTeamLine,
+  RiMailLine,
+  RiPhoneFill
 } from "react-icons/ri";
 import { FaSolarPanel } from "react-icons/fa";
 import { ImMobile } from "react-icons/im";
@@ -71,6 +73,9 @@ export const iconInstagram = <RiInstagramLine />;
 export const iconFacebook = <RiFacebookBoxFill />;
 export const iconLinkedIn = <RiLinkedinFill />;
 export const iconYoutube = <RiYoutubeFill />;
+
+export const iconMail = <RiMailLine />;
+export const iconPhone = <RiPhoneFill />;
 
 //
 

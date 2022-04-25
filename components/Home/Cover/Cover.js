@@ -16,6 +16,7 @@ const Cover = () => {
         <video
           className="object-cover w-full h-screen absolute -z-50"
           src="/cover.m4v"
+          // src="/cover.mp4"
           autoPlay
           loop
           muted

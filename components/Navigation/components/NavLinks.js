@@ -74,7 +74,7 @@ const NavLinks = () => {
         <Link href="/">
           <a className="navLinksActive navLinksActiveMobile">Blog</a>
         </Link>
-        <Link href="/">
+        <Link href="/contactUs">
           <a className="navLinksActive navLinksActiveMobile">Contacto</a>
         </Link>
       </ul>
