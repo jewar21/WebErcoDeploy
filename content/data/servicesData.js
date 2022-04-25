@@ -43,6 +43,8 @@ import imgCoverMobilityE from "../../assets/imagenes/Empresas/MovilidadElectrica
 import imgCompanyM1 from "../../assets/imagenes/Empresas/MovilidadElectrica/MovilidadSostenible.jpeg";
 
 import imgCoverStorage from "../../assets/imagenes/Empresas/Almacenamiento/BannerAE.jpg";
+import imghome from "../../assets/imagenes/Empresas/Almacenamiento/AEhogar.jpg";
+import imgCompany from "../../assets/imagenes/Empresas/Almacenamiento/AEempresas.jpg";
 
 // cover info
 
@@ -330,7 +332,7 @@ export const electricMobilityData = {
     content:
       "Infraestructura e instalación de equipos para recarga de vehículos eléctricos e híbridos."
   },
-  
+
   iconBattery: iconBattery,
   iconBatteryL: iconBatteryLine,
   var1: "Carga rápida",
@@ -404,9 +406,54 @@ export const fiveStepsM = {
   ]
 };
 
-export const energyStorage = {
+export const energyStorageData = {
   img: imgCoverStorage,
   title: "Movilidad eléctrica",
   content:
-    "No estamos exentos de cortes de energía, por esto, si quieres asegurar el funcionamiento de tus equipos y no parar la producción de tu empresa, ¡Este sistema es ideal para ti!"
+    "No estamos exentos de cortes de energía, por esto, si quieres asegurar el funcionamiento de tus equipos y no parar la producción de tu empresa, ¡Este sistema es ideal para ti!",
+  items: [
+    {
+      img: imghome,
+      title: "Para tu hogar:",
+      content:
+        "Almacena tu energía eléctrica proveniente de la red convencional en baterías y úsala en caso de cortes o fallas energéticas de la red."
+    },
+    {
+      img: imgCompany,
+      title: "Para tu empresa:",
+      content:
+        "Almacena la energía de tu empresa proveniente de la red eléctrica en un banco de baterías. Aprovecha esta energía en cualquier momento del día o durante la noche."
+    }
+  ]
+};
+
+export const fiveStepsS = {
+  title: "5 pasos para tener tu sistema de respaldo",
+  steps: [
+    {
+      number: "01",
+      description: "Diagnóstico",
+      info: "Análisis de cargas, consumos y tiempo de respaldo."
+    },
+    {
+      number: "02",
+      description: "Diseño",
+      info: "Visita y diseño de propuesta para la autonomía de tu sistema de respaldo."
+    },
+    {
+      number: "03",
+      description: "Ingeniería",
+      info: "Ingeniería de detalle y compra de equipos."
+    },
+    {
+      number: "04",
+      description: "Instalación y legalización",
+      info: "Instalación de paneles y banco de baterías, envio de documentación y certificación."
+    },
+    {
+      number: "05",
+      description: "Disfruta tu energía",
+      info: "Entrega de tu sistema y capacitación de la App de monitoreo."
+    }
+  ]
 };

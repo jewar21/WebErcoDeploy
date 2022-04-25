@@ -21,7 +21,7 @@ const InstallationPage = ({ dataInstallation }) => {
       <InstallationGeneralView dataCards={cardsInstallation} />
       <EcosystemBanner />
       <Steps dataSteps={stepsSolarEnergy} />
-      <PaymentMethods dataPayment={paymentMethods} />
+      <PaymentMethods colorPrimary={false} />
     </Container>
   );
 };

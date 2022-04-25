@@ -134,9 +134,6 @@
   .paymentContent {
     @apply lg:flex lg:justify-between;
   }
-  .paymentText {
-    @apply text-lightGrey-100;
-  }
   .paymentText > h3 {
     @apply text-H5 font-bold lg:text-H3;
   }

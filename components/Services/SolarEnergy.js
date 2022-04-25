@@ -13,7 +13,6 @@ const SolarEnergy = ({
   dataInstallation,
   cardsData,
   stepsData,
-  paymentMethods,
   neuPlus,
   operationAndMaintenance
 }) => {
@@ -25,7 +24,7 @@ const SolarEnergy = ({
       <AccordionGridComponent data={operationAndMaintenance} />
       <EcosystemBanner />
       <Steps dataSteps={stepsData} />
-      <PaymentMethods dataPayment={paymentMethods} />
+      <PaymentMethods colorPrimary={false} />
     </Container>
   );
 };
