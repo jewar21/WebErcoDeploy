@@ -16,6 +16,8 @@
 @import "./Services/paymentMethods.css";
 @import "./Services/stepsSolarEnergy.css";
 
+@import "./Projects/projectsviews.css";
+
 @import "./PartialComponents/PartialComponents.css";
 
 @layer base {
