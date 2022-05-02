@@ -9,8 +9,13 @@ import { typeServiceState } from "../../../recoil/atoms";
 import ExploreButton from "../ExploreButton";
 import QuoteButton from "../QuoteButton";
 
-const GeneralCover = ({ dataCover, isActiveQuoteButton }) => {
+const GeneralCover = ({
+  dataCover,
+  isActiveQuoteButton,
+  isActiveExploreButton
+}) => {
   const typeService = useRecoilValue(typeServiceState);
+  console.log(typeService);
   const sectionType = dataCover.section;
   const title = dataCover.title;
   const content = dataCover.content;
@@ -29,7 +34,13 @@ const GeneralCover = ({ dataCover, isActiveQuoteButton }) => {
       </div>
       <div className="generalCoverContainer">
         {/* <span>{typeService}</span> */}
-        <span>{sectionType}</span>
+        <span>
+          {sectionType !== undefined
+            ? sectionType
+            : typeService === "home"
+            ? "Hogar"
+            : "Empresa"}
+        </span>
         <h1>{title}</h1>
         <p>{content}</p>
         <div className="generalCoverButtons">
@@ -42,7 +53,7 @@ const GeneralCover = ({ dataCover, isActiveQuoteButton }) => {
               isIcon={true}
             />
           )}
-          <ExploreButton />
+          {isActiveExploreButton && <ExploreButton />}
         </div>
       </div>
     </section>

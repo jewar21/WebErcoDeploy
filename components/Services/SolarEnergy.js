@@ -18,7 +18,11 @@ const SolarEnergy = ({
 }) => {
   return (
     <Container>
-      <GeneralCover dataCover={dataCover} isActiveQuoteButton={true} />
+      <GeneralCover
+        dataCover={dataCover}
+        isActiveQuoteButton={true}
+        isActiveExploreButton={true}
+      />
       <Installation dataInstallation={dataInstallation} cardsData={cardsData} />
       <AccordionGridComponent data={neuPlus} isNeu={true} />
       <AccordionGridComponent data={operationAndMaintenance} />

@@ -16,7 +16,11 @@ import InstallationGeneralView from "./components/InstallationGeneralView";
 const InstallationPage = ({ dataInstallation }) => {
   return (
     <Container>
-      <GeneralCover dataCover={dataInstallation} isActiveQuoteButton={false} />
+      <GeneralCover
+        dataCover={dataInstallation}
+        isActiveQuoteButton={false}
+        isActiveExploreButton={true}
+      />
       <InstallationGeneralView dataCards={cardsInstallation} />
       <EcosystemBanner />
       <Steps dataSteps={stepsSolarEnergy} />
