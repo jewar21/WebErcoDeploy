@@ -2,7 +2,7 @@
 
 import Container from "../../components/Navigation/Container";
 import ServicesCover from "../../components/PartialComponents/ServicesCover/ServicesCover";
-import Installation from "./components/installation";
+import Installation from "./components/Installation";
 import AccordionGridComponent from "../../components/PartialComponents/AccordionGridComponent";
 import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner/EcosystemBanner";
 import PaymentMethods from "../PartialComponents/PaymentMethods/PaymentMethods";

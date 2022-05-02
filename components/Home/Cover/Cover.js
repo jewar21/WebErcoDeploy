@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 
 // Components
-import CardsCover from "./components/cardsCover";
+import CardsCover from "./components/CardsCover";
 import QuoteButton from "../../PartialComponents/QuoteButton";
 
 // animations

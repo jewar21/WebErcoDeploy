@@ -9,7 +9,7 @@ import {
 
 import Container from "../../../components/Navigation/Container";
 import ServicesCover from "../../../components/PartialComponents/ServicesCover/ServicesCover";
-import EnergyStorageComponent from "../../../components/Services/components/energyStorageComponent";
+import EnergyStorageComponent from "../../../components/Services/components/EnergyStorageComponent";
 import Steps from "../../../components/PartialComponents/StepsComponent/Steps";
 import PaymentMethods from "../../../components/PartialComponents/PaymentMethods/PaymentMethods";
 
