@@ -1,11 +1,11 @@
 import AccordionComponent from "./AccordionComponent";
 import GridComponent from "./GridComponent";
 
-const index = ({ data, isImage, isColor }) => {
+const index = ({ data, isImage, isNeu }) => {
   return (
     <>
       <AccordionComponent data={data} />
-      <GridComponent data={data} isImage={isImage} isColor={isColor} />
+      <GridComponent data={data} isImage={isImage} isNeu={isNeu} />
     </>
   );
 };

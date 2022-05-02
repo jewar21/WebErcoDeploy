@@ -3,13 +3,13 @@ import Image from "next/image";
 // component
 import ComponentTitle from "./ComponentTitle";
 
-const GridComponent = ({ data, isImage, isColor }) => {
+const GridComponent = ({ data, isImage, isNeu }) => {
   const cards = data.cards;
   return (
     <section
       className={
-        isColor
-          ? "gridComponentContainer bg-lightGrey-300"
+        isNeu
+          ? "gridComponentContainer bg-darkGrey-900"
           : "gridComponentContainer"
       }
     >
@@ -24,13 +24,19 @@ const GridComponent = ({ data, isImage, isColor }) => {
         )}
       </div>
       <div className="gridComponentContent">
-        <ComponentTitle data={data} />
+        <ComponentTitle data={data} isNeu={isNeu} />
         <div className="gridComponentRight">
           {cards.map((body, i) => {
             return (
               <div key={i} className="gridComponentRightItem">
                 <div className="gridComponentRightItemIcon">{body.icon}</div>
-                <div className="gridComponentRightItemText">
+                <div
+                  className={
+                    isNeu
+                      ? "gridComponentRightItemTextNeu"
+                      : "gridComponentRightItemText"
+                  }
+                >
                   <h4>{body.title}</h4>
                   <p>{body.content}</p>
                 </div>

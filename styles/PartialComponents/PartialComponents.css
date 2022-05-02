@@ -22,7 +22,7 @@
     @apply lg:w-5/6;
   }
   .componentTitle > h3 {
-    @apply text-H4 lg:text-H3 font-bold text-darkGrey-900;
+    @apply text-H4 lg:text-H3 font-bold;
   }
   .componentTitle > h3 > span {
     @apply block;
@@ -44,6 +44,15 @@
   }
   .gridComponentRightItemText > p {
     @apply text-Body1 text-darkGrey-700 pt-2;
+  }
+  .gridComponentRightItemTextNeu {
+    @apply pt-10;
+  }
+  .gridComponentRightItemTextNeu > h4 {
+    @apply text-H5 font-bold text-lightGrey-100;
+  }
+  .gridComponentRightItemTextNeu > p {
+    @apply text-Body1 text-lightGrey-700 pt-2;
   }
 
   .accordionComponentContainer {

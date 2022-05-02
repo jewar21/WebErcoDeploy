@@ -20,7 +20,7 @@ const SolarEnergy = ({
     <Container>
       <ServicesCover dataCover={dataCover} isActiveQuoteButton={true} />
       <Installation dataInstallation={dataInstallation} cardsData={cardsData} />
-      <AccordionGridComponent data={neuPlus} isColor={true} />
+      <AccordionGridComponent data={neuPlus} isNeu={true} />
       <AccordionGridComponent data={operationAndMaintenance} />
       <EcosystemBanner />
       <Steps dataSteps={stepsData} />
