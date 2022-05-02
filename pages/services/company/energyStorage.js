@@ -8,7 +8,7 @@ import {
 // components
 
 import Container from "../../../components/Navigation/Container";
-import ServicesCover from "../../../components/PartialComponents/ServicesCover/ServicesCover";
+import GeneralCover from "../../../components/PartialComponents/GeneralCover/GeneralCover";
 import EnergyStorageComponent from "../../../components/Services/components/EnergyStorageComponent";
 import Steps from "../../../components/PartialComponents/StepsComponent/Steps";
 import PaymentMethods from "../../../components/PartialComponents/PaymentMethods/PaymentMethods";
@@ -16,7 +16,7 @@ import PaymentMethods from "../../../components/PartialComponents/PaymentMethods
 const energyStorage = () => {
   return (
     <Container>
-      <ServicesCover dataCover={energyStorageData} isActiveQuoteButton={true} />
+      <GeneralCover dataCover={energyStorageData} isActiveQuoteButton={true} />
       <EnergyStorageComponent dataStorage={energyStorageData}/>
       <Steps dataSteps={fiveStepsS} />
       <PaymentMethods colorPrimary={true} />

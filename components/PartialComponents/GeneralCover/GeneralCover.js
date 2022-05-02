@@ -9,7 +9,7 @@ import { typeServiceState } from "../../../recoil/atoms";
 import ExploreButton from "../ExploreButton";
 import QuoteButton from "../QuoteButton";
 
-const ServicesCover = ({ dataCover, isActiveQuoteButton }) => {
+const GeneralCover = ({ dataCover, isActiveQuoteButton }) => {
   const typeService = useRecoilValue(typeServiceState);
   const sectionType = dataCover.section;
   const title = dataCover.title;
@@ -17,8 +17,8 @@ const ServicesCover = ({ dataCover, isActiveQuoteButton }) => {
   const image = dataCover.img;
 
   return (
-    <section className="servicesCoverContent">
-      <div className="servicesCoverImage">
+    <section className="generalCoverContent">
+      <div className="generalCoverImage">
         <Image
           src={image.src}
           alt="image"
@@ -27,12 +27,12 @@ const ServicesCover = ({ dataCover, isActiveQuoteButton }) => {
           priority="true"
         />
       </div>
-      <div className="servicesCoverContainer">
+      <div className="generalCoverContainer">
         {/* <span>{typeService}</span> */}
         <span>{sectionType}</span>
         <h1>{title}</h1>
         <p>{content}</p>
-        <div className="servicesCoverButtons">
+        <div className="generalCoverButtons">
           {isActiveQuoteButton && (
             <QuoteButton
               buttonParameters={
@@ -49,6 +49,6 @@ const ServicesCover = ({ dataCover, isActiveQuoteButton }) => {
   );
 };
 
-ServicesCover.propTypes = { dataCover: PropTypes.object.isRequired };
+GeneralCover.propTypes = { dataCover: PropTypes.object.isRequired };
 
-export default ServicesCover;
+export default GeneralCover;

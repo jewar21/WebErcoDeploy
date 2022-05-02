@@ -1,7 +1,7 @@
 // components
 
 import Container from "../../components/Navigation/Container";
-import ServicesCover from "../../components/PartialComponents/ServicesCover/ServicesCover";
+import GeneralCover from "../PartialComponents/GeneralCover/GeneralCover";
 import Installation from "./components/Installation";
 import AccordionGridComponent from "../../components/PartialComponents/AccordionGridComponent";
 import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner/EcosystemBanner";
@@ -18,7 +18,7 @@ const SolarEnergy = ({
 }) => {
   return (
     <Container>
-      <ServicesCover dataCover={dataCover} isActiveQuoteButton={true} />
+      <GeneralCover dataCover={dataCover} isActiveQuoteButton={true} />
       <Installation dataInstallation={dataInstallation} cardsData={cardsData} />
       <AccordionGridComponent data={neuPlus} isNeu={true} />
       <AccordionGridComponent data={operationAndMaintenance} />

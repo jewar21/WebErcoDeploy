@@ -8,7 +8,7 @@ import {
 // components
 
 import Container from "../../../components/Navigation/Container";
-import ServicesCover from "../../../components/PartialComponents/ServicesCover/ServicesCover";
+import GeneralCover from "../../../components/PartialComponents/GeneralCover/GeneralCover";
 import MobilityComponent from "../../../components/PartialComponents/MobilityComponent/MobilityComponent";
 import Steps from "../../../components/PartialComponents/StepsComponent/Steps";
 import EcosystemBanner from "../../../components/PartialComponents/EcosystemBanner/EcosystemBanner";
@@ -17,7 +17,7 @@ const electricMobility = () => {
   const dataCover = electricMobilityData.bannerHome;
   return (
     <Container>
-      <ServicesCover dataCover={dataCover} isActiveQuoteButton={true} />
+      <GeneralCover dataCover={dataCover} isActiveQuoteButton={true} />
       <MobilityComponent dataMobility={electricMobilityData} />
       <Steps dataSteps={fiveStepsM} />
       <EcosystemBanner />

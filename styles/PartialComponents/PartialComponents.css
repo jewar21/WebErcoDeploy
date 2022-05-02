@@ -77,27 +77,27 @@
     @apply text-Body3 text-darkGrey-300 w-[80%] h-auto max-h-96 transition-all duration-500 ease-in-expo;
   }
 
-  /*--------------------------------- ServicesCover component ---------------------------------  */
+  /*--------------------------------- GeneralCover component ---------------------------------  */
 
-  .servicesCoverContent {
+  .generalCoverContent {
     @apply relative lg:h-38.7rem w-screen h-screen;
   }
-  .servicesCoverImage {
+  .generalCoverImage {
     @apply absolute w-full h-full -z-50;
   }
-  .servicesCoverContainer {
+  .generalCoverContainer {
     @apply flex flex-col justify-center w-full lg:w-3/4 h-full px-6 pt-[5%] lg:px-5.5rem;
   }
-  .servicesCoverContainer > span {
+  .generalCoverContainer > span {
     @apply flex items-center w-full h-8 text-sm font-IBM font-medium text-primary-300 uppercase lg:text-base;
   }
-  .servicesCoverContainer > h1 {
+  .generalCoverContainer > h1 {
     @apply flex items-center text-H3 font-extrabold text-lightGrey-100 lg:text-H1 lg:h-20;
   }
-  .servicesCoverContainer > p {
+  .generalCoverContainer > p {
     @apply text-Body2 font-Regular text-lightGrey-500 lg:text-Body1;
   }
-  .servicesCoverButtons {
+  .generalCoverButtons {
     @apply flex lg:flex-row flex-col h-[25%] lg:w-[45%] justify-between pt-12;
   }
 
