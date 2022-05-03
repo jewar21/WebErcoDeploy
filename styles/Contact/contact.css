@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .contactContent {
+    @apply relative w-screen bg-lightGrey-300;
+  }
+  .contactContainer {
+    @apply px-6 lg:px-5.5rem pt-[30%] pb-8 lg:pt-[12%] lg:pb-20;
+  }
+  .contentCardContainer {
+    @apply lg:flex w-full lg:justify-between;
+  }
+  .contactContainer > h3 {
+    @apply text-sm font-IBM font-medium text-darkGrey-100 lg:text-lg;
+  }
+  .contactContainer > h2 {
+    @apply text-H3 font-bold text-darkGrey-900 pt-4 lg:text-H1;
+  }
+  .contactContainer > p {
+    @apply text-Body2 font-Regular text-darkGrey-500 pt-4 lg:text-Body1;
+  }
+  .contactCard {
+    @apply flex flex-col items-center lg:items-start bg-lightGrey-100 border-2 border-lightGrey-300 rounded-[2rem] shadow-lg p-6 mt-6 lg:w-[22rem];
+  }
+  .contactCard > h4 {
+    @apply text-H5 font-bold text-darkGrey-900 lg:pt-8;
+  }
+  .contactCard > p {
+    @apply text-Body3 font-Regular text-darkGrey-900 py-4 lg:pt-4 lg:pb-8;
+  }
+  .contactIconCard {
+    @apply hidden lg:block text-6xl text-primary-500;
+  }
+  .contactButton {
+    @apply w-12.5rem h-12 px-2 font-semibold bg-primary-500 text-darkGrey-900;
+  }
+  .contactButtonT {
+    @apply h-12 w-12.5rem lg:h-12 border-primary-500 border-solid border-2 rounded-full text-darkGrey-900 font-semibold;
+  }
+
+  /* -------------------------------CardsCover------------------------------------------ */
+
+  .officesContent {
+    @apply relative w-screen;
+  }
+  .officesCoverImage {
+    @apply hidden absolute w-full h-full -z-50 lg:block;
+  }
+  .officesContainer {
+    @apply px-6 lg:px-5.25rem lg:py-32;
+  }
+  .officesContainer > h4 {
+    @apply text-H4 font-bold text-darkGrey-900 py-12 lg:text-H3 lg:py-0;
+  }
+  .officesInfo {
+    @apply grid grid-cols-1 gap-4 pb-12 lg:grid-cols-2 lg:gap-12 lg:pt-10 lg:pb-0;
+  }
+  .officesInfoTitle {
+    @apply text-Subtitle font-Regular text-darkGrey-900;
+  }
+  .officesCenter {
+    @apply flex items-center lg:pt-4;
+  }
+  .officesCenter > span {
+    @apply text-base font-Regular font-IBM text-darkGrey-500;
+  }
+  .officesIcon {
+    @apply text-primary-500 pr-2 lg:text-2xl lg:pr-4;
+  }
+}

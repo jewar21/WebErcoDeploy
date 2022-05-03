@@ -19,7 +19,9 @@
   .coverInfo > p {
     @apply text-lightGrey-100 z-10 font-Sora text-2xl h-48 lg:text-4xl lg:font-semibold;
   }
+
   /* -------------------------------CardsCover------------------------------------------ */
+  
   .cardCoverContainer {
     @apply flex flex-col py-12 px-6 lg:py-10 lg:absolute lg:bottom-0 lg:w-full lg:px-5.5rem
      lg:flex-row lg:justify-between lg:items-center bg-lightGrey-300;

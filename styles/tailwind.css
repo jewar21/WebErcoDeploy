@@ -8,9 +8,9 @@
 
 @import "./Home/cover.css";
 @import "./Home/ecosystem.css";
-@import "./Home/StatisticsBanner.css";
-@import "./Home/EcosystemBanner.css";
-@import "./Home/Customers.css";
+@import "./Home/statisticsBanner.css";
+@import "./Home/ecosystemBanner.css";
+@import "./Home/customers.css";
 
 @import "./Services/installation.css";
 @import "./Services/paymentMethods.css";
@@ -18,7 +18,9 @@
 
 @import "./Projects/projectsviews.css";
 
-@import "./PartialComponents/PartialComponents.css";
+@import "./Contact/contact.css";
+
+@import "./PartialComponents/partialComponents.css";
 
 @layer base {
   html {
