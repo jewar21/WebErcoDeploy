@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 const Offices = ({ contactData }) => {
-  console.log("esteeee", contactData);
   const title = contactData.title;
   const contacts = contactData.contacts;
   const img1 = contactData.img1.src;
@@ -26,7 +25,6 @@ const Offices = ({ contactData }) => {
           <h4>{title}</h4>
           <div className="officesInfo">
             {contacts.map((contact, i) => {
-              console.log(contact);
               const country = contact.country;
               const email = contact.email;
               const phone = contact.phone;
@@ -47,8 +45,8 @@ const Offices = ({ contactData }) => {
           </div>
         </div>
       </div>
-      <div className="relative w-screen h-[19.5rem] lg:hidden">
-        <div className="absolute w-full h-full top-0 left-0">
+      <div className="officesContentImgMobile">
+        <div className="officesImgMobile">
           <Image
             src={img1}
             alt="image"

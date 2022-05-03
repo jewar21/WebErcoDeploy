@@ -69,4 +69,10 @@
   .officesIcon {
     @apply text-primary-500 pr-2 lg:text-2xl lg:pr-4;
   }
+  .officesContentImgMobile {
+    @apply relative w-screen h-[19.5rem] lg:hidden;
+  }
+  .officesImgMobile {
+    @apply absolute w-full h-full top-0 left-0;
+  }
 }
