@@ -1,12 +1,12 @@
-import imgCoverProjects from "../../assets/imagenes/Projects/Interna Proyectos/Banner/Banner-proyectos.jpg";
+import imgCoverProjects from "../../assets/imagenes/Projects/InternaProyectos/Banner/Banner-proyectos.jpg";
 
-import imgP01_01 from "../../assets/imagenes/Projects/Interna Proyectos/Fotos residenciales/1. Residencial 9,72 kWp/1.jpg";
-import imgP01_02 from "../../assets/imagenes/Projects/Interna Proyectos/Fotos residenciales/1. Residencial 9,72 kWp/2.jpg";
-import imgP01_03 from "../../assets/imagenes/Projects/Interna Proyectos/Fotos residenciales/1. Residencial 9,72 kWp/3.jpg";
+import imgProjectsA01 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/1/1.JPG";
+import imgProjectsA02 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/1/2.jpg";
+import imgProjectsA03 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/1/3.jpg";
 
-import imgP02_01 from "../../assets/imagenes/Projects/Interna Proyectos/Fotos residenciales/2. Residencial 4,32 kWp/1.jpg";
-import imgP02_02 from "../../assets/imagenes/Projects/Interna Proyectos/Fotos residenciales/2. Residencial 4,32 kWp/2.JPG";
-import imgP02_03 from "../../assets/imagenes/Projects/Interna Proyectos/Fotos residenciales/2. Residencial 4,32 kWp/3.JPG";
+import imgProjectsB01 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/2/1.jpg";
+import imgProjectsB02 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/2/2.JPG";
+import imgProjectsB03 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/2/3.JPG";
 
 export const projectsConverInfo = {
   section: "Proyectos",
@@ -30,7 +30,11 @@ export const projectsGeneralData = [
       co2: "18", //Tons
       annualGeneration: "13191,984" //kWh
     },
-    imgs: { img1: imgP01_01, img2: imgP01_02, img3: imgP01_03 }
+    imgs: [
+      { img: imgProjectsA01 },
+      { img: imgProjectsA02 },
+      { img: imgProjectsA03 }
+    ]
   },
   {
     name: "Sistema de energía solar",
@@ -46,7 +50,11 @@ export const projectsGeneralData = [
       co2: "2",
       annualGeneration: "5.945"
     },
-    imgs: { img1: imgP02_01, img2: imgP02_02, img3: imgP02_03 }
+    imgs: [
+      { img: imgProjectsB01 },
+      { img: imgProjectsB02 },
+      { img: imgProjectsB03 }
+    ]
   },
   {
     name: "Sistema de energía solar",
@@ -62,6 +70,10 @@ export const projectsGeneralData = [
       co2: "6",
       annualGeneration: "8.553,6"
     },
-    imgs: { img1: imgP02_01, img2: imgP02_02, img3: imgP02_03 }
+    imgs: [
+      { img: imgProjectsA01 },
+      { img: imgProjectsA02 },
+      { img: imgProjectsA03 }
+    ]
   }
 ];

@@ -86,7 +86,7 @@
     @apply absolute w-full h-full -z-50;
   }
   .generalCoverContainer {
-    @apply flex flex-col justify-center w-full lg:w-3/4 h-full px-6 pt-[5%] lg:px-5.5rem;
+    @apply flex flex-col justify-center w-full lg:w-3/4 h-full px-6 lg:px-5.5rem;
   }
   .generalCoverContainer > span {
     @apply flex items-center w-full h-8 text-sm font-IBM font-medium text-primary-300 uppercase lg:text-base;

@@ -1,3 +1,8 @@
+import {
+  projectsConverInfo,
+  projectsGeneralData
+} from "../../content/data/projectData";
+
 // components
 import Container from "../../components/Navigation/Container";
 import GeneralCover from "../../components/PartialComponents/GeneralCover/GeneralCover";
@@ -5,12 +10,10 @@ import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner/
 
 const index = () => {
   return (
-    <div>
-      <Container>
-        <GeneralCover dataCover={dataCover} isActiveQuoteButton={false} />
-        <EcosystemBanner />
-      </Container>
-    </div>
+    <Container>
+      <GeneralCover dataCover={projectsConverInfo} />
+      <EcosystemBanner />
+    </Container>
   );
 };
 

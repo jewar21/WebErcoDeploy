@@ -15,7 +15,6 @@ const GeneralCover = ({
   isActiveExploreButton
 }) => {
   const typeService = useRecoilValue(typeServiceState);
-  console.log(typeService);
   const sectionType = dataCover.section;
   const title = dataCover.title;
   const content = dataCover.content;
@@ -32,7 +31,13 @@ const GeneralCover = ({
           priority="true"
         />
       </div>
-      <div className="generalCoverContainer">
+      <div
+        className={
+          isActiveQuoteButton && isActiveExploreButton
+            ? "generalCoverContainer pt-[5%]"
+            : "generalCoverContainer pt-[10%]"
+        }
+      >
         {/* <span>{typeService}</span> */}
         <span>
           {sectionType !== undefined
