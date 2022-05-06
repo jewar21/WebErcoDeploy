@@ -6,6 +6,6 @@ export const typeServiceState = atom({
 });
 
 export const mobilePanelServiceState = atom({
-  key: "whatSection",
+  key: "IsOpenPanel",
   default: false
 });

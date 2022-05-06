@@ -21,7 +21,7 @@ import ServicesPanelMobile from "./ServicesPanelMobile";
 const NavLinks = () => {
   const op = useRef(null);
   const isTablet = useMediaQuery({ maxWidth: DeviceSize.tablet });
-  const [isOpenPenal, setOpenPanel] = useRecoilState(mobilePanelServiceState);
+  const [isOpenPanel, setOpenPanel] = useRecoilState(mobilePanelServiceState);
 
   return (
     <div className="navLinksContainer">
@@ -35,7 +35,7 @@ const NavLinks = () => {
             <button
               type="button"
               onClick={() => {
-                setOpenPanel(!isOpenPenal);
+                setOpenPanel(!isOpenPanel);
               }}
             >
               <RiArrowRightLine className="iconArrow" />
@@ -91,7 +91,7 @@ const NavLinks = () => {
           </div>
         </div>
       )}
-      {isOpenPenal && <ServicesPanelMobile />}
+      {isOpenPanel && <ServicesPanelMobile />}
     </div>
   );
 };

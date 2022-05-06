@@ -11,7 +11,7 @@ import {
 import { iconArrowL } from "../../../content/globalData";
 
 const ServicesPanelMobile = () => {
-  const [isOpenPenal, setOpenPanel] = useRecoilState(mobilePanelServiceState);
+  const [isOpenPanel, setOpenPanel] = useRecoilState(mobilePanelServiceState);
   const [typeService, setTypeService] = useRecoilState(typeServiceState);
 
   const handleClick = (e, isCompany) => {
