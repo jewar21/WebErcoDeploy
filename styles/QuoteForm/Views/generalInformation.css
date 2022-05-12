@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .generalIContent {
+        @apply w-full bg-slate-500;
+    }
+}

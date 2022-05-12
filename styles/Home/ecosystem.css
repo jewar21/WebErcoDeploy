@@ -82,6 +82,6 @@
     @apply absolute w-full h-48 mt-6;
   }
   .mobileErcosystemContainer {
-    @apply bg-lightGrey-300 rounded-3xl p-6 z-20 mx-6 mt-32;
+    @apply bg-lightGrey-300 rounded-3xl p-6 z-10 mx-6 mt-32;
   }
 }

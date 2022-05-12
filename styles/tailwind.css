@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&display=swap");
+@import "./primeStyles.css";
 @import "./navbar.css";
 @import "./footer.css";
 
@@ -19,6 +20,8 @@
 @import "./Projects/projectsviews.css";
 
 @import "./Contact/contact.css";
+
+@import "./QuoteForm/quoteForm.css";
 
 @import "./PartialComponents/partialComponents.css";
 

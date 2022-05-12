@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .typeOfSystemContent {
+        @apply w-full bg-blue-500;
+    }
+}

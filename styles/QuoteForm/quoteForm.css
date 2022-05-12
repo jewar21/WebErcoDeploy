@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./Views/generalInformation.css";
+@import "./Views/typeOfSystem.css";
+@import "./Views/infrastructure.css";
+@import "./Views/roofType.css";
+@import "./Views/energyBill.css";
+@import "./Views/additionalInformation.css";
+@import "./Views/confirmation.css";
+
+@layer components {
+  .quoteContent {
+    @apply w-full h-full;
+  }
+  .quoteContainer {
+    @apply w-full h-full lg:px-64;
+  }
+  .dynamicContent {
+    @apply w-full h-4/5;
+  }
+  .progressBarQuote {
+    @apply flex justify-center w-full absolute left-0 top-16 lg:top-5.5rem;
+  }
+  .progressBarQuote-line {
+    @apply h-[0.2rem] w-36 bg-lightGrey-700;
+  }
+  .progressBarQuote-line-fill {
+    @apply h-full w-[calc(100%_/_7)] bg-gradient-to-r from-[#ABD131] to-[#60BE3E];
+  }
+  .baseButton {
+    @apply flex items-center justify-evenly w-40 h-10 rounded-full;
+  }
+  .baseButton > p {
+    @apply font-Sora text-base font-semibold text-darkGrey-900 tracking-wide;
+  }
+  .backButton {
+    @apply border-primary-500 border-solid border-2;
+  }
+  .nextButton {
+    @apply bg-primary-500;
+  }
+}

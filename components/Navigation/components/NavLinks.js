@@ -9,7 +9,6 @@ import { useMediaQuery } from "react-responsive";
 import { OverlayPanel } from "primereact/overlaypanel";
 import { RiArrowRightLine } from "react-icons/ri";
 
-import "primereact/resources/themes/lara-light-indigo/theme.css";
 import { DeviceSize } from "../../../utils/handlers/handlers";
 import { co, pa, us } from "../../../content/data/homeData";
 

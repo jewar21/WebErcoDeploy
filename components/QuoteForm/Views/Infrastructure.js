@@ -2,7 +2,7 @@ import React from 'react'
 
 const Infrastructure = () => {
   return (
-    <div>Infrastructure</div>
+    <div className="infrastructureContent">Infrastructure</div>
   )
 }
 

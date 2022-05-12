@@ -1,0 +1,69 @@
+.p-overlaypanel .p-overlaypanel-content {
+  padding: 0 !important;
+}
+
+/*------------------------------- Modal Styles  -------------------------------*/
+
+.p-dialog .p-dialog-header {
+  padding-top: 3.75rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.p-dialog .p-dialog-header .p-dialog-header-icon {
+  border: 1px solid #3d3d3c;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.pi {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 601px) {
+  .p-dialog .p-dialog-header {
+    border-top-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+  }
+  .p-dialog {
+    border-radius: 1.5rem;
+  }
+  .p-dialog .p-dialog-content {
+    border-bottom-right-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .p-dialog .p-dialog-header {
+    padding: 1.5rem;
+  }
+  .p-dialog {
+    max-height: 100%;
+  }
+  .p-dialog .p-dialog-header {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .p-dialog .p-dialog-header .p-dialog-header-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .pi {
+    font-size: 1rem;
+  }
+}
+
+/*------------------------------- swiper Styles  -------------------------------*/
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: " ";
+  width: 72px;
+  height: 72px;
+  background-color: #292928;
+  border-radius: 100%;
+  margin-left: 6rem;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-family: none;
+}

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .confirmationContent {
+        @apply w-full bg-purple-500;
+    }
+}

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .roofTypeContent {
+        @apply w-full bg-red-500;
+    }
+}

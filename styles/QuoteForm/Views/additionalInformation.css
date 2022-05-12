@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .additionalIContent {
+        @apply w-full bg-pink-500;
+    }
+}

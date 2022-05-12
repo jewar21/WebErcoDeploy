@@ -78,7 +78,7 @@
   }
   .homeContainer {
     @apply pt-10;
-  }	
+  }
 
   /*------------------------------- Services panel  -------------------------------*/
 
@@ -127,8 +127,4 @@
   .itemCountry {
     @apply pl-4 h-12 w-full text-Body1 text-left;
   }
-}
-
-.p-overlaypanel .p-overlaypanel-content {
-  padding: 0 !important;
 }
