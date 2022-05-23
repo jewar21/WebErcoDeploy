@@ -3,7 +3,46 @@
 @tailwind utilities;
 
 @layer components {
-    .additionalIContent {
-        @apply w-full bg-pink-500;
-    }
+  .additionalIContent {
+    @apply w-full h-full;
+  }
+  .additionalIQ1 {
+    @apply w-full h-24;
+  }
+  .additionalIText {
+    @apply text-sm font-semibold text-darkGrey-700;
+  }
+  .additionalInputTextarea {
+    @apply h-28;
+  }
+  .additionalITerms {
+    @apply flex h-8 text-Body1 mt-4;
+  }
+  .additionalCheckbox {
+    @apply block relative cursor-pointer;
+  }
+  .additionalCheckbox input {
+    @apply absolute cursor-pointer opacity-0  w-0 h-0;
+  }
+  .checkmark {
+    @apply w-6 h-6 absolute top-0 left-0 bg-lightGrey-100 border-2 border-darkGrey-900 rounded-md;
+  }
+  .additionalCheckbox:hover input ~ .checkmark {
+    @apply bg-lightGrey-500;
+  }
+  .additionalCheckbox input:checked ~ .checkmark {
+    @apply bg-primary-500;
+  }
+  .checkmark:after {
+    @apply absolute hidden;
+  }
+  .additionalCheckbox input:checked ~ .checkmark:after {
+    @apply block;
+  }
+  .additionalCheckbox .checkmark:after {
+    @apply top-3 left-3 w-2 h-2 bg-white rounded-full;
+  }
+  .additionalITerms small {
+    @apply text-Body2 font-Regular text-darkGrey-500 ml-8;
+  }
 }

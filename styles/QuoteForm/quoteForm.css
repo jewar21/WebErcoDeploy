@@ -15,7 +15,7 @@
     @apply w-full h-full;
   }
   .quoteContainer {
-    @apply w-full h-full lg:px-64;
+    @apply flex flex-col justify-between w-full h-full lg:h-[90%]  px-4 py-2 lg:px-64;
   }
   .dynamicContent {
     @apply w-full h-4/5;
@@ -30,7 +30,7 @@
     @apply h-full w-[calc(100%_/_7)] bg-gradient-to-r from-[#ABD131] to-[#60BE3E];
   }
   .baseButton {
-    @apply flex items-center justify-evenly w-40 h-10 rounded-full;
+    @apply flex items-center justify-evenly w-12 h-12 lg:w-40 lg:h-10 rounded-full;
   }
   .baseButton > p {
     @apply font-Sora text-base font-semibold text-darkGrey-900 tracking-wide;
@@ -40,5 +40,17 @@
   }
   .nextButton {
     @apply bg-primary-500;
+  }
+  .titleQuoteContent {
+    @apply flex items-center justify-center w-full mb-4 lg:h-4.5rem lg:mb-8;
+  }
+  .titleQuote {
+    @apply text-H5 w-5/6 font-bold text-center text-darkGrey-900 tracking-wide lg:w-[60%] lg:text-H5;
+  }
+
+  /* ------------------------- input -------------------------------- */
+
+  .inputRounded {
+    @apply border-2 border-lightGrey-900 rounded-2xl;
   }
 }

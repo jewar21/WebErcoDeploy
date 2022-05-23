@@ -3,7 +3,40 @@
 @tailwind utilities;
 
 @layer components {
-    .energyBillContent {
-        @apply w-full bg-green-500;
-    }
+  .energyBillContent {
+    @apply w-full h-full;
+  }
+  .energyBillQuestion1 {
+    @apply w-full lg:py-6 lg:flex lg:items-center lg:justify-between lg:border-y-2 border-lightGrey-700;
+  }
+  .energyBillQuestion1 label {
+    @apply text-Body2 font-Regular text-darkGrey-500;
+  }
+  .energyBillYesNo {
+    @apply flex w-36 justify-between mt-4 lg:mt-0;
+  }
+  .energyBillOptionContent {
+    @apply flex;
+  }
+  .energyBillOption {
+    @apply w-6 h-6 border-2 border-darkGrey-500 rounded-full mr-2;
+  }
+  .energyBillUpload {
+    @apply pt-4;
+  }
+  .energyBillUpload label {
+    @apply text-Body2 font-Regular text-darkGrey-500;
+  }
+  .energyBillIconUpload {
+    @apply flex items-center justify-center w-full h-6.5rem border-2 border-lightGrey-700 border-dotted rounded-2xl text-5xl text-primary-500 my-4;
+  }
+  .energyBillQuestion2 {
+    @apply w-full flex justify-evenly lg:justify-center;
+  }
+  .energyBillQuestion2 small {
+    @apply underline text-darkGrey-500 text-sm lg:pr-2;
+  }
+  .energyBillQuestion2 div {
+    @apply text-primary-500 text-lg;
+  }
 }

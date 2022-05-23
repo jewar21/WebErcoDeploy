@@ -3,7 +3,40 @@
 @tailwind utilities;
 
 @layer components {
-    .confirmationContent {
-        @apply w-full bg-purple-500;
-    }
+  .confirmationContent {
+    @apply flex lg:justify-end w-full h-full;
+  }
+  .confirmationContainer {
+    @apply flex flex-col mt-64 lg:items-center lg:w-1/2 lg:mt-20;
+  }
+  .confirmationImgR {
+    @apply absolute z-10 lg:absolute top-0 left-0 w-full h-80 overflow-hidden lg:w-1/2 lg:h-full lg:rounded-l-3xl;
+  }
+  .confirmationImgA {
+    @apply absolute lg:relative top-0 left-0 w-full h-full;
+  }
+  .confirmationBackground {
+    @apply relative z-0 top-0 w-full h-full left-0;
+  }
+  .confirmationText {
+    @apply flex flex-col text-center w-full lg:w-2/3 z-10;
+  }
+  .confirmationText h5 {
+    @apply text-H3 font-bold pb-4 text-darkGrey-900 lg:text-H2;
+  }
+  .confirmationText P {
+    @apply font-Regular font-IBM text-darkGrey-500 text-Body2;
+  }
+  .confirmationButtons {
+    @apply flex flex-col mt-4 items-center justify-evenly w-full h-full lg:flex-row lg:mt-8;
+  }
+  .ConfirmationButton {
+    @apply h-12 w-44 border-primary-500 border-solid border-2 rounded-full;
+  }
+  .ConfirmationButton > p {
+    @apply font-Sora text-base font-semibold text-darkGrey-900 tracking-wide;
+  }
+  .ConfirmationButtonFill {
+    @apply bg-primary-500 mt-4 lg:mt-0;
+  }
 }

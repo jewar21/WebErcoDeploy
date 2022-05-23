@@ -3,7 +3,22 @@
 @tailwind utilities;
 
 @layer components {
-    .infrastructureContent {
-        @apply w-full bg-orange-500;
-    }
+  .infrastructureContent {
+    @apply w-full h-full;
+  }
+  .infrastructureCardsContent {
+    @apply w-full h-full lg:flex justify-between pt-6;
+  }
+  .infrastructureCard {
+    @apply flex border-2 rounded-2xl border-lightGrey-500 h-4.5rem items-center mt-6 px-4 lg:mt-0 lg:w-52 lg:h-52 lg:px-0 lg:justify-center lg:items-start lg:pt-14;
+  }
+  .infrastructureIconText {
+    @apply flex lg:flex-col lg:w-1/2 lg:items-center;
+  }
+  .infrastructureIconText div {
+    @apply text-4xl text-primary-500;
+  }
+  .infrastructureIconText h5 {
+    @apply text-lg font-semibold text-darkGrey-900 ml-4 lg:ml-0 lg:block lg:text-center lg:pt-4;
+  }
 }

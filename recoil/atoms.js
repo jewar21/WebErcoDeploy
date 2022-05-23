@@ -12,6 +12,12 @@ export const mobilePanelServiceState = atom({
   default: false
 });
 
+/* Creating a state called quoteCountState and setting the default value to 0. */
+export const quoteCountState = atom({
+  key: "Counter",
+  default: 0
+});
+
 /* Creating a state called quoteContentState and setting the default value to an empty array. */
 export const quoteContentState = atom({
   key: "QuoteContent",

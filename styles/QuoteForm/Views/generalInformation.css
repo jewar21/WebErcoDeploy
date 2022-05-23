@@ -3,7 +3,22 @@
 @tailwind utilities;
 
 @layer components {
-    .generalIContent {
-        @apply w-full bg-slate-500;
-    }
+  .generalIContent {
+    @apply w-full;
+  }
+  .generalInput {
+    @apply w-full;
+  }
+  .generalIQuestion {
+    @apply pb-2;
+  }
+  .generalInput label {
+    @apply text-sm font-IBM font-semibold;
+  }
+  .generalInput span {
+    @apply text-secondary-500;
+  }
+  .generalICards {
+    @apply lg:grid lg:grid-cols-2 lg:gap-6;
+  }
 }

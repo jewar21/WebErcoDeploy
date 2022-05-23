@@ -4,6 +4,9 @@ import { Dialog } from "primereact/dialog";
 import PropTypes from "prop-types";
 import { useMediaQuery } from "react-responsive";
 
+import { useRecoilState } from "recoil";
+import { quoteCountState } from "../../recoil/atoms";
+
 import { DeviceSize } from "../../utils/handlers/handlers";
 
 import { iconArrow, ercoLogo } from "../../content/globalData";
@@ -14,12 +17,15 @@ const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
   const isMobile = useMediaQuery({ maxWidth: DeviceSize.mobile });
   const [isOpenModal, setIsOpenModal] = useState(false);
 
+  const [count, setCount] = useRecoilState(quoteCountState);
+
   const openQuote = () => {
     setIsOpenModal(true);
   };
 
   const closeQuote = () => {
     setIsOpenModal(false);
+    setCount(0);
   };
 
   return (
@@ -34,7 +40,11 @@ const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
         {isIcon && <div className="text-2xl">{iconArrow}</div>}
       </button>
       <Dialog
-        header={<div className="hidden lg:block">{ercoLogo(192.27, 45)}</div>}
+        header={
+          count !== 5 && (
+            <div className="hidden lg:block">{ercoLogo(192.27, 45)}</div>
+          )
+        }
         visible={isOpenModal}
         modal
         breakpoints={{ "960px": "75vw", "640px": "100vw" }}

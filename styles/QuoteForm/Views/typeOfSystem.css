@@ -3,7 +3,19 @@
 @tailwind utilities;
 
 @layer components {
-    .typeOfSystemContent {
-        @apply w-full bg-blue-500;
-    }
+  .typeOfSystemContent {
+    @apply w-full h-full;
+  }
+  .typeOfSystemCardContent {
+    @apply lg:grid lg:grid-cols-2 lg:gap-6;
+  }
+  .typeOfSystemCard {
+    @apply border-2 rounded-2xl border-lightGrey-500 mt-2 p-2 lg:p-6 lg:mt-0;
+  }
+  .typeOfSystemCard h5 {
+    @apply text-lg font-semibold text-darkGrey-900 lg:text-center;
+  }
+  .typeOfSystemCard p {
+    @apply text-Body2 font-Regular text-darkGrey-900 lg:text-center;
+  }
 }
