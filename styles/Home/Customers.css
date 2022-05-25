@@ -4,16 +4,28 @@
 
 @layer components {
   .customersContent {
-    @apply flex flex-col bg-lightGrey-300;
+    @apply w-full flex flex-col bg-lightGrey-300;
   }
   .customersContent > h3 {
     @apply w-full pt-14 px-6 text-H4 text-darkGrey-900 font-bold lg:text-center lg:py-20 lg:text-H3;
   }
   .testimonialsContainer {
-    @apply flex w-screen pt-10;
+    @apply flex w-screen lg:items-center;
   }
+  .testimonialSwiper {
+    @apply hidden lg:block;
+  }
+  .swiperSlideContainer {
+    @apply flex justify-center;
+  }
+
+  /* -----------------------SwiperMobile-------------------- */
+  .testimonialSwiperMobile {
+    @apply lg:hidden;
+  }
+
   .swiperMobileContent {
-    @apply w-80 rounded-[2rem] bg-lightGrey-100 lg:hidden;
+    @apply w-80 h-29rem rounded-[2rem] bg-lightGrey-100 my-4;
   }
   .swiperMobileContainer {
     @apply p-6;
@@ -40,6 +52,24 @@
     @apply absolute w-full h-full top-0 left-0;
   }
 
+  /* -----------------------SwiperDesktop-------------------- */
+
+  .testimonialSwiper {
+    @apply hidden lg:block;
+  }
+
+  .swiperDesktopContent {
+    @apply w-full rounded-3xl;
+  }
+  .swiperDesktopCard {
+    @apply w-[55rem] h-[25rem] rounded-3xl border-2 bg-lightGrey-100;
+  }
+  .sdImg {
+    @apply relative w-4/5 h-full overflow-hidden rounded-l-3xl;
+  }
+  .sdImgA {
+    @apply absolute w-full h-full top-0 left-0;
+  }
   /* -----------------------Brands-------------------- */
 
   .brandsImgR {
@@ -50,3 +80,40 @@
   }
 }
 
+/*------------------------------- swiper Styles  -------------------------------*/
+
+.testimonialSwiper .swiper-button-prev {
+  left: 48px;
+  width: 72px;
+  height: 72px;
+  background-image: url("../../assets/Icon/arrowLeft.png");
+}
+.testimonialSwiper .swiper-button-next {
+  right: 48px;
+  width: 72px;
+  height: 72px;
+  background-image: url("../../assets/Icon/arrowRight.png");
+}
+
+.testimonialSwiper .swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: " ";
+}
+
+.testimonialSwiper .swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: " ";
+}
+
+/* .swiper-slide-visible.swiper-slide-prev,
+.swiper-slide-visible.swiper-slide-next {
+  opacity: 0.5 !important;
+} */
+
+.testimonialSwiper
+  .swiper-slide
+  .swiper-slide-duplicate
+  .swiper-slide-visible
+  .swiper-slide-prev {
+  opacity: 0.5;
+}

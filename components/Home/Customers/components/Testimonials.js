@@ -1,89 +1,80 @@
 import React from "react";
-import Image from "next/image";
+
+import PropTypes from "prop-types";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+
+import SwiperCore, { EffectCoverflow, Navigation } from "swiper/core";
+
+import CardMobile from "./CardMobile";
+import CardDesktop from "./CardDesktop";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 
-import SwiperCore, { EffectCoverflow, Navigation } from "swiper/core";
-
 SwiperCore.use([EffectCoverflow, Navigation]);
 
 const Testimonials = ({ testimonials }) => {
   const { cardContent } = testimonials;
+
   return (
     <div className="testimonialsContainer">
-      {/* <Swiper
-        navigation={true}
-        effect={"coverflow"}
-        centeredSlides={true}
-        // slidesPerView={window.innerWidth < 768 ? 1 : "auto"}
-        slidesPerView={"auto"}
-        loop={true}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true
-        }}
-        pagination={false}
-        className="mySwiper"
-      > */}
       <Swiper
+        grabCursor={true}
         slidesPerView={1}
-        spaceBetween={50}
         centeredSlides={true}
         loop={true}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true
-        }}
+        pagination={false}
+        className="testimonialSwiperMobile"
       >
-        {cardContent.map((e, i) => {
-          const image = e.img.src;
-          const photo = e.photo.src;
-          const brand = e.companyIcon.src;
+        {cardContent.map((content, i) => {
+          const photo = content.photo.src;
+          const brand = content.companyIcon.src;
 
           return (
             <SwiperSlide key={i}>
-              <div className="flex justify-center">
-                <div className="swiperMobileContent">
-                  <div className="swiperMobileContainer">
-                    <p className="swiperText">{e.testimonial}</p>
-                    <div className="swiperClientInfo">
-                      <div className="swiperClientImgR">
-                        <div className="swiperClientImgA">
-                          <Image
-                            src={photo}
-                            alt="image"
-                            layout="fill"
-                            objectFit="fill"
-                          />
-                        </div>
-                      </div>
-                      <div className="swiperClientName">
-                        <h3>{e.name}</h3>
-                        <p>{e.position}</p>
-                      </div>
-                    </div>
-                    <div className="swiperBrandR">
-                      <div className="swiperBrandA">
-                        <Image
-                          src={brand}
-                          alt="image"
-                          layout="fill"
-                          objectFit="fill"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="swiperSlideContainer">
+                <CardMobile photo={photo} brand={brand} content={content} />
+              </div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+
+      <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        slidesPerView={2}
+        navigation={true}
+        centeredSlides={true}
+        loop={true}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: false
+        }}
+        pagination={false}
+        modules={[EffectCoverflow]}
+        className="testimonialSwiper"
+      >
+        {cardContent.map((content, i) => {
+          const image = content.img.src;
+          const photo = content.photo.src;
+          const brand = content.companyIcon.src;
+
+          return (
+            <SwiperSlide key={i}>
+              <div className="swiperSlideContainer">
+                <CardDesktop
+                  img={image}
+                  photo={photo}
+                  brand={brand}
+                  content={content}
+                />
               </div>
             </SwiperSlide>
           );
@@ -92,5 +83,7 @@ const Testimonials = ({ testimonials }) => {
     </div>
   );
 };
+
+Testimonials.propTypes = { testimonials: PropTypes.object.isRequired };
 
 export default Testimonials;
