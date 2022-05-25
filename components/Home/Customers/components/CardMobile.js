@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
+import PropTypes from "prop-types";
+
 const CardMobile = ({ photo, brand, content }) => {
   return (
     <div className="swiperMobileContent">
@@ -25,6 +27,12 @@ const CardMobile = ({ photo, brand, content }) => {
       </div>
     </div>
   );
+};
+
+CardMobile.propTypes = {
+  photo: PropTypes.object.isRequired,
+  brand: PropTypes.object.isRequired,
+  content: PropTypes.object.isRequired
 };
 
 export default CardMobile;
