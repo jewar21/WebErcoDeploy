@@ -20,7 +20,7 @@
   }
 
   /* -----------------------SwiperMobile-------------------- */
-  
+
   .testimonialSwiperMobile {
     @apply lg:hidden;
   }
@@ -57,14 +57,32 @@
   .testimonialSwiper {
     @apply hidden lg:block;
   }
+  .testimonialSwiper .swiper-button-prev {
+    @apply left-12 w-4.5rem h-4.5rem bg-[url("../../assets/Icon/arrowLeft.png")];
+  }
+  .testimonialSwiper .swiper-button-next {
+    @apply right-12 w-4.5rem h-4.5rem bg-[url("../../assets/Icon/arrowRight.png")];
+  }
+  .testimonialSwiper .swiper-button-prev:after,
+  .swiper-rtl .swiper-button-next:after {
+    @apply content-none;
+  }
+  .testimonialSwiper .swiper-button-next:after,
+  .swiper-rtl .swiper-button-prev:after {
+    @apply content-none;
+  }
+  .testimonialSwiper .swiper-slide-prev,
+  .testimonialSwiper .swiper-slide-next {
+    @apply opacity-50;
+  }
   .swiperDesktopContent {
     @apply w-full rounded-3xl;
   }
   .swiperDesktopCard {
-    @apply w-11/12 h-[25rem] rounded-3xl border-2 bg-lightGrey-100;
+    @apply w-[95%] h-[25rem] rounded-3xl border-2 bg-lightGrey-100;
   }
   .sdImg {
-    @apply relative w-4/5 h-full overflow-hidden rounded-l-3xl;
+    @apply relative w-full h-full overflow-hidden rounded-l-3xl;
   }
   .sdImgA {
     @apply absolute w-full h-full top-0 left-0;
@@ -78,31 +96,4 @@
   .brandsImgA {
     @apply absolute w-full h-full top-0 left-0;
   }
-}
-
-/*------------------------------- swiper Styles  -------------------------------*/
-
-.testimonialSwiper .swiper-button-prev {
-  left: 48px;
-  width: 72px;
-  height: 72px;
-  background-image: url("../../assets/Icon/arrowLeft.png");
-}
-.testimonialSwiper .swiper-button-next {
-  right: 48px;
-  width: 72px;
-  height: 72px;
-  background-image: url("../../assets/Icon/arrowRight.png");
-}
-.testimonialSwiper .swiper-button-prev:after,
-.swiper-rtl .swiper-button-next:after {
-  content: " ";
-}
-.testimonialSwiper .swiper-button-next:after,
-.swiper-rtl .swiper-button-prev:after {
-  content: " ";
-}
-.testimonialSwiper .swiper-slide-prev,
-.testimonialSwiper .swiper-slide-next {
-  opacity: 0.5 !important;
 }
