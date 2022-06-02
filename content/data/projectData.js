@@ -8,6 +8,8 @@ import imgProjectsB01 from "../../assets/imagenes/Projects/InternaProyectos/Foto
 import imgProjectsB02 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/2/2.JPG";
 import imgProjectsB03 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/2/3.JPG";
 
+import imgBrand from "../../assets/imagenes/brands/EPM.png";
+
 export const projectsConverInfo = {
   section: "Proyectos",
   img: imgCoverProjects,
@@ -34,7 +36,8 @@ export const projectsGeneralData = [
       { img: imgProjectsA01 },
       { img: imgProjectsA02 },
       { img: imgProjectsA03 }
-    ]
+    ],
+    brandImg: imgBrand
   },
   {
     name: "Sistema de energía solar",
@@ -54,7 +57,8 @@ export const projectsGeneralData = [
       { img: imgProjectsB01 },
       { img: imgProjectsB02 },
       { img: imgProjectsB03 }
-    ]
+    ],
+    brandImg: imgBrand
   },
   {
     name: "Sistema de energía solar",
@@ -74,6 +78,7 @@ export const projectsGeneralData = [
       { img: imgProjectsA01 },
       { img: imgProjectsA02 },
       { img: imgProjectsA03 }
-    ]
+    ],
+    brandImg: imgBrand
   }
 ];
