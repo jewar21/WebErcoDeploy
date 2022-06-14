@@ -9,7 +9,7 @@ export class ZohoAPI {
         this.clientId = process.env.CLIENT_ID_ZOHO;
         this.clientSecret = process.env.CLIENT_SECRET_ZOHO;
         this.refresh_token = process.env.REFRESH_TOKEN;
-        this.moduleName = 'Deals'
+        this.moduleName = 'Leads'
 
         this.zohoClient = axios.create();
         this.initClient();
@@ -40,7 +40,7 @@ export class ZohoAPI {
                 // if the token has expired it's renewed
                 originalRequest._retry = true;
                 $this.auth_token = await $this.refreshAuthToken();
-                //console.log($this.auth_token);
+                console.log($this.auth_token);
                 axios.defaults.headers.common['Authorization'] = `Zoho-oauthtoken ${$this.auth_token}`;
                 return $this.zohoClient(originalRequest);
             }
@@ -85,6 +85,26 @@ export class ZohoAPI {
         } catch (error) {
             console.log('error', error)
             return 'No se puede obtener el record'
+        }
+    }
+
+    addNewEntityModule = async (dataPost) => {
+        try {
+            const { data } = await this.zohoClient.post(`${this.moduleName}`,
+                {
+                    data: [dataPost]
+                }
+            );
+            // console.log(data)
+
+            if(data.data[0].code === 'SUCCESS') {
+                return { data: data.data[0].details, message: "Datos añadido correctamente", status: 'SUCCESS' }
+            } else {
+                return { data: data.data[0].details, message: data.data[0].message, status: 'FAIL' }
+            }
+        } catch (error) {
+            console.log('error', error)
+            return { data: {}, message: "Error al intentar crear", status: 'FAIL' }
         }
     }
 
