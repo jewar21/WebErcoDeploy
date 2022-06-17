@@ -48,10 +48,8 @@ const GeneralInformation = () => {
       const { value, isRequired, typeValidation } = dataGeneral[el];
       let valueSend = value
 
-      if(id) {
-        if(id === el){
-          valueSend = data
-        } 
+      if(id && id === el) {
+        valueSend = data
       } 
       
       if(isRequired) {
@@ -122,7 +120,7 @@ const GeneralInformation = () => {
               }
             </div>
             <AutoComplete
-              className="inputRounded"
+              className={`inputRounded ${dataGeneral.department.errorMessage && 'inputRoundedError'}`}
               value={dataGeneral.department.value}
               suggestions={filteredItems}
               completeMethod={searchItems}
@@ -132,6 +130,9 @@ const GeneralInformation = () => {
               onChange={(e) => changeInput(e.value, id)}
               aria-label="Places"
             />
+            {dataGeneral.department.errorMessage &&
+              <small className="p-error p-d-block">{dataGeneral.department.errorMessage}</small>
+            }
           </div>
         </div>
       </div>

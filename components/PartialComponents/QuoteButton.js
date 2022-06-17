@@ -4,8 +4,8 @@ import { Dialog } from "primereact/dialog";
 import PropTypes from "prop-types";
 import { useMediaQuery } from "react-responsive";
 
-import { useRecoilState } from "recoil";
-import { quoteCountState } from "../../recoil/atoms";
+import { useRecoilState, useResetRecoilState } from "recoil";
+import { dataGeneralInformation, quoteCountState } from "../../recoil/atoms";
 
 import { DeviceSize } from "../../utils/handlers/handlers";
 
@@ -14,6 +14,10 @@ import { iconArrow, ercoLogo } from "../../content/globalData";
 import QuoteForm from "../QuoteForm/QuoteForm";
 
 const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
+
+  // Reset quote form atoms
+  const resetGeneralInformation = useResetRecoilState(dataGeneralInformation);
+
   const isMobile = useMediaQuery({ maxWidth: DeviceSize.mobile });
   const [isOpenModal, setIsOpenModal] = useState(false);
 
@@ -24,6 +28,9 @@ const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
   };
 
   const closeQuote = () => {
+    // Reset quote form atoms
+    resetGeneralInformation();
+    
     setIsOpenModal(false);
     setCount(0);
   };

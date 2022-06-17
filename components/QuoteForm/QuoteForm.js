@@ -32,7 +32,7 @@ const QuoteForm = () => {
   const clickNext = () => {
     console.log('clickNext')
     setCount(count + 1)
-    setNextPage(true)
+    // setNextPage(true)
   }
 
   return (

@@ -91,6 +91,12 @@
   height: 2.5rem;
 }
 
+.p-dialog .p-dialog-header .p-dialog-header-icon:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem #AAD130;
+}
+
 .p-inputtext:enabled:focus {
   outline: 0 none;
   outline-offset: 0;
