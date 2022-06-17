@@ -90,3 +90,27 @@
   border-radius: 0.75rem;
   height: 2.5rem;
 }
+
+.p-inputtext:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem #AAD130;
+  border-color: #AAD130;
+}
+
+.inputRoundedError .p-inputtext:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem red;
+  border-color: red;
+}
+
+.p-button:enabled:hover, .p-button:not(button):not(a):not(.p-disabled):hover {
+  background: #AAD130;
+  color: #ffffff;
+  border-color: #AAD130;
+}
+
+.p-button:focus {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #AAD130, 0 1px 2px 0 black;
+}

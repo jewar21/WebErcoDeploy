@@ -11,15 +11,16 @@ import imgQuote from "../../assets/imagenes/imgQuote.png";
 export const generalInformations = {
   title: "¡Háblanos de ti! Queremos conocerte",
   fiels: [
-    { question: "¿Para quién es esta cotización?" },
-    { question: "¿Cuáles son tus apellidos?" },
+    { question: "¿Para quién es esta cotización?", id:"firstName" },
+    { question: "¿Cuáles son tus apellidos?", id:"lastName" },
     {
       question: "¿A cuál correo debemos enviar esta cotización?",
-      error: "Correo no válido"
+      error: "Correo no válido",
+      id:"email"
     },
-    { question: "¿Cuál es tu número de celular?" }
+    { question: "¿Cuál es tu número de celular?", id:"phone" },
   ],
-  selections: { question: "¿En dónde vives?" }
+  selections: { question: "¿En dónde vives?", id:"department" },
 };
 
 export const infrastructure = {
@@ -98,10 +99,10 @@ export const confirmation = {
 };
 
 export const places = [
-  { label: "Antioquia" },
-  { label: "Antioquia" },
-  { label: "Antioquia" },
-  { label: "Antioquia" }
+  { label: "Antioquia", value: "Antioquia" },
+  { label: "Antioquia", value: "Antioquia" },
+  { label: "Antioquia", value: "Antioquia" },
+  { label: "Antioquia", value: "Antioquia" }
 ];
 
 export const optionsQuestion = [

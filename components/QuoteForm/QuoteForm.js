@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Dialog } from "primereact/dialog";
 
 import PropTypes from "prop-types";
 
 import { useRecoilState } from "recoil";
-import { quoteCountState, quoteContentState } from "../../recoil/atoms";
+import { quoteCountState, quoteContentState, disabledNextPageFormState } from "../../recoil/atoms";
 
 import { iconArrow, iconArrowL } from "../../content/globalData";
 
@@ -19,6 +19,21 @@ import Confirmation from "./Views/Confirmation";
 
 const QuoteForm = () => {
   const [count, setCount] = useRecoilState(quoteCountState);
+  const [nextPage, setNextPage] = useRecoilState(disabledNextPageFormState);
+
+  // const [next, setNext] = useState(false)
+
+  const clickPrevius = () => {
+    console.log('clickPrevius')
+    setCount(count - 1)
+    // setNextPage(false)
+  }
+
+  const clickNext = () => {
+    console.log('clickNext')
+    setCount(count + 1)
+    setNextPage(true)
+  }
 
   return (
     <div className="quoteContent">
@@ -47,15 +62,16 @@ const QuoteForm = () => {
               {count !== 0 && (
                 <button
                   className="baseButton backButton"
-                  onClick={() => setCount(count - 1)}
+                  onClick={clickPrevius}
                 >
                   <div className="text-2xl">{iconArrowL}</div>
                   <p className="hidden lg:block">Anterior</p>
                 </button>
               )}
               <button
-                className="baseButton nextButton"
-                onClick={() => setCount(count + 1)}
+                className="baseButton nextButton disabled:opacity-75"
+                onClick={clickNext}
+                disabled={nextPage}
               >
                 <p className="hidden lg:block">Siguiente</p>
                 <div className="text-2xl">{iconArrow}</div>

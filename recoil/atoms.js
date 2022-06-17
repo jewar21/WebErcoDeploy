@@ -23,3 +23,20 @@ export const quoteContentState = atom({
   key: "QuoteContent",
   default: []
 });
+
+// quote form
+export const disabledNextPageFormState = atom({
+  key: "NextPageForm",
+  default: true
+});
+
+export const dataGeneralInformation = atom({
+  key: "GeneralInformation",
+  default: {
+    firstName: { value: '', isRequired: true, typeValidation: 'text', errorMessage: null }, 
+    lastName: { value: '', isRequired: true, typeValidation: 'text', errorMessage: null },
+    email: { value: '', isRequired: true, typeValidation: 'email', errorMessage: null },
+    phone: { value: '', isRequired: true, typeValidation: 'number', errorMessage: null },
+    department: { value: '', isRequired: true, typeValidation: 'select', errorMessage: null },
+  }
+});
