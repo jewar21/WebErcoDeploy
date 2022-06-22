@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
+import { useRecoilState } from "recoil";
+
+// Atoms
+import { dataInfrastructure, disabledNextPageFormState } from "../../../recoil/atoms";
 
 import { infrastructure } from "../../../content/data/quoteData";
 import { iconCheck } from "../../../content/globalData";
 
 const Infrastructure = () => {
-  const title = infrastructure.title;
-  const cards = infrastructure.cards;
+  const [infrastructureAtom, setInfrastructureAtom] = useRecoilState(dataInfrastructure);
+  const [disabledNextPage, setDisabledNextPage] = useRecoilState(disabledNextPageFormState);
+  
+  const { title, cards } = infrastructure;
 
-  console.log(cards);
+  const validateRequired = useCallback( () => {
+    if(infrastructureAtom) {
+      setDisabledNextPage(false)
+    } else {
+      setDisabledNextPage(true)
+    }
+  },[infrastructureAtom, setDisabledNextPage])
+
+  useEffect(() => {
+    validateRequired();
+  }, [validateRequired])
+
+  const clickCard = (data) => {
+    setInfrastructureAtom(data.name)
+  }
 
   return (
     <div className="infrastructureContent">
@@ -17,13 +37,13 @@ const Infrastructure = () => {
         </div>
         <div className="infrastructureCardsContent">
           {cards.map((card, i) => (
-            <div className="infrastructureCard" key={i}>
-              {false && (
+            <div className={`infrastructureCard ${infrastructureAtom === card.name && "activeInfrastructureCard"}`} key={i} onClick={() => clickCard(card)} >
+              {infrastructureAtom === card.name && (
                 <div className="infrastructureIconCheck">{iconCheck}</div>
               )}
               <div className="infrastructureIconText">
                 <div>{card.icon}</div>
-                <h5>{card.name}</h5>
+                <h5 className={`${infrastructureAtom === card.name && "infrastructureTextActive"}`}>{card.name}</h5>
               </div>
             </div>
           ))}

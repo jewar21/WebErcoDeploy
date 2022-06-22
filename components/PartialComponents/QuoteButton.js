@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { useMediaQuery } from "react-responsive";
 
 import { useRecoilState, useResetRecoilState } from "recoil";
-import { dataGeneralInformation, quoteCountState } from "../../recoil/atoms";
+import { dataGeneralInformation, dataInfrastructure, quoteCountState } from "../../recoil/atoms";
 
 import { DeviceSize } from "../../utils/handlers/handlers";
 
@@ -17,6 +17,7 @@ const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
 
   // Reset quote form atoms
   const resetGeneralInformation = useResetRecoilState(dataGeneralInformation);
+  const resetInfrastructure = useResetRecoilState(dataInfrastructure);
 
   const isMobile = useMediaQuery({ maxWidth: DeviceSize.mobile });
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -30,6 +31,7 @@ const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
   const closeQuote = () => {
     // Reset quote form atoms
     resetGeneralInformation();
+    resetInfrastructure();
     
     setIsOpenModal(false);
     setCount(0);

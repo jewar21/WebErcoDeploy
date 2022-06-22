@@ -40,3 +40,8 @@ export const dataGeneralInformation = atom({
     department: { value: '', isRequired: true, typeValidation: 'select', errorMessage: null },
   }
 });
+
+export const dataInfrastructure = atom({
+  key: "Infrastructure",
+  default: ''
+})
