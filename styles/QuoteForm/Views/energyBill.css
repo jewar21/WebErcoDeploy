@@ -16,10 +16,10 @@
     @apply flex w-36 justify-between mt-4 lg:mt-0;
   }
   .energyBillOptionContent {
-    @apply flex;
+    @apply flex cursor-pointer;
   }
   .energyBillOption {
-    @apply w-6 h-6 border-2 border-darkGrey-500 rounded-full mr-2;
+    @apply flex items-center justify-center w-6 h-6 border-2 border-darkGrey-500 rounded-full mr-2;
   }
   .energyBillUpload {
     @apply pt-4;
@@ -28,7 +28,7 @@
     @apply text-Body2 font-Regular text-darkGrey-500;
   }
   .energyBillIconUpload {
-    @apply flex items-center justify-center w-full h-6.5rem border-2 border-lightGrey-700 border-dotted rounded-2xl text-5xl text-primary-500 my-4;
+    @apply flex items-center justify-center w-full h-6.5rem border-2 border-lightGrey-700 border-dotted rounded-2xl text-5xl text-primary-500 my-4 cursor-pointer;
   }
   .energyBillQuestion2 {
     @apply w-full flex justify-evenly lg:justify-center;
@@ -38,5 +38,11 @@
   }
   .energyBillQuestion2 div {
     @apply text-primary-500 text-lg;
+  }
+  .activeEnergyBillOption {
+    @apply h-2.5 w-2.5 rounded-full bg-primary-500;
+  }
+  .requiredEnergyBillOption {
+    @apply text-secondary-500;
   }
 }

@@ -50,3 +50,11 @@ export const dataTypeOfSystem = atom({
   key: "TypeOfSystem",
   default: ''
 })
+
+export const dataEnergyBill = atom({
+  key: "EnergyBill",
+  default: {
+    reciveEnergyBill: null,
+    image: null
+  }
+})
