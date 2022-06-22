@@ -10,7 +10,7 @@
     @apply w-full h-full lg:flex justify-between pt-6;
   }
   .infrastructureCard {
-    @apply relative flex border-2 rounded-2xl border-lightGrey-500 h-4.5rem items-center mt-6 px-4 lg:mt-0 lg:w-52 lg:h-52 lg:px-0 lg:justify-center lg:items-start lg:pt-14;
+    @apply relative flex border-2 rounded-2xl border-lightGrey-500 h-4.5rem items-center mt-6 px-4 lg:mt-0 lg:w-52 lg:h-52 lg:px-0 lg:justify-center lg:items-start lg:pt-14 cursor-pointer;
   }
   .infrastructureIconText {
     @apply flex lg:flex-col lg:w-1/2 lg:items-center;

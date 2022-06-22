@@ -45,3 +45,8 @@ export const dataInfrastructure = atom({
   key: "Infrastructure",
   default: ''
 })
+
+export const dataTypeOfSystem = atom({
+  key: "TypeOfSystem",
+  default: ''
+})
