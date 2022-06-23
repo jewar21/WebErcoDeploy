@@ -1,14 +1,17 @@
 import { useEffect } from "react";
 import Image from "next/image";
+import PropTypes from "prop-types";
 
 // Packages
 import { gsap } from "gsap/dist/gsap";
 
 import { sidebarAnimations } from "../../../../styles/animations/globals";
 
+import { p1, p2, p3 } from "../../../../content/globalData";
+
 import QuoteButton from "../../../PartialComponents/QuoteButton";
 
-const CardsEcosystem = ({ contentData, icon, phone }) => {
+const CardsEcosystem = ({ contentData, icon, phone, textButton }) => {
   useEffect(() => {
     gsap.set(".panel-imgs", {
       zIndex: (i, target, targets) => targets.length - i
@@ -42,7 +45,7 @@ const CardsEcosystem = ({ contentData, icon, phone }) => {
             <div className="progressBar">
               <p className="progressBar-number">0</p>
               <div>
-                {contentData.map((e, i) => (
+                {contentData.map(({ counter }, i) => (
                   <span
                     key={i}
                     className={
@@ -51,7 +54,7 @@ const CardsEcosystem = ({ contentData, icon, phone }) => {
                         : "progressBar-number counter opacity-1 translate-y-[-5%]"
                     }
                   >
-                    {e.counter}
+                    {counter}
                   </span>
                 ))}
               </div>
@@ -63,8 +66,7 @@ const CardsEcosystem = ({ contentData, icon, phone }) => {
               </div>
             </div>
             <div>
-              {contentData.map((e, i) => {
-                let items = e.items;
+              {contentData.map(({ subtitle, items }, i) => {
                 return (
                   <div
                     key={i}
@@ -74,11 +76,11 @@ const CardsEcosystem = ({ contentData, icon, phone }) => {
                         : "panel-text opacity-0 translate-x-[10%]"
                     }
                   >
-                    <h5 className="panel-title">{e.subtitle}</h5>
-                    {items.map((e, i) => (
+                    <h5 className="panel-title">{subtitle}</h5>
+                    {items.map(({ item }, i) => (
                       <div key={i} className="panel-body">
                         <div className="panel-icon">{icon}</div>
-                        <p className="panel-item">{e.item}</p>
+                        <p className="panel-item">{item}</p>
                       </div>
                     ))}
                   </div>
@@ -89,23 +91,18 @@ const CardsEcosystem = ({ contentData, icon, phone }) => {
               buttonParameters={
                 "w-12.5rem h-14 font-bold border-solid border-2 border-primary-500 text-darkGrey-900"
               }
-              buttonText={"Cotizar sistema"}
+              buttonText={textButton}
               isIcon={false}
             />
           </div>
         </div>
         <div className="imgs-wrap">
-          {contentData.map((e, i) => (
+          {contentData.map(({ img, subtitle }, i) => (
             <div
               key={i}
               className={i === 2 ? "panel-imgs exclude" : "panel-imgs"}
             >
-              <Image
-                src={e.img.src}
-                alt="image"
-                layout="fill"
-                objectFit="fill"
-              />
+              <Image src={img} alt={subtitle} layout="fill" objectFit="fill" />
             </div>
           ))}
         </div>
@@ -117,11 +114,11 @@ const CardsEcosystem = ({ contentData, icon, phone }) => {
             layout="fill"
             objectFit="fill"
           />
-          {contentData.map((p, i) => (
+          {contentData.map((e, i) => (
             <Image
               key={i}
               className={i === 2 ? "panel-phone exclude" : "panel-phone"}
-              src={p.phoneImg.src}
+              src={i === 0 ? p1.src : i === 1 ? p2.src : p3.src}
               alt="image"
               layout="fill"
               objectFit="fill"
@@ -131,6 +128,13 @@ const CardsEcosystem = ({ contentData, icon, phone }) => {
       </div>
     </section>
   );
+};
+
+CardsEcosystem.propTypes = {
+  contentData: PropTypes.object.isRequired,
+  icon: PropTypes.object.isRequired,
+  phone: PropTypes.object.isRequired,
+  textButton: PropTypes.string.isRequired
 };
 
 export default CardsEcosystem;

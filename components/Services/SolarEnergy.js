@@ -4,7 +4,7 @@ import Container from "../../components/Navigation/Container";
 import GeneralCover from "../PartialComponents/GeneralCover/GeneralCover";
 import Installation from "./components/Installation";
 import AccordionGridComponent from "../../components/PartialComponents/AccordionGridComponent";
-import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner/EcosystemBanner";
+import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner";
 import PaymentMethods from "../PartialComponents/PaymentMethods/PaymentMethods";
 import Steps from "../PartialComponents/StepsComponent/Steps";
 

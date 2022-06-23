@@ -23,7 +23,7 @@ import p02 from "../../assets/imagenes/phone/tecnologia.svg";
 import p03 from "../../assets/imagenes/phone/oym.svg";
 import colombia from "../../assets/Paises/CO.png";
 import panama from "../../assets/Paises/PA.png";
-import unitedStates from "../../assets/Paises/UE.png";
+import unitedStates from "../../assets/Paises/US.png";
 import imgBackground from "../../assets/Backgrounds/backgroundGrid.svg";
 
 // Brands

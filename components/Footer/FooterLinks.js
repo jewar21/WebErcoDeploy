@@ -1,44 +1,38 @@
 import Link from "next/link";
 
-const FooterLinks = () => {
+import PropTypes from "prop-types";
+
+const FooterLinks = ({ links, contacts, country }) => {
   return (
     <div className="footerLinksContainer">
       <div className="footerlinksContentRight">
-        <Link href="/">
+        {links.map(({ name, href }, i) => (
+          <Link key={i} href={`/${country}${href}`}>
+            <a className="footerLink">{name}</a>
+          </Link>
+        ))}
+        {/* <Link href="/">
           <a className="footerLinkTitle">Erco</a>
-        </Link>
-        <Link href="/">
-          <a className="footerLink">Blog</a>
-        </Link>
-        <Link href="/">
-          <a className="footerLink">FAQ</a>
-        </Link>
-        <Link href="/">
-          <a className="footerLink">Contáctanos</a>
-        </Link>
-        <Link href="/">
-          <a className="footerLink">Trabaja con nosotros</a>
-        </Link>
-        <Link href="/">
-          <a className="footerLink">Políticas de privacidad</a>
-        </Link>
+        </Link> */}
       </div>
       <div className="footerlinksContentRight mt-4 lg:mt-0">
-        <p className="footerLinkTitle">Colombia</p>
-        <Link href="mailto:comercial@ercoenergia.com.co?subject=Questions">
-          <a className="footerLink">comercial@ercoenergia.com.co</a>
-        </Link>
-        <p className="footerLinkTitle">Panamá</p>
-        <Link href="mailto:cramirez@ercoenergia.com.pa?subject=Questions">
-          <a className="footerLink">cramirez@ercoenergia.com.pa</a>
-        </Link>
-        <p className="footerLinkTitle">San Antonio - Texas</p>
-        <Link href="mailto:info@ercoenergy.us?subject=Questions">
-          <a className="footerLink">info@ercoenergy.us</a>
-        </Link>
+        {contacts.map(({ country, email, href }, i) => (
+          <div key={i}>
+            <p className="footerLinkTitle">{country}</p>
+            <Link href={href}>
+              <a className="footerLink">{email}</a>
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );
+};
+
+FooterLinks.propTypes = {
+  links: PropTypes.array.isRequired,
+  contacts: PropTypes.array.isRequired,
+  country: PropTypes.string.isRequired
 };
 
 export default FooterLinks;

@@ -12,16 +12,28 @@ import TitleContent from "./components/TitleContent";
 import MobileErcosystem from "./components/MobileErcosystem";
 import CardsErcosystem from "./components/CardsErcosystem";
 
+/* Recoil */
+/* A state management library. */
+import { useRecoilValue } from "recoil";
+import { homeEcosystemContent, textsButtons } from "../../../recoil/atoms";
+
 const ErcosystemHeader = () => {
   const dataInformation = ecoSystemContent.information;
+  const { header, information } = useRecoilValue(homeEcosystemContent);
+  const buttons = useRecoilValue(textsButtons);
   return (
     <section>
-      <TitleContent headerData={ecoSystemContent} />
-      <MobileErcosystem contentData={dataInformation} icon={iconCheck} />
+      <TitleContent headerData={header} />
+      <MobileErcosystem
+        contentData={information}
+        icon={iconCheck}
+        textButton={buttons[4]}
+      />
       <CardsErcosystem
-        contentData={dataInformation}
+        contentData={information}
         icon={iconCheck}
         phone={phoneSVG}
+        textButton={buttons[4]}
       />
     </section>
   );

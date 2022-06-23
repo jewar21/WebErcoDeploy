@@ -32,7 +32,6 @@ const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
     <>
       <button
         className={`globalButton ${buttonParameters}`}
-        Button
         label="Top"
         onClick={openQuote}
       >
@@ -61,7 +60,7 @@ const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
 
 QuoteButton.propTypes = {
   buttonParameters: PropTypes.string.isRequired,
-  buttonText: PropTypes.string.isRequired,
+  buttonText: PropTypes.string,
   isIcon: PropTypes.bool.isRequired
 };
 

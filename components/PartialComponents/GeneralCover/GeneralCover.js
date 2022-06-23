@@ -38,7 +38,6 @@ const GeneralCover = ({
             : "generalCoverContainer pt-[10%]"
         }
       >
-        {/* <span>{typeService}</span> */}
         <span>
           {sectionType !== undefined
             ? sectionType

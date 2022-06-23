@@ -16,9 +16,7 @@ import "swiper/css/navigation";
 
 SwiperCore.use([EffectCoverflow, Navigation]);
 
-const Testimonials = ({ testimonials }) => {
-  const { cardContent } = testimonials;
-
+const Testimonials = ({ cardContent }) => {
   return (
     <div className="testimonialsContainer">
       <Swiper
@@ -30,13 +28,10 @@ const Testimonials = ({ testimonials }) => {
         className="testimonialSwiperMobile"
       >
         {cardContent.map((content, i) => {
-          const photo = content.photo.src;
-          const brand = content.companyIcon.src;
-
           return (
             <SwiperSlide key={i}>
               <div className="swiperSlideContainer">
-                <CardMobile photo={photo} brand={brand} content={content} />
+                <CardMobile content={content} />
               </div>
             </SwiperSlide>
           );
@@ -62,19 +57,10 @@ const Testimonials = ({ testimonials }) => {
         className="testimonialSwiper"
       >
         {cardContent.map((content, i) => {
-          const image = content.img.src;
-          const photo = content.photo.src;
-          const brand = content.companyIcon.src;
-
           return (
             <SwiperSlide key={i}>
               <div className="swiperSlideContainer">
-                <CardDesktop
-                  img={image}
-                  photo={photo}
-                  brand={brand}
-                  content={content}
-                />
+                <CardDesktop content={content} />
               </div>
             </SwiperSlide>
           );
@@ -84,6 +70,6 @@ const Testimonials = ({ testimonials }) => {
   );
 };
 
-Testimonials.propTypes = { testimonials: PropTypes.object.isRequired };
+Testimonials.propTypes = { cardContent: PropTypes.array.isRequired };
 
 export default Testimonials;

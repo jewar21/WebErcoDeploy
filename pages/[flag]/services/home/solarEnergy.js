@@ -1,23 +1,23 @@
 // Data
 
 import {
-  companyConverInfo,
-  companyInstallation,
+  homeConverInfo,
+  homeInstallation,
   cardsInstallation,
   stepsSolarEnergy,
   neuPlus,
   operationAndMaintenance
-} from "../../../content/data/servicesData";
+} from "../../../../content/data/servicesData";
 
 // components
 
-import SolarEnergy from "../../../components/Services/SolarEnergy";
+import SolarEnergy from "../../../../components/Services/SolarEnergy";
 
 const solarEnergy = () => {
   return (
     <SolarEnergy
-      dataCover={companyConverInfo}
-      dataInstallation={companyInstallation}
+      dataCover={homeConverInfo}
+      dataInstallation={homeInstallation}
       cardsData={cardsInstallation}
       stepsData={stepsSolarEnergy}
       neuPlus={neuPlus}

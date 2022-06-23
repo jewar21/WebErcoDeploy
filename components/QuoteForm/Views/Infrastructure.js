@@ -7,8 +7,6 @@ const Infrastructure = () => {
   const title = infrastructure.title;
   const cards = infrastructure.cards;
 
-  console.log(cards);
-
   return (
     <div className="infrastructureContent">
       <div className="infrastructureContainer">

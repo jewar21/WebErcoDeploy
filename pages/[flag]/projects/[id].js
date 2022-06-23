@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 
 // components
-import Container from "../../components/Navigation/Container";
-import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner/EcosystemBanner";
+import Container from "../../../components/Navigation/Container";
+import EcosystemBanner from "../../../components/PartialComponents/EcosystemBanner";
 
 const ProjectItem = () => {
   const router = useRouter();

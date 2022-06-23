@@ -1,82 +1,92 @@
+import React, { useRef, useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
 import Image from "next/image";
 
-import { useRecoilState } from "recoil";
-import { mobilePanelServiceState } from "../../../recoil/atoms";
+/* Recoil. */
+import { useRecoilState, useRecoilValue } from "recoil";
+import { mobilePanelServiceState, nameCountry } from "../../../recoil/atoms";
 
+/* I'm using the react-responsive library to detect the device size and the primereact library to
+create a panel that is displayed when the user clicks on the services button. */
 import { useMediaQuery } from "react-responsive";
 import { OverlayPanel } from "primereact/overlaypanel";
 import { RiArrowRightLine } from "react-icons/ri";
 
+/* I'm importing the DeviceSize object to use it in the react-responsive library.
+The co, pa, us are images that I use in the countries button. */
 import { DeviceSize } from "../../../utils/handlers/handlers";
 import { co, pa, us } from "../../../content/data/homeData";
 
-// components
-
+/* I'm importing the components that I use in the panel. */
 import ServicesPanel from "./ServicesPanel";
 import ServicesPanelMobile from "./ServicesPanelMobile";
 
-const NavLinks = () => {
+const NavLinks = ({ navbar }) => {
   const op = useRef(null);
   const isTablet = useMediaQuery({ maxWidth: DeviceSize.tablet });
   const [isOpenPanel, setOpenPanel] = useRecoilState(mobilePanelServiceState);
+  const country = useRecoilValue(nameCountry);
+
+  const menu = navbar.menu;
 
   return (
     <div className="navLinksContainer">
-      <ul className="contentUl">
-        <Link href="/">
-          <a className="navLinksActive navLinksActiveMobile">¿Quiénes somos?</a>
-        </Link>
-        {isTablet ? (
-          <div className="flex justify-between navLinksActiveMobile">
-            <p>Servicios</p>
-            <button
-              type="button"
-              onClick={() => {
-                setOpenPanel(!isOpenPanel);
-              }}
-            >
-              <RiArrowRightLine className="iconArrow" />
-            </button>
-          </div>
-        ) : (
-          <>
-            <button
-              className="navLinksActive navLinksActiveMobile"
-              type="button"
-              onClick={(e) => op.current.toggle(e)}
-            >
-              Servicios
-            </button>
-            <OverlayPanel
-              ref={op}
-              style={{
-                width: "38rem",
-                height: "17rem",
-                position: "absolute",
-                marginTop: "1rem",
-                borderRadius: "1rem"
-              }}
-            >
-              <ServicesPanel />
-            </OverlayPanel>
-          </>
-        )}
+      {menu && (
+        <ul className="contentUl">
+          <Link href={`/${country}`}>
+            <a className="navLinksActive navLinksActiveMobile">{menu[0]}</a>
+          </Link>
+          {isTablet ? (
+            <div className="flex justify-between navLinksActiveMobile">
+              <p>{navbar && menu[1]}</p>
+              <button
+                type="button"
+                onClick={() => {
+                  setOpenPanel(!isOpenPanel);
+                }}
+              >
+                <RiArrowRightLine className="iconArrow" />
+              </button>
+            </div>
+          ) : (
+            <>
+              <button
+                className="navLinksActive navLinksActiveMobile"
+                type="button"
+                onClick={(e) => op.current.toggle(e)}
+              >
+                {menu[1]}
+              </button>
+              <OverlayPanel
+                ref={op}
+                style={{
+                  width: "38rem",
+                  height: "17rem",
+                  position: "absolute",
+                  marginTop: "1rem",
+                  borderRadius: "1rem"
+                }}
+              >
+                <ServicesPanel data={navbar.services} />
+              </OverlayPanel>
+            </>
+          )}
 
-        <Link href="/projects">
-          <a className="navLinksActive navLinksActiveMobile">Proyectos</a>
-        </Link>
-        <Link href="/">
-          <a className="navLinksActive navLinksActiveMobile">Referidos</a>
-        </Link>
-        <Link href="/">
-          <a className="navLinksActive navLinksActiveMobile">Blog</a>
-        </Link>
-        <Link href="/contactUs">
-          <a className="navLinksActive navLinksActiveMobile">Contacto</a>
-        </Link>
-      </ul>
+          <Link href={`/${country}/projects`}>
+            <a className="navLinksActive navLinksActiveMobile">{menu[2]}</a>
+          </Link>
+          <Link href={`/${country}`}>
+            <a className="navLinksActive navLinksActiveMobile">{menu[3]}</a>
+          </Link>
+          <Link href={`/${country}`}>
+            <a className="navLinksActive navLinksActiveMobile">{menu[4]}</a>
+          </Link>
+          <Link href={`/${country}/contactUs`}>
+            <a className="navLinksActive navLinksActiveMobile">{menu[5]}</a>
+          </Link>
+        </ul>
+      )}
       {isTablet && (
         <div className="flex mb-6">
           <div className="countriesButton border-primary-500 border-2 ">
@@ -90,9 +100,11 @@ const NavLinks = () => {
           </div>
         </div>
       )}
-      {isOpenPanel && <ServicesPanelMobile />}
+      {isOpenPanel && <ServicesPanelMobile data={navbar.services} />}
     </div>
   );
 };
+
+NavLinks.propTypes = { navbar: PropTypes.object.isRequired };
 
 export default NavLinks;

@@ -1,11 +1,23 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
-import { useRecoilState } from "recoil";
-import { typeServiceState } from "../../../recoil/atoms";
+/* A state management library. */
+import { useRecoilState, useRecoilValue } from "recoil";
+import {
+  nameCountry,
+  typeServiceState,
+  textsButtons
+} from "../../../recoil/atoms";
 
-import { navInfo } from "../../../content/data/homeData";
+/* Importing the svg icons. */
+import {
+  iconLightbulb,
+  iconCar,
+  iconBattery
+} from "../../../content/globalData";
 
+/* Importing the svg icons. */
 import { iconArrow, iconArrowRight } from "../../../content/globalData";
 
 const initialState = {
@@ -20,12 +32,14 @@ const viewedComponent = {
   colorHover: "bg-[#F3FCD6]"
 };
 
-const ServicesPanel = () => {
+const ServicesPanel = ({ data }) => {
   const [home, setHome] = useState(initialState);
   const [company, setCompany] = useState(initialState);
   const [opening, setopening] = useState(viewedComponent.class);
   const [overCompany, setoverCompany] = useState(false);
   const [typeService, setTypeService] = useRecoilState(typeServiceState);
+  const country = useRecoilValue(nameCountry);
+  const buttonText = useRecoilValue(textsButtons);
 
   const handleClick = (e, isCompany) => {
     if (isCompany) {
@@ -70,20 +84,20 @@ const ServicesPanel = () => {
     <div id="servicesPanel" className="servicesPanelContent">
       <div className="servicesPanelLeft">
         <div id="home" className={`menuLeft ${home.colorHover}`}>
-          <p>HOGAR</p>
+          <p>{data.home}</p>
           {iconArrowRight}
         </div>
         <div id="company" className={`menuLeft ${company.colorHover}`}>
-          <p>EMPRESA</p>
+          <p>{data.company}</p>
           {iconArrowRight}
         </div>
       </div>
       <div className={`viewConditionalContent ${opening}`}>
         <div className="viewConditionalContainer">
-          <p>En Erco utilizamos la tecnología para transformar la energía.</p>
+          <p>{data.title}</p>
           <div className="viewConditionalButton">
-            <Link href="/">
-              <a className="viewConditionalButtonText">Conoce más</a>
+            <Link href={`/${country}/aboutUs`}>
+              <a className="viewConditionalButtonText">{buttonText[5]}</a>
             </Link>
             <div className="text-primary-500 text-xl">{iconArrow}</div>
           </div>
@@ -91,13 +105,13 @@ const ServicesPanel = () => {
       </div>
       <div className={`hiddenConditional ${home.class}`}>
         <div className="p-6 flex flex-col h-full w-full justify-between">
-          {navInfo.map((item, i) => (
+          {data.info.map((item, i) => (
             <Link
               key={i}
               href={
                 overCompany
-                  ? `/services/company${item.link}`
-                  : `/services/home${item.link}`
+                  ? `/${country}/services/company${item.link}`
+                  : `/${country}/services/home${item.link}`
               }
             >
               <a
@@ -115,7 +129,7 @@ const ServicesPanel = () => {
                       : "hiddenConditionalIcon"
                   }
                 >
-                  {item.icon}
+                  {i === 0 ? iconLightbulb : i === 1 ? iconCar : iconBattery}
                 </div>
                 <div className="hiddenConditionalText w-4/5">
                   <h2>{item.title}</h2>
@@ -129,5 +143,7 @@ const ServicesPanel = () => {
     </div>
   );
 };
+
+ServicesPanel.propTypes = { data: PropTypes.object.isRequired };
 
 export default ServicesPanel;

@@ -3,14 +3,21 @@ import Image from "next/image";
 
 import PropTypes from "prop-types";
 
-const CardDesktop = ({ img, photo, brand, content }) => {
+const CardDesktop = ({ content }) => {
+  const { testimonial, img, photo, name, position, companyIcon, altCompany } =
+    content;
   return (
     <div className="swiperDesktopContent">
       <div className="swiperDesktopCard">
         <div className="flex w-full h-full">
           <div className="sdImg">
             <div className="sdImgA">
-              <Image src={img} alt="image" layout="fill" objectFit="fill" />
+              <Image
+                src={img}
+                alt={altCompany}
+                layout="fill"
+                objectFit="fill"
+              />
             </div>
           </div>
           <div className="flex flex-col justify-center w-full h-full p-4.5rem">
@@ -20,23 +27,23 @@ const CardDesktop = ({ img, photo, brand, content }) => {
                   <div className="swiperClientImgA">
                     <Image
                       src={photo}
-                      alt="image"
+                      alt={name}
                       layout="fill"
                       objectFit="fill"
                     />
                   </div>
                 </div>
                 <div className="swiperClientName">
-                  <h3>{content.name}</h3>
-                  <p>{content.position}</p>
+                  <h3>{name}</h3>
+                  <p>{position}</p>
                 </div>
               </div>
-              <p className="swiperText">{content.testimonial}</p>
+              <p className="swiperText">{testimonial}</p>
               <div className="swiperBrandR">
                 <div className="swiperBrandA">
                   <Image
-                    src={brand}
-                    alt="image"
+                    src={companyIcon}
+                    alt={altCompany}
                     layout="fill"
                     objectFit="fill"
                   />
@@ -50,11 +57,6 @@ const CardDesktop = ({ img, photo, brand, content }) => {
   );
 };
 
-CardDesktop.propTypes = {
-  img: PropTypes.object.isRequired,
-  photo: PropTypes.object.isRequired,
-  brand: PropTypes.object.isRequired,
-  content: PropTypes.object.isRequired
-};
+CardDesktop.propTypes = { content: PropTypes.object.isRequired };
 
 export default CardDesktop;

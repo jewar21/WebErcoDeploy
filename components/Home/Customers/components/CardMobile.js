@@ -3,25 +3,33 @@ import Image from "next/image";
 
 import PropTypes from "prop-types";
 
-const CardMobile = ({ photo, brand, content }) => {
+const CardMobile = ({ content }) => {
+  const { testimonial, photo, name, position, companyIcon, altCompany } =
+    content;
+
   return (
     <div className="swiperMobileContent">
       <div className="swiperMobileContainer">
-        <p className="swiperText">{content.testimonial}</p>
+        <p className="swiperText">{testimonial}</p>
         <div className="swiperClientInfo">
           <div className="swiperClientImgR">
             <div className="swiperClientImgA">
-              <Image src={photo} alt="image" layout="fill" objectFit="fill" />
+              <Image src={photo} alt={name} layout="fill" objectFit="fill" />
             </div>
           </div>
           <div className="swiperClientName">
-            <h3>{content.name}</h3>
-            <p>{content.position}</p>
+            <h3>{name}</h3>
+            <p>{position}</p>
           </div>
         </div>
         <div className="swiperBrandR">
           <div className="swiperBrandA">
-            <Image src={brand} alt="image" layout="fill" objectFit="fill" />
+            <Image
+              src={companyIcon}
+              alt={altCompany}
+              layout="fill"
+              objectFit="fill"
+            />
           </div>
         </div>
       </div>
@@ -29,10 +37,6 @@ const CardMobile = ({ photo, brand, content }) => {
   );
 };
 
-CardMobile.propTypes = {
-  photo: PropTypes.object.isRequired,
-  brand: PropTypes.object.isRequired,
-  content: PropTypes.object.isRequired
-};
+CardMobile.propTypes = { content: PropTypes.object.isRequired };
 
 export default CardMobile;

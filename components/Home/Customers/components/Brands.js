@@ -12,10 +12,10 @@ import { Autoplay } from "swiper";
 
 const Brands = ({ companyLogos }) => {
   const isMobile = useMediaQuery({ maxWidth: DeviceSize.mobile });
+
   return (
     <div className="lg:p-5.5rem ">
       <Swiper
-        // effect={"coverflow"}
         slidesPerView={isMobile ? 2 : 6}
         spaceBetween={24}
         centeredSlides={true}
@@ -34,16 +34,15 @@ const Brands = ({ companyLogos }) => {
         modules={[Autoplay]}
         className="mySwiper"
       >
-        {companyLogos.map((e, i) => {
-          const image = e.logo.src;
+        {companyLogos.map(({ name, logo }, i) => {
           return (
             <SwiperSlide key={i}>
               <div className="grid grid-rows-2">
                 <div className="brandsImgR">
                   <div className="brandsImgA">
                     <Image
-                      src={image}
-                      alt="Picture of the brand"
+                      alt={name}
+                      src={logo}
                       layout="fill"
                       objectFit="fill"
                     />

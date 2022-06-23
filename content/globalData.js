@@ -144,3 +144,11 @@ export const ercoLogo = (width, height, color, isOneColor) => (
     </g>
   </svg>
 );
+
+import p01 from "../assets/imagenes/phone/instalacion.svg";
+import p02 from "../assets/imagenes/phone/tecnologia.svg";
+import p03 from "../assets/imagenes/phone/oym.svg";
+
+export const p1 = p01;
+export const p2 = p02;
+export const p3 = p03;

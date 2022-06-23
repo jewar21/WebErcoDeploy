@@ -1,16 +1,20 @@
+import React from "react";
 import Link from "next/link";
+import PropTypes from "prop-types";
 
-// recoil
-
-import { useRecoilState } from "recoil";
+/* Importing the state of the mobile panel and the type of service. */
+import { useRecoilState, useRecoilValue } from "recoil";
 import {
+  nameCountry,
   mobilePanelServiceState,
   typeServiceState
 } from "../../../recoil/atoms";
 
+/* Importing the icon of the arrow. */
 import { iconArrowL } from "../../../content/globalData";
 
-const ServicesPanelMobile = () => {
+const ServicesPanelMobile = ({ data }) => {
+  const country = useRecoilValue(nameCountry);
   const [isOpenPanel, setOpenPanel] = useRecoilState(mobilePanelServiceState);
   const [typeService, setTypeService] = useRecoilState(typeServiceState);
 
@@ -33,44 +37,41 @@ const ServicesPanelMobile = () => {
           }}
         >
           <div className="iconArrow">{iconArrowL}</div>
-          <p className="servicesReturn">Servicios</p>
+          <p className="servicesReturn">{data.name}</p>
         </button>
         <div className="companyContent">
           <div className="companyContainer">
-            <h2 className="titleSection">EMPRESA</h2>
-            <Link href="/services/company/solarEnergy">
-              <a onClick={(e) => handleClick(e, true)} className="companyLink">
-                Ecosistema de energía
-              </a>
-            </Link>
-            <Link href="/services/company/electricMobility">
-              <a onClick={(e) => handleClick(e, true)} className="companyLink">
-                Movilidad eléctrica
-              </a>
-            </Link>
-            <Link href="/services/company/energyStorage">
-              <a onClick={(e) => handleClick(e, true)} className="companyLink">
-                Almacenamiento de energía
-              </a>
-            </Link>
+            <h2 className="titleSection">{data.company}</h2>
+            {data.info.map((item, i) => (
+              <Link key={i} href={`/${country}/services/company${item.link}`}>
+                <a
+                  onClick={(e) => handleClick(e, true)}
+                  className="companyLink"
+                >
+                  {item.title}
+                </a>
+              </Link>
+            ))}
           </div>
         </div>
         <div className="homeContainer">
-          <h2 className="titleSection">HOGAR</h2>
-          <Link href="/services/home/solarEnergy">
-            <a onClick={(e) => handleClick(e, false)} className="companyLink">
-              Ecosistema de energía
-            </a>
-          </Link>
-          <Link href="/services/home/electricMobility">
-            <a onClick={(e) => handleClick(e, false)} className="companyLink">
-              Movilidad eléctrica
-            </a>
-          </Link>
+          <h2 className="titleSection">{data.home}</h2>
+          {data.info.map((item, i) => (
+            <Link key={i} href={`/${country}/services/home${item.link}`}>
+              <a
+                onClick={(e) => handleClick(e, true)}
+                className={i === 2 ? "hidden" : "companyLink"}
+              >
+                {item.title}
+              </a>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
   );
 };
+
+ServicesPanelMobile.propTypes = { data: PropTypes.object.isRequired };
 
 export default ServicesPanelMobile;

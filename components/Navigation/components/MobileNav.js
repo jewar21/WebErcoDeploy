@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 import NavLinks from "./NavLinks";
 import MenuToggle from "./MenuToggle";
 
-const MobileNav = () => {
+const MobileNav = ({ navbar }) => {
   const [isOpen, setOpen] = useState(false);
 
   return (
@@ -16,11 +17,13 @@ const MobileNav = () => {
       />
       {isOpen && (
         <div className="mobileNav">
-          <NavLinks />
+          <NavLinks navbar={navbar} />
         </div>
       )}
     </div>
   );
 };
+
+MobileNav.propTypes = { navbar: PropTypes.object.isRequired };
 
 export default MobileNav;

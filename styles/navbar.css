@@ -89,7 +89,7 @@
     @apply flex flex-col h-full w-2/5 bg-lightGrey-300;
   }
   .menuLeft {
-    @apply flex justify-between items-center p-6 cursor-pointer;
+    @apply flex justify-between items-center p-6 cursor-pointer uppercase;
   }
   .viewConditionalContent {
     @apply h-full w-full;

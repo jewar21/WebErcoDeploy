@@ -1,26 +1,31 @@
 import Head from "next/head";
 
-import Navigation from "./Navigation";
-import Footer from "../Footer/Footer";
+// Recoil
+import { useRecoilValue } from "recoil";
+import { nameCountry } from "../../recoil/atoms";
 
-const Container = (props) => (
-  <div>
-    <Head>
-      <title>Erco Energía</title>
-      <link rel="icon" href="/erco_logo.ico" />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"
-      />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&display=swap"
-      />
-    </Head>
-    <Navigation />
-    <div>{props.children}</div>
-    <Footer />
-  </div>
-);
+/* Importing the components that are going to be used in the Container component. */
+import Footer from "../Footer";
+import Navigation from ".";
+
+const Container = (props) => {
+  const country = useRecoilValue(nameCountry);
+  return (
+    <div>
+      <Head>
+        <title>
+          {country === "co" || country === "pa"
+            ? "Erco Energía"
+            : "Erco Energy"}
+        </title>
+      </Head>
+      <Navigation />
+      <div>{props.children}</div>
+      <Footer />
+    </div>
+  );
+};
 
 export default Container;
+
+import React from "react";
