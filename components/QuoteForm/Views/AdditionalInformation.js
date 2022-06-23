@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
 
 import { InputTextarea } from "primereact/inputtextarea";
 
@@ -9,14 +10,16 @@ import {
 
 import { AutoComplete } from "primereact/autocomplete";
 import { Dialog } from "primereact/dialog";
+import { dataAdditionalInformation, disabledNextPageFormState } from "../../../recoil/atoms";
 
 const AdditionalInformation = () => {
   const title = additionalInformation.title;
   const terms = additionalInformation.terms.split(" ");
 
-  const [value1, setValue1] = useState("");
 
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [additionalInformationAtom, setAdditionalInformationAtom] = useRecoilState(dataAdditionalInformation);
+  const [disabledNextPage, setDisabledNextPage] = useRecoilState(disabledNextPageFormState);
+
   const [filteredItems, setFilteredItems] = useState(null);
 
   /**
@@ -38,6 +41,31 @@ const AdditionalInformation = () => {
     setFilteredItems(_filteredItems);
   };
 
+  const validateRequired = useCallback( () => {
+    let allReady = false;
+
+    if(additionalInformationAtom.meetUs && additionalInformationAtom.moreInformation && additionalInformationAtom.agreeTerms) {
+      allReady = true;
+    }
+
+    if(allReady) {
+      setDisabledNextPage(false);
+    } else {
+      setDisabledNextPage(true);
+    }
+  },[additionalInformationAtom, setDisabledNextPage])
+
+  useEffect(() => {
+    validateRequired(true);
+  }, [validateRequired])
+
+  const onChangeInfo = (id, data) => {
+    setAdditionalInformationAtom({
+      ...additionalInformationAtom,
+      [id]: data
+    })
+  }
+
   return (
     <div className="additionalIContent">
       <div className="additionalIContainer">
@@ -49,14 +77,14 @@ const AdditionalInformation = () => {
           <span className="text-secondary-500">*</span>
           <AutoComplete
             className="inputRounded mt-4"
-            value={selectedItem}
+            value={additionalInformationAtom.meetUs}
             suggestions={filteredItems}
             completeMethod={searchItems}
             virtualScrollerOptions={{ itemSize: 10 }}
             field="label"
             dropdown
-            onChange={(e) => setSelectedItem(e.value)}
-            aria-label="Placves"
+            onChange={(e) => onChangeInfo('meetUs', e.value)}
+            aria-label="meetUs"
           />
         </div>
         <div className="additionalIQ2">
@@ -64,8 +92,8 @@ const AdditionalInformation = () => {
           <span className="text-secondary-500">*</span>
           <div className="inputRounded mt-4">
             <InputTextarea
-              value={value1}
-              onChange={(e) => setValue1(e.target.value)}
+              value={additionalInformationAtom.moreInformation}
+              onChange={(e) => onChangeInfo('moreInformation', e.target.value)}
               rows={5}
               cols={30}
               className="additionalInputTextarea"
@@ -74,7 +102,7 @@ const AdditionalInformation = () => {
         </div>
         <div className="additionalITerms">
           <label className="additionalCheckbox">
-            <input type="checkbox" />
+            <input type="checkbox" checked={additionalInformationAtom.agreeTerms} onChange={(e) => onChangeInfo('agreeTerms', e.target.checked)} />
             <span className="checkmark"></span>
           </label>
           <small>

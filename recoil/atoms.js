@@ -58,3 +58,12 @@ export const dataEnergyBill = atom({
     image: null
   }
 })
+
+export const dataAdditionalInformation = atom({
+  key: "AdditionalInformation",
+  default: {
+    meetUs: '',
+    moreInformation: '',
+    agreeTerms: false
+  }
+})
