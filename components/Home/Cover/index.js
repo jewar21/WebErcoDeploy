@@ -19,7 +19,8 @@ const Cover = () => {
   const coverInfo = useRecoilValue(homeCoverData);
   const buttonText = useRecoilValue(textsButtons);
 
-  const coverContent = coverInfo.coverContent;
+  const { coverContent, cardsCover } = coverInfo;
+  const { bg, title, content, content1 } = coverContent;
 
   return (
     <section>
@@ -27,7 +28,7 @@ const Cover = () => {
         <div className="coverBackground" />
         <video
           className="object-cover w-full h-screen absolute -z-50"
-          src={coverContent.bg}
+          src={bg}
           autoPlay
           loop
           muted
@@ -38,12 +39,10 @@ const Cover = () => {
           initial="displacement"
           animate="visible"
         >
-          <h1>{coverContent.title}</h1>
+          <h1>{title}</h1>
           <p>
-            {coverContent.content}
-            <span className="text-primary-300 pl-2">
-              {coverContent.content1}
-            </span>
+            {content}
+            <span className="text-primary-300 pl-2">{content1}</span>
           </p>
           <QuoteButton
             buttonParameters={
@@ -54,11 +53,11 @@ const Cover = () => {
           />
         </motion.div>
         <div className="hidden lg:block">
-          <CardsCover data={coverInfo.cardsCover} />
+          <CardsCover data={cardsCover} />
         </div>
       </div>
       <div className="lg:hidden">
-        <CardsCover data={coverInfo.cardsCover} />
+        <CardsCover data={cardsCover} />
       </div>
     </section>
   );

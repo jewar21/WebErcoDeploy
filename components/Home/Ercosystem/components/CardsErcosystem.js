@@ -131,7 +131,7 @@ const CardsEcosystem = ({ contentData, icon, phone, textButton }) => {
 };
 
 CardsEcosystem.propTypes = {
-  contentData: PropTypes.object.isRequired,
+  contentData: PropTypes.array.isRequired,
   icon: PropTypes.object.isRequired,
   phone: PropTypes.object.isRequired,
   textButton: PropTypes.string.isRequired
