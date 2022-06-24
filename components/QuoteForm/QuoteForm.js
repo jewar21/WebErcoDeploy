@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import axios from 'axios';
 
 import { Dialog } from "primereact/dialog";
 
 import PropTypes from "prop-types";
 
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { quoteCountState, quoteContentState, disabledNextPageFormState } from "../../recoil/atoms";
 
 import { iconArrow, iconArrowL } from "../../content/globalData";
@@ -16,10 +17,13 @@ import Infrastructure from "./Views/Infrastructure";
 import EnergyBill from "./Views/EnergyBill";
 import AdditionalInformation from "./Views/AdditionalInformation";
 import Confirmation from "./Views/Confirmation";
+import { dataToSendZoho } from "../../recoil/selectors";
 
 const QuoteForm = () => {
   const [count, setCount] = useRecoilState(quoteCountState);
   const [nextPage, setNextPage] = useRecoilState(disabledNextPageFormState);
+
+  const dataSend = useRecoilValue(dataToSendZoho);
 
   // const [next, setNext] = useState(false)
 
@@ -29,10 +33,27 @@ const QuoteForm = () => {
     // setNextPage(false)
   }
 
-  const clickNext = () => {
-    console.log('clickNext')
-    setCount(count + 1)
-    // setNextPage(true)
+  const clickNext = async () => {
+    console.log('clickNext',count)
+    if(count !== 4) {
+      setCount(count + 1);
+    } else {
+      console.log('dataSend',dataSend)
+      const URL = process.env.NEXT_PUBLIC_API_URL;
+      const HEADER = {headers: {
+        "Content-Type": "multipart/form-data",
+      }}
+      const {status, data} = await axios.post(`${URL}zoho/new_entity`, dataSend, HEADER);
+
+      console.log('status',status)
+      console.log('data',data)
+      if(status === 200 && data.status === 'SUCCESS') {
+        // setCount(count + 1);
+      } else {
+        console.log('Error algo salio mal. STATUS:', status)
+        console.log('Error', data.message)
+      }
+    }
   }
 
   return (

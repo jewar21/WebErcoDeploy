@@ -46,10 +46,6 @@ export const typeOfSystem = {
     {
       subTitle: "Aislado",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing"
-    },
-    {
-      subTitle: "Respaldo",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing"
     }
   ]
 };
@@ -106,14 +102,14 @@ export const places = [
 ];
 
 export const optionsQuestion = [
-  { label: "Facebook/Instagram" },
-  { label: "LinkedIn" },
-  { label: "Búsqueda Google" },
-  { label: "Ferias/Eventos" },
-  { label: "Periódicos" },
-  { label: "Radio" },
-  { label: "Televisión" },
-  { label: "Referido" },
-  { label: "Valla Publicitaria" },
-  { label: "Email Marketing" }
+  { label: "Facebook/Instagram" , value: "Redes Sociales" },
+  { label: "LinkedIn" , value: "Redes Sociales" },
+  { label: "Búsqueda Google" , value: "Búsqueda Google" },
+  { label: "Ferias/Eventos" , value: "Ferias/Eventos" },
+  { label: "Periódicos" , value: "Periódico" },
+  { label: "Radio" , value: "Radio" },
+  { label: "Televisión" , value: "Televisión" },
+  { label: "Referido" , value: "Referido"},
+  { label: "Valla Publicitaria" , value: "Valla Publicitaria" },
+  { label: "Email Marketing", value: "Email Marketing" }
 ];

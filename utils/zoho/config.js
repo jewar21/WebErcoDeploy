@@ -93,6 +93,11 @@ export class ZohoAPI {
             const { data } = await this.zohoClient.post(`${this.moduleName}`,
                 {
                     data: [dataPost]
+                },
+                {
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                    },
                 }
             );
             // console.log(data)
@@ -100,6 +105,7 @@ export class ZohoAPI {
             if(data.data[0].code === 'SUCCESS') {
                 return { data: data.data[0].details, message: "Datos añadido correctamente", status: 'SUCCESS' }
             } else {
+                console.log(data.data[0])
                 return { data: data.data[0].details, message: data.data[0].message, status: 'FAIL' }
             }
         } catch (error) {
