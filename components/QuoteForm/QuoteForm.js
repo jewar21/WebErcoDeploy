@@ -40,10 +40,13 @@ const QuoteForm = () => {
     } else {
       console.log('dataSend',dataSend)
       const URL = process.env.NEXT_PUBLIC_API_URL;
-      const HEADER = {headers: {
-        "Content-Type": "multipart/form-data",
-      }}
-      const {status, data} = await axios.post(`${URL}zoho/new_entity`, dataSend, HEADER);
+      const CONFIG = {
+        headers: { "Content-Type": "multipart/form-data" },
+        onUploadProgress: (event) => {
+          console.log(`Current progress:`, Math.round((event.loaded * 100) / event.total));
+        },
+      }
+      const {status, data} = await axios.post(`${URL}zoho/new_entity`, dataSend, CONFIG);
 
       console.log('status',status)
       console.log('data',data)

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import FormData from 'form-data';
 
 export class ZohoAPI {
 
@@ -88,21 +89,21 @@ export class ZohoAPI {
         }
     }
 
-    addNewEntityModule = async (dataPost) => {
+    addNewEntityModule = async (dataPost, file) => {
         try {
             const { data } = await this.zohoClient.post(`${this.moduleName}`,
                 {
                     data: [dataPost]
                 },
-                {
-                    headers: {
-                        "Content-Type": "multipart/form-data",
-                    },
-                }
             );
-            // console.log(data)
-
+            // console.log('dataResponse',data.data[0].details)
+            
             if(data.data[0].code === 'SUCCESS') {
+                if(file) {
+                    console.log('Proceso de imagen')
+                    const id = data.data[0].details.id
+                    this.addImageToAttachments(id, file)
+                }
                 return { data: data.data[0].details, message: "Datos añadido correctamente", status: 'SUCCESS' }
             } else {
                 console.log(data.data[0])
@@ -111,6 +112,28 @@ export class ZohoAPI {
         } catch (error) {
             console.log('error', error)
             return { data: {}, message: "Error al intentar crear", status: 'FAIL' }
+        }
+    }
+
+    addImageToAttachments = async (id, file) => {
+        try {
+            console.log(id, file)
+            const dataSend = new FormData();
+            dataSend.append('Adj_ntanos_una_foto_completa_de_tu_ltima_factura', file)
+
+            console.log('url', `${this.moduleName}/${id}/Attachments`)
+            
+            const { data } = await this.zohoClient.post(`${this.moduleName}/${id}/Attachments`, dataSend,
+                {
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                    },
+                }
+            ); 
+            console.log('termina')
+            console.log('dataResponse',data.data[0])
+        } catch (error) {
+            console.log('error al subir imagen', error)
         }
     }
 

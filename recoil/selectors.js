@@ -33,7 +33,7 @@ export const dataToSendZoho = selector({
         dataSend.append('Tu_solicitud_es_para', infrastructure);
         dataSend.append('Tipo_de_sistema', typeOfSystem ? `Solar ${typeOfSystem}` : null);
         dataSend.append('Te_llega_factura_mensual_de_Energ_a', energyBill.reciveEnergyBill);
-        dataSend.append('Adj_ntanos_una_foto_completa_de_tu_ltima_factura', energyBill.image);
+        dataSend.append('image', energyBill.image);
         dataSend.append('C_mo_nos_conociste', additionalInformation.meetUs.value);
         dataSend.append('Cu_ntanos_tu_necesidad', additionalInformation.moreInformation);
 
