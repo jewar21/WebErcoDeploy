@@ -4,8 +4,12 @@ import GridComponent from "./GridComponent";
 const index = ({ data, isImage, isNeu }) => {
   return (
     <>
-      <AccordionComponent data={data} />
-      <GridComponent data={data} isImage={isImage} isNeu={isNeu} />
+      {data && (
+        <>
+          <AccordionComponent data={data} />
+          <GridComponent data={data} isImage={isImage} isNeu={isNeu} />
+        </>
+      )}
     </>
   );
 };

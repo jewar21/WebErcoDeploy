@@ -9,13 +9,14 @@ const StatisticsBanner = () => {
   return (
     <section className="statisticsBannerContainer">
       <div className="statisticsBannerContent">
-        {statisticsErco.map(({ number, description, info }, index) => (
-          <div className="statistics" key={index}>
-            <h3>{number}</h3>
-            <p>{description}</p>
-            <span>{info}</span>
-          </div>
-        ))}
+        {statisticsErco &&
+          statisticsErco.map(({ number, description, info }, index) => (
+            <div className="statistics" key={index}>
+              <h3>{number}</h3>
+              <p>{description}</p>
+              <span>{info}</span>
+            </div>
+          ))}
       </div>
     </section>
   );

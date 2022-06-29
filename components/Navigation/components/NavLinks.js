@@ -28,7 +28,7 @@ const NavLinks = ({ navbar }) => {
   const [isOpenPanel, setOpenPanel] = useRecoilState(mobilePanelServiceState);
   const country = useRecoilValue(nameCountry);
 
-  const menu = navbar.menu;
+  const { menu, services } = navbar;
 
   return (
     <div className="navLinksContainer">
@@ -68,7 +68,7 @@ const NavLinks = ({ navbar }) => {
                   borderRadius: "1rem"
                 }}
               >
-                <ServicesPanel data={navbar.services} />
+                <ServicesPanel data={services} />
               </OverlayPanel>
             </>
           )}
@@ -92,15 +92,15 @@ const NavLinks = ({ navbar }) => {
           <div className="countriesButton border-primary-500 border-2 ">
             <Image src={co} alt="Colombia" width={32} height={32} />
           </div>
-          <div className="countriesButton mx-2">
+          {/* <div className="countriesButton mx-2">
             <Image src={pa} alt="Colombia" width={32} height={32} />
           </div>
           <div className="countriesButton">
             <Image src={us} alt="Colombia" width={32} height={32} />
-          </div>
+          </div> */}
         </div>
       )}
-      {isOpenPanel && <ServicesPanelMobile data={navbar.services} />}
+      {isOpenPanel && <ServicesPanelMobile data={services} />}
     </div>
   );
 };

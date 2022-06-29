@@ -26,7 +26,7 @@ const Navbar = () => {
   const isMobile = useMediaQuery({ maxWidth: DeviceSize.mobile });
   const isTablet = useMediaQuery({ maxWidth: DeviceSize.tablet });
 
-  const iconFlag = navbar.iconFlag;
+  const { iconFlag } = navbar;
 
   return (
     <nav className="navbarContainer">

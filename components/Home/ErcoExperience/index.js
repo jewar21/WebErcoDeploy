@@ -13,7 +13,13 @@ const ErcoExperience = () => {
 
   return (
     <section>
-      <AccordionGridComponent data={expContent} isImage={true} isNeu={false} />
+      {expContent && (
+        <AccordionGridComponent
+          data={expContent}
+          isImage={true}
+          isNeu={false}
+        />
+      )}
     </section>
   );
 };

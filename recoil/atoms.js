@@ -2,7 +2,7 @@ import { atom } from "recoil";
 
 /* Creating a state called flag and setting the default value to co. */
 export const nameCountry = atom({
-  key: "country",
+  key: "Country",
   default: "co"
 });
 
@@ -38,31 +38,31 @@ export const navbarInfo = atom({
 
 /* Creating a state called homeCoverData and setting the default value to an empty object. */
 export const homeCoverData = atom({
-  key: "homeCover",
+  key: "HomeCover",
   default: {}
 });
 
 /* Creating a state called homeEcosystemContent and setting the default value to an empty object. */
 export const homeEcosystemContent = atom({
-  key: "homeEcosystem",
+  key: "HomeEcosystem",
   default: {}
 });
 
 /* Creating a state called experienceContent and setting the default value to an empty object. */
 export const homeExpContent = atom({
-  key: "homeExperience",
+  key: "HomeExperience",
   default: {}
 });
 
 /* Creating a state called homeTestimonials and setting the default value to an empty object. */
 export const homeTestimonials = atom({
-  key: "testimonials",
+  key: "Testimonials",
   default: {}
 });
 
 /* Creating a state called brands and setting the default value to an empty array. */
 export const brands = atom({
-  key: "brand",
+  key: "Brand",
   default: []
 });
 
@@ -70,7 +70,7 @@ export const brands = atom({
 
 /* Creating a state called homeStatisticsErco and setting the default value to an empty array. */
 export const bannersData = atom({
-  key: "banners",
+  key: "Banners",
   default: {}
 });
 
@@ -82,6 +82,6 @@ export const textsButtons = atom({
 
 /* Creating a state called contactUs and setting the default value to an empty object. */
 export const contactUs = atom({
-  key: "cu",
+  key: "ContactU",
   default: {}
 });

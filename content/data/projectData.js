@@ -1,16 +1,16 @@
 import imgCoverProjects from "../../assets/imagenes/Projects/InternaProyectos/Banner/Banner-proyectos.jpg";
 
-import imgProjectsA01 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/1/1.JPG";
+import imgProjectsA01 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/1/1.jpg";
 import imgProjectsA02 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/1/2.jpg";
 import imgProjectsA03 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/1/3.jpg";
 
 import imgProjectsB01 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/2/1.jpg";
-import imgProjectsB02 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/2/2.JPG";
-import imgProjectsB03 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/2/3.JPG";
+import imgProjectsB02 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/2/2.jpg";
+import imgProjectsB03 from "../../assets/imagenes/Projects/InternaProyectos/FotosResidenciales/2/3.jpg";
 
 import imgBrand from "../../assets/imagenes/brands/EPM.png";
 
-export const projectsConverInfo = {
+export const projectsCoverInfo = {
   section: "Proyectos",
   img: imgCoverProjects,
   title: "Conoce nuestros proyectos",

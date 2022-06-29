@@ -1,5 +1,6 @@
 const ComponentTitle = ({ data, isNeu }) => {
-  const title1 = data.title1;
+  const { title, title1, content } = data;
+
   return (
     <div
       className={
@@ -9,10 +10,10 @@ const ComponentTitle = ({ data, isNeu }) => {
       }
     >
       <h3>
-        {data.title}
-        {title1 && <span>{title1}</span>}
+        {title}
+        <span>{title1}</span>
       </h3>
-      <p>{data.content}</p>
+      <p>{content}</p>
     </div>
   );
 };

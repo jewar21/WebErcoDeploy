@@ -23,63 +23,74 @@ import FooterLinks from "./FooterLinks";
 const Footer = () => {
   const data = useRecoilValue(contactUs);
   const country = useRecoilValue(nameCountry);
-  const { address, location, partner, links, socialNetworks, contacts } =
-    data.offices;
+  const { offices } = data;
 
   return (
     <footer className="footerContainer">
-      <div className="footerIconsContent">
-        <div className="footerIconsContainer">
-          <Link href={`/${country}`}>
-            <a className="block lg:hidden">
-              {ercoLogo(144, 38.92, "#fff", true)}
-            </a>
-          </Link>
-          <Link href="/">
-            <a className="hidden lg:block">{ercoLogo(185, 50, "#fff", true)}</a>
-          </Link>
-          <div className="footerSocialNetworks">
-            {socialNetworks.map((href, i) => (
-              <Link href={href} key={i}>
-                <a target="_blank">
-                  {i === 0
-                    ? iconTwitter
-                    : i === 1
-                    ? iconInstagram
-                    : i === 2
-                    ? iconFacebook
-                    : i === 3
-                    ? iconLinkedIn
-                    : iconYoutube}
+      {offices && (
+        <>
+          <div className="footerIconsContent">
+            <div className="footerIconsContainer">
+              <Link href={`/${country}`}>
+                <a className="block lg:hidden">
+                  {ercoLogo(144, 38.92, "#fff", true)}
                 </a>
               </Link>
-            ))}
+              <Link href="/">
+                <a className="hidden lg:block">
+                  {ercoLogo(185, 50, "#fff", true)}
+                </a>
+              </Link>
+              <div className="footerSocialNetworks">
+                {offices.socialNetworks.map((href, i) => (
+                  <Link href={href} key={i}>
+                    <a target="_blank">
+                      {i === 0
+                        ? iconTwitter
+                        : i === 1
+                        ? iconInstagram
+                        : i === 2
+                        ? iconFacebook
+                        : i === 3
+                        ? iconLinkedIn
+                        : iconYoutube}
+                    </a>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <FooterLinks
+              links={offices.links}
+              contacts={offices.contacts}
+              country={country}
+            />
           </div>
-        </div>
-        <FooterLinks links={links} contacts={contacts} country={country} />
-      </div>
-      <div className="footerbutton">
-        <div className="footerbuttonContainer">
-          <div>
-            <p className="footerInfoLeft">
-              {address}
-              <span className="block lg:ml-1 lg:inline">{location}</span>
-            </p>
-          </div>
-          <div className="footerInfoRight">
-            <p className="mb-1 uppercase">{partner}</p>
-            <div className="nuestroSocioImg">
-              <Image
-                src={nuestroSocioImg.src}
-                alt="Nuestro Socio"
-                layout="responsive"
-                width={159}
-                height={40}
-              />
+          <div className="footerbutton">
+            <div className="footerbuttonContainer">
+              <div>
+                <p className="footerInfoLeft">
+                  {offices.address}
+                  <span className="block lg:ml-1 lg:inline">
+                    {offices.location}
+                  </span>
+                </p>
+              </div>
+              <div className="footerInfoRight">
+                <p className="mb-1 uppercase">{offices.partner}</p>
+                <div className="nuestroSocioImg">
+                  <Image
+                    src={nuestroSocioImg.src}
+                    alt="Nuestro Socio"
+                    layout="responsive"
+                    width={159}
+                    height={40}
+                  />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </footer>
   );
 };

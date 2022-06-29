@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import ComponentTitle from "./ComponentTitle";
 
 import { iconAdd, iconSubtrac } from "../../../content/globalData";
 
-const AccordionComponent = ({ data}) => {
-  const cards = data.cards;
+import ComponentTitle from "./ComponentTitle";
+
+const AccordionComponent = ({ data }) => {
+  const { cards } = data;
   const [selected, setselected] = useState(null);
 
   const toggle = (i) => {
@@ -18,30 +19,31 @@ const AccordionComponent = ({ data}) => {
       <div className="accordionComponentContainer">
         <ComponentTitle data={data} />
         <div className="pt-12">
-          {cards.map(({ title, content }, i) => {
-            return (
-              <div key={i} className="accordan">
-                <div
-                  className="accordan-head"
-                  onClick={() => {
-                    toggle(i);
-                  }}
-                >
-                  <h4>{title}</h4>
-                  <div className="action-itemButton">
-                    {selected === i ? iconSubtrac : iconAdd}
+          {cards &&
+            cards.map(({ title, content }, i) => {
+              return (
+                <div key={i} className="accordan">
+                  <div
+                    className="accordan-head"
+                    onClick={() => {
+                      toggle(i);
+                    }}
+                  >
+                    <h4>{title}</h4>
+                    <div className="action-itemButton">
+                      {selected === i ? iconSubtrac : iconAdd}
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      selected === i ? "acordan-body-show" : "acordan-body"
+                    }
+                  >
+                    <p>{content}</p>
                   </div>
                 </div>
-                <div
-                  className={
-                    selected === i ? "acordan-body-show" : "acordan-body"
-                  }
-                >
-                  <p>{content}</p>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
       </div>
     </section>

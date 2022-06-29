@@ -7,9 +7,6 @@ import {
   iconLeaf
 } from "../../../../content/globalData";
 
-// data
-import { coverInfo } from "../../../../content/data/homeData";
-
 const CardsCover = ({ data }) => {
   return (
     <div className="cardCoverContainer">

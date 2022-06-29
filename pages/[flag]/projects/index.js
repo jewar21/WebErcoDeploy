@@ -1,5 +1,5 @@
 import {
-  projectsConverInfo,
+  projectsCoverInfo,
   projectsGeneralData
 } from "../../../content/data/projectData";
 
@@ -12,7 +12,7 @@ import EcosystemBanner from "../../../components/PartialComponents/EcosystemBann
 const index = () => {
   return (
     <Container>
-      <GeneralCover dataCover={projectsConverInfo} />
+      <GeneralCover dataCover={projectsCoverInfo} />
       <ViewProjects dataProjects={projectsGeneralData} />
       <EcosystemBanner />
     </Container>
@@ -20,3 +20,15 @@ const index = () => {
 };
 
 export default index;
+
+// export async function getStaticProps() {
+//   try {
+//     const response = await fetch("http://127.0.0.1:3000/api/hello");
+//     const data = await response.json();
+//     return {
+//       props: { flag: data }
+//     };
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }

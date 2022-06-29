@@ -23,3 +23,47 @@ const Home = () => {
 };
 
 export default Home;
+
+export async function getStaticProps({ params: { flag } }) {
+  console.log(`Building slug: ${flag}`);
+  try {
+    const response = await fetch("http://127.0.0.1:3000/api/hello");
+    const data = await response.json();
+    return {
+      props: { flag: data }
+    };
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function getStaticPaths() {
+  try {
+    // const res = await fetch("http://127.0.0.1:3000/api/hello");
+    // const data = await res.json();
+    const paths = [
+      // For each [flag] It would have a possible value like the following:
+      {
+        params: {
+          flag: "co"
+        }
+      },
+      {
+        params: {
+          flag: "pa"
+        }
+      },
+      {
+        params: {
+          flag: "us"
+        }
+      }
+    ];
+    return {
+      paths,
+      fallback: false
+    };
+  } catch (error) {
+    console.log(error);
+  }
+}

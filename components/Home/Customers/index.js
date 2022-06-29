@@ -13,8 +13,8 @@ const Customers = () => {
   return (
     <section className="customersContent">
       <h3>{title}</h3>
-      <Testimonials cardContent={cardContent} />
-      <Brands companyLogos={companyLogos} />
+      {cardContent && <Testimonials cardContent={cardContent} />}
+      {companyLogos && <Brands companyLogos={companyLogos} />}
     </section>
   );
 };
