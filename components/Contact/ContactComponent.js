@@ -1,8 +1,15 @@
 // components
 import QuoteButton from "../PartialComponents/QuoteButton";
 
+// iconos
+import {
+  iconHandler,
+  iconCustomer,
+  iconWhatsapp
+} from "../../content/globalData";
+
 const ContactComponent = ({ contactData }) => {
-  const cards = contactData.cards;
+  const { cards } = contactData;
   return (
     <section className="contactContent">
       <div className="contactContainer">
@@ -10,14 +17,16 @@ const ContactComponent = ({ contactData }) => {
         <h2>{contactData.title}</h2>
         <p>{contactData.content}</p>
         <div className="contentCardContainer">
-          {cards.map((card, i) => {
-            const icon = card.icon;
-            const title = card.title;
-            const info = card.info;
-            const buttonText = card.buttonText;
+          {cards.map(({ title, info, buttonText }, i) => {
             return (
               <div key={i} className={"contactCard"}>
-                <div className="contactIconCard">{icon}</div>
+                <div className="contactIconCard">
+                  {i === 0
+                    ? iconHandler
+                    : i === 1
+                    ? iconCustomer
+                    : iconWhatsapp}
+                </div>
                 <h4>{title}</h4>
                 <p>{info}</p>
                 <QuoteButton

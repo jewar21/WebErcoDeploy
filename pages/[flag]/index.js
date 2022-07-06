@@ -3,7 +3,7 @@ import React from "react";
 /* Importing the components from the folder. */
 import Container from "../../components/Navigation/Container";
 import Cover from "../../components/Home/Cover";
-import Ercosystem from "../../components/Home/Ercosystem/Ercosystem";
+import Ercosystem from "../../components/Home/Ercosystem";
 import ErcoExperience from "../../components/Home/ErcoExperience";
 import Customers from "../../components/Home/Customers";
 import StatisticsBanner from "../../components/Home/StatisticsBanner";

@@ -1,13 +1,9 @@
 import Image from "next/image";
 
-const Offices = ({ contactData }) => {
-  const title = contactData.title;
-  const contacts = contactData.contacts;
-  const img1 = contactData.img1.src;
-  const img2 = contactData.img2.src;
+import { iconMail, iconPhone } from "../../content/globalData";
 
-  const iconMail = contactData.iconMail;
-  const iconPhone = contactData.iconPhone;
+const Offices = ({ contactData }) => {
+  const { title, contacts, img1, img2 } = contactData;
 
   return (
     <section className="officesContent">

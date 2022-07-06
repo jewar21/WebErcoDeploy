@@ -9,14 +9,21 @@ import Offices from "../../../components/Contact/Offices";
 import Container from "../../../components/Navigation/Container";
 import EcosystemBanner from "../../../components/PartialComponents/EcosystemBanner";
 
-const index = () => {
+/* Recoil */
+/* A state management library. */
+import { useRecoilValue } from "recoil";
+import { contactUs, textsButtons } from "../../../recoil/atoms";
+
+const ContactUS = () => {
+  const contactData = useRecoilValue(contactUs);
+  const { offices } = contactData;
   return (
     <Container>
-      <ContactComponent contactData={constactInfo} />
-      <Offices contactData={constactInfo.offices} />
+      <ContactComponent contactData={contactData} />
+      <Offices contactData={offices} />
       <EcosystemBanner />
     </Container>
   );
 };
 
-export default index;
+export default ContactUS;
