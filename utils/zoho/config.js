@@ -41,7 +41,7 @@ export class ZohoAPI {
                 // if the token has expired it's renewed
                 originalRequest._retry = true;
                 $this.auth_token = await $this.refreshAuthToken();
-                console.log($this.auth_token);
+                // console.log($this.auth_token);
                 axios.defaults.headers.common['Authorization'] = `Zoho-oauthtoken ${$this.auth_token}`;
                 return $this.zohoClient(originalRequest);
             }
@@ -100,9 +100,8 @@ export class ZohoAPI {
             
             if(data.data[0].code === 'SUCCESS') {
                 if(file) {
-                    console.log('Proceso de imagen')
                     const id = data.data[0].details.id
-                    this.addImageToAttachments(id, file)
+                    await this.addImageToAttachments(id, file)
                 }
                 return { data: data.data[0].details, message: "Datos añadido correctamente", status: 'SUCCESS' }
             } else {
@@ -117,11 +116,9 @@ export class ZohoAPI {
 
     addImageToAttachments = async (id, file) => {
         try {
-            console.log(id, file)
             const dataSend = new FormData();
-            dataSend.append('Adj_ntanos_una_foto_completa_de_tu_ltima_factura', file)
-
-            console.log('url', `${this.moduleName}/${id}/Attachments`)
+            // dataSend.append('Adj_ntanos_una_foto_completa_de_tu_ltima_factura', file)
+            dataSend.append('file', file)
             
             const { data } = await this.zohoClient.post(`${this.moduleName}/${id}/Attachments`, dataSend,
                 {
@@ -130,8 +127,8 @@ export class ZohoAPI {
                     },
                 }
             ); 
-            console.log('termina')
-            console.log('dataResponse',data.data[0])
+            // console.log('dataResponse',data.data[0])
+            // console.log('dataResponse',data.data[0].details)
         } catch (error) {
             console.log('error al subir imagen', error)
         }

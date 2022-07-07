@@ -25,7 +25,8 @@ const QuoteForm = () => {
 
   const dataSend = useRecoilValue(dataToSendZoho);
 
-  // const [next, setNext] = useState(false)
+  // Show animation while true
+  const [loading, setLoading] = useState(false)
 
   const clickPrevius = () => {
     console.log('clickPrevius')
@@ -38,6 +39,7 @@ const QuoteForm = () => {
     if(count !== 4) {
       setCount(count + 1);
     } else {
+      setLoading(true);
       console.log('dataSend',dataSend)
       const URL = process.env.NEXT_PUBLIC_API_URL;
       const CONFIG = {
@@ -50,6 +52,7 @@ const QuoteForm = () => {
 
       console.log('status',status)
       console.log('data',data)
+      setLoading(false);
       if(status === 200 && data.status === 'SUCCESS') {
         // setCount(count + 1);
       } else {

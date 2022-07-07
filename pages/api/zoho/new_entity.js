@@ -1,8 +1,8 @@
 import nextConnect from 'next-connect';
-import multer from 'multer';
-import FormData from 'form-data';
+
 import fs from 'fs';
 import path from 'path';
+import fileupload from 'express-fileupload';
 
 import { format } from 'date-fns';
 import { zonedTimeToUtc } from 'date-fns-tz';
@@ -10,17 +10,6 @@ import { zonedTimeToUtc } from 'date-fns-tz';
 import { ZohoAPI } from '../../../utils/zoho/config'
 
 const zoho = new ZohoAPI();
-
-// Returns a Multer instance that provides several methods for generating 
-// middleware that process files uploaded in multipart/form-data format.
-//memoryStorage
-const upload = multer({
-    storage: multer.diskStorage({
-        destination: './public/uploads',
-        filename: (req, file, cb) => cb(null, file.originalname),
-        // preservePath: (req, file, cb) => cb(null, file.path),
-    }),
-});
 
 const newEntity = nextConnect({
     onError(error, req, res) {
@@ -32,18 +21,31 @@ const newEntity = nextConnect({
     },
 })
 
-// Returns middleware that processes multiple files sharing the same field name.
-const uploadMiddleware = upload.single('image');
-newEntity.use(uploadMiddleware); // Adds the middleware to Next-Connect
+// Middlewares load file
+newEntity.use(fileupload({
+    useTempFiles : true,
+    tempFileDir : '/tmp/',
+    createParentPath: true,
+}));
 
-//Adj_ntanos_una_foto_completa_de_tu_ltima_factura
+const saveImage = async ( files ) => {
+    return new Promise((resolve, reject) => {
+        const { image } = files;
+
+        const uploadPath = path.join(__dirname, '../../../public/uploads/', image.name);
+    
+        image.mv(uploadPath, (err) => {
+            if (err) {
+                reject(err)
+            }
+            
+            resolve(uploadPath)
+        });
+    })
+}
 
 newEntity.post( async (req, res) => {
-    const { body } = req;
-
-    console.log('body',body)
-    console.log('body',typeof body)
-    console.log('file',req.file)
+    const { body, files } = req;
 
     const date = new Date()
     const Fecha_hora = format(zonedTimeToUtc(date, 'America/Bogota'), "yyyy-MM-dd'T'HH:mm:ssxxx")
@@ -54,25 +56,20 @@ newEntity.post( async (req, res) => {
         Etapa_Proceso_de_Prospecci_n: "Contacto Frío"
     }
 
-    // const data = new FormData();
+    const pathImage = files && await saveImage(files);
 
-    // for ( let key in body ) {
-    //     data.append(key, body[key])
-    // }
-
-    // data.append('Fecha_hora', Fecha_hora)
-    // data.append('Etapa_Proceso_de_Prospecci_n', 'Contacto Frío')
-    // data.append('Adj_ntanos_una_foto_completa_de_tu_ltima_factura', fs.createReadStream( path.extname(req.file.originalname) ))
-
-    console.log('dataSend',data)
-
-    // console.log('imagen', fs.createReadStream( path.extname(req.file.originalname) ))
-    // console.log('imagen', path.extname(req.file.originalname) )
-    // const file = req.file && fs.createReadStream( path.join(__dirname, './public/uploads') );
-    const file = req.file && req.file;
-
+    const file = (files && pathImage) && fs.createReadStream( pathImage );
+    // const file = files && fs.createReadStream( files.image.tempFilePath ); // Funciona fileupload falta extencion
+    
     const response = await zoho.addNewEntityModule(data, file)
     // const response = 'exito'
+
+    if(files && pathImage) {
+        fs.unlink(pathImage, (err) => {
+            if(err) throw err;
+            // console.log('File deleted');
+        })
+    }
     
     res.status(200).json(response)
 } )
