@@ -101,7 +101,8 @@ export class ZohoAPI {
             if(data.data[0].code === 'SUCCESS') {
                 if(file) {
                     const id = data.data[0].details.id
-                    await this.addImageToAttachments(id, file)
+                    this.addTag('Formulario sitio web', id);
+                    await this.addImageToAttachments(id, file);
                 }
                 return { data: data.data[0].details, message: "Datos añadido correctamente", status: 'SUCCESS' }
             } else {
@@ -131,6 +132,22 @@ export class ZohoAPI {
             // console.log('dataResponse',data.data[0].details)
         } catch (error) {
             console.log('error al subir imagen', error)
+        }
+    }
+
+    addTag = async (tag, quoteId) => {
+        try {
+            const { data } = await this.zohoClient.post(`${this.moduleName}/${quoteId}/actions/add_tags`, null,
+                {
+                    params: {
+                        tag_names: tag
+                    }
+                }
+            );
+
+            // console.log('dataResponse Tag', data.data)
+        } catch (error) {
+            console.log('Error al poner nuevo tag', error)
         }
     }
 

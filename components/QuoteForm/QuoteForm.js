@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 
 import { Dialog } from "primereact/dialog";
+import { ProgressSpinner } from 'primereact/progressspinner';
 
 import PropTypes from "prop-types";
 
@@ -54,7 +55,7 @@ const QuoteForm = () => {
       console.log('data',data)
       setLoading(false);
       if(status === 200 && data.status === 'SUCCESS') {
-        // setCount(count + 1);
+        setCount(count + 1);
       } else {
         console.log('Error algo salio mal. STATUS:', status)
         console.log('Error', data.message)
@@ -94,14 +95,20 @@ const QuoteForm = () => {
                   <div className="text-2xl">{iconArrowL}</div>
                   <p className="hidden lg:block">Anterior</p>
                 </button>
-              )}
+              )} 
               <button
                 className="baseButton nextButton disabled:opacity-75"
                 onClick={clickNext}
-                disabled={nextPage}
+                disabled={nextPage || loading}
               >
+              {loading ? 
+                <ProgressSpinner style={{width: '35px', height: '35px'}} strokeWidth="3" animationDuration=".5s" /> 
+              :
+                <>
                 <p className="hidden lg:block">Siguiente</p>
                 <div className="text-2xl">{iconArrow}</div>
+                </>
+              }
               </button>
             </div>
           </div>
