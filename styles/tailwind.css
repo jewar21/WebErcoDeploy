@@ -9,21 +9,21 @@
 
 @import "./Home/cover.css";
 @import "./Home/ecosystem.css";
-@import "./Home/statisticsBanner.css";
-@import "./Home/ecosystemBanner.css";
+@import "./Home/statistics.css";
+@import "./Home/ecobanner.css";
 @import "./Home/customers.css";
 
 @import "./Services/installation.css";
-@import "./Services/paymentMethods.css";
-@import "./Services/stepsSolarEnergy.css";
+@import "./Services/paymentmethods.css";
+@import "./Services/stepssolarenergy.css";
 
-@import "./Projects/projectsViews.css";
+@import "./Projects/projectsviews.css";
 
 @import "./Contact/contact.css";
 
-@import "./QuoteForm/quoteForm.css";
+@import "./QuoteForm/quoteform.css";
 
-@import "./PartialComponents/partialComponents.css";
+@import "./PartialComponents/partialcomponents.css";
 
 @layer base {
   html {

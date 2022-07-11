@@ -18,9 +18,9 @@ import {
 import img1 from "../../assets/imagenes/1.png";
 import img2 from "../../assets/imagenes/2.png";
 import img3 from "../../assets/imagenes/3.png";
-import p01 from "../../assets/imagenes/phone/instalacion.svg";
-import p02 from "../../assets/imagenes/phone/tecnologia.svg";
-import p03 from "../../assets/imagenes/phone/oym.svg";
+// import p01 from "../../assets/imagenes/phone/instalacion.svg";
+// import p02 from "../../assets/imagenes/phone/tecnologia.svg";
+// import p03 from "../../assets/imagenes/phone/oym.svg";
 import colombia from "../../assets/Paises/CO.png";
 import panama from "../../assets/Paises/PA.png";
 import unitedStates from "../../assets/Paises/US.png";
@@ -114,50 +114,50 @@ export const coverInfo = [
 
 // Ecosystem information
 
-export const ecoSystemContent = {
-  title: "Ecosistema de energía Erco",
-  content:
-    "Instala un sistema de energía solar y ten el control de tu energía.",
-  information: [
-    {
-      counter: 1,
-      img: img1,
-      subtitle: "Instalación de sistemas de autogeneración",
-      items: [
-        { item: "Generar ahorros en tu factura de energía." },
-        {
-          item: "Realizar seguimiento y control de tu proyecto en tiempo real."
-        },
-        { item: "Contribuir a un futuro sostenible." }
-      ],
-      phoneImg: p01
-    },
-    {
-      counter: 2,
-      img: img2,
-      subtitle: "Control de consumos y producción de energía a través de NEU +",
-      items: [
-        { item: "Visualizar datos de consumo y generación en tiempo real." },
-        { item: "Obtener alertas por consumos atípicos." },
-        { item: "Evitar multas por consumo excesivo de energía reactiva." }
-      ],
-      phoneImg: p02
-    },
-    {
-      counter: 3,
-      img: img3,
-      subtitle: "Gestionar y operar tus sistemas de Energía Solar",
-      items: [
-        {
-          item: "Garantizar que el sistema solar trabaje al punto máximo de operación."
-        },
-        { item: "Realizar mantenimiento predictivo, preventivo y correctivo." },
-        { item: "Acompañar tu proyecto con un equipo propio y calificado." }
-      ],
-      phoneImg: p03
-    }
-  ]
-};
+// export const ecoSystemContent = {
+//   title: "Ecosistema de energía Erco",
+//   content:
+//     "Instala un sistema de energía solar y ten el control de tu energía.",
+//   information: [
+//     {
+//       counter: 1,
+//       img: img1,
+//       subtitle: "Instalación de sistemas de autogeneración",
+//       items: [
+//         { item: "Generar ahorros en tu factura de energía." },
+//         {
+//           item: "Realizar seguimiento y control de tu proyecto en tiempo real."
+//         },
+//         { item: "Contribuir a un futuro sostenible." }
+//       ],
+//       phoneImg: p01
+//     },
+//     {
+//       counter: 2,
+//       img: img2,
+//       subtitle: "Control de consumos y producción de energía a través de NEU +",
+//       items: [
+//         { item: "Visualizar datos de consumo y generación en tiempo real." },
+//         { item: "Obtener alertas por consumos atípicos." },
+//         { item: "Evitar multas por consumo excesivo de energía reactiva." }
+//       ],
+//       phoneImg: p02
+//     },
+//     {
+//       counter: 3,
+//       img: img3,
+//       subtitle: "Gestionar y operar tus sistemas de Energía Solar",
+//       items: [
+//         {
+//           item: "Garantizar que el sistema solar trabaje al punto máximo de operación."
+//         },
+//         { item: "Realizar mantenimiento predictivo, preventivo y correctivo." },
+//         { item: "Acompañar tu proyecto con un equipo propio y calificado." }
+//       ],
+//       phoneImg: p03
+//     }
+//   ]
+// };
 
 // Experience Erco Information
 

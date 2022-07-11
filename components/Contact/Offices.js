@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import PropTypes from "prop-types";
+
 import { iconMail, iconPhone } from "../../content/globalData";
 
 const Offices = ({ contactData }) => {
@@ -55,5 +57,7 @@ const Offices = ({ contactData }) => {
     </section>
   );
 };
+
+Offices.propTypes = { contactData: PropTypes.array.isRequired };
 
 export default Offices;

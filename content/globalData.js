@@ -27,7 +27,8 @@ import {
   RiBillLine,
   RiTeamLine,
   RiMailLine,
-  RiPhoneFill
+  RiPhoneFill,
+  RiContactsLine
 } from "react-icons/ri";
 import { FaSolarPanel } from "react-icons/fa";
 import { ImMobile } from "react-icons/im";
@@ -37,17 +38,59 @@ import {
   MdOutlinePlace
 } from "react-icons/md";
 import { FiAlertCircle } from "react-icons/fi";
-import { AiOutlineStar } from "react-icons/ai";
+import { SiGumroad } from "react-icons/si";
+import { AiOutlineStar, AiOutlineTeam } from "react-icons/ai";
 import { VscTools, VscRadioTower } from "react-icons/vsc";
 import { IoGitNetworkOutline } from "react-icons/io5";
-import { BsPlug, BsLightning } from "react-icons/bs";
+import { BsPlug, BsLightning, BsNut } from "react-icons/bs";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { TiCancelOutline } from "react-icons/ti";
 import { BiTime } from "react-icons/bi";
 
+import phone from "../assets/imagenes/phone/phone.svg";
+
+// Images Phone
+
+import p01 from "../assets/imagenes/phone/self-generation.svg";
+import p02 from "../assets/imagenes/phone/tech.svg";
+import p03 from "../assets/imagenes/phone/oym.svg";
+
+/* ---------- Exporting the icons Cards Cover. ---------- */
 export const iconHandler = <RiHandCoinLine />;
 export const iconComputer = <RiComputerLine />;
 export const iconLeaf = <RiLeafLine />;
+
+/* ---------- Exporting the icons ErcoSystem. ---------- */
+export const iconCheck = <RiCheckFill />;
+export const phoneSVG = phone;
+
+export const selfGeneration = p01; //Autogeneración
+export const tech = p02; // NEU
+export const oym = p03; // OYM
+
+/* ---------- Exporting the icons Erco Experience. ---------- */
+
+/* Exporting the icons GridComponent. */
+const iconTeam = <AiOutlineTeam />;
+const iconNut = <BsNut />;
+const iconSolarPanel = <FaSolarPanel />;
+//iconComputer
+const iconContact = <RiContactsLine />;
+const iconRoad = <SiGumroad />;
+
+export const iconsErcoExperience = [
+  iconTeam,
+  iconNut,
+  iconSolarPanel,
+  iconComputer,
+  iconContact,
+  iconRoad
+];
+
+/* Exporting the icons AccordionComponent. */
+export const iconAdd = <RiAddLine />;
+export const iconSubtrac = <RiSubtractLine />;
+
 export const iconLightbulb = <RiLightbulbFlashFill />;
 export const iconCar = <RiRoadsterLine />;
 export const iconBattery = <RiBatteryChargeLine />;
@@ -60,19 +103,23 @@ export const iconArrow = <RiArrowRightLine />;
 export const iconArrowL = <RiArrowLeftLine />;
 export const iconArrowRight = <RiArrowRightSLine />;
 
-export const iconCheck = <RiCheckFill />;
-
-export const iconAdd = <RiAddLine />;
-export const iconSubtrac = <RiSubtractLine />;
+/* ---------- Exporting the icons Footer. ---------- */
 
 // social networks
-
-export const iconWhatsapp = <RiWhatsappLine />;
-export const iconTwitter = <RiTwitterFill />;
-export const iconInstagram = <RiInstagramLine />;
-export const iconFacebook = <RiFacebookBoxFill />;
-export const iconLinkedIn = <RiLinkedinFill />;
-export const iconYoutube = <RiYoutubeFill />;
+const iconWhatsapp = <RiWhatsappLine />;
+const iconTwitter = <RiTwitterFill />;
+const iconInstagram = <RiInstagramLine />;
+const iconFacebook = <RiFacebookBoxFill />;
+const iconLinkedIn = <RiLinkedinFill />;
+const iconYoutube = <RiYoutubeFill />;
+export const iconsSocial = [
+  iconWhatsapp,
+  iconTwitter,
+  iconInstagram,
+  iconFacebook,
+  iconLinkedIn,
+  iconYoutube
+];
 
 export const iconMail = <RiMailLine />;
 export const iconPhone = <RiPhoneFill />;
@@ -82,18 +129,15 @@ export const iconPhone = <RiPhoneFill />;
 import nuestroSocio from "../assets/Icon/nuestroSocio.png";
 export const nuestroSocioImg = nuestroSocio;
 
-import phone from "../assets/imagenes/phone/phone.svg";
-export const phoneSVG = phone;
-
-// Icon Services
+/* ---------- Exporting the icons Services. ---------- */
 
 export const iconMobile = <ImMobile />;
 export const iconAlert = <MdOutlineAddAlert />;
 export const iconTechnology = <IoGitNetworkOutline />;
 export const iconAlertCircle = <FiAlertCircle />;
 export const iconBill = <RiBillLine />;
-
 export const iconStar = <AiOutlineStar />;
+
 export const iconAnalytics = <MdOutlineAnalytics />;
 export const iconTools = <VscTools />;
 export const iconWorker = <RiTeamLine />;
@@ -105,9 +149,11 @@ export const iconCancel = <TiCancelOutline />;
 export const iconTime = <BiTime />;
 export const iconPlace = <MdOutlinePlace />;
 export const iconLightning = <BsLightning />;
-export const iconSolarPanel = <FaSolarPanel />;
 
 export const iconBatteryLine = <RiBatteryLine />;
+
+/* ---------- Exporting the icons Contact. ---------- */
+export const iconsContact = [iconHandler, iconCustomer, iconWhatsapp];
 
 // Erco logo
 
@@ -144,11 +190,3 @@ export const ercoLogo = (width, height, color, isOneColor) => (
     </g>
   </svg>
 );
-
-import p01 from "../assets/imagenes/phone/instalacion.svg";
-import p02 from "../assets/imagenes/phone/tecnologia.svg";
-import p03 from "../assets/imagenes/phone/oym.svg";
-
-export const p1 = p01;
-export const p2 = p02;
-export const p3 = p03;

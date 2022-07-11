@@ -1,12 +1,10 @@
+import PropTypes from "prop-types";
+
 // components
 import QuoteButton from "../PartialComponents/QuoteButton";
 
 // iconos
-import {
-  iconHandler,
-  iconCustomer,
-  iconWhatsapp
-} from "../../content/globalData";
+import { iconsContact } from "../../content/globalData";
 
 const ContactComponent = ({ contactData }) => {
   const { cards } = contactData;
@@ -20,13 +18,7 @@ const ContactComponent = ({ contactData }) => {
           {cards.map(({ title, info, buttonText }, i) => {
             return (
               <div key={i} className={"contactCard"}>
-                <div className="contactIconCard">
-                  {i === 0
-                    ? iconHandler
-                    : i === 1
-                    ? iconCustomer
-                    : iconWhatsapp}
-                </div>
+                <div className="contactIconCard">{iconsContact[i]}</div>
                 <h4>{title}</h4>
                 <p>{info}</p>
                 <QuoteButton
@@ -44,5 +36,7 @@ const ContactComponent = ({ contactData }) => {
     </section>
   );
 };
+
+ContactComponent.propTypes = { contactData: PropTypes.array.isRequired };
 
 export default ContactComponent;

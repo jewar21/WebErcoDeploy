@@ -1,7 +1,3 @@
-// data
-
-import { constactInfo } from "../../../content/data/contactData";
-
 // components
 
 import ContactComponent from "../../../components/Contact/ContactComponent";
@@ -12,7 +8,7 @@ import EcosystemBanner from "../../../components/PartialComponents/EcosystemBann
 /* Recoil */
 /* A state management library. */
 import { useRecoilValue } from "recoil";
-import { contactUs, textsButtons } from "../../../recoil/atoms";
+import { contactUs } from "../../../recoil/atoms";
 
 const ContactUS = () => {
   const contactData = useRecoilValue(contactUs);

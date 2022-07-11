@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./Views/generalInformation.css";
-@import "./Views/typeOfSystem.css";
+@import "./Views/generalinformation.css";
+@import "./Views/typeofsystem.css";
 @import "./Views/infrastructure.css";
-@import "./Views/roofType.css";
-@import "./Views/energyBill.css";
-@import "./Views/additionalInformation.css";
+@import "./Views/rooftype.css";
+@import "./Views/energybill.css";
+@import "./Views/additionalinformation.css";
 @import "./Views/confirmation.css";
 
 @layer components {

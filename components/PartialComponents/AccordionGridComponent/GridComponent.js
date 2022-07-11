@@ -5,18 +5,18 @@ import imgBackground from "../../../assets/Backgrounds/backgroundGrid.svg";
 
 /* Importing the icons from the globalData.js file. */
 import {
-  iconCustomer,
-  iconShield,
-  iconGroup,
+  iconTeam,
+  iconFireball,
+  iconSolarPanel,
   iconComputer,
-  iconLeaf,
-  iconTrophy
+  iconContact,
+  iconRoad
 } from "../../../content/globalData";
 
 // component
 import ComponentTitle from "./ComponentTitle";
 
-const GridComponent = ({ data, isImage, isNeu }) => {
+const GridComponent = ({ data, icons, isImage, isNeu }) => {
   const { cards } = data;
   return (
     <section
@@ -43,21 +43,7 @@ const GridComponent = ({ data, isImage, isNeu }) => {
             cards.map(({ title, content }, i) => {
               return (
                 <div key={i} className="gridComponentRightItem">
-                  <div className="gridComponentRightItemIcon">
-                    {i === 0
-                      ? iconCustomer
-                      : i === 1
-                      ? iconShield
-                      : i === 2
-                      ? iconGroup
-                      : i === 3
-                      ? iconComputer
-                      : i === 4
-                      ? iconLeaf
-                      : i === 5
-                      ? iconTrophy
-                      : null}
-                  </div>
+                  <div className="gridComponentRightItemIcon">{icons[i]}</div>
                   <div
                     className={
                       isNeu

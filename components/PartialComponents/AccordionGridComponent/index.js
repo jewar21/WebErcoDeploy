@@ -1,13 +1,18 @@
 import AccordionComponent from "./AccordionComponent";
 import GridComponent from "./GridComponent";
 
-const index = ({ data, isImage, isNeu }) => {
+const index = ({ data, icons, isImage, isNeu }) => {
   return (
     <>
       {data && (
         <>
           <AccordionComponent data={data} />
-          <GridComponent data={data} isImage={isImage} isNeu={isNeu} />
+          <GridComponent
+            data={data}
+            icons={icons}
+            isImage={isImage}
+            isNeu={isNeu}
+          />
         </>
       )}
     </>

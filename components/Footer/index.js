@@ -3,11 +3,7 @@ import Image from "next/image";
 
 // local data
 import {
-  iconTwitter,
-  iconInstagram,
-  iconFacebook,
-  iconLinkedIn,
-  iconYoutube,
+  iconsSocial,
   nuestroSocioImg,
   ercoLogo
 } from "../../content/globalData";
@@ -44,17 +40,7 @@ const Footer = () => {
               <div className="footerSocialNetworks">
                 {offices.socialNetworks.map((href, i) => (
                   <Link href={href} key={i}>
-                    <a target="_blank">
-                      {i === 0
-                        ? iconTwitter
-                        : i === 1
-                        ? iconInstagram
-                        : i === 2
-                        ? iconFacebook
-                        : i === 3
-                        ? iconLinkedIn
-                        : iconYoutube}
-                    </a>
+                    <a target="_blank">{iconsSocial[i]}</a>
                   </Link>
                 ))}
               </div>
