@@ -81,7 +81,7 @@ const GeneralInformation = () => {
                     <span>*</span>
                   }
                 </div>
-                <div className={`inputRounded ${errorMessage && 'inputRoundedError'}`}>
+                <div className={`${errorMessage && 'inputRoundedError'}`}>
                   <InputText value={value} onChange={(e) => changeInput(e.target.value, id, typeValidation)} className={`${errorMessage && 'p-invalid p-d-block'}`} />
                 </div>
                 {errorMessage &&
@@ -112,17 +112,6 @@ const GeneralInformation = () => {
               virtualScrollerOptions={{ itemSize: 10 }}
               // showFilterClear={true}
             />
-            {/* <AutoComplete
-              className={`${dataGeneral.department.errorMessage && 'p-invalid'}`}
-              value={dataGeneral.department.value}
-              suggestions={filteredItems}
-              completeMethod={searchItems}
-              virtualScrollerOptions={{ itemSize: 10 }}
-              field="label"
-              dropdown
-              onChange={(e) => changeInput(e.value, id)}
-              aria-label="Places"
-            /> */}
             {dataGeneral.department.errorMessage &&
               <small className="p-error p-d-block">{dataGeneral.department.errorMessage}</small>
             }

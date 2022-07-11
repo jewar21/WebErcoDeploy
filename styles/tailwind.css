@@ -29,4 +29,52 @@
   html {
     @apply font-Sora overflow-x-hidden;
   }
+  /* Scroll */
+  /* *::-webkit-scrollbar {
+    @apply w-5 h-5;
+  }
+  *::-webkit-scrollbar-thumb {
+    @apply bg-[#cdd3d9] rounded-[10px] border-[6px] border-solid border-transparent bg-clip-content;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#acb7c0];
+  }
+  *::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  *::-webkit-scrollbar-track:vertical {
+    @apply border-l-[1px] border-l-solid border-l-[#dee2e6];
+  }
+  *::-webkit-scrollbar-track:horizontal {
+    @apply border-t-[1px] border-t-solid border-t-[#dee2e6];
+  } */
+}
+
+/* Scroll */
+*::-webkit-scrollbar {
+  width: 20px;
+  height: 20px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #cdd3d9;
+  border-radius: 10px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #acb7c0;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-track:vertical {
+  border-left: 1px solid #dee2e6;
+}
+
+*::-webkit-scrollbar-track:horizontal {
+  border-top: 1px solid #dee2e6;
 }
