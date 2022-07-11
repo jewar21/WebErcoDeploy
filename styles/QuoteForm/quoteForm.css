@@ -50,11 +50,11 @@
 
   /* ------------------------- input -------------------------------- */
 
-  .inputRounded {
+  /* .inputRounded {
     @apply border-2 border-lightGrey-900 rounded-2xl;
-  }
+  } */
 
-  .inputRoundedError {
+  /* .inputRoundedError {
     @apply border-2 border-rose-500 rounded-2xl;
-  }
+  } */
 }

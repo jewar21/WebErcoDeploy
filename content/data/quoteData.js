@@ -96,8 +96,12 @@ export const confirmation = {
 
 export const places = [
   { label: "Antioquia", value: "Antioquia" },
+  { label: "Colombia", value: "Colombia" },
   { label: "Antioquia", value: "Antioquia" },
+  { label: "Colombia", value: "Colombia" },
   { label: "Antioquia", value: "Antioquia" },
+  { label: "Colombia", value: "Colombia" },
+  { label: "Colombia", value: "Colombia" },
   { label: "Antioquia", value: "Antioquia" }
 ];
 

@@ -29,12 +29,12 @@ export const dataToSendZoho = selector({
         dataSend.append('Last_Name', generalInformation.lastName.value);
         dataSend.append('Email', generalInformation.email.value);
         dataSend.append('Phone', generalInformation.phone.value);
-        dataSend.append('Departamento', generalInformation.department.value.value);
+        dataSend.append('Departamento', generalInformation.department.value);
         dataSend.append('Tu_solicitud_es_para', infrastructure);
         dataSend.append('Tipo_de_sistema', typeOfSystem ? `Solar ${typeOfSystem}` : null);
         dataSend.append('Te_llega_factura_mensual_de_Energ_a', energyBill.reciveEnergyBill);
         dataSend.append('image', energyBill.image);
-        dataSend.append('C_mo_nos_conociste', additionalInformation.meetUs.value);
+        dataSend.append('C_mo_nos_conociste', additionalInformation.meetUs);
         dataSend.append('Cu_ntanos_tu_necesidad', additionalInformation.moreInformation);
 
         return dataSend;

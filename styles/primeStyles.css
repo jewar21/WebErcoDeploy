@@ -74,49 +74,83 @@
 
 /*------------------------------- input Text  -------------------------------*/
 
-.p-inputtext {
+.p-inputtext, .p-dropdown {
   width: 100%;
   height: 2.5rem;
   border-radius: 0.75rem;
-  border: 0;
+  border-width: 2px;
+  border-color: #B7B8B6;
 }
 
-.p-autocomplete {
-  width: 100%;
-}
-
-.p-button {
-  border: 0;
-  border-radius: 0.75rem;
-  height: 2.5rem;
+.p-inputtext:enabled:hover {
+  border-color: #AAD130;
 }
 
 .p-dialog .p-dialog-header .p-dialog-header-icon:focus {
   outline: 0 none;
   outline-offset: 0;
-  box-shadow: 0 0 0 0.2rem #AAD130;
+  box-shadow: 0 0 0 0.1rem #AAD130;
 }
 
 .p-inputtext:enabled:focus {
   outline: 0 none;
   outline-offset: 0;
-  box-shadow: 0 0 0 0.2rem #AAD130;
+  box-shadow: 0 0 0 0.1rem #AAD130;
   border-color: #AAD130;
+}
+
+.inputRoundedError .p-inputtext:enabled:hover {
+  border-color: #E24C4C;
 }
 
 .inputRoundedError .p-inputtext:enabled:focus {
   outline: 0 none;
   outline-offset: 0;
-  box-shadow: 0 0 0 0.2rem red;
-  border-color: red;
+  box-shadow: 0 0 0 0.1rem #E24C4C;
+  border-color: #E24C4C;
 }
 
-.p-button:enabled:hover, .p-button:not(button):not(a):not(.p-disabled):hover {
-  background: #AAD130;
-  color: #ffffff;
+.p-dropdown .p-dropdown-label.p-placeholder, .p-dropdown .p-dropdown-label {
+  color: #6c757d;
+  padding-top: 0.4rem;
+}
+
+.p-dropdown .p-dropdown-label {
+  color: #495057;
+}
+
+.p-dropdown:not(.p-disabled):hover {
   border-color: #AAD130;
 }
 
-.p-button:focus {
-  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #AAD130, 0 1px 2px 0 black;
+.inputRoundedError .p-dropdown:not(.p-disabled):hover {
+  border-color: #E24C4C;
+}
+
+.p-dropdown:not(.p-disabled).p-focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.1rem #AAD130;
+  border-color: #AAD130;
+}
+
+.inputRoundedError .p-dropdown:not(.p-disabled).p-focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.1rem #E24C4C;
+  border-color: #E24C4C;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  color: #AAD130;
+  background: #eaebe6;
+}
+
+.p-dropdown-clear-icon {
+  font-size: 1rem;
+  color: #B7B8B6 !important;
+}
+
+.d-none .p-dropdown-clear-icon {
+  display: none;
 }
