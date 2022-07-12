@@ -1,10 +1,8 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 
 import { InputTextarea } from "primereact/inputtextarea";
 import { Dropdown } from 'primereact/dropdown';
-// import { AutoComplete } from "primereact/autocomplete";
-// import { Dialog } from "primereact/dialog";
 
 import {
   additionalInformation,
@@ -12,6 +10,7 @@ import {
 } from "../../../content/data/quoteData";
 
 import { dataAdditionalInformation, disabledNextPageFormState } from "../../../recoil/atoms";
+import { ValidateDataRequired } from "../../../utils/handlers/handlers";
 
 const AdditionalInformation = () => {
   const title = additionalInformation.title;
@@ -21,43 +20,54 @@ const AdditionalInformation = () => {
   const [additionalInformationAtom, setAdditionalInformationAtom] = useRecoilState(dataAdditionalInformation);
   const [disabledNextPage, setDisabledNextPage] = useRecoilState(disabledNextPageFormState);
 
-  const [errorMessageIQ1, setErrorMessageIQ1] = useState(null);
-  const [errorMessageIQ2, setErrorMessageIQ2] = useState(null);
+  const validateRequired = (data, id) => {
+    let allReady = true;
 
-  const validateRequired = useCallback( () => {
-    let allReady = false;
+    for (let el in additionalInformationAtom) {
+      const { value, isRequired, typeValidation } = additionalInformationAtom[el];
+      let valueSend = value
+      
+      if(id && id === el) {
+        valueSend = data
+      }
 
-    if(additionalInformationAtom.meetUs && additionalInformationAtom.moreInformation && additionalInformationAtom.agreeTerms) {
-      allReady = true;
-    } 
+      if(isRequired) {
+        const { status, error } = ValidateDataRequired(valueSend, typeValidation)
+        if(!status) allReady = status
+
+        if(!!error && id === el) {
+          setAdditionalInformationAtom({
+            ...additionalInformationAtom,
+            [id]: { ...additionalInformationAtom[id], value:valueSend, errorMessage: error }
+          })
+        } else if(id === el) {
+          setAdditionalInformationAtom({
+            ...additionalInformationAtom,
+            [id]: { ...additionalInformationAtom[id], value:valueSend, errorMessage: null }
+          })
+        }
+      }
+    }
+
+    console.log('allReady',allReady)
 
     if(allReady) {
       setDisabledNextPage(false);
-      setErrorMessageIQ1(null)
-      setErrorMessageIQ2(null)
     } else {
       setDisabledNextPage(true);
-      if(!additionalInformationAtom.meetUs)
-        setErrorMessageIQ1('Este campo es requerido.')
-      else
-        setErrorMessageIQ1(null)
-    
-      if(!additionalInformationAtom.moreInformation)
-        setErrorMessageIQ2('Este campo es requerido.')
-      else
-        setErrorMessageIQ2(null)
     }
-  },[additionalInformationAtom, setDisabledNextPage])
+  }
 
   useEffect(() => {
-    validateRequired(true);
-  }, [validateRequired])
+    validateRequired();
+  }, [])
 
   const onChangeInfo = (id, data) => {
-    setAdditionalInformationAtom({
-      ...additionalInformationAtom,
-      [id]: data
-    })
+    // setAdditionalInformationAtom({
+    //   ...additionalInformationAtom,
+    //   [id]: data
+    // })
+    validateRequired(data, id)
   }
 
   return (
@@ -66,13 +76,13 @@ const AdditionalInformation = () => {
         <div className="titleQuoteContent">
           <h5 className="titleQuote">{title}</h5>
         </div>
-        <div className="additionalIQ1 generalInput">
+        <div className={`additionalIQ1 generalInput ${additionalInformationAtom.meetUs.errorMessage && 'inputRoundedError'}`}>
           <label className="additionalIText">{additionalInformation.q1}</label>
           <span className="text-secondary-500">*</span>
           <Dropdown 
             showClear
-            className={`mt-4 ${errorMessageIQ1 && 'p-invalid'} ${!additionalInformationAtom.meetUs && 'd-none'}`}
-            value={additionalInformationAtom.meetUs} 
+            className={`mt-4 ${additionalInformationAtom.meetUs.errorMessage && 'p-invalid'} ${!additionalInformationAtom.meetUs.value && 'd-none'}`}
+            value={additionalInformationAtom.meetUs.value} 
             options={optionsQuestion} 
             onChange={(e) => onChangeInfo('meetUs', e.value)}
             optionLabel="label" 
@@ -80,29 +90,29 @@ const AdditionalInformation = () => {
             emptyMessage='Sin información' 
             virtualScrollerOptions={{ itemSize: 10 }}
           />
-          {errorMessageIQ1 &&
-            <small className="p-error p-d-block">{errorMessageIQ1}</small>
+          {additionalInformationAtom.meetUs.errorMessage &&
+            <small className="p-error p-d-block">{additionalInformationAtom.meetUs.errorMessage}</small>
           }
         </div>
         <div className="additionalIQ2">
           <label className="additionalIText">{additionalInformation.q2}</label>
           <span className="text-secondary-500">*</span>
-          <div className={`mt-4 ${errorMessageIQ2 && 'inputRoundedError'}`}>
+          <div className={`mt-4 ${additionalInformationAtom.moreInformation.errorMessage && 'inputRoundedError'}`}>
             <InputTextarea
-              value={additionalInformationAtom.moreInformation}
+              value={additionalInformationAtom.moreInformation.value}
               onChange={(e) => onChangeInfo('moreInformation', e.target.value)}
               rows={5}
               cols={30}
-              className={`additionalInputTextarea ${errorMessageIQ2 && 'p-invalid p-d-block'}`}
+              className={`additionalInputTextarea ${additionalInformationAtom.moreInformation.errorMessage && 'p-invalid p-d-block'}`}
             />
           </div>
-          {errorMessageIQ2 &&
-            <small className="p-error p-d-block">{errorMessageIQ2}</small>
+          {additionalInformationAtom.moreInformation.errorMessage &&
+            <small className="p-error p-d-block">{additionalInformationAtom.moreInformation.errorMessage}</small>
           }
         </div>
         <div className="additionalITerms">
           <label className="additionalCheckbox">
-            <input type="checkbox" checked={additionalInformationAtom.agreeTerms} onChange={(e) => onChangeInfo('agreeTerms', e.target.checked)} />
+            <input type="checkbox" checked={additionalInformationAtom.agreeTerms.value} onChange={(e) => onChangeInfo('agreeTerms', e.target.checked)} />
             <span className="checkmark"></span>
           </label>
           <small>

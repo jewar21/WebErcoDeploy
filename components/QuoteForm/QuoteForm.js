@@ -105,7 +105,7 @@ const QuoteForm = () => {
                 <ProgressSpinner style={{width: '35px', height: '35px'}} strokeWidth="3" animationDuration=".5s" /> 
               :
                 <>
-                <p className="hidden lg:block">Siguiente</p>
+                <p className="hidden lg:block">{count === 4 ? 'Terminar' : 'Siguiente'}</p>
                 <div className="text-2xl">{iconArrow}</div>
                 </>
               }

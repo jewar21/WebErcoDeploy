@@ -57,12 +57,8 @@ newEntity.post( async (req, res) => {
     }
 
     const pathImage = files && await saveImage(files);
-
     const file = (files && pathImage) && fs.createReadStream( pathImage );
-    // const file = files && fs.createReadStream( files.image.tempFilePath ); // Funciona fileupload falta extencion
-    
     const response = await zoho.addNewEntityModule(data, file)
-    // const response = 'exito'
 
     if(files && pathImage) {
         fs.unlink(pathImage, (err) => {

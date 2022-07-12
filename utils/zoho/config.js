@@ -101,9 +101,8 @@ export class ZohoAPI {
             if(data.data[0].code === 'SUCCESS') {
                 const id = data.data[0].details.id
                 this.addTag('Formulario sitio web', id);
-                if(file) {
-                    await this.addImageToAttachments(id, file);
-                }
+                file && await this.addImageToAttachments(id, file);
+                
                 return { data: data.data[0].details, message: "Datos añadido correctamente", status: 'SUCCESS' }
             } else {
                 console.log(data.data[0])

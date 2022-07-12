@@ -62,6 +62,13 @@ export const ValidateDataRequired = (data, type) => {
         error = 'Este campo es requerido.'
       }
       break;
+
+    case 'boolean':
+      if(!data) {
+        status = false;
+        error = 'Este campo es requerido.'
+      }
+      break;
   
     default:
       status = false;

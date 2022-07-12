@@ -62,8 +62,8 @@ export const dataEnergyBill = atom({
 export const dataAdditionalInformation = atom({
   key: "AdditionalInformation",
   default: {
-    meetUs: '',
-    moreInformation: '',
-    agreeTerms: false
+    meetUs: { value: '', isRequired: true, typeValidation: 'select', errorMessage: null },
+    moreInformation: { value: '', isRequired: true, typeValidation: 'text', errorMessage: null },
+    agreeTerms: { value: false, isRequired: true, typeValidation: 'boolean', errorMessage: null }
   }
 })

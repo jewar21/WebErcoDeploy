@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Dialog } from "primereact/dialog";
 
 import PropTypes from "prop-types";
@@ -42,6 +42,18 @@ const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
     setIsOpenModal(false);
     setCount(0);
   };
+
+  useEffect(() => {
+    if(isOpenModal) {
+      document.querySelectorAll('html').forEach(target => {
+        target.classList.add('no-scroll')
+      });
+    } else {
+      document.querySelectorAll('html').forEach(target => {
+        target.classList.remove('no-scroll')
+      });
+    }
+  }, [isOpenModal])
 
   return (
     <>
