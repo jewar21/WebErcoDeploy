@@ -5,18 +5,22 @@
 @layer components {
   /*---------------------  TitleContent --------------------- */
   .TitleContent {
-    @apply flex flex-col px-6 pt-12 lg:px-0 lg:items-center lg:pt-4.5rem;
+    @apply flex flex-col px-6 pt-12 
+    lg:px-0 lg:items-center lg:pt-4.5rem;
   }
   .TitleContent > h3 {
-    @apply text-H4 lg:text-H3 text-darkGrey-900 font-bold;
+    @apply text-H4 text-darkGrey-900 font-bold 
+    lg:text-H3;
   }
   .TitleContent > p {
-    @apply text-Subtitle w-full text-left lg:text-center lg:w-36.5rem pt-4 text-darkGrey-300;
+    @apply text-Subtitle w-full text-left pt-4 text-darkGrey-300
+    lg:text-center lg:w-36.5rem;
   }
 
   /* --------------------- CardContent SideBar ---------------------*/
   .ecosystemContainer {
-    @apply hidden lg:flex;
+    @apply hidden 
+    lg:flex;
   }
   .cardsEcosystemContainer {
     @apply flex h-screen w-screen px-5.5rem pt-4.5rem pb-6.5rem font-Sora sticky;
@@ -55,7 +59,8 @@
     @apply text-xl text-darkGrey-700 font-semibold font-Sora;
   }
   .panel-body {
-    @apply flex w-full lg:justify-between pt-4 lg:pt-3;
+    @apply flex w-full lg:justify-between pt-4 
+    lg:pt-3;
   }
   .panel-icon {
     @apply flex w-6 h-6 rounded-full bg-primary-500 items-center text-base p-1;
@@ -73,7 +78,7 @@
     @apply flex absolute overflow-hidden items-center justify-center w-13.5rem h-[27.5rem] right-[10%] top-[28%] z-50 rounded-3xl;
   }
   .panel-phone {
-    @apply -z-50 ;
+    @apply -z-50;
   }
 
   /* --------------------- Mobile ---------------------*/

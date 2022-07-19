@@ -5,7 +5,7 @@ import { useRecoilValue } from "recoil";
 import { nameCountry } from "../../recoil/atoms";
 
 /* Importing the components that are going to be used in the Container component. */
-import Footer from "../Footer";
+import Footer from "../Footer/Footer";
 import Navigation from ".";
 
 const Container = (props) => {

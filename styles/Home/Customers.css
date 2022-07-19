@@ -7,13 +7,16 @@
     @apply w-full flex flex-col bg-lightGrey-300;
   }
   .customersContent > h3 {
-    @apply w-full pt-14 px-6 text-H4 text-darkGrey-900 font-bold lg:text-center lg:py-20 lg:text-H3;
+    @apply w-full pt-14 px-6 text-H4 text-darkGrey-900 font-bold 
+    lg:text-center lg:py-20 lg:text-H3;
   }
   .testimonialsContainer {
-    @apply flex w-screen lg:items-center;
+    @apply flex w-screen 
+    lg:items-center;
   }
   .testimonialSwiper {
-    @apply hidden lg:block;
+    @apply hidden 
+    lg:block;
   }
   .swiperSlideContainer {
     @apply flex justify-center;
@@ -55,7 +58,8 @@
   /* -----------------------SwiperDesktop-------------------- */
 
   .testimonialSwiper {
-    @apply hidden lg:block;
+    @apply hidden 
+    lg:block;
   }
   .testimonialSwiper .swiper-button-prev {
     @apply left-12 w-4.5rem h-4.5rem bg-[url("../../assets/Icon/arrowLeft.png")];

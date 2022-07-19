@@ -4,6 +4,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
+    screens: {
+      lg: "1366px",
+      xl: "1920px"
+    },
     extend: {
       spacing: {
         "4.25rem": "4.25rem",
@@ -160,8 +164,8 @@ module.exports = {
         ]
       },
       transitionTimingFunction: {
-        'in-expo': 'cubic-bezier(1, 0, 1, 0)',
-        'out-expo': 'cubic-bezier(0, 1, 0, 1)',
+        "in-expo": "cubic-bezier(1, 0, 1, 0)",
+        "out-expo": "cubic-bezier(0, 1, 0, 1)"
       }
     }
   },

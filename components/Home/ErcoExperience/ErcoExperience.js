@@ -3,8 +3,6 @@ import React from "react";
 // components
 import AccordionGridComponent from "../../PartialComponents/AccordionGridComponent";
 
-import { iconsErcoExperience } from "../../../content/globalData";
-
 /* Recoil */
 /* A state management library. */
 import { useRecoilValue } from "recoil";
@@ -18,7 +16,6 @@ const ErcoExperience = () => {
       {expContent && (
         <AccordionGridComponent
           data={expContent}
-          icons={iconsErcoExperience}
           isImage={true}
           isNeu={false}
         />

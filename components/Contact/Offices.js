@@ -1,11 +1,13 @@
 import Image from "next/image";
 
-import PropTypes from "prop-types";
-
-import { iconMail, iconPhone } from "../../content/globalData";
-
 const Offices = ({ contactData }) => {
-  const { title, contacts, img1, img2 } = contactData;
+  const title = contactData.title;
+  const contacts = contactData.contacts;
+  const img1 = contactData.img1.src;
+  const img2 = contactData.img2.src;
+
+  const iconMail = contactData.iconMail;
+  const iconPhone = contactData.iconPhone;
 
   return (
     <section className="officesContent">
@@ -57,7 +59,5 @@ const Offices = ({ contactData }) => {
     </section>
   );
 };
-
-Offices.propTypes = { contactData: PropTypes.array.isRequired };
 
 export default Offices;

@@ -2,11 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 // local data
-import {
-  iconsSocial,
-  nuestroSocioImg,
-  ercoLogo
-} from "../../content/globalData";
+import { iconsSocial } from "../../content/globalData";
 
 /* Recoil */
 /* A state management library. */

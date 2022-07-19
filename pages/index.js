@@ -32,7 +32,7 @@ import {
 } from "../utils/firebase/firebaseTypes";
 import remote_config from "../utils/firebase/controller";
 
-const IndexPage = ({ flag }) => {
+const IndexPage = () => {
   const [country, setCountry] = useRecoilState(nameCountry);
   const [navbar, setNavbar] = useRecoilState(navbarInfo);
   const [buttonText, setButtonText] = useRecoilState(textsButtons);

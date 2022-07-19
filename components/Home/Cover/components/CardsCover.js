@@ -1,11 +1,7 @@
 import PropTypes from "prop-types";
 
 /* Importing the svg icons. */
-import {
-  iconHandler,
-  iconComputer,
-  iconLeaf
-} from "../../../../content/globalData";
+import { iconsContact } from "../../../../content/globalData";
 
 const CardsCover = ({ data }) => {
   return (
@@ -17,9 +13,7 @@ const CardsCover = ({ data }) => {
             i === 0 ? "coverContentInfo" : "coverContentInfo mt-14 lg:mt-0"
           }
         >
-          <div className="coverContentIcon">
-            {i === 0 ? iconHandler : i === 1 ? iconComputer : iconLeaf}
-          </div>
+          <div className="coverContentIcon">{iconsContact[i]}</div>
           <div className="coverContentText">
             <h5>{e.title}</h5>
             <p>{e.description}</p>

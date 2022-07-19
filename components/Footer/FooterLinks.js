@@ -11,9 +11,6 @@ const FooterLinks = ({ links, contacts, country }) => {
             <a className="footerLink">{name}</a>
           </Link>
         ))}
-        {/* <Link href="/">
-          <a className="footerLinkTitle">Erco</a>
-        </Link> */}
       </div>
       <div className="footerlinksContentRight mt-4 lg:mt-0">
         {contacts.map(({ country, email, href }, i) => (

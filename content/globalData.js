@@ -51,9 +51,11 @@ import phone from "../assets/imagenes/phone/phone.svg";
 
 // Images Phone
 
-import p01 from "../assets/imagenes/phone/self-generation.svg";
-import p02 from "../assets/imagenes/phone/tech.svg";
-import p03 from "../assets/imagenes/phone/oym.svg";
+import selfGeneration from "../assets/imagenes/phone/self-generation.svg";
+import tech from "../assets/imagenes/phone/tech.svg";
+import oym from "../assets/imagenes/phone/oym.svg";
+
+export const phoneImgs = [selfGeneration, tech, oym];
 
 /* ---------- Exporting the icons Cards Cover. ---------- */
 export const iconHandler = <RiHandCoinLine />;
@@ -63,10 +65,6 @@ export const iconLeaf = <RiLeafLine />;
 /* ---------- Exporting the icons ErcoSystem. ---------- */
 export const iconCheck = <RiCheckFill />;
 export const phoneSVG = phone;
-
-export const selfGeneration = p01; //Autogeneración
-export const tech = p02; // NEU
-export const oym = p03; // OYM
 
 /* ---------- Exporting the icons Erco Experience. ---------- */
 
@@ -113,10 +111,10 @@ const iconFacebook = <RiFacebookBoxFill />;
 const iconLinkedIn = <RiLinkedinFill />;
 const iconYoutube = <RiYoutubeFill />;
 export const iconsSocial = [
-  iconWhatsapp,
   iconTwitter,
   iconInstagram,
   iconFacebook,
+  iconWhatsapp,
   iconLinkedIn,
   iconYoutube
 ];
@@ -130,6 +128,24 @@ import nuestroSocio from "../assets/Icon/nuestroSocio.png";
 export const nuestroSocioImg = nuestroSocio;
 
 /* ---------- Exporting the icons Services. ---------- */
+
+// [7/8/2022 4:51 PM] Alejandra Escobar Ledesma
+// Para NEU+
+
+// [7/8/2022 4:51 PM] Alejandra Escobar Ledesma
+// En tiempo real - ImMobile
+
+// [7/8/2022 4:53 PM] Alejandra Escobar Ledesma
+// Energía inteligente - GrTechnology
+
+// [7/8/2022 4:56 PM] Alejandra Escobar Ledesma
+// Energía digital - MdOutlineTouchApp
+
+// [7/8/2022 4:57 PM] Alejandra Escobar Ledesma
+// Notificaciones - IoNotificationsOutline
+
+// [7/8/2022 4:59 PM] Alejandra Escobar Ledesma
+// Basados en datos - BsClipboardData
 
 export const iconMobile = <ImMobile />;
 export const iconAlert = <MdOutlineAddAlert />;

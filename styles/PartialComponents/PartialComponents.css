@@ -10,7 +10,8 @@
   /*--------------------------------- Accordion and Grid component ---------------------------------  */
 
   .gridComponentContainer {
-    @apply w-screen py-28 relative hidden lg:block;
+    @apply w-screen py-28 relative hidden 
+    lg:block;
   }
   .gridComponentImg {
     @apply w-5/6 h-full absolute bottom-0 left-0 -z-10;
@@ -56,7 +57,8 @@
   }
 
   .accordionComponentContainer {
-    @apply relative block px-6 lg:hidden;
+    @apply relative block px-6 
+    lg:hidden;
   }
   .accordan {
     @apply border-t-2 border-lightGrey-500 py-6;
@@ -80,31 +82,38 @@
   /*--------------------------------- GeneralCover component ---------------------------------  */
 
   .generalCoverContent {
-    @apply relative lg:h-38.7rem w-screen h-screen;
+    @apply relative w-screen h-screen 
+    lg:h-38.7rem;
   }
   .generalCoverImage {
     @apply absolute w-full h-full -z-50;
   }
   .generalCoverContainer {
-    @apply flex flex-col justify-center w-full lg:w-3/4 h-full px-6 lg:px-5.5rem;
+    @apply flex flex-col justify-center w-full h-full px-6
+    lg:w-3/4 lg:px-5.5rem;
   }
   .generalCoverContainer > span {
-    @apply flex items-center w-full h-8 text-sm font-IBM font-medium text-primary-300 uppercase lg:text-base;
+    @apply flex items-center w-full h-8 text-sm font-IBM font-medium text-primary-300 uppercase 
+    lg:text-base;
   }
   .generalCoverContainer > h1 {
-    @apply flex items-center text-H3 font-extrabold text-lightGrey-100 lg:text-H1 lg:h-20;
+    @apply flex items-center text-H3 font-extrabold text-lightGrey-100 
+    lg:text-H1 lg:h-20;
   }
   .generalCoverContainer > p {
-    @apply text-Body2 font-Regular text-lightGrey-500 lg:text-Body1;
+    @apply text-Body2 font-Regular text-lightGrey-500 
+    lg:text-Body1;
   }
   .generalCoverButtons {
-    @apply flex lg:flex-row flex-col h-[25%] lg:w-[45%] justify-between pt-12;
+    @apply flex flex-col h-[25%] lg:w-[45%] justify-between pt-12 
+    lg:flex-row;
   }
-  
+
   /*--------------------------------- ExploreButton component ---------------------------------  */
 
   .exploreButton {
-    @apply h-12 w-12.5rem lg:h-12 border-primary-500 border-solid border-2 rounded-full;
+    @apply h-12 w-12.5rem border-primary-500 border-solid border-2 rounded-full 
+    lg:h-12;
   }
   .exploreButton > p {
     @apply font-Sora text-base font-semibold text-lightGrey-100 tracking-wide;
@@ -116,25 +125,32 @@
     @apply w-screen bg-lightGrey-300;
   }
   .stepsContent > h3 {
-    @apply text-H4 lg:text-H3 font-bold text-darkGrey-900 lg:w-2/4;
+    @apply text-H4 font-bold text-darkGrey-900 
+    lg:w-2/4 lg:text-H3;
   }
   .stepsDiv {
-    @apply hidden lg:flex justify-between lg:py-14;
+    @apply hidden justify-between 
+    lg:flex lg:py-14;
   }
   .stepInfo {
-    @apply w-[8.313rem] lg:w-52;
+    @apply w-[8.313rem] 
+    lg:w-52;
   }
   .stepInfo > h3 {
-    @apply text-H3 font-bold font-Sora text-primary-500 lg:text-H1 lg:font-extrabold;
+    @apply text-H3 font-bold font-Sora text-primary-500 
+    lg:text-H1 lg:font-extrabold;
   }
   .stepInfo > p {
-    @apply text-H5 pt-4 h-5.5rem font-bold text-darkGrey-900 lg:text-2xl lg:h-28;
+    @apply text-H5 pt-4 h-5.5rem font-bold text-darkGrey-900 
+    lg:text-2xl lg:h-28;
   }
   .stepInfo > span {
-    @apply text-Body3 font-Regular text-darkGrey-900 lg:h-24 lg:pt-4 lg:text-Body2;
+    @apply text-Body3 font-Regular text-darkGrey-900 
+    lg:h-24 lg:pt-4 lg:text-Body2;
   }
   .stepsSwiper {
-    @apply lg:hidden pt-10;
+    @apply pt-10 
+    lg:hidden;
   }
 
   .paymentContainer {
@@ -144,7 +160,8 @@
     @apply lg:flex lg:justify-between;
   }
   .paymentText > h3 {
-    @apply text-H5 font-bold lg:text-H3;
+    @apply text-H5 font-bold 
+    lg:text-H3;
   }
   .paymentText > p {
     @apply text-Body1 font-Regular font-IBM pt-4;
@@ -157,7 +174,8 @@
   }
 
   .globalContent {
-    @apply px-6 py-14 lg:px-5.5rem lg:py-6.5rem;
+    @apply px-6 py-14 
+    lg:px-5.5rem lg:py-6.5rem;
   }
 
   /* ------------------------------ Mobility component ------------------------------ */
@@ -166,33 +184,41 @@
     @apply py-6;
   }
   .mobilityContainer {
-    @apply w-full px-6 lg:px-5.5rem;
+    @apply w-full px-6 
+    lg:px-5.5rem;
   }
   .mobilityCard {
-    @apply flex justify-around lg:py-5.25rem;
+    @apply flex justify-around 
+    lg:py-5.25rem;
   }
   .mobilityItemImgR {
-    @apply relative overflow-hidden w-[20.5rem] h-[13.9rem] lg:w-[30.5rem] lg:h-[20.5rem] rounded-2xl bg-blue-300;
+    @apply relative overflow-hidden w-[20.5rem] h-[13.9rem] rounded-2xl bg-blue-300 
+    lg:w-[30.5rem] lg:h-[20.5rem];
   }
   .mobilityItemImgA {
     @apply absolute w-full h-full top-0 left-0;
   }
   .mobilityCardContent {
-    @apply pt-6 lg:pt-0 ;
+    @apply pt-6 
+    lg:pt-0;
   }
   .mobilityTitle > h3 {
-    @apply text-H5 py-8 lg:text-H4 font-bold text-darkGrey-900;
+    @apply text-H5 py-8 font-bold text-darkGrey-900 
+    lg:text-H4;
   }
   .mobilityTitle > p {
-    @apply text-Body2 lg:text-Body1 font-Regular text-darkGrey-500 lg:w-[30.5rem];
+    @apply text-Body2 font-Regular text-darkGrey-500 
+    lg:w-[30.5rem] lg:text-Body1;
   }
   .infoChargeContainer {
     @apply flex items-center pt-8;
   }
   .battery {
-    @apply text-4xl pr-4 text-primary-500 lg:text-7xl;
+    @apply text-4xl pr-4 text-primary-500 
+    lg:text-7xl;
   }
   .infoCharge > span {
-    @apply block text-sm font-semibold text-darkGrey-500 lg:text-lg;
+    @apply block text-sm font-semibold text-darkGrey-500 
+    lg:text-lg;
   }
 }

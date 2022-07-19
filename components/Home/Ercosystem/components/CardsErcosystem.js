@@ -7,7 +7,7 @@ import { gsap } from "gsap/dist/gsap";
 
 import { sidebarAnimations } from "../../../../styles/animations/globals";
 
-import { selfGeneration, tech, oym } from "../../../../content/globalData";
+import { phoneImgs } from "../../../../content/globalData";
 
 import QuoteButton from "../../../PartialComponents/QuoteButton";
 
@@ -118,7 +118,7 @@ const CardsEcosystem = ({ contentData, icon, phone, textButton }) => {
             <Image
               key={i}
               className={i === 2 ? "panel-phone exclude" : "panel-phone"}
-              src={i === 0 ? selfGeneration.src : i === 1 ? tech.src : oym.src}
+              src={phoneImgs[i]}
               alt="image"
               layout="fill"
               objectFit="fill"

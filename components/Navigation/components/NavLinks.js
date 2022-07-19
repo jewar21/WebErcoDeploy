@@ -14,9 +14,8 @@ import { OverlayPanel } from "primereact/overlaypanel";
 import { RiArrowRightLine } from "react-icons/ri";
 
 /* I'm importing the DeviceSize object to use it in the react-responsive library.
-The co, pa, us are images that I use in the countries button. */
+ */
 import { DeviceSize } from "../../../utils/handlers/handlers";
-import { co, pa, us } from "../../../content/data/homeData";
 
 /* I'm importing the components that I use in the panel. */
 import ServicesPanel from "./ServicesPanel";
@@ -28,7 +27,7 @@ const NavLinks = ({ navbar }) => {
   const [isOpenPanel, setOpenPanel] = useRecoilState(mobilePanelServiceState);
   const country = useRecoilValue(nameCountry);
 
-  const { menu, services } = navbar;
+  const { menu, services, iconFlag } = navbar;
 
   return (
     <div className="navLinksContainer">
@@ -89,15 +88,20 @@ const NavLinks = ({ navbar }) => {
       )}
       {isTablet && (
         <div className="flex mb-6">
-          <div className="countriesButton border-primary-500 border-2 ">
-            <Image src={co} alt="Colombia" width={32} height={32} />
-          </div>
-          {/* <div className="countriesButton mx-2">
-            <Image src={pa} alt="Colombia" width={32} height={32} />
-          </div>
-          <div className="countriesButton">
-            <Image src={us} alt="Colombia" width={32} height={32} />
-          </div> */}
+          {iconFlag.map((e, i) => (
+            <div
+              key={i}
+              className={
+                i === 0
+                  ? "countriesButton border-primary-500 border-2 "
+                  : i === 1
+                  ? "countriesButton mx-2"
+                  : "countriesButton"
+              }
+            >
+              <Image src={e.src} alt={e.alt} width={32} height={32} />
+            </div>
+          ))}
         </div>
       )}
       {isOpenPanel && <ServicesPanelMobile data={services} />}
