@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 // local data
-import { iconsSocial } from "../../content/globalData";
+import { ercoLogo, iconsSocial } from "../../content/globalData";
 
 /* Recoil */
 /* A state management library. */
@@ -61,8 +61,8 @@ const Footer = () => {
                 <p className="mb-1 uppercase">{offices.partner}</p>
                 <div className="nuestroSocioImg">
                   <Image
-                    src={nuestroSocioImg.src}
-                    alt="Nuestro Socio"
+                    src={offices.imgPartner}
+                    alt={offices.partner}
                     layout="responsive"
                     width={159}
                     height={40}

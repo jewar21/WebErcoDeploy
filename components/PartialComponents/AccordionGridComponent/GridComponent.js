@@ -3,16 +3,6 @@ import Image from "next/image";
 /* Importing the image. */
 import imgBackground from "../../../assets/Backgrounds/backgroundGrid.svg";
 
-/* Importing the icons from the globalData.js file. */
-import {
-  iconTeam,
-  iconFireball,
-  iconSolarPanel,
-  iconComputer,
-  iconContact,
-  iconRoad
-} from "../../../content/globalData";
-
 // component
 import ComponentTitle from "./ComponentTitle";
 
@@ -43,7 +33,7 @@ const GridComponent = ({ data, icons, isImage, isNeu }) => {
             cards.map(({ title, content }, i) => {
               return (
                 <div key={i} className="gridComponentRightItem">
-                  <div className="gridComponentRightItemIcon">{icons[i]}</div>
+                  {/* <div className="gridComponentRightItemIcon">{icons[i]}</div> */}
                   <div
                     className={
                       isNeu

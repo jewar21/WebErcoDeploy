@@ -11,13 +11,13 @@ import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner/
 
 const Home = () => {
   return (
-    <Container>
+    <Container>    
       <Cover />
       <Ercosystem />
       <ErcoExperience />
       <Customers />
       <StatisticsBanner />
-      <EcosystemBanner />
+      <EcosystemBanner />    
     </Container>
   );
 };

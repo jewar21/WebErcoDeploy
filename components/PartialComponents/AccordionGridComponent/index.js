@@ -1,7 +1,10 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 import AccordionComponent from "./AccordionComponent";
 import GridComponent from "./GridComponent";
 
-const index = ({ data, icons, isImage, isNeu }) => {
+const AccordionGridComponent = ({ data, icons, isImage, isNeu }) => {
   return (
     <>
       {data && (
@@ -19,4 +22,11 @@ const index = ({ data, icons, isImage, isNeu }) => {
   );
 };
 
-export default index;
+AccordionGridComponent.propTypes = {
+  data: PropTypes.object.isRequired,
+  icons: PropTypes.array,
+  isImage: PropTypes.bool,
+  isNeu: PropTypes.bool
+};
+
+export default AccordionGridComponent;

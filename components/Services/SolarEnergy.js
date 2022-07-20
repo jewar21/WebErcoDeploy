@@ -8,6 +8,9 @@ import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner"
 import PaymentMethods from "../PartialComponents/PaymentMethods/PaymentMethods";
 import Steps from "../PartialComponents/StepsComponent/Steps";
 
+/* Importing the iconsErcoExperience from the globalData.js file. */
+import { iconsErcoExperience } from "../../content/globalData";
+
 const SolarEnergy = ({
   dataCover,
   dataInstallation,
@@ -24,7 +27,12 @@ const SolarEnergy = ({
         isActiveExploreButton={true}
       />
       <Installation dataInstallation={dataInstallation} cardsData={cardsData} />
-      <AccordionGridComponent data={neuPlus} isNeu={true} />
+      <AccordionGridComponent
+        data={neuPlus}
+        icons={iconsErcoExperience}
+        isImage={false}
+        isNeu={true}
+      />
       <AccordionGridComponent data={operationAndMaintenance} />
       <EcosystemBanner />
       <Steps dataSteps={stepsData} />

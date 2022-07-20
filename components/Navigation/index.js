@@ -46,8 +46,8 @@ const Navbar = () => {
             <div className="navbarButtons">
               {iconFlag && (
                 <Image
-                  src={iconFlag.src}
-                  alt={iconFlag.alt}
+                  src={iconFlag[0].src}
+                  alt={iconFlag[0].alt}
                   width={28}
                   height={28}
                 />
