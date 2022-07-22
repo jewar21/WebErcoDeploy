@@ -1,38 +1,67 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { InputText } from "primereact/inputtext";
-import { AutoComplete } from "primereact/autocomplete";
+import { Dropdown } from 'primereact/dropdown';
 
 import { generalInformations, places } from "../../../content/data/quoteData";
+import { dataGeneralInformation, disabledNextPageFormState } from "../../../recoil/atoms";
+import { useRecoilState } from "recoil";
+import { remplaceInfo, ValidateDataRequired } from "../../../utils/handlers/handlers";
 
 const GeneralInformation = () => {
-  const title = generalInformations.title;
-  const fiels = generalInformations.fiels;
-  const selection = generalInformations.selections.question;
+  const { title, fiels, selections } = generalInformations;
+  const { question, id } = selections;
 
-  const [value1, setValue1] = useState("");
+  const [dataGeneral, setDataGeneral] = useRecoilState(dataGeneralInformation);
+  const [nextPage, setNextPage] = useRecoilState(disabledNextPageFormState);
+  
+  useEffect(() => {
+    validateRequired();
+  }, [])
 
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [filteredItems, setFilteredItems] = useState(null);
+  const validateRequired = (data, id) => {
+    let allReady = true;
 
-  /**
-   * It takes the query from the input field and filters the places array based on the query.
-   * @param event - The event object.
-   */
-  const searchItems = (event) => {
-    //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
-    let query = event.query;
-    let _filteredItems = [];
+    for( let el in dataGeneral) {
+      const { value, isRequired, typeValidation } = dataGeneral[el];
+      let valueSend = value
 
-    for (let i = 0; i < places.length; i++) {
-      let place = places[i];
-      if (place.label.toLowerCase().indexOf(query.toLowerCase()) === 0) {
-        _filteredItems.push(place);
+      if(id && id === el) {
+        valueSend = data
+      } 
+      
+      if(isRequired) {
+        const { status, error } = ValidateDataRequired(valueSend, typeValidation)
+        if(!status) allReady = status
+
+        if(!!error && id === el) {
+          setDataGeneral({
+            ...dataGeneral,
+            [id]: { ...dataGeneral[id], value:valueSend, errorMessage: error }
+          })
+        } else if(id === el) {
+          setDataGeneral({
+            ...dataGeneral,
+            [id]: { ...dataGeneral[id], value:valueSend, errorMessage: null }
+          })
+        }
       }
     }
 
-    setFilteredItems(_filteredItems);
-  };
+    if(allReady) {
+      console.log('Activa boton next')
+      setNextPage(false);
+    } else {
+      console.log('Desactiva boton next')
+      setNextPage(true);
+    }
+
+  }
+
+  const changeInput = (value, id, type) => {
+    value = remplaceInfo(value, type);
+    validateRequired(value, id);
+  }
 
   return (
     <div className="generalIContent">
@@ -42,34 +71,50 @@ const GeneralInformation = () => {
         </div>
         <div className="generalICards">
           {fiels.map((fiel, i) => {
-            const question = fiel.question;
+            const { question, id } = fiel;
+            const { value, isRequired, typeValidation, errorMessage } = dataGeneral[id];
             return (
               <div className="generalInput" key={i}>
                 <div className="generalIQuestion">
                   <label>{question}</label>
-                  <span>*</span>
+                  {isRequired &&
+                    <span>*</span>
+                  }
                 </div>
-                <div className="inputRounded">
-                  <InputText onChange={(e) => setValue1(e.target.value)} />
+                <div className={`${errorMessage && 'inputRoundedError'}`}>
+                  <InputText value={value} onChange={(e) => changeInput(e.target.value, id, typeValidation)} className={`${errorMessage && 'p-invalid p-d-block'}`} />
                 </div>
+                {errorMessage &&
+                  <small className="p-error p-d-block">{errorMessage}</small>
+                }
               </div>
             );
           })}
-          <div className="generalInput">
+          <div className={`generalInput ${dataGeneral.department.errorMessage && 'inputRoundedError'}`}>
             <div className="generalIQuestion">
-              <label>{selection}</label>
+              <label>{question}</label>
+              {dataGeneral.department.isRequired &&
+                <span>*</span>
+              }
             </div>
-            <AutoComplete
-              className="inputRounded"
-              value={selectedItem}
-              suggestions={filteredItems}
-              completeMethod={searchItems}
+            <Dropdown 
+              showClear
+              // filter
+              className={`${dataGeneral.department.errorMessage && 'p-invalid'} ${!dataGeneral.department.value && 'd-none'}`}
+              value={dataGeneral.department.value} 
+              options={places} 
+              onChange={(e) => changeInput(e.value, id)}
+              optionLabel="label" 
+              // filterBy="label"
+              placeholder="Seleccione una opción" 
+              emptyMessage='Sin información' 
+              // emptyFilterMessage='Sin resultados'
               virtualScrollerOptions={{ itemSize: 10 }}
-              field="label"
-              dropdown
-              onChange={(e) => setSelectedItem(e.value)}
-              aria-label="Placves"
+              // showFilterClear={true}
             />
+            {dataGeneral.department.errorMessage &&
+              <small className="p-error p-d-block">{dataGeneral.department.errorMessage}</small>
+            }
           </div>
         </div>
       </div>

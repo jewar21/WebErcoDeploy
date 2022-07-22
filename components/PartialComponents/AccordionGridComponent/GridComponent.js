@@ -33,7 +33,7 @@ const GridComponent = ({ data, icons, isImage, isNeu }) => {
             cards.map(({ title, content }, i) => {
               return (
                 <div key={i} className="gridComponentRightItem">
-                  {/* <div className="gridComponentRightItemIcon">{icons[i]}</div> */}
+                  <div className="gridComponentRightItemIcon">{icons[i]}</div>
                   <div
                     className={
                       isNeu

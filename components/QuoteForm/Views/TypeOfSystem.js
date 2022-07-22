@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
+import { useRecoilState } from "recoil";
 
 import { typeOfSystem } from "../../../content/data/quoteData";
+import { dataTypeOfSystem, disabledNextPageFormState } from "../../../recoil/atoms";
 
 const TypeOfSystem = () => {
-  const title = typeOfSystem.title;
-  const cards = typeOfSystem.cards;
+  const [typeOfSystemAtom, setTypeOfSystemAtom] = useRecoilState(dataTypeOfSystem);
+  const [disabledNextPage, setDisabledNextPage] = useRecoilState(disabledNextPageFormState);
+
+  const { title, cards } = typeOfSystem;
+
+  const validateRequired = useCallback( () => {
+    if(typeOfSystemAtom) {
+      setDisabledNextPage(false)
+    } else {
+      setDisabledNextPage(true)
+    }
+  },[typeOfSystemAtom, setDisabledNextPage])
+
+  useEffect(() => {
+    validateRequired();
+  }, [validateRequired])
+
+  const clickCard = (data) => {
+    setTypeOfSystemAtom(data)
+  }
 
   return (
     <div className="typeOfSystemContent">
@@ -14,10 +34,9 @@ const TypeOfSystem = () => {
         </div>
         <div className="typeOfSystemCardContent">
           {cards.map((card, i) => {
-            const subTitle = card.subTitle;
-            const desc = card.desc;
+            const { subTitle, desc } = card;
             return (
-              <div className="typeOfSystemCard" key={i}>
+              <div className={`typeOfSystemCard ${typeOfSystemAtom === subTitle && "activeTypeOfSystemCard"}`} key={i} onClick={() => clickCard(subTitle)} >
                 <h5>{subTitle}</h5>
                 <p>{desc}</p>
               </div>

@@ -8,6 +8,9 @@ import AccordionGridComponent from "../../PartialComponents/AccordionGridCompone
 import { useRecoilValue } from "recoil";
 import { homeExpContent } from "../../../recoil/atoms";
 
+/* Importing the iconsErcoExperience from the globalData.js file. */
+import { iconsErcoExperience } from "../../../content/globalData";
+
 const ErcoExperience = () => {
   const expContent = useRecoilValue(homeExpContent);
 
@@ -16,6 +19,7 @@ const ErcoExperience = () => {
       {expContent && (
         <AccordionGridComponent
           data={expContent}
+          icons={iconsErcoExperience}
           isImage={true}
           isNeu={false}
         />

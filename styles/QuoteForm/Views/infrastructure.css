@@ -10,7 +10,7 @@
     @apply w-full h-full lg:flex justify-between pt-6;
   }
   .infrastructureCard {
-    @apply flex border-2 rounded-2xl border-lightGrey-500 h-4.5rem items-center mt-6 px-4 lg:mt-0 lg:w-52 lg:h-52 lg:px-0 lg:justify-center lg:items-start lg:pt-14;
+    @apply relative flex border-2 rounded-2xl border-lightGrey-500 h-4.5rem items-center mt-6 px-4 lg:mt-0 lg:w-52 lg:h-52 lg:px-0 lg:justify-center lg:items-start lg:pt-14 cursor-pointer;
   }
   .infrastructureIconText {
     @apply flex lg:flex-col lg:w-1/2 lg:items-center;
@@ -19,6 +19,15 @@
     @apply text-4xl text-primary-500;
   }
   .infrastructureIconText h5 {
-    @apply text-lg font-semibold text-darkGrey-900 ml-4 lg:ml-0 lg:block lg:text-center lg:pt-4;
+    @apply text-lg font-light text-darkGrey-900 ml-4 lg:ml-0 lg:block lg:text-center lg:pt-4;
+  }
+  h5.infrastructureTextActive {
+    @apply font-semibold;
+  }
+  .activeInfrastructureCard {
+    @apply border-2 rounded-2xl border-primary-500;
+  }
+  .infrastructureIconCheck {
+    @apply flex justify-center items-center absolute top-3 right-3 rounded-full bg-primary-500 h-7 w-7
   }
 }

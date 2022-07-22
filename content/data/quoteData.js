@@ -11,15 +11,16 @@ import imgQuote from "../../assets/imagenes/imgQuote.png";
 export const generalInformations = {
   title: "¡Háblanos de ti! Queremos conocerte",
   fiels: [
-    { question: "¿Para quién es esta cotización?" },
-    { question: "¿Cuáles son tus apellidos?" },
+    { question: "¿Para quién es esta cotización?", id:"firstName" },
+    { question: "¿Cuáles son tus apellidos?", id:"lastName" },
     {
       question: "¿A cuál correo debemos enviar esta cotización?",
-      error: "Correo no válido"
+      error: "Correo no válido",
+      id:"email"
     },
-    { question: "¿Cuál es tu número de celular?" }
+    { question: "¿Cuál es tu número de celular?", id:"phone" },
   ],
-  selections: { question: "¿En dónde vives?" }
+  selections: { question: "¿En dónde vives?", id:"department" },
 };
 
 export const infrastructure = {
@@ -44,10 +45,6 @@ export const typeOfSystem = {
     },
     {
       subTitle: "Aislado",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing"
-    },
-    {
-      subTitle: "Respaldo",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing"
     }
   ]
@@ -98,21 +95,25 @@ export const confirmation = {
 };
 
 export const places = [
-  { label: "Antioquia" },
-  { label: "Antioquia" },
-  { label: "Antioquia" },
-  { label: "Antioquia" }
+  { label: "Antioquia", value: "Antioquia" },
+  { label: "Colombia", value: "Colombia" },
+  { label: "Antioquia", value: "Antioquia" },
+  { label: "Colombia", value: "Colombia" },
+  { label: "Antioquia", value: "Antioquia" },
+  { label: "Colombia", value: "Colombia" },
+  { label: "Colombia", value: "Colombia" },
+  { label: "Antioquia", value: "Antioquia" }
 ];
 
 export const optionsQuestion = [
-  { label: "Facebook/Instagram" },
-  { label: "LinkedIn" },
-  { label: "Búsqueda Google" },
-  { label: "Ferias/Eventos" },
-  { label: "Periódicos" },
-  { label: "Radio" },
-  { label: "Televisión" },
-  { label: "Referido" },
-  { label: "Valla Publicitaria" },
-  { label: "Email Marketing" }
+  { label: "Facebook/Instagram" , value: "Redes Sociales" },
+  { label: "LinkedIn" , value: "Redes Sociales" },
+  { label: "Búsqueda Google" , value: "Búsqueda Google" },
+  { label: "Ferias/Eventos" , value: "Ferias/Eventos" },
+  { label: "Periódicos" , value: "Periódico" },
+  { label: "Radio" , value: "Radio" },
+  { label: "Televisión" , value: "Televisión" },
+  { label: "Referido" , value: "Referido"},
+  { label: "Valla Publicitaria" , value: "Valla Publicitaria" },
+  { label: "Email Marketing", value: "Email Marketing" }
 ];

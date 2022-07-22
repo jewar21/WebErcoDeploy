@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Dialog } from "primereact/dialog";
 
 import PropTypes from "prop-types";
 import { useMediaQuery } from "react-responsive";
 
-import { useRecoilState } from "recoil";
-import { quoteCountState } from "../../recoil/atoms";
+import { useRecoilState, useResetRecoilState } from "recoil";
+import { dataAdditionalInformation, dataEnergyBill, dataGeneralInformation, dataInfrastructure, dataTypeOfSystem, quoteCountState } from "../../recoil/atoms";
 
 import { DeviceSize } from "../../utils/handlers/handlers";
 
@@ -14,6 +14,14 @@ import { iconArrow, ercoLogo } from "../../content/globalData";
 import QuoteForm from "../QuoteForm/QuoteForm";
 
 const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
+
+  // Reset quote form atoms
+  const resetGeneralInformation = useResetRecoilState(dataGeneralInformation);
+  const resetInfrastructure = useResetRecoilState(dataInfrastructure);
+  const resetTypeOfSystem = useResetRecoilState(dataTypeOfSystem);
+  const resetEnergyBill = useResetRecoilState(dataEnergyBill);
+  const resetAdditionalInformation = useResetRecoilState(dataAdditionalInformation);
+
   const isMobile = useMediaQuery({ maxWidth: DeviceSize.mobile });
   const [isOpenModal, setIsOpenModal] = useState(false);
 
@@ -24,9 +32,28 @@ const QuoteButton = ({ buttonParameters, buttonText, isIcon }) => {
   };
 
   const closeQuote = () => {
+    // Reset quote form atoms
+    resetGeneralInformation();
+    resetInfrastructure();
+    resetTypeOfSystem();
+    resetEnergyBill();
+    resetAdditionalInformation();
+    
     setIsOpenModal(false);
     setCount(0);
   };
+
+  useEffect(() => {
+    if(isOpenModal) {
+      document.querySelectorAll('html').forEach(target => {
+        target.classList.add('no-scroll')
+      });
+    } else {
+      document.querySelectorAll('html').forEach(target => {
+        target.classList.remove('no-scroll')
+      });
+    }
+  }, [isOpenModal])
 
   return (
     <>

@@ -1,42 +1,74 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useRecoilState } from "recoil";
 
 import { InputTextarea } from "primereact/inputtextarea";
+import { Dropdown } from 'primereact/dropdown';
 
 import {
   additionalInformation,
   optionsQuestion
 } from "../../../content/data/quoteData";
 
-import { AutoComplete } from "primereact/autocomplete";
-import { Dialog } from "primereact/dialog";
+import { dataAdditionalInformation, disabledNextPageFormState } from "../../../recoil/atoms";
+import { ValidateDataRequired } from "../../../utils/handlers/handlers";
 
 const AdditionalInformation = () => {
   const title = additionalInformation.title;
   const terms = additionalInformation.terms.split(" ");
 
-  const [value1, setValue1] = useState("");
 
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [filteredItems, setFilteredItems] = useState(null);
+  const [additionalInformationAtom, setAdditionalInformationAtom] = useRecoilState(dataAdditionalInformation);
+  const [disabledNextPage, setDisabledNextPage] = useRecoilState(disabledNextPageFormState);
 
-  /**
-   * It takes the query from the input field and filters the places array based on the query.
-   * @param event - The event object.
-   */
-  const searchItems = (event) => {
-    //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
-    let query = event.query;
-    let _filteredItems = [];
+  const validateRequired = (data, id) => {
+    let allReady = true;
 
-    for (let i = 0; i < optionsQuestion.length; i++) {
-      let option = optionsQuestion[i];
-      if (option.label.toLowerCase().indexOf(query.toLowerCase()) === 0) {
-        _filteredItems.push(option);
+    for (let el in additionalInformationAtom) {
+      const { value, isRequired, typeValidation } = additionalInformationAtom[el];
+      let valueSend = value
+      
+      if(id && id === el) {
+        valueSend = data
+      }
+
+      if(isRequired) {
+        const { status, error } = ValidateDataRequired(valueSend, typeValidation)
+        if(!status) allReady = status
+
+        if(!!error && id === el) {
+          setAdditionalInformationAtom({
+            ...additionalInformationAtom,
+            [id]: { ...additionalInformationAtom[id], value:valueSend, errorMessage: error }
+          })
+        } else if(id === el) {
+          setAdditionalInformationAtom({
+            ...additionalInformationAtom,
+            [id]: { ...additionalInformationAtom[id], value:valueSend, errorMessage: null }
+          })
+        }
       }
     }
 
-    setFilteredItems(_filteredItems);
-  };
+    console.log('allReady',allReady)
+
+    if(allReady) {
+      setDisabledNextPage(false);
+    } else {
+      setDisabledNextPage(true);
+    }
+  }
+
+  useEffect(() => {
+    validateRequired();
+  }, [])
+
+  const onChangeInfo = (id, data) => {
+    // setAdditionalInformationAtom({
+    //   ...additionalInformationAtom,
+    //   [id]: data
+    // })
+    validateRequired(data, id)
+  }
 
   return (
     <div className="additionalIContent">
@@ -44,37 +76,43 @@ const AdditionalInformation = () => {
         <div className="titleQuoteContent">
           <h5 className="titleQuote">{title}</h5>
         </div>
-        <div className="additionalIQ1">
+        <div className={`additionalIQ1 generalInput ${additionalInformationAtom.meetUs.errorMessage && 'inputRoundedError'}`}>
           <label className="additionalIText">{additionalInformation.q1}</label>
           <span className="text-secondary-500">*</span>
-          <AutoComplete
-            className="inputRounded mt-4"
-            value={selectedItem}
-            suggestions={filteredItems}
-            completeMethod={searchItems}
+          <Dropdown 
+            showClear
+            className={`mt-4 ${additionalInformationAtom.meetUs.errorMessage && 'p-invalid'} ${!additionalInformationAtom.meetUs.value && 'd-none'}`}
+            value={additionalInformationAtom.meetUs.value} 
+            options={optionsQuestion} 
+            onChange={(e) => onChangeInfo('meetUs', e.value)}
+            optionLabel="label" 
+            placeholder="Seleccione una opción" 
+            emptyMessage='Sin información' 
             virtualScrollerOptions={{ itemSize: 10 }}
-            field="label"
-            dropdown
-            onChange={(e) => setSelectedItem(e.value)}
-            aria-label="Placves"
           />
+          {additionalInformationAtom.meetUs.errorMessage &&
+            <small className="p-error p-d-block">{additionalInformationAtom.meetUs.errorMessage}</small>
+          }
         </div>
         <div className="additionalIQ2">
           <label className="additionalIText">{additionalInformation.q2}</label>
           <span className="text-secondary-500">*</span>
-          <div className="inputRounded mt-4">
+          <div className={`mt-4 ${additionalInformationAtom.moreInformation.errorMessage && 'inputRoundedError'}`}>
             <InputTextarea
-              value={value1}
-              onChange={(e) => setValue1(e.target.value)}
+              value={additionalInformationAtom.moreInformation.value}
+              onChange={(e) => onChangeInfo('moreInformation', e.target.value)}
               rows={5}
               cols={30}
-              className="additionalInputTextarea"
+              className={`additionalInputTextarea ${additionalInformationAtom.moreInformation.errorMessage && 'p-invalid p-d-block'}`}
             />
           </div>
+          {additionalInformationAtom.moreInformation.errorMessage &&
+            <small className="p-error p-d-block">{additionalInformationAtom.moreInformation.errorMessage}</small>
+          }
         </div>
         <div className="additionalITerms">
           <label className="additionalCheckbox">
-            <input type="checkbox" />
+            <input type="checkbox" checked={additionalInformationAtom.agreeTerms.value} onChange={(e) => onChangeInfo('agreeTerms', e.target.checked)} />
             <span className="checkmark"></span>
           </label>
           <small>
