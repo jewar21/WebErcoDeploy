@@ -27,7 +27,9 @@ export default Home;
 export async function getStaticProps({ params: { flag } }) {
   console.log(`Building slug: ${flag}`);
   try {
-    const response = await fetch("http://localhost:3000/api/hello");
+    const response = await fetch(
+      "http:web-erco-deploy-oymmwh7u6-jesseard94.vercel.app/api/hello"
+    );
     const data = await response.json();
     return {
       props: { flag: data }
