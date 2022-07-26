@@ -17,6 +17,7 @@ const GeneralInformation = () => {
   
   useEffect(() => {
     validateRequired();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const validateRequired = (data, id) => {

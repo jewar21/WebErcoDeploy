@@ -71,7 +71,7 @@ export const phoneSVG = phone;
 /* Exporting the icons GridComponent. */
 const iconTeam = <AiOutlineTeam />;
 const iconNut = <BsNut />;
-const iconSolarPanel = <FaSolarPanel />;
+export const iconSolarPanel = <FaSolarPanel />;
 //iconComputer
 const iconContact = <RiContactsLine />;
 const iconRoad = <SiGumroad />;
@@ -104,7 +104,7 @@ export const iconArrowRight = <RiArrowRightSLine />;
 /* ---------- Exporting the icons Footer. ---------- */
 
 // social networks
-const iconWhatsapp = <RiWhatsappLine />;
+export const iconWhatsapp = <RiWhatsappLine />;
 const iconTwitter = <RiTwitterFill />;
 const iconInstagram = <RiInstagramLine />;
 const iconFacebook = <RiFacebookBoxFill />;

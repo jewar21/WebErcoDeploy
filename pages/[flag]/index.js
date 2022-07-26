@@ -11,13 +11,13 @@ import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner/
 
 const Home = () => {
   return (
-    <Container>    
+    <Container>
       <Cover />
       <Ercosystem />
       <ErcoExperience />
       <Customers />
       <StatisticsBanner />
-      <EcosystemBanner />    
+      <EcosystemBanner />
     </Container>
   );
 };
@@ -27,9 +27,7 @@ export default Home;
 export async function getStaticProps({ params: { flag } }) {
   console.log(`Building slug: ${flag}`);
   try {
-    const response = await fetch(
-      "https://website-erco-eutcus2j4-jesseard94.vercel.app/api/hello"
-    );
+    const response = await fetch("http://localhost:3000/api/hello");
     const data = await response.json();
     return {
       props: { flag: data }

@@ -11,7 +11,7 @@ import Container from "../../../../components/Navigation/Container";
 import GeneralCover from "../../../../components/PartialComponents/GeneralCover/GeneralCover";
 import MobilityComponent from "../../../../components/PartialComponents/MobilityComponent/MobilityComponent";
 import Steps from "../../../../components/PartialComponents/StepsComponent/Steps";
-import EcosystemBanner from "../../../../components/PartialComponents/EcosystemBanner";
+import EcosystemBanner from "../../../../components/PartialComponents/EcosystemBanner/EcosystemBanner";
 
 const electricMobility = () => {
   const dataCover = electricMobilityData.bannerHome;

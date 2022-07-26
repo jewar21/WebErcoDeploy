@@ -60,6 +60,7 @@ const AdditionalInformation = () => {
 
   useEffect(() => {
     validateRequired();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const onChangeInfo = (id, data) => {

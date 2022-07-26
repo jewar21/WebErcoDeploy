@@ -7,7 +7,7 @@ import { constactInfo } from "../../../content/data/contactData";
 import ContactComponent from "../../../components/Contact/ContactComponent";
 import Offices from "../../../components/Contact/Offices";
 import Container from "../../../components/Navigation/Container";
-import EcosystemBanner from "../../../components/PartialComponents/EcosystemBanner";
+import EcosystemBanner from "../../../components/PartialComponents/EcosystemBanner/EcosystemBanner";
 
 const index = () => {
   return (
