@@ -26,20 +26,31 @@ export default Home;
 
 export async function getStaticProps({ params: { flag } }) {
   console.log(`Building slug: ${flag}`);
+  let data = [];
+  let error = "";
   try {
     // const URL = process.env.API_TESTING_LOCAL_URL;
     const URL = process.env.API_TESTING_URL;
     const response = await fetch(
       // "http:web-erco-deploy-oymmwh7u6-jesseard94.vercel.app/api/hello"
-      `${URL}/api/hello`
+      `${URL}/api/hello`,
+      {
+        method: "GET",
+        headers: {
+          // update with your user-agent
+          "User-Agent":
+            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+          Accept: "application/json; charset=UTF-8"
+        }
+      }
     );
-    const data = await response.json();
-    return {
-      props: { flag: data }
-    };
-  } catch (error) {
-    console.log(error);
+    data = await response.json();
+  } catch (e) {
+    error = e.toString();
   }
+  return {
+    props: { flag: data }
+  };
 }
 
 export async function getStaticPaths() {
