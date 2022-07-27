@@ -1,4 +1,5 @@
 import Image from "next/image";
+import PropTypes from "prop-types";
 
 /* Importing the image. */
 import imgBackground from "../../../assets/Backgrounds/backgroundGrid.svg";
@@ -8,6 +9,7 @@ import ComponentTitle from "./ComponentTitle";
 
 const GridComponent = ({ data, icons, isImage, isNeu }) => {
   const { cards } = data;
+
   return (
     <section
       className={
@@ -33,7 +35,9 @@ const GridComponent = ({ data, icons, isImage, isNeu }) => {
             cards.map(({ title, content }, i) => {
               return (
                 <div key={i} className="gridComponentRightItem">
-                  <div className="gridComponentRightItemIcon">{icons[i]}</div>
+                  {icons && ( //Quitar esto una vez tengamos definidos todos los iconos
+                    <div className="gridComponentRightItemIcon">{icons[i]}</div>
+                  )}
                   <div
                     className={
                       isNeu
@@ -51,6 +55,13 @@ const GridComponent = ({ data, icons, isImage, isNeu }) => {
       </div>
     </section>
   );
+};
+
+GridComponent.propTypes = {
+  data: PropTypes.object.isRequired,
+  icons: PropTypes.array, //cambiar a isRequired cuando se haga el update de la data
+  isImage: PropTypes.bool,
+  isNeu: PropTypes.bool
 };
 
 export default GridComponent;

@@ -24,7 +24,7 @@ const AccordionGridComponent = ({ data, icons, isImage, isNeu }) => {
 
 AccordionGridComponent.propTypes = {
   data: PropTypes.object.isRequired,
-  icons: PropTypes.array,
+  icons: PropTypes.array, //cambiar a isRequired cuando se haga el update de la data
   isImage: PropTypes.bool,
   isNeu: PropTypes.bool
 };

@@ -13,7 +13,6 @@ import { iconsErcoExperience } from "../../../content/globalData";
 
 const ErcoExperience = () => {
   const expContent = useRecoilValue(homeExpContent);
-
   return (
     <section>
       {expContent && (
