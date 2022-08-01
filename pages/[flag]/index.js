@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useCallback } from "react";
 
 /* Importing the components from the folder. */
 import Container from "../../components/Navigation/Container";
@@ -9,7 +9,123 @@ import Customers from "../../components/Home/Customers/Customers";
 import StatisticsBanner from "../../components/Home/StatisticsBanner/StatisticsBanner";
 import EcosystemBanner from "../../components/PartialComponents/EcosystemBanner/EcosystemBanner";
 
+// Recoil
+import { useRecoilState } from "recoil";
+import {
+  nameCountry,
+  navbarInfo,
+  textsButtons,
+  homeCoverData,
+  homeEcosystemContent,
+  homeExpContent,
+  bannersData,
+  homeTestimonials,
+  brands,
+  contactUs
+} from "../../recoil/atoms";
+
+/* Importing the remote config from firebase. */
+import {
+  FLAG,
+  NAVBAR,
+  BUTTONTEXT,
+  HOME_COVER,
+  HOME_ECOSYSTEM,
+  HOME_EXP,
+  BANNERS,
+  HOME_TESTIMONIALS,
+  HOME_BRANDS,
+  CONTACT_US
+} from "../../utils/firebase/firebaseTypes";
+import remote_config from "../../utils/firebase/controller";
+
 const Home = () => {
+  const [country, setCountry] = useRecoilState(nameCountry);
+  const [navbar, setNavbar] = useRecoilState(navbarInfo);
+  const [buttonText, setButtonText] = useRecoilState(textsButtons);
+  const [coverInfo, setCoverInfo] = useRecoilState(homeCoverData);
+  const [ecosystem, seteEcosystem] = useRecoilState(homeEcosystemContent);
+  const [homeExp, setHomeExp] = useRecoilState(homeExpContent);
+  const [banners, setBanners] = useRecoilState(bannersData);
+  const [testimonial, setTestimonials] = useRecoilState(homeTestimonials);
+  const [brand, setBrand] = useRecoilState(brands);
+  const [contact, setContact] = useRecoilState(contactUs);
+
+  const getFlag = useCallback(async () => {
+    const flag = await remote_config.get(FLAG);
+    setCountry(flag[0]);
+  }, [setCountry]);
+
+  const getNav = useCallback(async () => {
+    const nav = await remote_config.get(NAVBAR);
+    setNavbar(nav);
+  }, [setNavbar]);
+
+  const getButtonsT = useCallback(async () => {
+    const buttonText = await remote_config.get(BUTTONTEXT);
+    setButtonText(buttonText);
+  }, [setButtonText]);
+
+  const getHomeCover = useCallback(async () => {
+    const homeCover = await remote_config.get(HOME_COVER);
+    setCoverInfo(homeCover);
+  }, [setCoverInfo]);
+
+  const getHomeEcosystem = useCallback(async () => {
+    const homeEcosystem = await remote_config.get(HOME_ECOSYSTEM);
+    seteEcosystem(homeEcosystem);
+  }, [seteEcosystem]);
+
+  const getExp = useCallback(async () => {
+    const exp = await remote_config.get(HOME_EXP);
+    setHomeExp(exp);
+  }, [setHomeExp]);
+
+  const getBanners = useCallback(async () => {
+    const bann = await remote_config.get(BANNERS);
+    setBanners(bann);
+  }, [setBanners]);
+
+  const getTestimonials = useCallback(async () => {
+    const testi = await remote_config.get(HOME_TESTIMONIALS);
+    setTestimonials(testi);
+  }, [setTestimonials]);
+
+  const getBrands = useCallback(async () => {
+    const brands = await remote_config.get(HOME_BRANDS);
+    setBrand(brands);
+  }, [setBrand]);
+
+  const getContactUs = useCallback(async () => {
+    const cu = await remote_config.get(CONTACT_US);
+    setContact(cu);
+  }, [setContact]);
+
+  useEffect(() => {
+    getFlag();
+    getNav();
+    getButtonsT();
+    getHomeCover();
+    getHomeEcosystem();
+    getExp();
+    getTestimonials();
+    getBrands();
+    getBanners();
+    getContactUs();
+  }, [
+    getBanners,
+    getBrands,
+    getButtonsT,
+    getContactUs,
+    getExp,
+    getFlag,
+    getHomeCover,
+    getHomeEcosystem,
+    getNav,
+    getTestimonials,
+    setCountry
+  ]);
+
   return (
     <Container>
       <Cover />

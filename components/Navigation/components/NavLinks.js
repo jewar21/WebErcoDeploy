@@ -54,6 +54,7 @@ const NavLinks = ({ navbar }) => {
                 className="navLinksActive navLinksActiveMobile"
                 type="button"
                 onClick={(e) => op.current.toggle(e)}
+                disabled //Quitar, solo para QA del Home
               >
                 {menu[1]}
               </button>
@@ -72,7 +73,9 @@ const NavLinks = ({ navbar }) => {
             </>
           )}
 
-          <Link href={`/${country}/projects`}>
+          {/* <Link href={`/${country}/projects`}> */} 
+          {/* Unir ramas para luego habilitar esto, pendiente (Terminar proyectos) */}
+          <Link href={`/${country}`}>
             <a className="navLinksActive navLinksActiveMobile">{menu[2]}</a>
           </Link>
           <Link href={`/${country}`}>
