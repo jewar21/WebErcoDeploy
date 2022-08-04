@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback } from "react";
+import { useRouter } from "next/router";
 
 /* Importing the components from the folder. */
 import Container from "../../components/Navigation/Container";
@@ -39,6 +40,8 @@ import {
 } from "../../utils/firebase/firebaseTypes";
 import remote_config from "../../utils/firebase/controller";
 
+import Loading from "../../components/PartialComponents/Loading";
+
 const Home = () => {
   const [country, setCountry] = useRecoilState(nameCountry);
   const [navbar, setNavbar] = useRecoilState(navbarInfo);
@@ -50,11 +53,13 @@ const Home = () => {
   const [testimonial, setTestimonials] = useRecoilState(homeTestimonials);
   const [brand, setBrand] = useRecoilState(brands);
   const [contact, setContact] = useRecoilState(contactUs);
+  const router = useRouter();
 
   const getFlag = useCallback(async () => {
     const flag = await remote_config.get(FLAG);
     setCountry(flag[0]);
-  }, [setCountry]);
+    router.push(`/${country}`);
+  }, [country, router, setCountry]);
 
   const getNav = useCallback(async () => {
     const nav = await remote_config.get(NAVBAR);
@@ -102,16 +107,18 @@ const Home = () => {
   }, [setContact]);
 
   useEffect(() => {
-    getFlag();
-    getNav();
-    getButtonsT();
-    getHomeCover();
-    getHomeEcosystem();
-    getExp();
-    getTestimonials();
-    getBrands();
-    getBanners();
-    getContactUs();
+    if (Object.entries(navbar).length === 0 || !navbar) {
+      getFlag();
+      getNav();
+      getButtonsT();
+      getHomeCover();
+      getHomeEcosystem();
+      getExp();
+      getTestimonials();
+      getBrands();
+      getBanners();
+      getContactUs();
+    }
   }, [
     getBanners,
     getBrands,
@@ -123,18 +130,25 @@ const Home = () => {
     getHomeEcosystem,
     getNav,
     getTestimonials,
+    navbar,
     setCountry
   ]);
 
   return (
-    <Container>
-      <Cover />
-      <Ercosystem />
-      <ErcoExperience />
-      <Customers />
-      <StatisticsBanner />
-      <EcosystemBanner />
-    </Container>
+    <>
+      {Object.entries(navbar).length === 0 ? (
+        <Loading />
+      ) : (
+        <Container>
+          <Cover />
+          <Ercosystem />
+          <ErcoExperience />
+          <Customers />
+          <StatisticsBanner />
+          <EcosystemBanner />
+        </Container>
+      )}
+    </>
   );
 };
 

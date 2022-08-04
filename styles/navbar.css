@@ -4,8 +4,8 @@
 
 @layer components {
   .navbarContainer {
-    @apply flex fixed w-full bg-lightGrey-100 h-14 
-    lg:h-20 z-50;
+    @apply flex fixed w-full bg-lightGrey-100 h-14 z-50
+    lg:h-20;
   }
   .navbarDivContainer {
     @apply flex w-full justify-between mx-6 

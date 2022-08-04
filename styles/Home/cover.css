@@ -4,23 +4,27 @@
 
 @layer components {
   .coverContainer {
-    @apply flex flex-col h-screen w-full object-contain inset-0 outline-0;
+    @apply flex flex-col h-screen w-full object-contain inset-0 outline-0
+    lg:justify-center;
   }
   .coverBackground {
     @apply flex h-screen w-full bg-darkGrey-900/10 bg-gradient-to-r from-darkGrey-900/60
      to-darkGrey-900/25 -z-10 absolute;
   }
-  .coverInfo {
-    @apply text-primary-300 mt-64 lg:mt-48 px-6 -z-10 
-    lg:w-52rem lg:px-5.5rem;
+  .coverContent {
+    @apply text-primary-300 mt-64 px-6
+    lg:w-52rem lg:px-5.5rem lg:mt-0
+    xl:w-[65%] xl:mb-5.5rem;
   }
   .coverInfo > h1 {
     @apply flex items-center w-full h-8 font-IBM text-sm font-medium
-    lg:text-base;
+    lg:text-base
+    xl:text-xl xl:pb-6;
   }
   .coverInfo > p {
     @apply text-lightGrey-100 z-10 font-Sora text-2xl h-48 
-    lg:text-4xl lg:font-semibold;
+    lg:text-4xl lg:font-semibold lg:h-40
+    xl:text-6xl xl:h-60;
   }
 
   /* -------------------------------CardsCover------------------------------------------ */

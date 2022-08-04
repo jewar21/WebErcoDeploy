@@ -3,7 +3,7 @@ import React from "react";
 
 // Lib
 import { motion } from "framer-motion";
-import { useCookies } from "react-cookie";
+// import { useCookies } from "react-cookie";
 
 // Components
 import CardsCover from "./components/CardsCover";
@@ -41,21 +41,23 @@ const Cover = () => {
             muted
           />
           <motion.div
-            className="coverInfo"
+            className="coverContent"
             variants={containerInfo}
             initial="displacement"
             animate="visible"
           >
-            <h1>{coverContent.title}</h1>
-            <p>
-              {coverContent.content}
-              <span className="text-primary-300 pl-2">
-                {coverContent.content1}
-              </span>
-            </p>
+            <div className="coverInfo">
+              <h1>{coverContent.title}</h1>
+              <p>
+                {coverContent.content}
+                <span className="text-primary-300 pl-2">
+                  {coverContent.content1}
+                </span>
+              </p>
+            </div>
             <QuoteButton
               buttonParameters={
-                "w-44 h-12 font-semibold bg-primary-500 text-darkGrey-900"
+                "w-44 h-12 font-semibold bg-primary-500 text-darkGrey-900 xl:w-60 xl:h-16 xl:text-xl"
               }
               buttonText={buttonT[1]}
               isIcon={true}

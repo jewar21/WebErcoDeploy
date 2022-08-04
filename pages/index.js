@@ -32,6 +32,8 @@ import {
 } from "../utils/firebase/firebaseTypes";
 import remote_config from "../utils/firebase/controller";
 
+import Loading from "../components/PartialComponents/Loading";
+
 const IndexPage = () => {
   const [country, setCountry] = useRecoilState(nameCountry);
   const [navbar, setNavbar] = useRecoilState(navbarInfo);
@@ -131,7 +133,7 @@ const IndexPage = () => {
             : "Erco Energy"}
         </title>
       </Head>
-      <p>loading...</p>
+      <Loading />
     </div>
   );
 };
