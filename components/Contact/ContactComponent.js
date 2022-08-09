@@ -1,8 +1,11 @@
 // components
 import QuoteButton from "../PartialComponents/QuoteButton";
 
+/* Importing the svg icons. */
+import { iconsContact } from "../../content/globalData";
+
 const ContactComponent = ({ contactData }) => {
-  const cards = contactData.cards;
+  const { cards } = contactData;
   return (
     <section className="contactContent">
       <div className="contactContainer">
@@ -10,14 +13,10 @@ const ContactComponent = ({ contactData }) => {
         <h2>{contactData.title}</h2>
         <p>{contactData.content}</p>
         <div className="contentCardContainer">
-          {cards.map((card, i) => {
-            const icon = card.icon;
-            const title = card.title;
-            const info = card.info;
-            const buttonText = card.buttonText;
+          {cards.map(({ buttonText, info, title }, i) => {
             return (
               <div key={i} className={"contactCard"}>
-                <div className="contactIconCard">{icon}</div>
+                <div className="contactIconCard">{iconsContact[i]}</div>
                 <h4>{title}</h4>
                 <p>{info}</p>
                 <QuoteButton

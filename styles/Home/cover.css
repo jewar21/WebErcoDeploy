@@ -16,11 +16,11 @@
     lg:w-52rem lg:px-5.5rem lg:mt-0
     xl:w-[65%] xl:mb-5.5rem;
   }
-  .coverInfo > h1 {
+  /* .coverInfo > h1 {
     @apply flex items-center w-full h-8 font-IBM text-sm font-medium
     lg:text-base
     xl:text-xl xl:pb-6;
-  }
+  } */
   .coverInfo > p {
     @apply text-lightGrey-100 z-10 font-Sora text-2xl h-48 
     lg:text-4xl lg:font-semibold lg:h-40

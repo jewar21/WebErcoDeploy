@@ -47,7 +47,6 @@ const Cover = () => {
             animate="visible"
           >
             <div className="coverInfo">
-              <h1>{coverContent.title}</h1>
               <p>
                 {coverContent.content}
                 <span className="text-primary-300 pl-2">

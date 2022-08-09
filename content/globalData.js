@@ -58,9 +58,10 @@ import oym from "../assets/imagenes/phone/oym.svg";
 export const phoneImgs = [selfGeneration, tech, oym];
 
 /* ---------- Exporting the icons Cards Cover. ---------- */
-export const iconHandler = <RiHandCoinLine />;
+export const iconHandler = <RiHandCoinLine />; //Actualizar services y contact para dejarlos solo como constante
 export const iconComputer = <RiComputerLine />;
 export const iconLeaf = <RiLeafLine />;
+export const iconsCardsCover = [iconHandler, iconComputer, iconLeaf];
 
 /* ---------- Exporting the icons ErcoSystem. ---------- */
 export const iconCheck = <RiCheckFill />;
