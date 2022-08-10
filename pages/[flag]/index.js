@@ -55,6 +55,8 @@ const Home = () => {
   const [contact, setContact] = useRecoilState(contactUs);
   const router = useRouter();
 
+  const isData = Object.entries(coverInfo).length === 0;
+
   const getFlag = useCallback(async () => {
     const flag = await remote_config.get(FLAG);
     setCountry(flag[0]);
@@ -107,7 +109,7 @@ const Home = () => {
   }, [setContact]);
 
   useEffect(() => {
-    if (Object.entries(navbar).length === 0 || !navbar) {
+    if (isData || !coverInfo) {
       getFlag();
       getNav();
       getButtonsT();
@@ -120,6 +122,7 @@ const Home = () => {
       getContactUs();
     }
   }, [
+    coverInfo,
     getBanners,
     getBrands,
     getButtonsT,
@@ -130,13 +133,14 @@ const Home = () => {
     getHomeEcosystem,
     getNav,
     getTestimonials,
+    isData,
     navbar,
     setCountry
   ]);
 
   return (
     <>
-      {Object.entries(navbar).length === 0 ? (
+      {isData ? (
         <Loading />
       ) : (
         <Container>
